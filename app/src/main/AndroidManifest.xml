@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectOptionActivity"></activity>
+        <activity android:name=".SelectPlayerTypeActivity"></activity>
+        <activity android:name=".PlayerMakingActivity"></activity>
     </application>
 
 </manifest>
