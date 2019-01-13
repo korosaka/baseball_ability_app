@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AbiityOfBaseball</string>
+    <string name="title">野球化アプリ！</string>
+    <string name="app_start">はじめる</string>
 </resources>
