@@ -1,4 +1,12 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class SelectTypeActivity {
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+
+class SelectTypeActivity : AppCompatActivity(){
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_select_type)
+    }
 }
