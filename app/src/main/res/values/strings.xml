@@ -2,4 +2,6 @@
     <string name="app_name">AbiityOfBaseball</string>
     <string name="title">野球化アプリ！</string>
     <string name="app_start">はじめる</string>
+    <string name="player_making">野球選手をつくる</string>
+    <string name="check_data">つくった選手をみる</string>
 </resources>
