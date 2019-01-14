@@ -12,7 +12,6 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         const val EXTRA_TEXTDATA = "playerName"
     }
 
-    private val editText = findViewById<EditText>(R.id.player_name) as EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +21,9 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
 
     // 選手をつくるボタンクリックで画面遷移
     fun onClickSelectFielder(view : View){
+
+        val editText = findViewById<EditText>(R.id.player_name) as EditText
+
 
         if(editText != null){
 
