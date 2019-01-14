@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".QuestionOfAppearanceFragment"
     android:orientation="vertical">
 
 
@@ -13,9 +15,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q1:身長の高さ"/>
+            android:text="Q1:優しさ"/>
         <Spinner
-            android:id="@+id/spinner_q1_a"
+            android:id="@+id/spinner_q1_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -28,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q2:体がしまってるか"/>
+            android:text="Q2:しっかり者さ"/>
         <Spinner
             android:id="@+id/spinner_q2_a"
             android:layout_width="wrap_content"
@@ -44,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q3:筋肉あるか"/>
+            android:text="Q3:気の強さ"/>
         <Spinner
             android:id="@+id/spinner_q3_a"
             android:layout_width="wrap_content"
@@ -59,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q4:顔の良さ"/>
+            android:text="Q4:頭の良さ"/>
         <Spinner
             android:id="@+id/spinner_q4_a"
             android:layout_width="wrap_content"

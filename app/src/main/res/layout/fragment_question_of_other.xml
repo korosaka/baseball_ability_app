@@ -13,9 +13,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q1:身長の高さ"/>
+            android:text="Q1:異性からの人気"/>
         <Spinner
-            android:id="@+id/spinner_q1_a"
+            android:id="@+id/spinner_q1_o"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -28,9 +28,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q2:体がしまってるか"/>
+            android:text="Q2:同性からの人気"/>
         <Spinner
-            android:id="@+id/spinner_q2_a"
+            android:id="@+id/spinner_q2_o"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -44,9 +44,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q3:筋肉あるか"/>
+            android:text="Q3:ここ１番の強さ"/>
         <Spinner
-            android:id="@+id/spinner_q3_a"
+            android:id="@+id/spinner_q3_o"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -59,9 +59,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q4:顔の良さ"/>
+            android:text="Q4:あなたからの好感度"/>
         <Spinner
-            android:id="@+id/spinner_q4_a"
+            android:id="@+id/spinner_q4_o"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>

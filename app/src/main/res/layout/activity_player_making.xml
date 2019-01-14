@@ -17,15 +17,18 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="外見"/>
+            android:text="外見"
+            android:onClick="onClickAppearance"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="性格"/>
+            android:text="性格"
+            android:onClick="onClickPersonality"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="その他"/>
+            android:text="その他"
+            android:onClick="onClickOther"/>
 
     </LinearLayout>
 
