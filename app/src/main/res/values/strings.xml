@@ -6,4 +6,14 @@
     <string name="check_data">つくった選手をみる</string>
     <string name="picher_making">投手でつくる</string>
     <string name="fielder_making">野手でつくる</string>
+    <string name="require_name">名前を登録してください</string>
+
+    <string-array name="array_for_spinner">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
 </resources>
