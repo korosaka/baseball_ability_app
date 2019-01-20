@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Spinner
 
 class PlayerMakingActivity : AppCompatActivity(){
 
     private val fragmentA:Fragment = QuestionOfAppearanceFragment.newInstance("a","b")
     private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance("a","b")
     private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance("a","b")
+
+
+    val calcAbility = CalcAbility()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +67,47 @@ class PlayerMakingActivity : AppCompatActivity(){
         }
 
         transaction.commit()
+    }
+
+    fun onClickMakePlayer(view: View){
+
+        val spinnerQ1_A = findViewById<Spinner>(R.id.spinner_q1_a) as Spinner
+        val spinnerQ2_A = findViewById<Spinner>(R.id.spinner_q2_a) as Spinner
+        val spinnerQ3_A = findViewById<Spinner>(R.id.spinner_q3_a) as Spinner
+        val spinnerQ4_A = findViewById<Spinner>(R.id.spinner_q4_a) as Spinner
+
+        val spinnerQ1_P = findViewById<Spinner>(R.id.spinner_q1_p) as Spinner
+        val spinnerQ2_P = findViewById<Spinner>(R.id.spinner_q2_p) as Spinner
+        val spinnerQ3_P = findViewById<Spinner>(R.id.spinner_q3_p) as Spinner
+        val spinnerQ4_P = findViewById<Spinner>(R.id.spinner_q4_p) as Spinner
+
+        val spinnerQ1_O = findViewById<Spinner>(R.id.spinner_q1_o) as Spinner
+        val spinnerQ2_O = findViewById<Spinner>(R.id.spinner_q2_o) as Spinner
+        val spinnerQ3_O = findViewById<Spinner>(R.id.spinner_q3_o) as Spinner
+        val spinnerQ4_O = findViewById<Spinner>(R.id.spinner_q4_o) as Spinner
+
+
+
+        calcAbility.tall = Integer.parseInt(spinnerQ1_A.selectedItem as String)
+        calcAbility.bodyShape = Integer.parseInt(spinnerQ2_A.selectedItem as String)
+        calcAbility.muscle = Integer.parseInt(spinnerQ3_A.selectedItem as String)
+        calcAbility.looks = Integer.parseInt(spinnerQ4_A.selectedItem as String)
+
+        calcAbility.kindness = Integer.parseInt(spinnerQ1_P.selectedItem as String)
+        calcAbility.reliable = Integer.parseInt(spinnerQ2_P.selectedItem as String)
+        calcAbility.attitude = Integer.parseInt(spinnerQ3_P.selectedItem as String)
+        calcAbility.intelligence = Integer.parseInt(spinnerQ4_P.selectedItem as String)
+
+        calcAbility.popularWithOpposite = Integer.parseInt(spinnerQ1_O.selectedItem as String)
+        calcAbility.popularWithSame = Integer.parseInt(spinnerQ2_O.selectedItem as String)
+        calcAbility.clutch = Integer.parseInt(spinnerQ3_O.selectedItem as String)
+        calcAbility.favorabilityFromYou = Integer.parseInt(spinnerQ4_O.selectedItem as String)
+
+        calcAbility.calcAbility()
+
+//        val intent = Intent(this,SelectOptionActivity::class.java)
+//        startActivity(intent)
+
     }
 
 }

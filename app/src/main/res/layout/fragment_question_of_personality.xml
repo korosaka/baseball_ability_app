@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Q2:しっかり者さ"/>
         <Spinner
-            android:id="@+id/spinner_q2_a"
+            android:id="@+id/spinner_q2_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="Q3:気の強さ"/>
         <Spinner
-            android:id="@+id/spinner_q3_a"
+            android:id="@+id/spinner_q3_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Q4:頭の良さ"/>
         <Spinner
-            android:id="@+id/spinner_q4_a"
+            android:id="@+id/spinner_q4_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/array_for_spinner"/>
