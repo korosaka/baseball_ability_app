@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -8,12 +9,26 @@ import android.widget.Spinner
 
 class PlayerMakingActivity : AppCompatActivity(){
 
+    companion object {
+        const val PLAYER_NAME = "playerName"
+        const val CONTACT = "contact_status"
+        const val POWER = "power_status"
+        const val SPEED = "speed_status"
+        const val ARM = "arm_status"
+        const val FIELDING = "fielding_status"
+
+    }
+
+
     private val fragmentA:Fragment = QuestionOfAppearanceFragment.newInstance("a","b")
     private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance("a","b")
     private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance("a","b")
 
 
+
     val calcAbility = CalcAbility()
+
+    var playerName:String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +43,8 @@ class PlayerMakingActivity : AppCompatActivity(){
         transaction.hide(fragmentP)
         transaction.hide(fragmentO)
         transaction.commit()
+
+        playerName = intent.getStringExtra(PLAYER_NAME)
 
 
     }
@@ -105,8 +122,15 @@ class PlayerMakingActivity : AppCompatActivity(){
 
         calcAbility.calcAbility()
 
-//        val intent = Intent(this,SelectOptionActivity::class.java)
-//        startActivity(intent)
+        val intent = Intent(this,MakingStatusActivity::class.java)
+        intent.putExtra(PLAYER_NAME,playerName)
+        intent.putExtra(CONTACT,calcAbility.contact)
+        intent.putExtra(POWER,calcAbility.power)
+        intent.putExtra(SPEED,calcAbility.speed)
+        intent.putExtra(ARM,calcAbility.armStrength)
+        intent.putExtra(FIELDING,calcAbility.fielding)
+
+        startActivity(intent)
 
     }
 

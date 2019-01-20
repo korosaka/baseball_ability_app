@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectOptionActivity"></activity>
-        <activity android:name=".SelectPlayerTypeActivity"></activity>
-        <activity android:name=".PlayerMakingActivity"></activity>
+        <activity android:name=".SelectOptionActivity" />
+        <activity android:name=".SelectPlayerTypeActivity" />
+        <activity android:name=".PlayerMakingActivity" />
+        <activity android:name=".MakingStatusActivity"></activity>
     </application>
 
 </manifest>

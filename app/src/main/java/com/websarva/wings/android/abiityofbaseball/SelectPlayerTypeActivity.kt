@@ -9,7 +9,7 @@ import android.widget.EditText
 class SelectPlayerTypeActivity : AppCompatActivity(){
 
     companion object {
-        const val EXTRA_TEXTDATA = "playerName"
+        const val PLAYER_NAME = "playerName"
     }
 
 
@@ -31,7 +31,7 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
 
             val intent = Intent(this,PlayerMakingActivity::class.java)
 
-            intent.putExtra(EXTRA_TEXTDATA,playerName)
+            intent.putExtra(PLAYER_NAME,playerName)
 
             startActivity(intent)
 
