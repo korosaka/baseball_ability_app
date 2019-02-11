@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
@@ -40,12 +41,24 @@ class MakingStatusActivity : AppCompatActivity() {
         val armDisplay = findViewById<TextView>(R.id.arm_display)
         val fieldDisplay = findViewById<TextView>(R.id.field_display)
 
+
         nameDisplay.setText(player.playerName)
+        // TODO ポジションで条件分岐
+        nameDisplay.setBackgroundColor(Color.YELLOW)
+
+
         contactDisplay.setText(player.contact_lank)
         powerDisplay.setText(player.power_lank)
         speedDisplay.setText(player.speed_lank)
         armDisplay.setText(player.arm_lank)
         fieldDisplay.setText(player.fielding_lank)
+
+        setTextColor(contactDisplay)
+        setTextColor(powerDisplay)
+        setTextColor(speedDisplay)
+        setTextColor(armDisplay)
+        setTextColor(fieldDisplay)
+
 
         calcStats(player)
 
@@ -69,5 +82,19 @@ class MakingStatusActivity : AppCompatActivity() {
         sb_dis.setText(Integer.toString(sb))
 
 
+    }
+
+    fun setTextColor(alphabet:TextView){
+
+        when(alphabet.text){
+            "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
+            "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
+            "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
+            "D" -> alphabet.setTextColor(Color.parseColor("#ffff00"))
+            "E" -> alphabet.setTextColor(Color.parseColor("#7cfc00"))
+            "F" -> alphabet.setTextColor(Color.parseColor("#00ffff"))
+            "G" -> alphabet.setTextColor(Color.parseColor("#696969"))
+
+        }
     }
 }
