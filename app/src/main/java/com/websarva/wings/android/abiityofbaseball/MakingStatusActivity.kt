@@ -46,6 +46,14 @@ class MakingStatusActivity : AppCompatActivity() {
         // TODO ポジションで条件分岐
         nameDisplay.setBackgroundColor(Color.YELLOW)
 
+        // 字数でサイズ変更
+        var fontCount = nameDisplay.length()
+        when(fontCount){
+            in 0..4 -> nameDisplay.width = 500
+            in 5..6 -> nameDisplay.width = 700
+            else -> nameDisplay.width = 900
+        }
+
 
         contactDisplay.setText(player.contact_lank)
         powerDisplay.setText(player.power_lank)
@@ -76,10 +84,26 @@ class MakingStatusActivity : AppCompatActivity() {
         val rbi_dis = findViewById<TextView>(R.id.rbi_display)
         val sb_dis = findViewById<TextView>(R.id.steel_display)
 
-        ave_dis.setText(Integer.toString(ave))
-        hr_dis.setText(Integer.toString(hr))
-        rbi_dis.setText(Integer.toString(rbi))
-        sb_dis.setText(Integer.toString(sb))
+        // 打率表示
+        var ave_string:String? = null
+        if (ave < 100){
+            ave_string = "." + "0" + Integer.toString(ave)
+        } else {
+            ave_string = "." + Integer.toString(ave)
+        }
+        ave_dis.setText(ave_string)
+
+        // HR表示
+        val hr_string = Integer.toString(hr) + "本"
+        hr_dis.setText(hr_string)
+
+        // 打点表示
+        val rbi_string = Integer.toString(rbi) + "点"
+        rbi_dis.setText(rbi_string)
+
+        // 盗塁表示
+        val sb_string = Integer.toString(sb) + "個"
+        sb_dis.setText(sb_string)
 
 
     }

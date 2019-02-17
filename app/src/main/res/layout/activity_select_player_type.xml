@@ -5,26 +5,94 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/require_name"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:text="@string/require_name"/>
 
-    <EditText
-        android:id="@+id/player_name"
+        <EditText
+            android:id="@+id/player_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="8"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fielder_making"
-        android:onClick="onClickSelectFielder"/>
+        android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:text="@string/require_sex"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal">
+            <RadioButton android:text="男性"
+                android:id="@+id/Radio_M"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+            </RadioButton>
+            <RadioButton android:text="女性"
+                android:id="@+id/Radio_W"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+        </RadioGroup>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/picher_making"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/fielder_making"
+            android:onClick="onClickSelectFielder"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/picher_making"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unable_pitcher"/>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

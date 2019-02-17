@@ -3,30 +3,46 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorAccent">
 
-
-    <TextView
-        android:id="@+id/player_name_of_making"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="選手つくる画面（仮）"/>
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/player_name_of_making"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="@string/require_each_item"/>
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:text="外見"
             android:onClick="onClickAppearance"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:text="性格"
             android:onClick="onClickPersonality"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:text="その他"
             android:onClick="onClickOther"/>
 
@@ -36,14 +52,24 @@
         android:id="@+id/frame_for_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0">
+        android:layout_weight="1.0"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
 
     </FrameLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="決定"
-        android:onClick="onClickMakePlayer"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="決定"
+            android:onClick="onClickMakePlayer"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>
