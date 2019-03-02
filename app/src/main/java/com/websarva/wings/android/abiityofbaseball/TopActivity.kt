@@ -15,7 +15,9 @@ class TopActivity : AppCompatActivity() {
     // はじめるボタンクリックで画面遷移
     fun onClickAppStart(view : View){
 
-        val intent = Intent(this,SelectOptionActivity::class.java)
+        // 今回機能として作成選手の確認は無いため、飛ばす
+//        val intent = Intent(this,SelectOptionActivity::class.java)
+        val intent = Intent(this,SelectPlayerTypeActivity::class.java)
         startActivity(intent)
 
     }
