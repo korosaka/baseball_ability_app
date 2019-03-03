@@ -49,6 +49,7 @@
             android:layout_marginBottom="30dp"
             android:gravity="center_horizontal">
             <RadioButton android:text="男性"
+                android:checked="true"
                 android:id="@+id/Radio_M"
                 android:layout_marginRight="20dp"
                 android:layout_height="wrap_content"
