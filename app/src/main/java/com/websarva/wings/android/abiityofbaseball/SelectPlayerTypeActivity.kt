@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 
 class SelectPlayerTypeActivity : AppCompatActivity(){
 
@@ -33,6 +34,8 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
 
             startActivity(intent)
 
+        } else {
+            Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
         }
 
 
