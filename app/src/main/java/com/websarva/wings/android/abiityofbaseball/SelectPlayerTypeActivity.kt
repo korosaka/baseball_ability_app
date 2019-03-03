@@ -23,11 +23,9 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
     fun onClickSelectFielder(view : View){
 
         val editText = findViewById<EditText>(R.id.player_name) as EditText
+        val playerName = editText.text.toString()
 
-
-        if(editText != null){
-
-            val playerName = editText.text.toString()
+        if(playerName.isNotEmpty()){
 
             val intent = Intent(this,PlayerMakingActivity::class.java)
 
