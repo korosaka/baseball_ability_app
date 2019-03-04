@@ -43,6 +43,7 @@
             android:text="@string/require_sex"/>
 
         <RadioGroup
+            android:id="@+id/sex_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -50,13 +51,13 @@
             android:gravity="center_horizontal">
             <RadioButton android:text="男性"
                 android:checked="true"
-                android:id="@+id/Radio_M"
+                android:id="@+id/radio_m"
                 android:layout_marginRight="20dp"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content">
             </RadioButton>
             <RadioButton android:text="女性"
-                android:id="@+id/Radio_W"
+                android:id="@+id/radio_w"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">

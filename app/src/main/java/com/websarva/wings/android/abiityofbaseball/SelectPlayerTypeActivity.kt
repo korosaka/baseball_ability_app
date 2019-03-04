@@ -4,13 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_select_player_type.*
 
 class SelectPlayerTypeActivity : AppCompatActivity(){
 
     companion object {
         const val PLAYER_NAME = "playerName"
+        const val SEXID = "sex_id"
     }
 
 
@@ -23,22 +24,34 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
     // 選手をつくるボタンクリックで画面遷移
     fun onClickSelectFielder(view : View){
 
-        val editText = findViewById<EditText>(R.id.player_name) as EditText
+        val editText = player_name
         val playerName = editText.text.toString()
-
+        // 名前空欄はダメ
         if(playerName.isNotEmpty()){
-
-            val intent = Intent(this,PlayerMakingActivity::class.java)
-
-            intent.putExtra(PLAYER_NAME,playerName)
-
-            startActivity(intent)
-
+            makeIntent(playerName)
         } else {
             Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
         }
+    }
 
+    /**
+     * 入力情報をsetして次のページへ
+     */
+    private fun makeIntent(name:String){
 
+        val intent = Intent(this,PlayerMakingActivity::class.java)
+
+        val radioGroup = sex_radio
+        val id = radioGroup.checkedRadioButtonId
+
+        when(id){
+            R.id.radio_m -> intent.putExtra(SEXID,0)
+            R.id.radio_w -> intent.putExtra(SEXID,1)
+        }
+
+        intent.putExtra(PLAYER_NAME,name)
+
+        startActivity(intent)
     }
 
 
