@@ -29,6 +29,7 @@ class PlayerMakingActivity : AppCompatActivity(){
     val calcAbility = CalcAbility()
 
     var playerName:String? = null
+    var sex_id:Int? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +46,7 @@ class PlayerMakingActivity : AppCompatActivity(){
         transaction.commit()
 
         playerName = intent.getStringExtra(PLAYER_NAME)
+        sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID,-1)
 
 
     }
