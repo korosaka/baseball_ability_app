@@ -17,19 +17,18 @@ class PlayerMakingActivity : AppCompatActivity(){
         const val ARM = "arm_status"
         const val FIELDING = "fielding_status"
 
+        var sex_id = -1
     }
 
+    var playerName : String? = null
 
-    private val fragmentA:Fragment = QuestionOfAppearanceFragment.newInstance("a","b")
+    private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance(sex_id)
     private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance("a","b")
     private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance("a","b")
 
 
 
     val calcAbility = CalcAbility()
-
-    var playerName:String? = null
-    var sex_id:Int? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +46,6 @@ class PlayerMakingActivity : AppCompatActivity(){
 
         playerName = intent.getStringExtra(PLAYER_NAME)
         sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID,-1)
-
 
     }
 

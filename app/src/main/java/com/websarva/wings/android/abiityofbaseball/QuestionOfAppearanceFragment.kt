@@ -1,100 +1,81 @@
 package com.websarva.wings.android.abiityofbaseball
 
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [QuestionOfAppearanceFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [QuestionOfAppearanceFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class QuestionOfAppearanceFragment : Fragment() {
-
-    fun createInstance(stringTest1:String,stringTest2: String):QuestionOfAppearanceFragment{
-
-        val questionOfAppearanceFragment = QuestionOfAppearanceFragment()
-
-        return questionOfAppearanceFragment
-    }
-
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question_of_appearance, container, false)
+        val view = inflater.inflate(R.layout.fragment_question_of_appearance, container, false)
+
+        return view
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (PlayerMakingActivity.sex_id == 1) {
+            textChange()
+        }
+
     }
 
 
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
+    private fun textChange(){
+
+        val spinnerItems_1 = arrayOf("~150cm", "151~160cm", "161~170cm", "171~180cm","181cm~")
+        val spinnerItems_2 = arrayOf("ふつう", "スリム", "ぽっちゃり", "マッチョ","グラマラス")
+        val spinnerItems_3 = arrayOf("ふつう","カワイイ系", "美人系", "地味め", "派手め")
+        val spinnerItems_4 = arrayOf("優しそう", "こわそう", "元気そう", "大人しそう","不思議ちゃん")
+        val spinnerItems_5 = arrayOf("ふつう", "オシャレ", "地味め", "派手め", "独創的")
+
+
+        var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_q1_a.adapter = adapter
+
+        adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_2)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_q2_a.adapter = adapter
+
+
+        adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_3)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_q3_a.adapter = adapter
+
+        adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_4)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_q4_a.adapter = adapter
+
+        adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_5)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_q5_a.adapter = adapter
+
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
-    }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment QuestionOfAppearanceFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                QuestionOfAppearanceFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+        fun newInstance(sex_id : Int): QuestionOfAppearanceFragment{
+
+            val fragment = QuestionOfAppearanceFragment()
+
+//            val args = Bundle()
+//            args.putInt("sex",sex_id)
+//            fragment.arguments = args
+
+            return fragment
+        }
     }
 }
