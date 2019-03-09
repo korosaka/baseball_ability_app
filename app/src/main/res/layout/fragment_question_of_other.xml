@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:text="Q5:雰囲気"/>
+            android:text="Q5:その他特徴"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
