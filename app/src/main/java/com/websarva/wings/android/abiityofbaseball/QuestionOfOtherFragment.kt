@@ -34,11 +34,11 @@ class QuestionOfOtherFragment : Fragment() {
 
     private fun textChange(){
 
-        val spinnerItems_1 = arrayOf("マドンナ", "モテる", "一部から", "ふつう","残念")
-        val spinnerItems_2 = arrayOf("大人気", "まぁまぁ", "ふつう", "あんまり","嫌われ者")
-        val spinnerItems_3 = arrayOf("ここぞで最強","なかなか", "ふつう", "あんまり", "最弱")
-        val spinnerItems_4 = arrayOf("大好き","まぁまぁ", "ふつう", "興味深い", "嫌い")
-        val spinnerItems_5 = arrayOf("カリスマ性", "ボスキャラ","お色気", "大和撫子", "スポーツ万能", "特になし")
+        val spinnerItems_1 = arrayOf("マドンナ", "モテる", "一部から", "ふつう","ぷぅ〜")
+        val spinnerItems_2 = arrayOf("大人気", "まぁまぁ", "ふつう", "あんまり","ぷぅ〜")
+        val spinnerItems_3 = arrayOf("最強","なかなか", "ふつう", "あんまり", "豆腐メンタル")
+        val spinnerItems_4 = arrayOf("大好き","まぁまぁ", "ふつう", "興味深い", "アンチ")
+        val spinnerItems_5 = arrayOf("ボスキャラ","お色気", "大和撫子", "スポーツ万能", "特になし")
 
 
         var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)

@@ -19,6 +19,126 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="array_q1_a">
+        <item>~160cm</item>
+        <item>161~170cm</item>
+        <item>171~180cm</item>
+        <item>181~190cm</item>
+        <item>191cm~</item>
+    </string-array>
+
+    <string-array name="array_q2_a">
+        <item>ふつう</item>
+        <item>スリム</item>
+        <item>ぽっちゃり</item>
+        <item>ややマッチョ</item>
+        <item>ゴリマッチョ</item>
+    </string-array>
+
+    <string-array name="array_q3_a">
+        <item>ふつう</item>
+        <item>イケメン</item>
+        <item>ワイルド</item>
+        <item>かわいい</item>
+        <item>強面</item>
+    </string-array>
+
+    <string-array name="array_q4_a">
+        <item>優男</item>
+        <item>マジメ君</item>
+        <item>クール</item>
+        <item>おとぼけ</item>
+        <item>チャラ男</item>
+    </string-array>
+
+    <string-array name="array_q5_a">
+        <item>ふつう</item>
+        <item>オシャレ</item>
+        <item>地味め</item>
+        <item>派手め</item>
+        <item>独創的</item>
+    </string-array>
+
+    <string-array name="array_q1_p">
+        <item>穏やか</item>
+        <item>おとなしい</item>
+        <item>淡々</item>
+        <item>騒がしい</item>
+        <item>ミステリアス</item>
+    </string-array>
+
+    <string-array name="array_q2_p">
+        <item>優しい</item>
+        <item>気が強い</item>
+        <item>無気力</item>
+        <item>目立ちたがり</item>
+        <item>一匹オオカミ</item>
+    </string-array>
+
+    <string-array name="array_q3_p">
+        <item>リーダー</item>
+        <item>控えめ</item>
+        <item>ムードメーカー</item>
+        <item>評論家</item>
+        <item>アイデアマン</item>
+    </string-array>
+
+    <string-array name="array_q4_p">
+        <item>ふつう</item>
+        <item>お勉強得意</item>
+        <item>頭キレキレ</item>
+        <item>頭からっぽ</item>
+        <item>脳筋</item>
+    </string-array>
+
+    <string-array name="array_q5_p">
+        <item>ふつう</item>
+        <item>冗談多め</item>
+        <item>話が面白い</item>
+        <item>つまらない</item>
+        <item>全てが面白い</item>
+    </string-array>
+
+    <string-array name="array_q1_o">
+        <item>王子様</item>
+        <item>モテる</item>
+        <item>ハンター</item>
+        <item>ふつう</item>
+        <item>ぷぅ〜</item>
+    </string-array>
+
+    <string-array name="array_q2_o">
+        <item>大人気</item>
+        <item>まぁまぁ</item>
+        <item>ふつう</item>
+        <item>あんまり</item>
+        <item>ぷぅ〜</item>
+    </string-array>
+
+    <string-array name="array_q3_o">
+        <item>最強</item>
+        <item>なかなか</item>
+        <item>ふつう</item>
+        <item>あんまり</item>
+        <item>豆腐メンタル</item>
+    </string-array>
+
+    <string-array name="array_q4_o">
+        <item>大好き</item>
+        <item>まぁまぁ</item>
+        <item>ふつう</item>
+        <item>興味深い</item>
+        <item>アンチ</item>
+    </string-array>
+
+    <string-array name="array_q5_o">
+        <item>カリスマ</item>
+        <item>スポーツ万能</item>
+        <item>天才頭脳</item>
+        <item>どヤンキー</item>
+        <item>特になし</item>
+    </string-array>
+
 
 
 </resources>

@@ -32,11 +32,11 @@ class QuestionOfPersonalityFragment : Fragment() {
 
     private fun textChange(){
 
-        val spinnerItems_1 = arrayOf("穏やか", "静か", "サバサバ", "うるさい","メンヘラ")
+        val spinnerItems_1 = arrayOf("穏やか", "おとなしい", "サバサバ", "うるさい","メンヘラ")
         val spinnerItems_2 = arrayOf("優しい", "気が強い", "無気力", "かまってちゃん","一匹オオカミ")
-        val spinnerItems_3 = arrayOf("リーダーシップ系","控えめ系", "元気系", "文句多い系", "アイデア満載系")
-        val spinnerItems_4 = arrayOf("ふつう","勉強得意系", "頭キレる系", "頭からっぽ系", "脳筋系")
-        val spinnerItems_5 = arrayOf("ふつう", "冗談多い", "話が面白い", "つまらない", "全てが面白い")
+        val spinnerItems_3 = arrayOf("リーダー","控えめ", "ムードメーカー", "評論家", "アイデアマン")
+        val spinnerItems_4 = arrayOf("ふつう","勉強得意", "頭キレキレ", "頭からっぽ", "脳筋")
+        val spinnerItems_5 = arrayOf("ふつう", "冗談多め", "話が面白い", "つまらない", "全てが面白い")
 
 
         var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)
