@@ -22,9 +22,9 @@ class PlayerMakingActivity : AppCompatActivity(){
 
     var playerName : String? = null
 
-    private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance(sex_id)
-    private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance("a","b")
-    private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance("a","b")
+    private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
+    private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance()
+    private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance()
 
 
 

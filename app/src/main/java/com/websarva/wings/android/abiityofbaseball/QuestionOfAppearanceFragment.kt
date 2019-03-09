@@ -17,9 +17,7 @@ class QuestionOfAppearanceFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_question_of_appearance, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_question_of_appearance, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +35,7 @@ class QuestionOfAppearanceFragment : Fragment() {
         val spinnerItems_1 = arrayOf("~150cm", "151~160cm", "161~170cm", "171~180cm","181cm~")
         val spinnerItems_2 = arrayOf("ふつう", "スリム", "ぽっちゃり", "マッチョ","グラマラス")
         val spinnerItems_3 = arrayOf("ふつう","カワイイ系", "美人系", "地味め", "派手め")
-        val spinnerItems_4 = arrayOf("優しそう", "こわそう", "元気そう", "大人しそう","不思議ちゃん")
+        val spinnerItems_4 = arrayOf("優しそう", "こわそう", "元気そう", "大人しそう","セクシー")
         val spinnerItems_5 = arrayOf("ふつう", "オシャレ", "地味め", "派手め", "独創的")
 
 
@@ -67,15 +65,8 @@ class QuestionOfAppearanceFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(sex_id : Int): QuestionOfAppearanceFragment{
-
-            val fragment = QuestionOfAppearanceFragment()
-
-//            val args = Bundle()
-//            args.putInt("sex",sex_id)
-//            fragment.arguments = args
-
-            return fragment
+        fun newInstance(): QuestionOfAppearanceFragment{
+            return QuestionOfAppearanceFragment()
         }
     }
 }
