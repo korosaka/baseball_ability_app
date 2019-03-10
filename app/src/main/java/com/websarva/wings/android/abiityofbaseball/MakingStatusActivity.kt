@@ -74,10 +74,28 @@ class MakingStatusActivity : AppCompatActivity() {
 
     fun calcStats(player:PlayerClass){
 
-        val ave = player.contact_ability *3
-        val hr = player.power_ability
-        val rbi = player.contact_ability + player.power_ability
-        val sb = player.speed_ability
+        var ave = 85 + (player.contact_ability * 4.5).toInt() + (player.power_ability * 0.5).toInt() + (player.speed_ability * 0.2).toInt()
+        if(ave < 150) {
+            ave = 120 + (ave * 0.3).toInt()
+        } else if (ave < 200) {
+            ave = 150 + (ave * 0.3).toInt()
+        } else if (ave > 300) {
+            ave = ((ave - 300) * 0.5).toInt() + 300
+        }
+        var hr = ((player.power_ability * 0.8) + (player.contact_ability * 0.2)).toInt() - 35
+        if (hr < 0){
+            hr = (player.power_ability * 0.1).toInt()
+        } else {
+          hr += 15
+        }
+        var rbi = ((player.contact_ability * 0.9) + (player.power_ability * 0.9)).toInt()
+        var sb = (player.speed_ability * 0.8).toInt() -25
+        if (sb < 0){
+            sb = (player.speed_ability * 0.2).toInt() + 1
+        } else {
+            sb += 3
+        }
+
 
         val ave_dis = findViewById<TextView>(R.id.average_display)
         val hr_dis = findViewById<TextView>(R.id.homer_display)

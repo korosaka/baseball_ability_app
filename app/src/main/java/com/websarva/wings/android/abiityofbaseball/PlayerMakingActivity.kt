@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Spinner
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
@@ -90,44 +89,9 @@ class PlayerMakingActivity : AppCompatActivity(){
 
     fun onClickMakePlayer(view: View){
 
-        val spinnerQ1_A = findViewById<Spinner>(R.id.spinner_q1_a) as Spinner
-        val spinnerQ2_A = findViewById<Spinner>(R.id.spinner_q2_a) as Spinner
-        val spinnerQ3_A = findViewById<Spinner>(R.id.spinner_q3_a) as Spinner
-        val spinnerQ4_A = findViewById<Spinner>(R.id.spinner_q4_a) as Spinner
-
-        val spinnerQ1_P = findViewById<Spinner>(R.id.spinner_q1_p) as Spinner
-        val spinnerQ2_P = findViewById<Spinner>(R.id.spinner_q2_p) as Spinner
-        val spinnerQ3_P = findViewById<Spinner>(R.id.spinner_q3_p) as Spinner
-        val spinnerQ4_P = findViewById<Spinner>(R.id.spinner_q4_p) as Spinner
-
-        val spinnerQ1_O = findViewById<Spinner>(R.id.spinner_q1_o) as Spinner
-        val spinnerQ2_O = findViewById<Spinner>(R.id.spinner_q2_o) as Spinner
-        val spinnerQ3_O = findViewById<Spinner>(R.id.spinner_q3_o) as Spinner
-        val spinnerQ4_O = findViewById<Spinner>(R.id.spinner_q4_o) as Spinner
-
-
         val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String,spinner_q2_a.selectedItem as String,spinner_q3_a.selectedItem as String,spinner_q4_a.selectedItem as String,spinner_q5_a.selectedItem as String,
                 spinner_q1_p.selectedItem as String,spinner_q2_p.selectedItem as String,spinner_q3_p.selectedItem as String,spinner_q4_p.selectedItem as String,spinner_q5_p.selectedItem as String,
                 spinner_q1_o.selectedItem as String,spinner_q2_o.selectedItem as String,spinner_q3_o.selectedItem as String,spinner_q4_o.selectedItem as String,spinner_q5_o.selectedItem as String)
-
-
-
-//        calcAbility.tall = Integer.parseInt(spinnerQ1_A.selectedItem as String)
-//        calcAbility.bodyShape = Integer.parseInt(spinnerQ2_A.selectedItem as String)
-//        calcAbility.muscle = Integer.parseInt(spinnerQ3_A.selectedItem as String)
-//        calcAbility.looks = Integer.parseInt(spinnerQ4_A.selectedItem as String)
-//
-//        calcAbility.kindness = Integer.parseInt(spinnerQ1_P.selectedItem as String)
-//        calcAbility.reliable = Integer.parseInt(spinnerQ2_P.selectedItem as String)
-//        calcAbility.attitude = Integer.parseInt(spinnerQ3_P.selectedItem as String)
-//        calcAbility.intelligence = Integer.parseInt(spinnerQ4_P.selectedItem as String)
-//
-//        calcAbility.popularWithOpposite = Integer.parseInt(spinnerQ1_O.selectedItem as String)
-//        calcAbility.popularWithSame = Integer.parseInt(spinnerQ2_O.selectedItem as String)
-//        calcAbility.clutch = Integer.parseInt(spinnerQ3_O.selectedItem as String)
-//        calcAbility.favorabilityFromYou = Integer.parseInt(spinnerQ4_O.selectedItem as String)
-
-//        calcAbility.calcAbility()
 
         val intent = Intent(this,MakingStatusActivity::class.java)
         intent.putExtra(PLAYER_NAME,playerName)
