@@ -1,22 +1,27 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class CalcAbility {
+class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
+                  a1_p:String,a2_p:String,a3_p:String,a4_p:String,a5_p:String,
+                  a1_o:String,a2_o:String,a3_o:String,a4_o:String,a5_o:String) {
 
-    var tall = 0
-    var bodyShape = 0
-    var muscle = 0
-    var looks = 0
+    val a1_a = a1_a
+    val a2_a = a2_a
+    val a3_a = a3_a
+    val a4_a = a4_a
+    val a5_a = a5_a
 
-    var kindness = 0
-    var reliable = 0
-    var attitude = 0
-    var intelligence = 0
+    val a1_p = a1_p
+    val a2_p = a2_p
+    val a3_p = a3_p
+    val a4_p = a4_p
+    val a5_p = a5_p
 
 
-    var popularWithOpposite = 0
-    var popularWithSame = 0
-    var clutch = 0
-    var favorabilityFromYou = 0
+    val a1_o = a1_o
+    val a2_o = a2_o
+    val a3_o = a3_o
+    val a4_o = a4_o
+    val a5_o = a5_o
 
     var contact = 0
     var power = 0
@@ -24,13 +29,484 @@ class CalcAbility {
     var armStrength = 0
     var fielding = 0
 
-    fun calcAbility(){
-        contact = bodyShape + looks*3 + kindness * 4 + reliable + intelligence*2 + popularWithOpposite + popularWithSame*2
-        power = tall*4 + muscle*6 + looks + reliable + attitude*2
-        speed = tall + bodyShape*3 + muscle*3 + looks*4 + attitude + popularWithOpposite*3
-        armStrength = tall*2 + bodyShape*2 + muscle*2 + looks + attitude*7
-        fielding =  kindness*4 + reliable*4 + intelligence*4 + popularWithSame*2
 
+    init {
+
+        if(PlayerMakingActivity.sex_id == 0){
+            calcAbility_m()
+        }
+
+    }
+
+    fun calcAbility_m(){
+
+        when(a1_a){
+            "~160cm" -> {
+                plusAbility("s",4)
+                plusAbility("c",2)
+            }
+            "161~170cm" -> {
+                plusAbility("p",4)
+                plusAbility("s",2)
+            }
+            "171~180cm" -> {
+                plusAbility("p",8)
+                plusAbility("a",1)
+            }
+            "181~190cm" -> {
+                plusAbility("p",15)
+                plusAbility("a",3)
+            }
+            "191cm~" -> {
+                plusAbility("p",20)
+                plusAbility("a",5)
+            }
+        }
+
+        when(a2_a){
+            "ふつう" -> {
+                plusAbility("p",2)
+                plusAbility("s",2)
+            }
+            "スリム" -> {
+                plusAbility("s",2)
+                plusAbility("f",2)
+            }
+            "ぽっちゃり" -> {
+                plusAbility("p",7)
+                plusAbility("s",-5)
+            }
+            "ややマッチョ" -> {
+                plusAbility("p",14)
+                plusAbility("s",3)
+                plusAbility("a",5)
+            }
+            "ゴリマッチョ" -> {
+                plusAbility("p",20)
+                plusAbility("s",-2)
+                plusAbility("a",2)
+            }
+        }
+
+        when(a3_a){
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+            }
+            "イケメン" -> {
+                plusAbility("c",8)
+                plusAbility("p",3)
+                plusAbility("s",5)
+                plusAbility("a",2)
+                plusAbility("f",7)
+            }
+            "ワイルド" -> {
+                plusAbility("p",5)
+                plusAbility("s",5)
+                plusAbility("a",10)
+            }
+            "かわいい" -> {
+                plusAbility("c",10)
+                plusAbility("s",3)
+                plusAbility("f",3)
+            }
+            "強面" -> {
+                plusAbility("p",3)
+                plusAbility("s",2)
+                plusAbility("a",10)
+            }
+        }
+
+        when(a4_a){
+            "優男" -> {
+                plusAbility("c",5)
+                plusAbility("s",1)
+                plusAbility("f",5)
+            }
+            "マジメ君" -> {
+                plusAbility("p",1)
+                plusAbility("s",2)
+                plusAbility("a",1)
+                plusAbility("f",5)
+            }
+            "クール" -> {
+                plusAbility("p",1)
+                plusAbility("s",7)
+                plusAbility("a",3)
+                plusAbility("f",5)
+            }
+            "おとぼけ" -> {
+                plusAbility("c",2)
+                plusAbility("s",3)
+                plusAbility("f",2)
+            }
+            "チャラ男" -> {
+                plusAbility("s",7)
+                plusAbility("a",2)
+            }
+        }
+
+        when(a5_a){
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+            }
+            "オシャレ" -> {
+                plusAbility("c",4)
+                plusAbility("p",1)
+                plusAbility("s",4)
+                plusAbility("a",2)
+                plusAbility("f",4)
+            }
+            "地味め" -> {
+                plusAbility("c",2)
+                plusAbility("a",2)
+                plusAbility("f",4)
+            }
+            "派手め" -> {
+                plusAbility("p",2)
+                plusAbility("s",3)
+                plusAbility("a",1)
+            }
+            "独創的" -> {
+                plusAbility("c",3)
+            }
+        }
+
+        when(a1_p){
+            "穏やか" -> {
+                plusAbility("c",3)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",3)
+            }
+            "おとなしい" -> {
+                plusAbility("c",2)
+                plusAbility("a",1)
+                plusAbility("f",5)
+            }
+            "淡々" -> {
+                plusAbility("p",3)
+                plusAbility("s",2)
+                plusAbility("a",4)
+            }
+            "騒がしい" -> {
+                plusAbility("c",-2)
+                plusAbility("p",3)
+                plusAbility("s",3)
+                plusAbility("f",-2)
+            }
+            "ミステリアス" -> {
+                plusAbility("p",2)
+            }
+        }
+
+        when(a2_p){
+            "優しい" -> {
+                plusAbility("c",3)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",4)
+            }
+            "気が強い" -> {
+                plusAbility("c",-1)
+                plusAbility("a",12)
+            }
+            "無気力" -> {
+                plusAbility("c",1)
+            }
+            "目立ちたがり" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",3)
+                plusAbility("a",3)
+                plusAbility("f",2)
+            }
+            "一匹オオカミ" -> {
+                plusAbility("c",2)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",2)
+            }
+        }
+
+        when(a3_p){
+            "リーダー" -> {
+                plusAbility("c",2)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",4)
+                plusAbility("f",5)
+            }
+            "控えめ" -> {
+                plusAbility("c",3)
+                plusAbility("f",2)
+            }
+            "ムードメーカー" -> {
+                plusAbility("c",1)
+                plusAbility("p",3)
+                plusAbility("s",1)
+                plusAbility("a",2)
+                plusAbility("f",2)
+
+            }
+            "評論家" -> {
+                plusAbility("c",-2)
+                plusAbility("p",1)
+                plusAbility("s",2)
+                plusAbility("a",3)
+                plusAbility("f",1)
+            }
+            "アイデアマン" -> {
+                plusAbility("c",3)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",3)
+            }
+        }
+
+        when(a4_p){
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+            }
+            "お勉強得意" -> {
+                plusAbility("c",2)
+                plusAbility("f",4)
+            }
+            "頭キレキレ" -> {
+                plusAbility("c",3)
+                plusAbility("s",5)
+                plusAbility("a",2)
+                plusAbility("f",2)
+
+            }
+            "頭からっぽ" -> {
+                plusAbility("c",-2)
+                plusAbility("p",2)
+                plusAbility("a",1)
+                plusAbility("f",-2)
+            }
+            "脳筋" -> {
+                plusAbility("c",-5)
+                plusAbility("p",5)
+                plusAbility("s",2)
+                plusAbility("a",5)
+                plusAbility("f",-2)
+            }
+        }
+
+        when(a5_p){
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+            }
+            "冗談多め" -> {
+                plusAbility("p",2)
+                plusAbility("s",3)
+            }
+            "話が面白い" -> {
+                plusAbility("c",3)
+                plusAbility("s",3)
+                plusAbility("f",3)
+
+            }
+            "つまらない" -> {
+                plusAbility("c",-2)
+                plusAbility("f",-2)
+            }
+            "全てが面白い" -> {
+                plusAbility("c",3)
+                plusAbility("p",3)
+                plusAbility("s",3)
+                plusAbility("a",3)
+                plusAbility("f",3)
+            }
+        }
+
+        when(a1_o){
+            "王子様" -> {
+                plusAbility("c",7)
+                plusAbility("p",3)
+                plusAbility("s",4)
+                plusAbility("a",3)
+                plusAbility("f",3)
+            }
+            "モテる" -> {
+                plusAbility("c",4)
+                plusAbility("p",2)
+                plusAbility("s",3)
+                plusAbility("a",2)
+                plusAbility("f",3)
+            }
+            "ハンター" -> {
+                plusAbility("c",2)
+                plusAbility("p",4)
+                plusAbility("s",2)
+            }
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("f",1)
+            }
+            "ぷぅ〜" -> {
+                plusAbility("c",-1)
+                plusAbility("p",-1)
+                plusAbility("s",-1)
+                plusAbility("a",-1)
+                plusAbility("f",-1)
+            }
+        }
+
+        when(a2_o){
+            "大人気" -> {
+                plusAbility("c",5)
+                plusAbility("p",3)
+                plusAbility("s",3)
+                plusAbility("a",3)
+                plusAbility("f",5)
+            }
+            "まぁまぁ" -> {
+                plusAbility("c",3)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",2)
+                plusAbility("f",3)
+            }
+            "ふつう" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+            }
+            "あんまり" -> {
+                plusAbility("c",-1)
+                plusAbility("f",-1)
+            }
+            "ぷぅ〜" -> {
+                plusAbility("c",-3)
+                plusAbility("p",-3)
+                plusAbility("s",-3)
+                plusAbility("a",-3)
+                plusAbility("f",-3)
+            }
+        }
+
+        when(a3_o){
+            "最強" -> {
+                plusAbility("c",3)
+                plusAbility("p",3)
+                plusAbility("s",3)
+                plusAbility("a",3)
+                plusAbility("f",3)
+            }
+            "なかなか" -> {
+                plusAbility("c",2)
+                plusAbility("p",2)
+                plusAbility("s",2)
+            }
+            "ふつう" -> {
+                plusAbility("f",1)
+            }
+            "あんまり" -> {
+                plusAbility("c",-1)
+                plusAbility("p",-1)
+            }
+            "豆腐メンタル" -> {
+                plusAbility("c",-3)
+                plusAbility("p",-3)
+                plusAbility("s",-3)
+                plusAbility("a",-3)
+                plusAbility("f",-3)
+            }
+        }
+
+        when(a5_o){
+            "カリスマ" -> {
+                plusAbility("c",7)
+                plusAbility("p",2)
+                plusAbility("s",3)
+                plusAbility("a",2)
+                plusAbility("f",2)
+            }
+            "スポーツ万能" -> {
+                plusAbility("c",3)
+                plusAbility("p",3)
+                plusAbility("s",10)
+                plusAbility("a",6)
+                plusAbility("f",6)
+            }
+            "天才頭脳" -> {
+                plusAbility("c",3)
+                plusAbility("a",2)
+                plusAbility("f",8)
+            }
+            "どヤンキー" -> {
+                plusAbility("p",4)
+                plusAbility("a",8)
+            }
+            "特になし" -> {}
+        }
+
+
+        when(a4_o){
+            "大好き" -> {
+                contact = (contact * 1.2).toInt()
+                power = (power * 1.2).toInt()
+                speed = (speed * 1.2).toInt()
+                armStrength = (armStrength * 1.2).toInt()
+                fielding = (fielding * 1.2).toInt()
+            }
+            "まぁまぁ" -> {
+                contact = (contact * 1.1).toInt()
+                power = (power * 1.1).toInt()
+                speed = (speed * 1.1).toInt()
+                armStrength = (armStrength * 1.1).toInt()
+                fielding = (fielding * 1.1).toInt()
+            }
+            "ふつう" -> {}
+            "興味深い" -> {
+                contact = (contact * 1.1).toInt()
+                power = (power * 1.1).toInt()
+                speed = (speed * 1.1).toInt()
+                armStrength = (armStrength * 1.1).toInt()
+                fielding = (fielding * 1.1).toInt()
+            }
+            "アンチ" -> {
+                contact = (contact * 0.8).toInt()
+                power = (power * 0.8).toInt()
+                speed = (speed * 0.8).toInt()
+                armStrength = (armStrength * 0.8).toInt()
+                fielding = (fielding * 0.8).toInt()
+            }
+        }
+
+
+    }
+
+    fun plusAbility(initial:String,point:Int){
+        when(initial){
+            "c" -> contact += point
+            "p" -> power += point
+            "s" -> speed += point
+            "a" -> armStrength += point
+            "f" -> fielding += point
+        }
     }
 
 
