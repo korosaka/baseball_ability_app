@@ -21,7 +21,7 @@ class PlayerClass(name:String,contact:Int,power:Int,speed:Int,arm:Int,fielding:I
 
         when(ability){
 
-            in 0..10 -> return "G"
+            in -100..10 -> return "G"
             in 11..20 -> return "F"
             in 21..30 -> return "E"
             in 31..40 -> return "D"
