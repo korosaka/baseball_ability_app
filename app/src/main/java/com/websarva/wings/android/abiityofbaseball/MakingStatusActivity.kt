@@ -82,13 +82,16 @@ class MakingStatusActivity : AppCompatActivity() {
         } else if (ave > 300) {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
-        var hr = ((player.power_ability * 0.8) + (player.contact_ability * 0.2)).toInt() - 35
+        var hr = ((player.power_ability * 0.85) + (player.contact_ability * 0.15)).toInt() - 35
         if (hr < 0){
             hr = (player.power_ability * 0.1).toInt()
         } else {
-          hr += 15
+          hr += 10
         }
         var rbi = ((player.contact_ability * 0.9) + (player.power_ability * 0.9)).toInt()
+        if (rbi < 0){
+            rbi = 0
+        }
         var sb = (player.speed_ability * 0.8).toInt() -25
         if (sb < 0){
             sb = (player.speed_ability * 0.2).toInt() + 1
