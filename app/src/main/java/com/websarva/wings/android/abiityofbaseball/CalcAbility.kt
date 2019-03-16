@@ -29,6 +29,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
     var armStrength = 0
     var fielding = 0
 
+    var chance = 1.0
+
 
     init {
 
@@ -52,15 +54,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
             }
             "171~180cm" -> {
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("a",1)
             }
             "181~190cm" -> {
-                plusAbility("p",15)
+                plusAbility("p",13)
                 plusAbility("a",3)
             }
             "191cm~" -> {
-                plusAbility("p",20)
+                plusAbility("p",16)
                 plusAbility("a",5)
             }
         }
@@ -75,16 +77,16 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",2)
             }
             "ぽっちゃり" -> {
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("s",-5)
             }
             "ややマッチョ" -> {
-                plusAbility("p",14)
+                plusAbility("p",12)
                 plusAbility("s",3)
                 plusAbility("a",5)
             }
             "ゴリマッチョ" -> {
-                plusAbility("p",20)
+                plusAbility("p",18)
                 plusAbility("s",-2)
                 plusAbility("a",2)
             }
@@ -137,6 +139,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
                 plusAbility("a",2)
                 plusAbility("f",7)
+                plusSpecial("chance",-0.05)
             }
             "クール" -> {
                 plusAbility("p",2)
@@ -187,6 +190,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "独創的" -> {
                 plusAbility("p",3)
                 plusAbility("a",3)
+                plusSpecial("chance",0.08)
             }
         }
 
@@ -218,13 +222,14 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "ミステリアス" -> {
                 plusAbility("c",5)
                 plusAbility("p",3)
+                plusSpecial("chance",0.05)
             }
         }
 
         when(a2_p){
             "優しい" -> {
                 plusAbility("c",3)
-                plusAbility("p",2)
+                plusAbility("p",1)
                 plusAbility("s",2)
                 plusAbility("a",2)
                 plusAbility("f",4)
@@ -235,28 +240,29 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "無気力" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
                 plusAbility("s",1)
                 plusAbility("a",1)
                 plusAbility("f",1)
             }
             "目立ちたがり" -> {
-                plusAbility("p",3)
+                plusAbility("p",2)
                 plusAbility("s",4)
                 plusAbility("a",5)
                 plusAbility("f",2)
+                plusSpecial("chance",0.05)
             }
             "一匹オオカミ" -> {
-                plusAbility("p",4)
+                plusAbility("p",1)
                 plusAbility("s",4)
                 plusAbility("a",5)
+                plusSpecial("chance",0.03)
             }
         }
 
         when(a3_p){
             "リーダー" -> {
                 plusAbility("c",2)
-                plusAbility("p",5)
+                plusAbility("p",4)
                 plusAbility("s",2)
                 plusAbility("a",7)
                 plusAbility("f",7)
@@ -267,22 +273,24 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "ムードメーカー" -> {
                 plusAbility("c",1)
-                plusAbility("p",5)
+                plusAbility("p",4)
                 plusAbility("s",3)
                 plusAbility("a",6)
                 plusAbility("f",2)
+                plusSpecial("chance",0.03)
 
             }
             "評論家" -> {
                 plusAbility("c",-2)
-                plusAbility("p",2)
+                plusAbility("p",1)
                 plusAbility("s",-2)
                 plusAbility("a",7)
                 plusAbility("f",-1)
+                plusSpecial("chance",-0.03)
             }
             "アイデアマン" -> {
                 plusAbility("c",5)
-                plusAbility("p",3)
+                plusAbility("p",2)
                 plusAbility("s",1)
                 plusAbility("a",5)
                 plusAbility("f",5)
@@ -292,7 +300,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a4_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",2)
+                plusAbility("p",1)
                 plusAbility("s",1)
                 plusAbility("a",2)
                 plusAbility("f",1)
@@ -302,83 +310,90 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",3)
                 plusAbility("a",2)
                 plusAbility("f",8)
+                plusSpecial("chance",-0.02)
             }
             "頭キレキレ" -> {
                 plusAbility("c",3)
                 plusAbility("s",9)
                 plusAbility("a",7)
                 plusAbility("f",5)
-
+                plusSpecial("chance",0.03)
             }
             "頭からっぽ" -> {
                 plusAbility("c",-1)
-                plusAbility("p",4)
+                plusAbility("p",3)
                 plusAbility("a",7)
                 plusAbility("f",-4)
+                plusSpecial("chance",0.03)
             }
             "脳筋" -> {
                 plusAbility("c",-3)
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("s",2)
-                plusAbility("a",7)
+                plusAbility("a",6)
                 plusAbility("f",-3)
+                plusSpecial("chance",-0.12)
             }
         }
 
         when(a5_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",2)
+                plusAbility("p",1)
                 plusAbility("s",1)
                 plusAbility("a",2)
                 plusAbility("f",1)
             }
             "冗談多め" -> {
-                plusAbility("p",5)
+                plusAbility("p",4)
                 plusAbility("a",3)
                 plusAbility("s",3)
+                plusSpecial("chance",0.02)
             }
             "話が面白い" -> {
                 plusAbility("c",2)
-                plusAbility("p",3)
+                plusAbility("p",2)
                 plusAbility("s",6)
                 plusAbility("a",3)
                 plusAbility("f",3)
-
+                plusSpecial("chance",0.02)
             }
             "つまらない" -> {
                 plusAbility("p",-2)
                 plusAbility("f",-2)
+                plusSpecial("chance",-0.05)
             }
             "全てが面白い" -> {
                 plusAbility("c",3)
-                plusAbility("p",6)
+                plusAbility("p",5)
                 plusAbility("s",8)
                 plusAbility("a",8)
                 plusAbility("f",3)
+                plusSpecial("chance",0.05)
             }
         }
 
         when(a1_o){
             "王子様" -> {
-                plusAbility("c",12)
-                plusAbility("p",8)
+                plusAbility("c",11)
+                plusAbility("p",7)
                 plusAbility("s",8)
                 plusAbility("a",5)
                 plusAbility("f",3)
             }
             "モテる" -> {
-                plusAbility("c",7)
-                plusAbility("p",6)
+                plusAbility("c",6)
+                plusAbility("p",5)
                 plusAbility("s",6)
                 plusAbility("a",3)
                 plusAbility("f",3)
             }
             "ハンター" -> {
                 plusAbility("c",3)
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("s",8)
                 plusAbility("a",8)
+                plusSpecial("chance",0.02)
             }
             "ふつう" -> {
                 plusAbility("c",1)
@@ -395,8 +410,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a2_o){
             "大人気" -> {
-                plusAbility("c",5)
-                plusAbility("p",5)
+                plusAbility("c",4)
+                plusAbility("p",4)
                 plusAbility("s",6)
                 plusAbility("a",12)
                 plusAbility("f",12)
@@ -409,8 +424,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",7)
             }
             "ふつう" -> {
-                plusAbility("a",4)
-                plusAbility("f",4)
+                plusAbility("a",3)
+                plusAbility("f",3)
             }
             "あんまり" -> {
                 plusAbility("a",-1)
@@ -427,30 +442,18 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a3_o){
             "最強" -> {
-                plusAbility("c",3)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
-                plusAbility("f",3)
+                plusSpecial("chance",0.15)
+
             }
             "なかなか" -> {
-                plusAbility("c",2)
-                plusAbility("p",2)
-                plusAbility("s",2)
+                plusSpecial("chance",0.08)
             }
-            "ふつう" -> {
-                plusAbility("f",1)
-            }
+            "ふつう" -> {}
             "あんまり" -> {
-                plusAbility("c",-1)
-                plusAbility("p",-1)
+                plusSpecial("chance",-0.08)
             }
             "豆腐メンタル" -> {
-                plusAbility("c",-3)
-                plusAbility("p",-3)
-                plusAbility("s",-3)
-                plusAbility("a",-3)
-                plusAbility("f",-3)
+                plusSpecial("chance",-0.15)
             }
         }
 
@@ -461,6 +464,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",7)
                 plusAbility("a",4)
                 plusAbility("f",4)
+                plusSpecial("chance",0.1)
             }
             "スポーツ万能" -> {
                 plusAbility("c",3)
@@ -531,15 +535,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
             }
             "161~170cm" -> {
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("a",1)
             }
             "171~180cm" -> {
-                plusAbility("p",15)
+                plusAbility("p",13)
                 plusAbility("a",3)
             }
             "181cm~" -> {
-                plusAbility("p",20)
+                plusAbility("p",18)
                 plusAbility("a",5)
             }
         }
@@ -566,7 +570,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "グラマラス" -> {
                 plusAbility("c",10)
-                plusAbility("p",15)
+                plusAbility("p",12)
             }
         }
 
@@ -580,14 +584,14 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "カワイイ系" -> {
                 plusAbility("c",10)
-                plusAbility("p",6)
+                plusAbility("p",4)
                 plusAbility("s",5)
                 plusAbility("a",6)
                 plusAbility("f",5)
             }
             "美人系" -> {
                 plusAbility("c",5)
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("s",7)
                 plusAbility("a",10)
                 plusAbility("f",10)
@@ -598,9 +602,10 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",10)
             }
             "派手め" -> {
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("s",8)
                 plusAbility("a",10)
+                plusSpecial("chance",0.02)
             }
         }
 
@@ -611,12 +616,12 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",5)
             }
             "こわそう" -> {
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("s",4)
                 plusAbility("a",10)
             }
             "元気そう" -> {
-                plusAbility("p",10)
+                plusAbility("p",8)
                 plusAbility("s",6)
                 plusAbility("a",8)
             }
@@ -661,6 +666,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "独創的" -> {
                 plusAbility("p",3)
                 plusAbility("a",3)
+                plusSpecial("chance",0.05)
             }
         }
 
@@ -684,14 +690,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "うるさい" -> {
                 plusAbility("c",-2)
-                plusAbility("p",5)
+                plusAbility("p",4)
                 plusAbility("s",4)
-                plusAbility("a",4)
+                plusAbility("a",6)
                 plusAbility("f",-2)
             }
             "メンヘラ" -> {
                 plusAbility("c",-3)
                 plusAbility("f",-6)
+                plusSpecial("chance",0.1)
             }
 
         }
@@ -707,6 +714,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "気が強い" -> {
                 plusAbility("c",-2)
                 plusAbility("a",12)
+                plusSpecial("chance",0.03)
             }
             "無気力" -> {
                 plusAbility("c",1)
@@ -725,6 +733,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("p",4)
                 plusAbility("s",4)
                 plusAbility("a",5)
+                plusSpecial("chance",0.02)
             }
         }
 
@@ -746,7 +755,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",3)
                 plusAbility("a",6)
                 plusAbility("f",2)
-
+                plusSpecial("chance",0.03)
             }
             "評論家" -> {
                 plusAbility("c",-2)
@@ -754,6 +763,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",-2)
                 plusAbility("a",7)
                 plusAbility("f",-1)
+                plusSpecial("chance",-0.03)
             }
             "アイデアマン" -> {
                 plusAbility("c",5)
@@ -778,19 +788,21 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",3)
                 plusAbility("a",2)
                 plusAbility("f",8)
+                plusSpecial("chance",-0.03)
             }
             "頭キレキレ" -> {
                 plusAbility("c",3)
                 plusAbility("s",9)
                 plusAbility("a",7)
                 plusAbility("f",5)
-
+                plusSpecial("chance",0.05)
             }
             "頭からっぽ" -> {
                 plusAbility("c",-1)
                 plusAbility("p",4)
                 plusAbility("a",7)
                 plusAbility("f",-4)
+                plusSpecial("chance",0.03)
             }
             "脳筋" -> {
                 plusAbility("c",-3)
@@ -798,6 +810,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
                 plusAbility("a",7)
                 plusAbility("f",-3)
+                plusSpecial("chance",-0.1)
             }
         }
 
@@ -813,6 +826,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("p",5)
                 plusAbility("a",3)
                 plusAbility("s",3)
+                plusSpecial("chance",0.02)
             }
             "話が面白い" -> {
                 plusAbility("c",2)
@@ -820,11 +834,12 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",6)
                 plusAbility("a",3)
                 plusAbility("f",3)
-
+                plusSpecial("chance",0.02)
             }
             "つまらない" -> {
                 plusAbility("p",-2)
                 plusAbility("f",-2)
+                plusSpecial("chance",-0.05)
             }
             "全てが面白い" -> {
                 plusAbility("c",3)
@@ -832,28 +847,29 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",8)
                 plusAbility("a",8)
                 plusAbility("f",3)
+                plusSpecial("chance",0.05)
             }
         }
 
         when(a1_o){
             "マドンナ" -> {
-                plusAbility("c",16)
-                plusAbility("p",12)
+                plusAbility("c",15)
+                plusAbility("p",10)
                 plusAbility("s",8)
                 plusAbility("a",7)
                 plusAbility("f",5)
             }
             "モテる" -> {
-                plusAbility("c",10)
-                plusAbility("p",8)
+                plusAbility("c",9)
+                plusAbility("p",7)
                 plusAbility("s",6)
                 plusAbility("a",5)
                 plusAbility("f",5)
             }
             "一部から" -> {
-                plusAbility("c",7)
-                plusAbility("p",7)
-                plusAbility("s",7)
+                plusAbility("c",6)
+                plusAbility("p",5)
+                plusAbility("s",6)
             }
             "ふつう" -> {
                 plusAbility("c",3)
@@ -905,30 +921,17 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a3_o){
             "最強" -> {
-                plusAbility("c",3)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
-                plusAbility("f",3)
+                plusSpecial("chance",0.15)
             }
             "なかなか" -> {
-                plusAbility("c",2)
-                plusAbility("p",2)
-                plusAbility("s",2)
+                plusSpecial("chance",0.8)
             }
-            "ふつう" -> {
-                plusAbility("f",1)
-            }
+            "ふつう" -> {}
             "あんまり" -> {
-                plusAbility("c",-1)
-                plusAbility("p",-1)
+                plusSpecial("chance",-0.08)
             }
             "豆腐メンタル" -> {
-                plusAbility("c",-3)
-                plusAbility("p",-3)
-                plusAbility("s",-3)
-                plusAbility("a",-3)
-                plusAbility("f",-3)
+                plusSpecial("chance",-0.15)
             }
         }
 
@@ -939,12 +942,14 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",1)
                 plusAbility("a",10)
                 plusAbility("f",2)
+                plusSpecial("chance",0.05)
             }
             "お色気" -> {
                 plusAbility("c",10)
                 plusAbility("p",15)
-                plusAbility("a",-3)
-                plusAbility("f",-5)
+                plusAbility("s",-5)
+                plusAbility("a",-6)
+                plusAbility("f",-8)
             }
             "大和撫子" -> {
                 plusAbility("c",5)
@@ -954,7 +959,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",10)
             }
             "スポーツ万能" -> {
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("s",15)
                 plusAbility("a",12)
             }
@@ -1003,6 +1008,12 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "s" -> speed += point
             "a" -> armStrength += point
             "f" -> fielding += point
+        }
+    }
+
+    fun plusSpecial(initial:String,point:Double){
+        when(initial){
+            "chance" -> chance += point
         }
     }
 

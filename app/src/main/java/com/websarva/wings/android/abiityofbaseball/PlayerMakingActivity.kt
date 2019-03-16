@@ -19,6 +19,9 @@ class PlayerMakingActivity : AppCompatActivity(){
         const val ARM = "arm_status"
         const val FIELDING = "fielding_status"
 
+        const val CHANCE = "chance"
+
+
         var sex_id = -1
     }
 
@@ -100,6 +103,8 @@ class PlayerMakingActivity : AppCompatActivity(){
         intent.putExtra(SPEED,calcAbility.speed)
         intent.putExtra(ARM,calcAbility.armStrength)
         intent.putExtra(FIELDING,calcAbility.fielding)
+
+        intent.putExtra(CHANCE,calcAbility.chance)
 
         startActivity(intent)
 

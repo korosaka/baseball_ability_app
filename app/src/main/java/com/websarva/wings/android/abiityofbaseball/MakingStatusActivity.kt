@@ -15,6 +15,7 @@ class MakingStatusActivity : AppCompatActivity() {
         const val ARM = "arm_status"
         const val FIELDING = "fielding_status"
 
+        const val CHANCE = "chance"
     }
 
 
@@ -29,7 +30,8 @@ class MakingStatusActivity : AppCompatActivity() {
                 intent.getIntExtra(POWER,0),
                 intent.getIntExtra(SPEED,0),
                 intent.getIntExtra(ARM,0),
-                intent.getIntExtra(FIELDING,0)
+                intent.getIntExtra(FIELDING,0),
+                intent.getDoubleExtra(CHANCE,1.0)
         )
 
 
@@ -82,13 +84,13 @@ class MakingStatusActivity : AppCompatActivity() {
         } else if (ave > 300) {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
-        var hr = ((player.power_ability * 0.85) + (player.contact_ability * 0.15)).toInt() - 35
+        var hr = ((player.power_ability * 0.8) + (player.contact_ability * 0.1)).toInt() - 35
         if (hr < 0){
             hr = (player.power_ability * 0.1).toInt()
         } else {
           hr += 10
         }
-        var rbi = ((player.contact_ability * 0.9) + (player.power_ability * 0.9)).toInt()
+        var rbi = (((player.contact_ability * 0.7) + (player.power_ability * 0.8)) * player.chance).toInt()
         if (rbi < 0){
             rbi = 0
         }
