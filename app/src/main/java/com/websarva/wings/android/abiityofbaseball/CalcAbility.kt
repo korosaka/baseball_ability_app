@@ -93,282 +93,301 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a3_a){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
-                plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "イケメン" -> {
                 plusAbility("c",8)
-                plusAbility("p",3)
+                plusAbility("p",4)
                 plusAbility("s",5)
-                plusAbility("a",2)
+                plusAbility("a",5)
                 plusAbility("f",7)
             }
             "ワイルド" -> {
-                plusAbility("p",5)
+                plusAbility("p",8)
                 plusAbility("s",5)
-                plusAbility("a",10)
+                plusAbility("a",12)
             }
             "かわいい" -> {
-                plusAbility("c",10)
+                plusAbility("c",12)
+                plusAbility("p",2)
                 plusAbility("s",3)
-                plusAbility("f",3)
+                plusAbility("a",2)
+                plusAbility("f",5)
             }
             "強面" -> {
-                plusAbility("p",3)
+                plusAbility("p",5)
                 plusAbility("s",2)
-                plusAbility("a",10)
+                plusAbility("a",12)
             }
         }
 
         when(a4_a){
             "優男" -> {
                 plusAbility("c",5)
-                plusAbility("s",1)
+                plusAbility("p",2)
+                plusAbility("s",3)
+                plusAbility("a",2)
                 plusAbility("f",5)
             }
             "マジメ君" -> {
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",2)
-                plusAbility("a",1)
-                plusAbility("f",5)
+                plusAbility("a",2)
+                plusAbility("f",7)
             }
             "クール" -> {
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",7)
-                plusAbility("a",3)
+                plusAbility("a",5)
                 plusAbility("f",5)
             }
             "おとぼけ" -> {
                 plusAbility("c",2)
+                plusAbility("p",2)
                 plusAbility("s",3)
+                plusAbility("a",2)
                 plusAbility("f",2)
             }
             "チャラ男" -> {
+                plusAbility("p",2)
                 plusAbility("s",7)
-                plusAbility("a",2)
+                plusAbility("a",5)
             }
         }
 
         when(a5_a){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "オシャレ" -> {
                 plusAbility("c",4)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",4)
-                plusAbility("a",2)
+                plusAbility("a",3)
                 plusAbility("f",4)
             }
             "地味め" -> {
                 plusAbility("c",2)
-                plusAbility("a",2)
-                plusAbility("f",4)
+                plusAbility("p",2)
+                plusAbility("a",3)
+                plusAbility("f",6)
             }
             "派手め" -> {
-                plusAbility("p",2)
-                plusAbility("s",3)
-                plusAbility("a",1)
+                plusAbility("p",5)
+                plusAbility("s",5)
+                plusAbility("a",5)
             }
             "独創的" -> {
-                plusAbility("c",3)
+                plusAbility("p",3)
+                plusAbility("a",3)
             }
         }
 
         when(a1_p){
             "穏やか" -> {
                 plusAbility("c",3)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",3)
             }
             "おとなしい" -> {
                 plusAbility("c",2)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",5)
             }
             "淡々" -> {
-                plusAbility("p",3)
-                plusAbility("s",2)
-                plusAbility("a",4)
+                plusAbility("p",4)
+                plusAbility("s",3)
+                plusAbility("a",6)
             }
             "騒がしい" -> {
                 plusAbility("c",-2)
-                plusAbility("p",3)
-                plusAbility("s",3)
+                plusAbility("p",5)
+                plusAbility("s",4)
+                plusAbility("a",4)
                 plusAbility("f",-2)
             }
             "ミステリアス" -> {
-                plusAbility("p",2)
+                plusAbility("c",5)
+                plusAbility("p",3)
             }
         }
 
         when(a2_p){
             "優しい" -> {
                 plusAbility("c",3)
-                plusAbility("p",1)
-                plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",2)
                 plusAbility("f",4)
             }
             "気が強い" -> {
-                plusAbility("c",-1)
+                plusAbility("c",-2)
                 plusAbility("a",12)
             }
             "無気力" -> {
                 plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
             }
             "目立ちたがり" -> {
-                plusAbility("c",1)
-                plusAbility("p",1)
-                plusAbility("s",3)
-                plusAbility("a",3)
+                plusAbility("p",3)
+                plusAbility("s",4)
+                plusAbility("a",5)
                 plusAbility("f",2)
             }
             "一匹オオカミ" -> {
-                plusAbility("c",2)
-                plusAbility("p",2)
-                plusAbility("s",2)
-                plusAbility("a",2)
+                plusAbility("p",4)
+                plusAbility("s",4)
+                plusAbility("a",5)
             }
         }
 
         when(a3_p){
             "リーダー" -> {
                 plusAbility("c",2)
-                plusAbility("p",2)
+                plusAbility("p",5)
                 plusAbility("s",2)
-                plusAbility("a",4)
-                plusAbility("f",5)
+                plusAbility("a",7)
+                plusAbility("f",7)
             }
             "控えめ" -> {
-                plusAbility("c",3)
-                plusAbility("f",2)
+                plusAbility("c",5)
+                plusAbility("f",6)
             }
             "ムードメーカー" -> {
                 plusAbility("c",1)
-                plusAbility("p",3)
-                plusAbility("s",1)
-                plusAbility("a",2)
+                plusAbility("p",5)
+                plusAbility("s",3)
+                plusAbility("a",6)
                 plusAbility("f",2)
 
             }
             "評論家" -> {
                 plusAbility("c",-2)
-                plusAbility("p",1)
-                plusAbility("s",2)
-                plusAbility("a",3)
-                plusAbility("f",1)
+                plusAbility("p",2)
+                plusAbility("s",-2)
+                plusAbility("a",7)
+                plusAbility("f",-1)
             }
             "アイデアマン" -> {
-                plusAbility("c",3)
-                plusAbility("p",1)
+                plusAbility("c",5)
+                plusAbility("p",3)
                 plusAbility("s",1)
-                plusAbility("a",1)
-                plusAbility("f",3)
+                plusAbility("a",5)
+                plusAbility("f",5)
             }
         }
 
         when(a4_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "お勉強得意" -> {
                 plusAbility("c",2)
-                plusAbility("f",4)
+                plusAbility("s",3)
+                plusAbility("a",2)
+                plusAbility("f",8)
             }
             "頭キレキレ" -> {
                 plusAbility("c",3)
-                plusAbility("s",5)
-                plusAbility("a",2)
-                plusAbility("f",2)
+                plusAbility("s",9)
+                plusAbility("a",7)
+                plusAbility("f",5)
 
             }
             "頭からっぽ" -> {
-                plusAbility("c",-2)
-                plusAbility("p",2)
-                plusAbility("a",1)
-                plusAbility("f",-2)
+                plusAbility("c",-1)
+                plusAbility("p",4)
+                plusAbility("a",7)
+                plusAbility("f",-4)
             }
             "脳筋" -> {
-                plusAbility("c",-5)
-                plusAbility("p",5)
+                plusAbility("c",-3)
+                plusAbility("p",7)
                 plusAbility("s",2)
-                plusAbility("a",5)
-                plusAbility("f",-2)
+                plusAbility("a",7)
+                plusAbility("f",-3)
             }
         }
 
         when(a5_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "冗談多め" -> {
-                plusAbility("p",2)
+                plusAbility("p",5)
+                plusAbility("a",3)
                 plusAbility("s",3)
             }
             "話が面白い" -> {
-                plusAbility("c",3)
-                plusAbility("s",3)
+                plusAbility("c",2)
+                plusAbility("p",3)
+                plusAbility("s",6)
+                plusAbility("a",3)
                 plusAbility("f",3)
 
             }
             "つまらない" -> {
-                plusAbility("c",-2)
+                plusAbility("p",-2)
                 plusAbility("f",-2)
             }
             "全てが面白い" -> {
                 plusAbility("c",3)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
+                plusAbility("p",6)
+                plusAbility("s",8)
+                plusAbility("a",8)
                 plusAbility("f",3)
             }
         }
 
         when(a1_o){
             "王子様" -> {
-                plusAbility("c",7)
-                plusAbility("p",3)
-                plusAbility("s",4)
-                plusAbility("a",3)
+                plusAbility("c",12)
+                plusAbility("p",8)
+                plusAbility("s",8)
+                plusAbility("a",5)
                 plusAbility("f",3)
             }
             "モテる" -> {
-                plusAbility("c",4)
-                plusAbility("p",2)
-                plusAbility("s",3)
-                plusAbility("a",2)
+                plusAbility("c",7)
+                plusAbility("p",6)
+                plusAbility("s",6)
+                plusAbility("a",3)
                 plusAbility("f",3)
             }
             "ハンター" -> {
-                plusAbility("c",2)
-                plusAbility("p",4)
-                plusAbility("s",2)
+                plusAbility("c",3)
+                plusAbility("p",8)
+                plusAbility("s",8)
+                plusAbility("a",8)
             }
             "ふつう" -> {
                 plusAbility("c",1)
                 plusAbility("f",1)
             }
             "ぷぅ〜" -> {
-                plusAbility("c",-1)
-                plusAbility("p",-1)
-                plusAbility("s",-1)
+                plusAbility("c",-3)
+                plusAbility("p",-3)
+                plusAbility("s",-2)
                 plusAbility("a",-1)
                 plusAbility("f",-1)
             }
@@ -377,33 +396,30 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a2_o){
             "大人気" -> {
                 plusAbility("c",5)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
-                plusAbility("f",5)
+                plusAbility("p",5)
+                plusAbility("s",6)
+                plusAbility("a",12)
+                plusAbility("f",12)
             }
             "まぁまぁ" -> {
-                plusAbility("c",3)
+                plusAbility("c",2)
                 plusAbility("p",2)
-                plusAbility("s",2)
-                plusAbility("a",2)
-                plusAbility("f",3)
+                plusAbility("s",3)
+                plusAbility("a",7)
+                plusAbility("f",7)
             }
             "ふつう" -> {
-                plusAbility("c",1)
-                plusAbility("p",1)
-                plusAbility("s",1)
-                plusAbility("a",1)
-                plusAbility("f",1)
+                plusAbility("a",4)
+                plusAbility("f",4)
             }
             "あんまり" -> {
-                plusAbility("c",-1)
+                plusAbility("a",-1)
                 plusAbility("f",-1)
             }
             "ぷぅ〜" -> {
-                plusAbility("c",-3)
-                plusAbility("p",-3)
-                plusAbility("s",-3)
+                plusAbility("c",-1)
+                plusAbility("p",-1)
+                plusAbility("s",-2)
                 plusAbility("a",-3)
                 plusAbility("f",-3)
             }
@@ -440,27 +456,28 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a5_o){
             "カリスマ" -> {
-                plusAbility("c",7)
-                plusAbility("p",2)
-                plusAbility("s",3)
-                plusAbility("a",2)
-                plusAbility("f",2)
+                plusAbility("c",10)
+                plusAbility("p",4)
+                plusAbility("s",7)
+                plusAbility("a",4)
+                plusAbility("f",4)
             }
             "スポーツ万能" -> {
                 plusAbility("c",3)
-                plusAbility("p",3)
-                plusAbility("s",10)
-                plusAbility("a",6)
+                plusAbility("p",10)
+                plusAbility("s",15)
+                plusAbility("a",10)
                 plusAbility("f",6)
             }
             "天才頭脳" -> {
-                plusAbility("c",3)
-                plusAbility("a",2)
-                plusAbility("f",8)
+                plusAbility("c",8)
+                plusAbility("s",5)
+                plusAbility("a",3)
+                plusAbility("f",15)
             }
             "どヤンキー" -> {
-                plusAbility("p",4)
-                plusAbility("a",8)
+                plusAbility("p",8)
+                plusAbility("a",15)
             }
             "特になし" -> {}
         }
@@ -468,18 +485,18 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a4_o){
             "大好き" -> {
-                contact = (contact * 1.2).toInt()
-                power = (power * 1.2).toInt()
-                speed = (speed * 1.2).toInt()
-                armStrength = (armStrength * 1.2).toInt()
-                fielding = (fielding * 1.2).toInt()
+                contact = (contact * 1.3).toInt()
+                power = (power * 1.3).toInt()
+                speed = (speed * 1.3).toInt()
+                armStrength = (armStrength * 1.3).toInt()
+                fielding = (fielding * 1.3).toInt()
             }
             "まぁまぁ" -> {
-                contact = (contact * 1.1).toInt()
-                power = (power * 1.1).toInt()
-                speed = (speed * 1.1).toInt()
-                armStrength = (armStrength * 1.1).toInt()
-                fielding = (fielding * 1.1).toInt()
+                contact = (contact * 1.15).toInt()
+                power = (power * 1.15).toInt()
+                speed = (speed * 1.15).toInt()
+                armStrength = (armStrength * 1.15).toInt()
+                fielding = (fielding * 1.15).toInt()
             }
             "ふつう" -> {}
             "興味深い" -> {
@@ -555,283 +572,297 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a3_a){
             "ふつう" -> {
-                plusAbility("c",1)
-                plusAbility("p",1)
-                plusAbility("s",1)
-                plusAbility("a",1)
-                plusAbility("f",1)
+                plusAbility("c",3)
+                plusAbility("p",4)
+                plusAbility("s",3)
+                plusAbility("a",4)
+                plusAbility("f",3)
             }
             "カワイイ系" -> {
                 plusAbility("c",10)
                 plusAbility("p",6)
                 plusAbility("s",5)
-                plusAbility("a",4)
+                plusAbility("a",6)
                 plusAbility("f",5)
             }
             "美人系" -> {
-                plusAbility("c",3)
-                plusAbility("p",7)
+                plusAbility("c",5)
+                plusAbility("p",8)
                 plusAbility("s",7)
-                plusAbility("a",7)
-                plusAbility("f",3)
+                plusAbility("a",10)
+                plusAbility("f",10)
             }
             "地味め" -> {
                 plusAbility("c",2)
-                plusAbility("f",5)
+                plusAbility("a",2)
+                plusAbility("f",10)
             }
             "派手め" -> {
-                plusAbility("p",6)
-                plusAbility("s",5)
-                plusAbility("a",5)
+                plusAbility("p",7)
+                plusAbility("s",8)
+                plusAbility("a",10)
             }
         }
 
         when(a4_a){
             "優しそう" -> {
                 plusAbility("c",5)
-                plusAbility("s",1)
+                plusAbility("s",3)
                 plusAbility("f",5)
             }
             "こわそう" -> {
-                plusAbility("p",4)
-                plusAbility("s",3)
-                plusAbility("a",8)
-            }
-            "元気そう" -> {
                 plusAbility("p",7)
                 plusAbility("s",4)
-                plusAbility("a",6)
+                plusAbility("a",10)
+            }
+            "元気そう" -> {
+                plusAbility("p",10)
+                plusAbility("s",6)
+                plusAbility("a",8)
             }
             "大人しそう" -> {
-                plusAbility("c",3)
+                plusAbility("c",4)
                 plusAbility("s",2)
-                plusAbility("f",3)
+                plusAbility("f",6)
             }
             "チャラそう" -> {
-                plusAbility("p",2)
-                plusAbility("s",5)
-                plusAbility("a",3)
+                plusAbility("p",3)
+                plusAbility("s",6)
+                plusAbility("a",7)
             }
         }
 
         when(a5_a){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "オシャレ" -> {
                 plusAbility("c",4)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",4)
-                plusAbility("a",2)
+                plusAbility("a",3)
                 plusAbility("f",4)
             }
             "地味め" -> {
                 plusAbility("c",2)
-                plusAbility("a",2)
-                plusAbility("f",4)
+                plusAbility("p",2)
+                plusAbility("a",3)
+                plusAbility("f",6)
             }
             "派手め" -> {
-                plusAbility("p",2)
-                plusAbility("s",3)
-                plusAbility("a",1)
+                plusAbility("p",5)
+                plusAbility("s",5)
+                plusAbility("a",5)
             }
             "独創的" -> {
-                plusAbility("c",3)
+                plusAbility("p",3)
+                plusAbility("a",3)
             }
         }
 
         when(a1_p){
             "穏やか" -> {
                 plusAbility("c",3)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",3)
             }
             "おとなしい" -> {
                 plusAbility("c",2)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",5)
             }
             "サバサバ" -> {
-                plusAbility("p",2)
+                plusAbility("p",4)
                 plusAbility("s",3)
-                plusAbility("a",7)
+                plusAbility("a",6)
             }
             "うるさい" -> {
                 plusAbility("c",-2)
-                plusAbility("p",2)
-                plusAbility("s",2)
+                plusAbility("p",5)
+                plusAbility("s",4)
+                plusAbility("a",4)
                 plusAbility("f",-2)
             }
             "メンヘラ" -> {
-                plusAbility("f",-5)
+                plusAbility("c",-3)
+                plusAbility("f",-6)
             }
+
         }
 
         when(a2_p){
             "優しい" -> {
                 plusAbility("c",3)
-                plusAbility("p",1)
-                plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",2)
                 plusAbility("f",4)
             }
             "気が強い" -> {
-                plusAbility("c",-1)
+                plusAbility("c",-2)
                 plusAbility("a",12)
             }
             "無気力" -> {
                 plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
             }
             "かまってちゃん" -> {
-                plusAbility("c",1)
-                plusAbility("p",1)
-                plusAbility("s",3)
-                plusAbility("a",3)
+                plusAbility("p",3)
+                plusAbility("s",4)
+                plusAbility("a",5)
                 plusAbility("f",2)
             }
             "一匹オオカミ" -> {
-                plusAbility("c",2)
-                plusAbility("p",2)
-                plusAbility("s",2)
-                plusAbility("a",2)
+                plusAbility("p",4)
+                plusAbility("s",4)
+                plusAbility("a",5)
             }
         }
 
         when(a3_p){
             "リーダー" -> {
                 plusAbility("c",2)
-                plusAbility("p",2)
+                plusAbility("p",5)
                 plusAbility("s",2)
-                plusAbility("a",4)
-                plusAbility("f",5)
+                plusAbility("a",7)
+                plusAbility("f",7)
             }
             "控えめ" -> {
-                plusAbility("c",3)
-                plusAbility("f",2)
+                plusAbility("c",5)
+                plusAbility("f",6)
             }
             "ムードメーカー" -> {
                 plusAbility("c",1)
-                plusAbility("p",3)
-                plusAbility("s",1)
-                plusAbility("a",2)
+                plusAbility("p",5)
+                plusAbility("s",3)
+                plusAbility("a",6)
                 plusAbility("f",2)
 
             }
             "評論家" -> {
                 plusAbility("c",-2)
-                plusAbility("p",1)
-                plusAbility("s",2)
-                plusAbility("a",3)
-                plusAbility("f",1)
+                plusAbility("p",2)
+                plusAbility("s",-2)
+                plusAbility("a",7)
+                plusAbility("f",-1)
             }
             "アイデアマン" -> {
-                plusAbility("c",3)
-                plusAbility("p",1)
+                plusAbility("c",5)
+                plusAbility("p",3)
                 plusAbility("s",1)
-                plusAbility("a",1)
-                plusAbility("f",3)
+                plusAbility("a",5)
+                plusAbility("f",5)
             }
+
         }
 
         when(a4_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "お勉強得意" -> {
                 plusAbility("c",2)
-                plusAbility("f",4)
+                plusAbility("s",3)
+                plusAbility("a",2)
+                plusAbility("f",8)
             }
             "頭キレキレ" -> {
                 plusAbility("c",3)
-                plusAbility("s",5)
-                plusAbility("a",2)
-                plusAbility("f",2)
+                plusAbility("s",9)
+                plusAbility("a",7)
+                plusAbility("f",5)
 
             }
             "頭からっぽ" -> {
-                plusAbility("c",-2)
-                plusAbility("p",2)
-                plusAbility("a",1)
-                plusAbility("f",-2)
+                plusAbility("c",-1)
+                plusAbility("p",4)
+                plusAbility("a",7)
+                plusAbility("f",-4)
             }
             "脳筋" -> {
-                plusAbility("c",-5)
-                plusAbility("p",5)
+                plusAbility("c",-3)
+                plusAbility("p",7)
                 plusAbility("s",2)
-                plusAbility("a",5)
-                plusAbility("f",-2)
+                plusAbility("a",7)
+                plusAbility("f",-3)
             }
         }
 
         when(a5_p){
             "ふつう" -> {
                 plusAbility("c",1)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",1)
-                plusAbility("a",1)
+                plusAbility("a",2)
                 plusAbility("f",1)
             }
             "冗談多め" -> {
-                plusAbility("p",2)
+                plusAbility("p",5)
+                plusAbility("a",3)
                 plusAbility("s",3)
             }
             "話が面白い" -> {
-                plusAbility("c",3)
-                plusAbility("s",3)
+                plusAbility("c",2)
+                plusAbility("p",3)
+                plusAbility("s",6)
+                plusAbility("a",3)
                 plusAbility("f",3)
 
             }
             "つまらない" -> {
-                plusAbility("c",-2)
+                plusAbility("p",-2)
                 plusAbility("f",-2)
             }
             "全てが面白い" -> {
                 plusAbility("c",3)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
+                plusAbility("p",6)
+                plusAbility("s",8)
+                plusAbility("a",8)
                 plusAbility("f",3)
             }
         }
 
         when(a1_o){
             "マドンナ" -> {
-                plusAbility("c",10)
-                plusAbility("p",6)
+                plusAbility("c",16)
+                plusAbility("p",12)
                 plusAbility("s",8)
-                plusAbility("a",6)
-                plusAbility("f",7)
+                plusAbility("a",7)
+                plusAbility("f",5)
             }
             "モテる" -> {
-                plusAbility("c",6)
-                plusAbility("p",4)
-                plusAbility("s",5)
-                plusAbility("a",3)
+                plusAbility("c",10)
+                plusAbility("p",8)
+                plusAbility("s",6)
+                plusAbility("a",5)
                 plusAbility("f",5)
             }
             "一部から" -> {
-                plusAbility("c",4)
-                plusAbility("p",5)
-                plusAbility("s",5)
+                plusAbility("c",7)
+                plusAbility("p",7)
+                plusAbility("s",7)
             }
             "ふつう" -> {
-                plusAbility("c",1)
-                plusAbility("f",1)
+                plusAbility("c",3)
+                plusAbility("p",3)
             }
             "ぷぅ〜" -> {
-                plusAbility("c",-1)
-                plusAbility("p",-1)
-                plusAbility("s",-1)
+                plusAbility("c",-3)
+                plusAbility("p",-3)
+                plusAbility("s",-2)
                 plusAbility("a",-1)
                 plusAbility("f",-1)
             }
@@ -839,34 +870,34 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a2_o){
             "大人気" -> {
-                plusAbility("c",6)
+                plusAbility("c",5)
                 plusAbility("p",6)
-                plusAbility("s",6)
-                plusAbility("a",8)
-                plusAbility("f",12)
+                plusAbility("s",8)
+                plusAbility("a",12)
+                plusAbility("f",15)
             }
             "まぁまぁ" -> {
-                plusAbility("c",4)
-                plusAbility("p",4)
-                plusAbility("s",4)
-                plusAbility("a",6)
-                plusAbility("f",8)
+                plusAbility("c",2)
+                plusAbility("p",3)
+                plusAbility("s",5)
+                plusAbility("a",8)
+                plusAbility("f",10)
             }
             "ふつう" -> {
                 plusAbility("c",1)
                 plusAbility("p",1)
-                plusAbility("s",1)
+                plusAbility("s",3)
+                plusAbility("a",5)
+                plusAbility("f",5)
+            }
+            "あんまり" -> {
                 plusAbility("a",1)
                 plusAbility("f",1)
             }
-            "あんまり" -> {
-                plusAbility("a",-2)
-                plusAbility("f",-3)
-            }
             "ぷぅ〜" -> {
-                plusAbility("c",-2)
-                plusAbility("p",-2)
-                plusAbility("s",-3)
+                plusAbility("c",-1)
+                plusAbility("p",-1)
+                plusAbility("s",-1)
                 plusAbility("a",-5)
                 plusAbility("f",-8)
             }
@@ -904,27 +935,28 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a5_o){
             "ボスキャラ" -> {
                 plusAbility("c",1)
-                plusAbility("p",3)
+                plusAbility("p",8)
                 plusAbility("s",1)
-                plusAbility("a",4)
+                plusAbility("a",10)
                 plusAbility("f",2)
             }
             "お色気" -> {
-                plusAbility("c",5)
-                plusAbility("p",5)
-                plusAbility("f",2)
+                plusAbility("c",10)
+                plusAbility("p",15)
+                plusAbility("a",-3)
+                plusAbility("f",-5)
             }
             "大和撫子" -> {
                 plusAbility("c",5)
-                plusAbility("p",3)
-                plusAbility("s",3)
-                plusAbility("a",3)
-                plusAbility("f",8)
+                plusAbility("p",5)
+                plusAbility("s",5)
+                plusAbility("a",5)
+                plusAbility("f",10)
             }
             "スポーツ万能" -> {
-                plusAbility("p",4)
-                plusAbility("s",8)
-                plusAbility("a",4)
+                plusAbility("p",8)
+                plusAbility("s",15)
+                plusAbility("a",12)
             }
             "特になし" -> {}
         }
@@ -932,18 +964,18 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a4_o){
             "大好き" -> {
-                contact = (contact * 1.2).toInt()
-                power = (power * 1.2).toInt()
-                speed = (speed * 1.2).toInt()
-                armStrength = (armStrength * 1.2).toInt()
-                fielding = (fielding * 1.2).toInt()
+                contact = (contact * 1.3).toInt()
+                power = (power * 1.3).toInt()
+                speed = (speed * 1.3).toInt()
+                armStrength = (armStrength * 1.3).toInt()
+                fielding = (fielding * 1.3).toInt()
             }
             "まぁまぁ" -> {
-                contact = (contact * 1.1).toInt()
-                power = (power * 1.1).toInt()
-                speed = (speed * 1.1).toInt()
-                armStrength = (armStrength * 1.1).toInt()
-                fielding = (fielding * 1.1).toInt()
+                contact = (contact * 1.15).toInt()
+                power = (power * 1.15).toInt()
+                speed = (speed * 1.15).toInt()
+                armStrength = (armStrength * 1.15).toInt()
+                fielding = (fielding * 1.15).toInt()
             }
             "ふつう" -> {}
             "興味深い" -> {
