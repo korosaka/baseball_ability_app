@@ -76,7 +76,7 @@ class MakingStatusActivity : AppCompatActivity() {
 
     fun calcStats(player:PlayerClass){
 
-        var ave = 85 + (player.contact_ability * 4.5).toInt() + (player.power_ability * 0.5).toInt() + (player.speed_ability * 0.2).toInt()
+        var ave = 85 + (player.contact_ability * 4.5).toInt() + (player.power_ability * 0.45).toInt() + (player.speed_ability * 0.15).toInt()
         if(ave < 150) {
             ave = 120 + (ave * 0.3).toInt()
         } else if (ave < 200) {
@@ -92,13 +92,22 @@ class MakingStatusActivity : AppCompatActivity() {
         }
         var rbi = (((player.contact_ability * 0.7) + (player.power_ability * 0.8)) * player.chance).toInt()
         if (rbi < 0){
-            rbi = 0
+            rbi = 1
+        } else if (rbi < 30){
+            rbi = (rbi * 0.5).toInt()
+        } else if (rbi < 50){
+            rbi = (rbi * 0.65).toInt()
+        } else if (rbi < 70){
+            rbi = (rbi * 0.8).toInt()
         }
         var sb = (player.speed_ability * 0.8).toInt() -25
-        if (sb < 0){
-            sb = (player.speed_ability * 0.2).toInt() + 1
-        } else {
-            sb += 3
+        if (sb < -10){
+            sb = (player.speed_ability * 0.1).toInt()
+        } else if (sb < 0){
+            sb = (player.speed_ability * 0.1).toInt() + 1
+        }
+        else if (sb > 30){
+            sb = (sb * 1.1).toInt()
         }
 
 

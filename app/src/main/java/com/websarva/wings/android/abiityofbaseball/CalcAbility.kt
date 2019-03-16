@@ -535,15 +535,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
             }
             "161~170cm" -> {
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("a",1)
             }
             "171~180cm" -> {
-                plusAbility("p",13)
+                plusAbility("p",11)
                 plusAbility("a",3)
             }
             "181cm~" -> {
-                plusAbility("p",18)
+                plusAbility("p",15)
                 plusAbility("a",5)
             }
         }
@@ -564,34 +564,34 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",-5)
             }
             "マッチョ" -> {
-                plusAbility("p",12)
+                plusAbility("p",11)
                 plusAbility("s",3)
                 plusAbility("a",5)
             }
             "グラマラス" -> {
                 plusAbility("c",10)
-                plusAbility("p",12)
+                plusAbility("p",9)
             }
         }
 
         when(a3_a){
             "ふつう" -> {
                 plusAbility("c",3)
-                plusAbility("p",4)
+                plusAbility("p",3)
                 plusAbility("s",3)
                 plusAbility("a",4)
                 plusAbility("f",3)
             }
             "カワイイ系" -> {
-                plusAbility("c",10)
-                plusAbility("p",4)
+                plusAbility("c",9)
+                plusAbility("p",3)
                 plusAbility("s",5)
                 plusAbility("a",6)
                 plusAbility("f",5)
             }
             "美人系" -> {
-                plusAbility("c",5)
-                plusAbility("p",7)
+                plusAbility("c",4)
+                plusAbility("p",5)
                 plusAbility("s",7)
                 plusAbility("a",10)
                 plusAbility("f",10)
@@ -602,7 +602,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",10)
             }
             "派手め" -> {
-                plusAbility("p",6)
+                plusAbility("p",5)
                 plusAbility("s",8)
                 plusAbility("a",10)
                 plusSpecial("chance",0.02)
@@ -616,12 +616,12 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",5)
             }
             "こわそう" -> {
-                plusAbility("p",6)
+                plusAbility("p",5)
                 plusAbility("s",4)
                 plusAbility("a",10)
             }
             "元気そう" -> {
-                plusAbility("p",8)
+                plusAbility("p",7)
                 plusAbility("s",6)
                 plusAbility("a",8)
             }
@@ -698,7 +698,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "メンヘラ" -> {
                 plusAbility("c",-3)
                 plusAbility("f",-6)
-                plusSpecial("chance",0.1)
+                plusSpecial("chance",-0.1)
             }
 
         }
@@ -853,15 +853,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a1_o){
             "マドンナ" -> {
-                plusAbility("c",15)
-                plusAbility("p",10)
+                plusAbility("c",13)
+                plusAbility("p",8)
                 plusAbility("s",8)
                 plusAbility("a",7)
                 plusAbility("f",5)
             }
             "モテる" -> {
                 plusAbility("c",9)
-                plusAbility("p",7)
+                plusAbility("p",6)
                 plusAbility("s",6)
                 plusAbility("a",5)
                 plusAbility("f",5)
@@ -887,7 +887,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a2_o){
             "大人気" -> {
                 plusAbility("c",5)
-                plusAbility("p",6)
+                plusAbility("p",5)
                 plusAbility("s",8)
                 plusAbility("a",12)
                 plusAbility("f",15)
