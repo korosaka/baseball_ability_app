@@ -27,7 +27,7 @@ class QuestionOfPersonalityFragment : Fragment() {
         if (PlayerMakingActivity.sex_id == 1) {
             textChange()
         }
-
+        setSpinner()
     }
 
     private fun textChange(){
@@ -61,6 +61,15 @@ class QuestionOfPersonalityFragment : Fragment() {
         spinner_q5_p.adapter = adapter
 
     }
+
+    fun setSpinner(){
+        spinner_q1_p.setSelection(0)
+        spinner_q2_p.setSelection(0)
+        spinner_q3_p.setSelection(0)
+        spinner_q4_p.setSelection(0)
+        spinner_q5_p.setSelection(0)
+    }
+
 
 
     companion object {

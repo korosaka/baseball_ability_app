@@ -26,7 +26,7 @@ class QuestionOfAppearanceFragment : Fragment() {
         if (PlayerMakingActivity.sex_id == 1) {
             textChange()
         }
-
+        setSpinner()
     }
 
 
@@ -42,6 +42,7 @@ class QuestionOfAppearanceFragment : Fragment() {
         var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q1_a.adapter = adapter
+
 
         adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_2)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -60,6 +61,14 @@ class QuestionOfAppearanceFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q5_a.adapter = adapter
 
+    }
+
+    fun setSpinner(){
+        spinner_q1_a.setSelection(0)
+        spinner_q2_a.setSelection(0)
+        spinner_q3_a.setSelection(0)
+        spinner_q4_a.setSelection(0)
+        spinner_q5_a.setSelection(0)
     }
 
 
