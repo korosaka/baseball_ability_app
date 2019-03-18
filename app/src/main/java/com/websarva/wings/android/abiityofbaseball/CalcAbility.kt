@@ -924,7 +924,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusSpecial("chance",0.15)
             }
             "なかなか" -> {
-                plusSpecial("chance",0.8)
+                plusSpecial("chance",0.08)
             }
             "ふつう" -> {}
             "あんまり" -> {
