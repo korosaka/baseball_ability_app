@@ -79,7 +79,7 @@
         <item>リーダー</item>
         <item>控えめ</item>
         <item>ムードメーカー</item>
-        <item>評論家</item>
+        <item>批評家</item>
         <item>アイデアマン</item>
     </string-array>
 
@@ -96,7 +96,7 @@
         <item>冗談多め</item>
         <item>話が面白い</item>
         <item>つまらない</item>
-        <item>全てが面白い</item>
+        <item>芸人</item>
     </string-array>
 
     <string-array name="array_q1_o">
@@ -133,9 +133,9 @@
 
     <string-array name="array_q5_o">
         <item>カリスマ</item>
-        <item>スポーツ万能</item>
+        <item>スポーツマン</item>
         <item>天才頭脳</item>
-        <item>どヤンキー</item>
+        <item>元ヤン</item>
         <item>特になし</item>
     </string-array>
 

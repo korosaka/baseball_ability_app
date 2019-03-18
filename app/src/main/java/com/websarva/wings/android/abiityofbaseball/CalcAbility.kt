@@ -280,7 +280,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusSpecial("chance",0.03)
 
             }
-            "評論家" -> {
+            "批評家" -> {
                 plusAbility("c",-2)
                 plusAbility("p",1)
                 plusAbility("s",-2)
@@ -363,7 +363,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",-2)
                 plusSpecial("chance",-0.05)
             }
-            "全てが面白い" -> {
+            "芸人" -> {
                 plusAbility("c",3)
                 plusAbility("p",5)
                 plusAbility("s",8)
@@ -466,7 +466,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",4)
                 plusSpecial("chance",0.1)
             }
-            "スポーツ万能" -> {
+            "スポーツマン" -> {
                 plusAbility("c",3)
                 plusAbility("p",10)
                 plusAbility("s",15)
@@ -479,7 +479,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("a",3)
                 plusAbility("f",15)
             }
-            "どヤンキー" -> {
+            "元ヤン" -> {
                 plusAbility("p",8)
                 plusAbility("a",15)
             }
@@ -757,7 +757,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",2)
                 plusSpecial("chance",0.03)
             }
-            "評論家" -> {
+            "批評家" -> {
                 plusAbility("c",-2)
                 plusAbility("p",2)
                 plusAbility("s",-2)
@@ -841,7 +841,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",-2)
                 plusSpecial("chance",-0.05)
             }
-            "全てが面白い" -> {
+            "芸人" -> {
                 plusAbility("c",3)
                 plusAbility("p",6)
                 plusAbility("s",8)
@@ -958,7 +958,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("a",5)
                 plusAbility("f",10)
             }
-            "スポーツ万能" -> {
+            "スポーツ少女" -> {
                 plusAbility("p",7)
                 plusAbility("s",15)
                 plusAbility("a",12)

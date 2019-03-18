@@ -34,9 +34,9 @@ class QuestionOfPersonalityFragment : Fragment() {
 
         val spinnerItems_1 = arrayOf("穏やか", "おとなしい", "サバサバ", "うるさい","メンヘラ")
         val spinnerItems_2 = arrayOf("優しい", "気が強い", "無気力", "かまってちゃん","一匹オオカミ")
-        val spinnerItems_3 = arrayOf("リーダー","控えめ", "ムードメーカー", "評論家", "アイデアマン")
+        val spinnerItems_3 = arrayOf("リーダー","控えめ", "ムードメーカー", "批評家", "アイデアマン")
         val spinnerItems_4 = arrayOf("ふつう","勉強得意", "頭キレキレ", "頭からっぽ", "脳筋")
-        val spinnerItems_5 = arrayOf("ふつう", "冗談多め", "話が面白い", "つまらない", "全てが面白い")
+        val spinnerItems_5 = arrayOf("ふつう", "冗談多め", "話が面白い", "つまらない", "芸人")
 
 
         var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)
