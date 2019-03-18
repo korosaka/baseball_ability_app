@@ -47,22 +47,23 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a1_a){
             "~160cm" -> {
                 plusAbility("s",4)
+                plusAbility("p",3)
                 plusAbility("c",2)
             }
             "161~170cm" -> {
-                plusAbility("p",4)
+                plusAbility("p",7)
                 plusAbility("s",2)
             }
             "171~180cm" -> {
-                plusAbility("p",7)
+                plusAbility("p",10)
                 plusAbility("a",1)
             }
             "181~190cm" -> {
-                plusAbility("p",13)
+                plusAbility("p",16)
                 plusAbility("a",3)
             }
             "191cm~" -> {
-                plusAbility("p",16)
+                plusAbility("p",20)
                 plusAbility("a",5)
             }
         }
@@ -172,7 +173,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             "オシャレ" -> {
                 plusAbility("c",4)
                 plusAbility("p",2)
-                plusAbility("s",4)
+                plusAbility("s",8)
                 plusAbility("a",3)
                 plusAbility("f",4)
             }
@@ -184,7 +185,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "派手め" -> {
                 plusAbility("p",5)
-                plusAbility("s",5)
+                plusAbility("s",6)
                 plusAbility("a",5)
             }
             "独創的" -> {
@@ -228,11 +229,11 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
 
         when(a2_p){
             "優しい" -> {
-                plusAbility("c",3)
-                plusAbility("p",1)
+                plusAbility("c",5)
+                plusAbility("p",2)
                 plusAbility("s",2)
                 plusAbility("a",2)
-                plusAbility("f",4)
+                plusAbility("f",5)
             }
             "気が強い" -> {
                 plusAbility("c",-2)
@@ -245,7 +246,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",1)
             }
             "目立ちたがり" -> {
-                plusAbility("p",2)
+                plusAbility("p",4)
                 plusAbility("s",4)
                 plusAbility("a",5)
                 plusAbility("f",2)
@@ -253,7 +254,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "一匹オオカミ" -> {
                 plusAbility("p",1)
-                plusAbility("s",4)
+                plusAbility("s",5)
                 plusAbility("a",5)
                 plusSpecial("chance",0.03)
             }
@@ -262,7 +263,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         when(a3_p){
             "リーダー" -> {
                 plusAbility("c",2)
-                plusAbility("p",4)
+                plusAbility("p",5)
                 plusAbility("s",2)
                 plusAbility("a",7)
                 plusAbility("f",7)
@@ -273,7 +274,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "ムードメーカー" -> {
                 plusAbility("c",1)
-                plusAbility("p",4)
+                plusAbility("p",5)
                 plusAbility("s",3)
                 plusAbility("a",6)
                 plusAbility("f",2)
@@ -282,7 +283,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
             }
             "批評家" -> {
                 plusAbility("c",-2)
-                plusAbility("p",1)
+                plusAbility("p",2)
                 plusAbility("s",-2)
                 plusAbility("a",7)
                 plusAbility("f",-1)
