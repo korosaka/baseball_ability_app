@@ -106,7 +106,7 @@ class MakingStatusActivity : AppCompatActivity() {
         var sb = (player.speed_ability * 0.8).toInt() -25
         if (sb < -10){
             sb = (player.speed_ability * 0.1).toInt()
-        } else if (sb < 0){
+        } else if (sb < 5){
             sb = (player.speed_ability * 0.1).toInt() + 1
         }
         else if (sb > 30){
