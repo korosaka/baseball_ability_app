@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -237,4 +238,13 @@ class MakingStatusActivity : AppCompatActivity() {
 
 
     }
+
+    // Topへ戻る
+    fun onClickFinish(view : View){
+
+        val intent = Intent(this,TopActivity::class.java)
+        startActivity(intent)
+
+    }
+
 }
