@@ -390,11 +390,11 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("f",3)
             }
             "ハンター" -> {
-                plusAbility("c",3)
-                plusAbility("p",7)
+                plusAbility("c",1)
+                plusAbility("p",6)
                 plusAbility("s",8)
-                plusAbility("a",8)
-                plusSpecial("chance",0.02)
+                plusAbility("a",7)
+                plusSpecial("chance",0.05)
             }
             "ふつう" -> {
                 plusAbility("c",1)

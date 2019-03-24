@@ -100,6 +100,9 @@ class MakingStatusActivity : AppCompatActivity() {
         } else if (rbi < 70){
             rbi = (rbi * 0.8).toInt()
         }
+        if(rbi < hr){
+            rbi = hr
+        }
         var sb = (player.speed_ability * 0.8).toInt() -25
         if (sb < -10){
             sb = (player.speed_ability * 0.1).toInt()
