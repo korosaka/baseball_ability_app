@@ -1,10 +1,13 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
@@ -24,14 +27,17 @@ class PlayerMakingActivity : AppCompatActivity(){
 
         var sex_id = -1
     }
+    val current_A = "appearance"
+    val current_P = "personality"
+    val current_O = "other"
+
+    var currentName = current_A
 
     var playerName : String? = null
 
     private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
     private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance()
     private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance()
-
-
 
 
 
@@ -43,25 +49,53 @@ class PlayerMakingActivity : AppCompatActivity(){
         transaction.add(R.id.frame_for_fragment,fragmentA)
         transaction.add(R.id.frame_for_fragment,fragmentP)
         transaction.add(R.id.frame_for_fragment,fragmentO)
-        transaction.show(fragmentA)
-        transaction.hide(fragmentP)
-        transaction.hide(fragmentO)
         transaction.commit()
+        showHideFragment(current_A)
 
         playerName = intent.getStringExtra(PLAYER_NAME)
         sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID,-1)
 
     }
 
+    fun onClickBack(view: View){
+        when(currentName){
+            current_A -> backToPrevious()
+            current_P -> changeToAppearance()
+            current_O -> changeToPerson()
+        }
+    }
 
-    fun onClickAppearance(view: View) {
-        showHideFragment("appearance")
+    fun onClickNext(view: View){
+        when(currentName){
+            current_A -> changeToPerson()
+            current_P -> changeToOther()
+            current_O -> makePlayer()
+        }
     }
-    fun onClickPersonality(view: View) {
-        showHideFragment("personality")
+
+    /**
+     * -> 見た目
+     */
+    fun changeToAppearance(){
+        showHideFragment(current_A)
+        currentName = current_A
+        bt_next.setText("次へ")
     }
-    fun onClickOther(view: View){
-        showHideFragment("other")
+    /**
+     * -> 性格
+     */
+    fun changeToPerson(){
+        showHideFragment(current_P)
+        currentName = current_P
+        bt_next.setText("次へ")
+    }
+    /**
+     * -> その他
+     */
+    fun changeToOther(){
+        showHideFragment(current_O)
+        currentName = current_O
+        bt_next.setText("査定結果へ")
     }
 
 
@@ -70,44 +104,75 @@ class PlayerMakingActivity : AppCompatActivity(){
         val transaction = supportFragmentManager.beginTransaction()
 
         when(fragmentName){
-            "appearance" -> {
+            current_A -> {
                 transaction.show(fragmentA)
                 transaction.hide(fragmentP)
                 transaction.hide(fragmentO)
+
+                label_A.setBackgroundColor(Color.WHITE)
+                label_P.setBackgroundColor(Color.GRAY)
+                label_O.setBackgroundColor(Color.GRAY)
             }
-            "personality" -> {
+            current_P -> {
                 transaction.show(fragmentP)
                 transaction.hide(fragmentA)
                 transaction.hide(fragmentO)
+
+                label_A.setBackgroundColor(Color.GRAY)
+                label_P.setBackgroundColor(Color.WHITE)
+                label_O.setBackgroundColor(Color.GRAY)
             }
-            "other" -> {
+            current_O -> {
                 transaction.show(fragmentO)
                 transaction.hide(fragmentA)
                 transaction.hide(fragmentP)
+
+                label_A.setBackgroundColor(Color.GRAY)
+                label_P.setBackgroundColor(Color.GRAY)
+                label_O.setBackgroundColor(Color.WHITE)
             }
         }
 
         transaction.commit()
     }
 
-    fun onClickMakePlayer(view: View){
+    fun makePlayer(){
 
-        val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String,spinner_q2_a.selectedItem as String,spinner_q3_a.selectedItem as String,spinner_q4_a.selectedItem as String,spinner_q5_a.selectedItem as String,
-                spinner_q1_p.selectedItem as String,spinner_q2_p.selectedItem as String,spinner_q3_p.selectedItem as String,spinner_q4_p.selectedItem as String,spinner_q5_p.selectedItem as String,
-                spinner_q1_o.selectedItem as String,spinner_q2_o.selectedItem as String,spinner_q3_o.selectedItem as String,spinner_q4_o.selectedItem as String,spinner_q5_o.selectedItem as String)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("入力確認")
+        builder.setMessage("入力はお済みでしょうか？")
+        builder.setPositiveButton("完了") { dialog, which ->
 
-        val intent = Intent(this,MakingStatusActivity::class.java)
-        intent.putExtra(PLAYER_NAME,playerName)
-        intent.putExtra(CONTACT,calcAbility.contact)
-        intent.putExtra(POWER,calcAbility.power)
-        intent.putExtra(SPEED,calcAbility.speed)
-        intent.putExtra(ARM,calcAbility.armStrength)
-        intent.putExtra(FIELDING,calcAbility.fielding)
+            // 全ての入力値から計算
+            val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String,spinner_q2_a.selectedItem as String,spinner_q3_a.selectedItem as String,spinner_q4_a.selectedItem as String,spinner_q5_a.selectedItem as String,
+                    spinner_q1_p.selectedItem as String,spinner_q2_p.selectedItem as String,spinner_q3_p.selectedItem as String,spinner_q4_p.selectedItem as String,spinner_q5_p.selectedItem as String,
+                    spinner_q1_o.selectedItem as String,spinner_q2_o.selectedItem as String,spinner_q3_o.selectedItem as String,spinner_q4_o.selectedItem as String,spinner_q5_o.selectedItem as String)
 
-        intent.putExtra(CHANCE,calcAbility.chance)
+            val intent = Intent(this,MakingStatusActivity::class.java)
+            intent.putExtra(PLAYER_NAME,playerName)
+            intent.putExtra(CONTACT,calcAbility.contact)
+            intent.putExtra(POWER,calcAbility.power)
+            intent.putExtra(SPEED,calcAbility.speed)
+            intent.putExtra(ARM,calcAbility.armStrength)
+            intent.putExtra(FIELDING,calcAbility.fielding)
 
-        startActivity(intent)
+            intent.putExtra(CHANCE,calcAbility.chance)
 
+            startActivity(intent)
+        }
+        builder.setNegativeButton("いいえ",null)
+        builder.show()
+    }
+
+    fun backToPrevious(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("戻る")
+        builder.setMessage("前の画面に戻りますか？")
+        builder.setPositiveButton("はい") { dialog, which ->
+            finish()
+        }
+        builder.setNegativeButton("キャンセル",null)
+        builder.show()
     }
 
 }

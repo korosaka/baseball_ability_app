@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent">
+    android:background="#90ee90">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,24 +27,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <TextView
+            android:id="@+id/label_A"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:text="外見"
-            android:onClick="onClickAppearance"/>
-        <Button
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="外見" />
+        <TextView
+            android:id="@+id/label_P"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:text="性格"
-            android:onClick="onClickPersonality"/>
-        <Button
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="性格" />
+        <TextView
+            android:id="@+id/label_O"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:text="その他"
-            android:onClick="onClickOther"/>
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="その他"/>
 
     </LinearLayout>
 
@@ -64,10 +82,20 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/bt_back"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="決定"
-            android:onClick="onClickMakePlayer"/>
+            android:layout_weight="1.0"
+            android:text="戻る"
+            android:onClick="onClickBack"/>
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="次へ"
+            android:onClick="onClickNext"/>
 
     </LinearLayout>
 
