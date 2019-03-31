@@ -219,7 +219,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="25sp"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginLeft="15dp"
                                 android:textColor="@android:color/black"
                                 android:text="打　率:"/>
                             <TextView
@@ -241,7 +241,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="25sp"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginLeft="15dp"
                                 android:textColor="@android:color/black"
                                 android:text="本塁打:"/>
                             <TextView
@@ -269,7 +269,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginLeft="15dp"
                                 android:textSize="25sp"
                                 android:textColor="@android:color/black"
                                 android:text="打　点:"/>
@@ -292,7 +292,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="25sp"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginLeft="15dp"
                                 android:textColor="@android:color/black"
                                 android:text="盗　塁:"/>
                             <TextView
