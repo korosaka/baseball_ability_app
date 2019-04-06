@@ -7,94 +7,111 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="25sp"
-            android:gravity="center_horizontal"
-            android:text="@string/require_name"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/player_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="8"
-            android:inputType="text"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="25sp"
-            android:gravity="center_horizontal"
-            android:text="@string/require_sex"/>
-
-        <RadioGroup
-            android:id="@+id/sex_radio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="30dp"
-            android:gravity="center_horizontal">
-            <RadioButton android:text="男性"
-                android:checked="true"
-                android:id="@+id/radio_m"
-                android:layout_marginRight="20dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-            </RadioButton>
-            <RadioButton android:text="女性"
-                android:id="@+id/radio_w"
-                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                android:gravity="center_horizontal"
+                android:text="@string/require_name"/>
+
+            <EditText
+                android:id="@+id/player_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="8"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                android:gravity="center_horizontal"
+                android:text="@string/require_sex"/>
+
+            <RadioGroup
+                android:id="@+id/sex_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_horizontal">
+                <RadioButton android:text="男性"
+                    android:checked="true"
+                    android:id="@+id/radio_m"
+                    android:layout_marginRight="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                </RadioButton>
+                <RadioButton android:text="女性"
+                    android:id="@+id/radio_w"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+            </RadioGroup>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </RadioButton>
-        </RadioGroup>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/fielder_making"
+                android:onClick="onClickSelectFielder"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/picher_making"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unable_pitcher"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
 
-    <LinearLayout
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/fielder_making"
-            android:onClick="onClickSelectFielder"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="@string/picher_making"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/unable_pitcher"/>
-
-
-    </LinearLayout>
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 
 
 </LinearLayout>

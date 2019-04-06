@@ -8,96 +8,115 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        >
-
-        <TextView
-            android:id="@+id/player_name_of_making"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:text="@string/require_each_item"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/label_A"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:layout_margin="2dp"
-            android:gravity="center_horizontal"
-            android:background="#ffffff"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:text="外見" />
-        <TextView
-            android:id="@+id/label_P"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:layout_margin="2dp"
-            android:gravity="center_horizontal"
-            android:background="#ffffff"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:text="性格" />
-        <TextView
-            android:id="@+id/label_O"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:layout_margin="2dp"
-            android:gravity="center_horizontal"
-            android:background="#ffffff"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:text="その他"/>
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frame_for_fragment"
-        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:orientation="vertical">
 
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/bt_back"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:text="戻る"
-            android:onClick="onClickBack"/>
+            android:gravity="center"
+            >
 
-        <Button
-            android:id="@+id/bt_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/player_name_of_making"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/require_each_item"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/label_A"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_margin="2dp"
+                android:gravity="center_horizontal"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="外見" />
+            <TextView
+                android:id="@+id/label_P"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_margin="2dp"
+                android:gravity="center_horizontal"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="性格" />
+            <TextView
+                android:id="@+id/label_O"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_margin="2dp"
+                android:gravity="center_horizontal"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="その他"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_for_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1.0"
-            android:text="次へ"
-            android:onClick="onClickNext"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="戻る"
+                android:onClick="onClickBack"/>
+
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="次へ"
+                android:onClick="onClickNext"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
 
 
 </LinearLayout>

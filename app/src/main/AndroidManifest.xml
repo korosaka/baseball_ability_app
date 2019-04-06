@@ -20,6 +20,9 @@
         <activity android:name=".SelectPlayerTypeActivity" />
         <activity android:name=".PlayerMakingActivity" />
         <activity android:name=".MakingStatusActivity"></activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6298264304843789~4492140864"/>
     </application>
 
 </manifest>
