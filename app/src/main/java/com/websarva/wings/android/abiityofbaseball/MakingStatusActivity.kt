@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_making_status.*
 
 class MakingStatusActivity : AppCompatActivity() {
@@ -26,6 +28,10 @@ class MakingStatusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_making_status)
 
+        // 広告処理
+        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
+        val adRequest = AdRequest.Builder().build()
+        adView_status.loadAd(adRequest)
 
         val player = PlayerClass(
                 intent.getStringExtra(PLAYER_NAME),

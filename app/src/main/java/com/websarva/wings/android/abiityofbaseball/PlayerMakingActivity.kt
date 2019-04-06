@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
@@ -44,6 +46,11 @@ class PlayerMakingActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_making)
+
+        // 広告処理
+        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
+        val adRequest = AdRequest.Builder().build()
+        adView_playerMaking.loadAd(adRequest)
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_fragment,fragmentA)
