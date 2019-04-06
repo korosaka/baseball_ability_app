@@ -5,26 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MakingStatusActivity"
+    android:background="#000000"
     android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0">
+        android:layout_weight="1.0"
+        android:background="#e0ffff">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:textColor="@android:color/black"
-                android:textSize="35sp"
-                android:text="査定結果"/>
+                android:layout_height="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,19 +62,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="1dp"
                         android:gravity="center_horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:text="ミート"/>
                         <TextView
                             android:id="@+id/contact_display"
                             android:layout_marginLeft="30dp"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -87,12 +84,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="1dp"
                         android:gravity="center_horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:text="パワー"/>
@@ -101,7 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textStyle="bold"
                             />
                     </LinearLayout>
@@ -109,12 +106,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="1dp"
                         android:gravity="center_horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:text="走　力"/>
@@ -123,7 +120,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textStyle="bold"
                             />
                     </LinearLayout>
@@ -131,12 +128,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="1dp"
                         android:gravity="center_horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:text="肩　力"/>
@@ -145,7 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textStyle="bold"
                             />
                     </LinearLayout>
@@ -157,7 +154,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:text="守備力"/>
@@ -166,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textStyle="bold"
                             />
                     </LinearLayout>
@@ -177,7 +174,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -310,7 +307,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="10dp"/>
+                android:layout_height="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -379,7 +376,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="10dp">
 
                 <!--<Button-->
                     <!--android:layout_width="0dp"-->
@@ -391,12 +388,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:layout_marginBottom="5dp"
                     android:onClick="onClickFinish"
                     android:text="終了"/>
 
             </LinearLayout>
-
-
 
         </LinearLayout>
 
@@ -407,6 +403,7 @@
         android:id="@+id/adView_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
