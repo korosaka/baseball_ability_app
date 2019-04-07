@@ -1,9 +1,11 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
@@ -26,7 +28,15 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         val adRequest = AdRequest.Builder().build()
         adView_selectType.loadAd(adRequest)
 
+        operateKeyBoard()
+
     }
+
+    // OKでフォーカス移してキーボード隠す
+//    fun onClickNameOK(view: View){
+//        orderText.requestFocus()
+//        player_name.setFocusable(false)
+//    }
 
     // 選手をつくるボタンクリックで画面遷移
     fun onClickSelectFielder(view : View){
@@ -59,6 +69,24 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         intent.putExtra(PLAYER_NAME,name)
 
         startActivity(intent)
+    }
+
+    /**
+     * キーボード表示操作
+     */
+    private fun operateKeyBoard(){
+        player_name.setOnFocusChangeListener{ view, b ->
+                // フォーカスを取得→キーボード表示
+                if(b){
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.showSoftInput(view,0)
+                }
+                // フォーカス外れる→キーボード非表示
+                else {
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(view.getWindowToken(),0)
+                }
+        }
     }
 
 
