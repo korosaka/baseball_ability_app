@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MakingStatusPitcherActivity"
-    tools:showIn="@layout/activity_making_status_pitcher"
     android:background="#FFFFFF"
     android:orientation="vertical">
 
@@ -130,36 +129,43 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
                                 <TextView
+                                    android:id="@+id/slider_7"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_6"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_5"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_4"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_3"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_2"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/slider_1"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0" />
@@ -174,36 +180,43 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
                                 <TextView
+                                    android:id="@+id/shoot_1"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_2"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_3"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_4"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_5"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_6"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="1dp"
                                     android:background="#c0c0c0"/>
                                 <TextView
+                                    android:id="@+id/shoot_7"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0"/>
@@ -219,6 +232,7 @@
                             android:paddingLeft="144sp"
                             android:paddingRight="144sp">
                             <TextView
+                                android:id="@+id/curb_1"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -227,6 +241,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
                             <TextView
+                                android:id="@+id/sinker_1"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -239,6 +254,7 @@
                             android:paddingLeft="126sp"
                             android:paddingRight="126sp">
                             <TextView
+                                android:id="@+id/curb_2"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -247,6 +263,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
                             <TextView
+                                android:id="@+id/sinker_2"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -259,6 +276,7 @@
                             android:paddingLeft="108sp"
                             android:paddingRight="108sp">
                             <TextView
+                                android:id="@+id/curb_3"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -268,11 +286,13 @@
                                 android:gravity="center"
                                 android:layout_weight="1">
                                 <TextView
+                                    android:id="@+id/fork_1"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0"/>
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/sinker_3"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -285,6 +305,7 @@
                             android:paddingLeft="90sp"
                             android:paddingRight="90sp">
                             <TextView
+                                android:id="@+id/curb_4"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -293,12 +314,15 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:layout_weight="1">
+
                                 <TextView
+                                    android:id="@+id/fork_2"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
-                                    android:background="#c0c0c0"/>
+                                    android:background="#c0c0c0" />
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/sinker_4"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -311,6 +335,7 @@
                             android:paddingLeft="72sp"
                             android:paddingRight="72sp">
                             <TextView
+                                android:id="@+id/curb_5"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -320,11 +345,13 @@
                                 android:gravity="center"
                                 android:layout_weight="1">
                                 <TextView
+                                    android:id="@+id/fork_3"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0"/>
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/sinker_5"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -337,6 +364,7 @@
                             android:paddingLeft="54sp"
                             android:paddingRight="54sp">
                             <TextView
+                                android:id="@+id/curb_6"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -346,11 +374,13 @@
                                 android:gravity="center"
                                 android:layout_weight="1">
                                 <TextView
+                                    android:id="@+id/fork_4"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0"/>
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/sinker_6"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -362,21 +392,25 @@
                             android:layout_marginTop="1dp"
                             android:paddingLeft="36sp"
                             android:paddingRight="36sp">
+
                             <TextView
+                                android:id="@+id/curb_7"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
-                                android:background="#c0c0c0"/>
+                                android:background="#c0c0c0" />
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:layout_weight="1">
                                 <TextView
+                                    android:id="@+id/fork_5"
                                     android:layout_width="18sp"
                                     android:layout_height="wrap_content"
                                     android:background="#c0c0c0"/>
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/sinker_7"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -387,6 +421,7 @@
                             android:layout_marginTop="1dp"
                             android:gravity="center">
                             <TextView
+                                android:id="@+id/fork_6"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
@@ -398,6 +433,7 @@
                             android:layout_marginBottom="5dp"
                             android:gravity="center">
                             <TextView
+                                android:id="@+id/fork_7"
                                 android:layout_width="18sp"
                                 android:layout_height="wrap_content"
                                 android:background="#c0c0c0"/>
