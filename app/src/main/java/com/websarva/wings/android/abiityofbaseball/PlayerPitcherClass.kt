@@ -1,6 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: Int, kindsOfChange: Int, amountOfChange: Int, priorityOfChange: Array<Int>, chance: Double) {
+class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: Int, kindsOfChange: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>, chance: Double) {
 
     val playerName = name
     val ball_speed_ability = ballSpeed
@@ -52,22 +52,41 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     }
 
     // 変化球球種・変化量
-    fun calculateChangeBalls(kind_change_ability: Int, amountOfChange: Int, priorityOfChange: Array<Int>): IntArray {
+    fun calculateChangeBalls(kind_change_ability: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
 
-        var changeballs = intArrayOf(0, 0, 0, 0, 0)
+        val newPriorityChange: ArrayList<Int> = remakePriorityOfChange(kind_change_ability, priorityOfChange)
+        var changeballs: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
         // 分母
         var denominator = 0
-        for (i in priorityOfChange) {
-            denominator += priorityOfChange[i]
+        for (i in 0..newPriorityChange.size - 1) {
+            denominator += newPriorityChange[i]
         }
 
-        for (i in priorityOfChange) {
-            changeballs[i] = (amountOfChange * priorityOfChange[i] / denominator)
+        for (i in 0..newPriorityChange.size - 1) {
+            changeballs[i] = (amountOfChange * newPriorityChange[i] / denominator)
             if (changeballs[i] < 0) changeballs[i] = 0
             if (changeballs[i] > 7) changeballs[i] = 7
         }
 
         return changeballs
+    }
+
+    // 変化球優先順位と種類数上限から優先順位再生成
+    fun remakePriorityOfChange(kind_change_ability: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
+        var newPriorityChange: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
+        var oldPriorityChange = priorityOfChange
+
+        if (kind_change_ability == 0) return newPriorityChange
+
+        for (i in 1..kind_change_ability) {
+            val maxChange = oldPriorityChange.max()
+            if (maxChange == null) return newPriorityChange
+            val maxIndex = oldPriorityChange.indexOf(maxChange)
+            newPriorityChange[maxIndex] = maxChange
+            oldPriorityChange[maxIndex] = 0
+        }
+
+        return newPriorityChange
     }
 
 }

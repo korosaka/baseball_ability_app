@@ -38,7 +38,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
     var stamina = 0
     var kindsOfChangeBall = 0
     var amountOfCange = 0
-    var priorityOfChange = intArrayOf(0, 0, 0, 0, 0)
+    var priorityOfChange = arrayListOf(0, 0, 0, 0, 0)
 
 
     init {
