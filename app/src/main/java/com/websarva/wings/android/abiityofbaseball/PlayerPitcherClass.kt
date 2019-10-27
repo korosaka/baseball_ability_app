@@ -14,7 +14,7 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
 
     val control_lank = lankMaking(control_ability)
     val stamina_lank = lankMaking(stamina_ability)
-    val max_speed = calculateMaxSpeed(ball_speed_ability)
+    val max_speed = Integer.toString(calculateMaxSpeed(ball_speed_ability))
     val changeballs = calculateChangeBalls(kind_change_ability, amount_change_ability, priorityOfChange)
 
 
