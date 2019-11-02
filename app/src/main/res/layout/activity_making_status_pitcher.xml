@@ -267,38 +267,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_1"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_1"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_1"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_1"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_1"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -307,38 +331,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_2"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_2"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_2"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_2"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_2"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -348,38 +396,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_3"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_3"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_3"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_3"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_3"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -388,38 +460,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_4"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_4"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_4"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_4"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_4"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -428,38 +524,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_5"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_5"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_5"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_5"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_5"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -468,38 +588,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_6"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_6"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_6"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_6"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_6"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
@@ -508,38 +652,62 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                             <TextView
                                 android:id="@+id/slider_7"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/curb_7"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/fork_7"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/sinker_7"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
                             <TextView
                                 android:id="@+id/shoot_7"
-                                android:background="#dcdcdc"
-                                android:layout_margin="2dp"
+                                android:background="#f5f5f5"
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"/>

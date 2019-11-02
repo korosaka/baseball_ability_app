@@ -108,12 +108,21 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)
 
+        var colors: Array<Int?> = arrayOfNulls(7)
+        colors[0] = Color.parseColor("#fff4f4")
+        colors[1] = Color.parseColor("#ffe0e0")
+        colors[2] = Color.parseColor("#ffcccc")
+        colors[3] = Color.parseColor("#ffb2b2")
+        colors[4] = Color.parseColor("#ff9999")
+        colors[5] = Color.parseColor("#ff7f7f")
+        colors[6] = Color.parseColor("#ff0000")
+
+
         for (changeKindIndex in 0..(playerPitcher.changeballs.size - 1)) {
 
             for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)){
-
-                changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(Color.parseColor("#ff7f50"))
-
+                
+                changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeAmountIndex]!!)
             }
         }
 
