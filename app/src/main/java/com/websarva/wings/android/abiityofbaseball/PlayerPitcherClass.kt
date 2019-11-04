@@ -32,8 +32,23 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
         }
     }
 
+    /**
+     * 球速計算
+     */
     fun calculateMaxSpeed(ability: Int): Int {
-        val maxSpeed = 120 + ability
+        var plusSpeed = 0
+        if (ability < 10) {
+            plusSpeed = 0
+        } else if (ability < 30) {
+            plusSpeed = ability / 2
+        } else if (ability < 60) {
+            plusSpeed = 5 + ability / 3
+        } else if (ability < 100) {
+            plusSpeed = 10 + ability / 4
+        } else {
+            plusSpeed = 15 + ability / 5
+        }
+        val maxSpeed = 120 + plusSpeed
         return maxSpeed
     }
 
