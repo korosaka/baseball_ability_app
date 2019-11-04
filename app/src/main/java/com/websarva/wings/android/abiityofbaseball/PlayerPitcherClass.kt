@@ -22,12 +22,12 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
 
         when (ability) {
 
-            in -100..10 -> return "G"
-            in 11..20 -> return "F"
-            in 21..30 -> return "E"
-            in 31..40 -> return "D"
-            in 41..50 -> return "C"
-            in 51..60 -> return "B"
+            in -100..19 -> return "G"
+            in 20..39 -> return "F"
+            in 40..64 -> return "E"
+            in 65..79 -> return "D"
+            in 80..94 -> return "C"
+            in 95..109 -> return "B"
             else -> return "A"
         }
     }
