@@ -62,6 +62,7 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
             denominator += newPriorityChange[i]
         }
 
+        if (denominator == 0) return changeballs
         for (i in 0..newPriorityChange.size - 1) {
             changeballs[i] = (amountOfChange * newPriorityChange[i] / denominator)
             if (changeballs[i] < 0) changeballs[i] = 0
