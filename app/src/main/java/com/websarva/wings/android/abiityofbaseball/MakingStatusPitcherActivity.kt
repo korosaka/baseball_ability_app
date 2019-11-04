@@ -108,21 +108,66 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)
 
-        var colors: Array<Int?> = arrayOfNulls(7)
-        colors[0] = Color.parseColor("#fff4f4")
-        colors[1] = Color.parseColor("#ffe0e0")
-        colors[2] = Color.parseColor("#ffcccc")
-        colors[3] = Color.parseColor("#ffb2b2")
-        colors[4] = Color.parseColor("#ff9999")
-        colors[5] = Color.parseColor("#ff7f7f")
-        colors[6] = Color.parseColor("#ff0000")
+        var colors = Array(5, {arrayOfNulls<Int>(7)})
+
+        var sliderColors: Array<Int?> = arrayOfNulls(7)
+        sliderColors[0] = Color.parseColor("#ffefef")
+        sliderColors[1] = Color.parseColor("#ffe0e0")
+        sliderColors[2] = Color.parseColor("#ffc6c6")
+        sliderColors[3] = Color.parseColor("#ffa3a3")
+        sliderColors[4] = Color.parseColor("#ff7f7f")
+        sliderColors[5] = Color.parseColor("#ff3d3d")
+        sliderColors[6] = Color.parseColor("#ff0000")
+
+        var curbColors: Array<Int?> = arrayOfNulls(7)
+        curbColors[0] = Color.parseColor("#fff7ef")
+        curbColors[1] = Color.parseColor("#ffefe0")
+        curbColors[2] = Color.parseColor("#ffe2c6")
+        curbColors[3] = Color.parseColor("#ffd1a3")
+        curbColors[4] = Color.parseColor("#ffbf7f")
+        curbColors[5] = Color.parseColor("#ff9e3d")
+        curbColors[6] = Color.parseColor("#ff7f00")
+
+        var forkColors: Array<Int?> = arrayOfNulls(7)
+        forkColors[0] = Color.parseColor("#ffffef")
+        forkColors[1] = Color.parseColor("#ffffe0")
+        forkColors[2] = Color.parseColor("#ffffc6")
+        forkColors[3] = Color.parseColor("#ffffa3")
+        forkColors[4] = Color.parseColor("#ffff7f")
+        forkColors[5] = Color.parseColor("#ffff3d")
+        forkColors[6] = Color.parseColor("#ffff00")
+
+        var sinkerColors: Array<Int?> = arrayOfNulls(7)
+        sinkerColors[0] = Color.parseColor("#efffef")
+        sinkerColors[1] = Color.parseColor("#e0ffe0")
+        sinkerColors[2] = Color.parseColor("#c6ffc6")
+        sinkerColors[3] = Color.parseColor("#a3ffa3")
+        sinkerColors[4] = Color.parseColor("#7fff7f")
+        sinkerColors[5] = Color.parseColor("#3dff3d")
+        sinkerColors[6] = Color.parseColor("#00ff00")
+
+        var shootColors: Array<Int?> = arrayOfNulls(7)
+        shootColors[0] = Color.parseColor("#efffff")
+        shootColors[1] = Color.parseColor("#e0ffff")
+        shootColors[2] = Color.parseColor("#c6ffff")
+        shootColors[3] = Color.parseColor("#a3ffff")
+        shootColors[4] = Color.parseColor("#7fffff")
+        shootColors[5] = Color.parseColor("#3dffff")
+        shootColors[6] = Color.parseColor("#00ffff")
+
+
+        colors[0] = sliderColors
+        colors[1] = curbColors
+        colors[2] = forkColors
+        colors[3] = sinkerColors
+        colors[4] = shootColors
 
 
         for (changeKindIndex in 0..(playerPitcher.changeballs.size - 1)) {
 
             for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)){
-                
-                changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeAmountIndex]!!)
+
+                changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
             }
         }
 
