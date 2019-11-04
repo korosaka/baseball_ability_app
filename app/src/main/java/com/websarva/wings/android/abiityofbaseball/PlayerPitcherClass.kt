@@ -7,7 +7,7 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     val control_ability = control
     val stamina_ability = stamina
     val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
-    val amount_change_ability = amountOfChange
+    val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
 
     val chance = chance
 
@@ -51,6 +51,14 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
         val maxSpeed = 120 + plusSpeed
         return maxSpeed
     }
+
+    /**
+     * 総変化量計算
+     */
+    fun calculateTotalChangeAmount(changeAmount: Int, kindsOfChange: Int): Int {
+        return changeAmount / 20 * kindsOfChange
+    }
+
 
 
     // 変化球の球種数
