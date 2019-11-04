@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.TextView
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
@@ -102,6 +103,21 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         changeDisplays[3] = sinkerDisplay
         changeDisplays[4] = shootDisplay
 
+        var changeBallMarks: Array<TextView?> = arrayOfNulls(5)
+        changeBallMarks[0] = findViewById<TextView>(R.id.mark_slider)
+        changeBallMarks[1] = findViewById<TextView>(R.id.mark_curb)
+        changeBallMarks[2] = findViewById<TextView>(R.id.mark_fork)
+        changeBallMarks[3] = findViewById<TextView>(R.id.mark_sinker)
+        changeBallMarks[4] = findViewById<TextView>(R.id.mark_shoot)
+
+        var changeBallTitles: Array<TextView?> = arrayOfNulls(5)
+        changeBallTitles[0] = findViewById<TextView>(R.id.title_slider)
+        changeBallTitles[1] = findViewById<TextView>(R.id.title_curb)
+        changeBallTitles[2] = findViewById<TextView>(R.id.title_fork)
+        changeBallTitles[3] = findViewById<TextView>(R.id.title_sinker)
+        changeBallTitles[4] = findViewById<TextView>(R.id.title_shoot)
+
+
 
         nameDisplay.setText(playerPitcher.playerName)
         ballSpeedDisplay.setText(playerPitcher.max_speed)
@@ -165,9 +181,12 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
         for (changeKindIndex in 0..(playerPitcher.changeballs.size - 1)) {
 
+            if (playerPitcher.changeballs[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
+
             for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)){
 
                 changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
+                changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex]!!)
             }
         }
 
