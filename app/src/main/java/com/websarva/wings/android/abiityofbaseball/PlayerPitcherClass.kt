@@ -57,11 +57,11 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
         when (kindsOfChange) {
 
-            in -100..10 -> return 0
-            in 11..20 -> return 1
-            in 21..30 -> return 2
-            in 31..40 -> return 3
-            in 41..50 -> return 4
+            in -100..5 -> return 0
+            in 6..39 -> return 1
+            in 40..79 -> return 2
+            in 80..119 -> return 3
+            in 120..139 -> return 4
             else -> return 5
         }
     }
