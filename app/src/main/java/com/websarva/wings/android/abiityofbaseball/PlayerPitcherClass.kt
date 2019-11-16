@@ -56,7 +56,8 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
      * 総変化量計算
      */
     fun calculateTotalChangeAmount(changeAmount: Int, kindsOfChange: Int): Int {
-        return changeAmount / 20 * kindsOfChange
+        if (kindsOfChange > 2) return changeAmount / 15 * 2
+        return changeAmount / 15 * kindsOfChange
     }
 
 
