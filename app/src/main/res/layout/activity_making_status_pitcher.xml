@@ -94,7 +94,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:textSize="20sp"
+                                    android:textSize="15sp"
                                     android:textColor="#00ffff"
                                     android:text="km/h"/>
 
@@ -126,7 +126,7 @@
                                 android:id="@+id/control_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="28sp"
+                                android:textSize="32sp"
                                 android:textColor="@android:color/white"
                                 android:textStyle="bold" />
 
@@ -155,7 +155,7 @@
                                 android:id="@+id/stamina_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="28sp"
+                                android:textSize="32sp"
                                 android:textColor="@android:color/white"
                                 android:textStyle="bold" />
 
