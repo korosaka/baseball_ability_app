@@ -114,13 +114,9 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="@string/picher_making"/>
+                android:text="@string/picher_making"
+                android:onClick="onClickSelectPitcher"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/unable_pitcher"/>
 
         </LinearLayout>
 

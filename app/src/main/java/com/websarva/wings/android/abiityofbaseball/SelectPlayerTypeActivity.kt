@@ -15,6 +15,7 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
 
     companion object {
         const val PLAYER_NAME = "playerName"
+        const val PLAYER_TYPE = "playerType"
         const val SEXID = "sex_id"
     }
 
@@ -39,22 +40,37 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
 //    }
 
     // 選手をつくるボタンクリックで画面遷移
+    // 野手
     fun onClickSelectFielder(view : View){
 
         val editText = player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if(playerName.isNotEmpty()){
-            makeIntent(playerName)
+            makeIntent(playerName,"fielder")
         } else {
             Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
         }
     }
 
+    // 投手
+    fun onClickSelectPitcher(view : View){
+
+        val editText = player_name
+        val playerName = editText.text.toString()
+        // 名前空欄はダメ
+        if(playerName.isNotEmpty()){
+            makeIntent(playerName,"pitcher")
+        } else {
+            Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
     /**
      * 入力情報をsetして次のページへ
      */
-    private fun makeIntent(name:String){
+    private fun makeIntent(name:String,type:String){
 
         val intent = Intent(this,PlayerMakingActivity::class.java)
 
@@ -67,6 +83,7 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         }
 
         intent.putExtra(PLAYER_NAME,name)
+        intent.putExtra(PLAYER_TYPE,type)
 
         startActivity(intent)
     }

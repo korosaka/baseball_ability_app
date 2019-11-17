@@ -18,6 +18,7 @@ class PlayerMakingActivity : AppCompatActivity(){
 
     companion object {
         const val PLAYER_NAME = "playerName"
+        const val PLAYER_TYPE = "playerType"
         const val CONTACT = "contact_status"
         const val POWER = "power_status"
         const val SPEED = "speed_status"
@@ -43,6 +44,7 @@ class PlayerMakingActivity : AppCompatActivity(){
     var currentName = current_A
 
     var playerName : String? = null
+    var playerType : String? = null
 
     private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
     private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance()
@@ -67,6 +69,7 @@ class PlayerMakingActivity : AppCompatActivity(){
         showHideFragment(current_A)
 
         playerName = intent.getStringExtra(PLAYER_NAME)
+        playerType = intent.getStringExtra(PLAYER_TYPE)
         sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID,-1)
 
     }
@@ -162,7 +165,7 @@ class PlayerMakingActivity : AppCompatActivity(){
                     spinner_q1_p.selectedItem as String,spinner_q2_p.selectedItem as String,spinner_q3_p.selectedItem as String,spinner_q4_p.selectedItem as String,spinner_q5_p.selectedItem as String,
                     spinner_q1_o.selectedItem as String,spinner_q2_o.selectedItem as String,spinner_q3_o.selectedItem as String,spinner_q4_o.selectedItem as String,spinner_q5_o.selectedItem as String)
 
-            if (false) {
+            if (playerType.equals("fielder")) {
                 val intent = Intent(this,MakingStatusActivity::class.java)
                 intent.putExtra(PLAYER_NAME,playerName)
                 intent.putExtra(CONTACT,calcAbility.contact)
