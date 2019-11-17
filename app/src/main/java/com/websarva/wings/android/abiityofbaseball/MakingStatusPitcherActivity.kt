@@ -124,6 +124,9 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)
 
+        setTextColor(controlDisplay)
+        setTextColor(staminaDisplay)
+
         var colors = Array(5, {arrayOfNulls<Int>(7)})
 
         var sliderColors: Array<Int?> = arrayOfNulls(7)
@@ -192,5 +195,20 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
 
     }
+
+    fun setTextColor(alphabet:TextView){
+
+        when(alphabet.text){
+            "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
+            "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
+            "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
+            "D" -> alphabet.setTextColor(Color.parseColor("#ffff00"))
+            "E" -> alphabet.setTextColor(Color.parseColor("#7cfc00"))
+            "F" -> alphabet.setTextColor(Color.parseColor("#00ffff"))
+            "G" -> alphabet.setTextColor(Color.parseColor("#696969"))
+
+        }
+    }
+
 
 }
