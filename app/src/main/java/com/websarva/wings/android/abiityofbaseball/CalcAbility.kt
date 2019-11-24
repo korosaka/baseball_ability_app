@@ -84,9 +84,9 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",3)
                 plusAbility("s_p",5)
                 plusAbility("ac_p",4)
-                plusAbility("slider",2)
-                plusAbility("curb",1)
-                plusAbility("folk",4)
+                plusAbility("slider",4)
+                plusAbility("curb",2)
+                plusAbility("folk",8)
             }
             "181~190cm" -> {
                 plusAbility("p",16)
@@ -95,8 +95,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",2)
                 plusAbility("s_p",7)
                 plusAbility("ac_p",6)
-                plusAbility("slider",2)
-                plusAbility("folk",7)
+                plusAbility("slider",4)
+                plusAbility("folk",20)
             }
             "191cm~" -> {
                 plusAbility("p",20)
@@ -105,8 +105,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",1)
                 plusAbility("s_p",10)
                 plusAbility("ac_p",8)
-                plusAbility("slider",2)
-                plusAbility("folk",10)
+                plusAbility("slider",5)
+                plusAbility("folk",25)
 
             }
         }
@@ -972,9 +972,9 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",3)
                 plusAbility("s_p",5)
                 plusAbility("ac_p",4)
-                plusAbility("slider",2)
-                plusAbility("curb",1)
-                plusAbility("folk",4)
+                plusAbility("slider",5)
+                plusAbility("curb",2)
+                plusAbility("folk",8)
             }
             "171~180cm" -> {
                 plusAbility("p",11)
@@ -983,8 +983,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",2)
                 plusAbility("s_p",7)
                 plusAbility("ac_p",6)
-                plusAbility("slider",2)
-                plusAbility("folk",7)
+                plusAbility("slider",4)
+                plusAbility("folk",20)
             }
             "181cm~" -> {
                 plusAbility("p",15)
@@ -993,8 +993,8 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",1)
                 plusAbility("s_p",10)
                 plusAbility("ac_p",8)
-                plusAbility("slider",2)
-                plusAbility("folk",10)
+                plusAbility("slider",5)
+                plusAbility("folk",25)
             }
         }
 
