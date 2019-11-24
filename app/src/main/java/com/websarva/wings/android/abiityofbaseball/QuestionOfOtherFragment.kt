@@ -69,7 +69,7 @@ class QuestionOfOtherFragment : Fragment() {
         spinner_q2_o.setSelection(2)
         spinner_q3_o.setSelection(2)
         spinner_q4_o.setSelection(2)
-        spinner_q5_o.setSelection(4)
+        spinner_q5_o.setSelection(0)
     }
 
 
