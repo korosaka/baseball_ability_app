@@ -131,8 +131,8 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         var colors = Array(5, {arrayOfNulls<Int>(7)})
 
         var sliderColors: Array<Int?> = arrayOfNulls(7)
-        sliderColors[0] = Color.parseColor("#ffefef")
-        sliderColors[1] = Color.parseColor("#ffe0e0")
+        sliderColors[0] = Color.parseColor("#ffe0e0")
+        sliderColors[1] = Color.parseColor("#ffd6d6")
         sliderColors[2] = Color.parseColor("#ffc6c6")
         sliderColors[3] = Color.parseColor("#ffa3a3")
         sliderColors[4] = Color.parseColor("#ff7f7f")
@@ -140,8 +140,8 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         sliderColors[6] = Color.parseColor("#ff0000")
 
         var curbColors: Array<Int?> = arrayOfNulls(7)
-        curbColors[0] = Color.parseColor("#fff7ef")
-        curbColors[1] = Color.parseColor("#ffefe0")
+        curbColors[0] = Color.parseColor("#ffefe0")
+        curbColors[1] = Color.parseColor("#ffe8d1")
         curbColors[2] = Color.parseColor("#ffe2c6")
         curbColors[3] = Color.parseColor("#ffd1a3")
         curbColors[4] = Color.parseColor("#ffbf7f")
@@ -150,7 +150,7 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
         var forkColors: Array<Int?> = arrayOfNulls(7)
         forkColors[0] = Color.parseColor("#ffffc6")
-        forkColors[1] = Color.parseColor("#ffffa3")
+        forkColors[1] = Color.parseColor("#ffffa8")
         forkColors[2] = Color.parseColor("#ffff7f")
         forkColors[3] = Color.parseColor("#ffff00")
         forkColors[4] = Color.parseColor("#fef263")
@@ -158,8 +158,8 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         forkColors[6] = Color.parseColor("#ffd900")
 
         var sinkerColors: Array<Int?> = arrayOfNulls(7)
-        sinkerColors[0] = Color.parseColor("#efffef")
-        sinkerColors[1] = Color.parseColor("#e0ffe0")
+        sinkerColors[0] = Color.parseColor("#e0ffe0")
+        sinkerColors[1] = Color.parseColor("#d1ffd1")
         sinkerColors[2] = Color.parseColor("#c6ffc6")
         sinkerColors[3] = Color.parseColor("#a3ffa3")
         sinkerColors[4] = Color.parseColor("#7fff7f")
@@ -167,8 +167,8 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         sinkerColors[6] = Color.parseColor("#00ff00")
 
         var shootColors: Array<Int?> = arrayOfNulls(7)
-        shootColors[0] = Color.parseColor("#efffff")
-        shootColors[1] = Color.parseColor("#e0ffff")
+        shootColors[0] = Color.parseColor("#e0ffff")
+        shootColors[1] = Color.parseColor("#d1ffff")
         shootColors[2] = Color.parseColor("#c6ffff")
         shootColors[3] = Color.parseColor("#a3ffff")
         shootColors[4] = Color.parseColor("#7fffff")
