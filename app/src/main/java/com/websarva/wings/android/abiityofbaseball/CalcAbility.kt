@@ -500,10 +500,11 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
                 plusAbility("a",3)
                 plusAbility("f",3)
-                plusAbility("b_p",3)
+                plusAbility("b_p",5)
+                plusAbility("c_p",7)
                 plusAbility("s_p",15)
-                plusAbility("kc_p",1)
-                plusAbility("ac_p",1)
+                plusAbility("kc_p",6)
+                plusAbility("ac_p",6)
             }
             "気が強い" -> {
                 plusAbility("c",-2)
@@ -1435,10 +1436,11 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",2)
                 plusAbility("a",3)
                 plusAbility("f",3)
-                plusAbility("b_p",3)
+                plusAbility("b_p",5)
+                plusAbility("c_p",7)
                 plusAbility("s_p",15)
-                plusAbility("kc_p",1)
-                plusAbility("ac_p",1)
+                plusAbility("kc_p",6)
+                plusAbility("ac_p",6)
             }
             "気が強い" -> {
                 plusAbility("c",-2)
