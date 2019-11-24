@@ -38,7 +38,7 @@ class QuestionOfOtherFragment : Fragment() {
         val spinnerItems_2 = arrayOf("大人気", "まぁまぁ", "ふつう", "あんまり","ぷぅ〜")
         val spinnerItems_3 = arrayOf("最強","なかなか", "ふつう", "あんまり", "豆腐メンタル")
         val spinnerItems_4 = arrayOf("大好き","まぁまぁ", "ふつう", "興味深い", "アンチ")
-        val spinnerItems_5 = arrayOf("ボスキャラ","お色気", "大和撫子", "スポーツ少女", "特になし")
+        val spinnerItems_5 = arrayOf("特になし", "スポーツ少女", "ボスキャラ", "お色気", "大和撫子", "ヘビースモーカー", "酒豪")
 
 
         var adapter = ArrayAdapter<String>(context,android.R.layout.simple_spinner_item,spinnerItems_1)

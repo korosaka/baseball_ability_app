@@ -32,6 +32,7 @@
         <item>ふつう</item>
         <item>スリム</item>
         <item>ぽっちゃり</item>
+        <item>ムッチリ</item>
         <item>ややマッチョ</item>
         <item>ゴリマッチョ</item>
     </string-array>
@@ -45,8 +46,9 @@
     </string-array>
 
     <string-array name="array_q4_a">
-        <item>優男</item>
-        <item>マジメ君</item>
+        <item>優しそう</item>
+        <item>明るい</item>
+        <item>マジメ</item>
         <item>クール</item>
         <item>おとぼけ</item>
         <item>チャラ男</item>
@@ -133,11 +135,13 @@
     </string-array>
 
     <string-array name="array_q5_o">
+        <item>特になし</item>
         <item>カリスマ</item>
         <item>スポーツマン</item>
         <item>天才頭脳</item>
+        <item>酒豪</item>
+        <item>ヘビースモーカー</item>
         <item>元ヤン</item>
-        <item>特になし</item>
     </string-array>
     <string name="title_activity_making_status_pitcher">MakingStatusPitcherActivity</string>
 

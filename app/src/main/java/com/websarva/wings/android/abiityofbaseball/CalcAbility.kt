@@ -134,7 +134,6 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",3)
                 plusAbility("slider",3)
                 plusAbility("shoot",3)
-
             }
             "ぽっちゃり" -> {
                 plusAbility("p",6)
@@ -144,7 +143,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("kc_p",1)
                 plusAbility("ac_p",3)
                 plusAbility("curb",5)
-
+            }
+            "ムッチリ" -> {
+                plusAbility("p",5)
+                plusAbility("s",-2)
+                plusAbility("a",5)
+                plusAbility("b_p",7)
+                plusAbility("s_p",7)
+                plusAbility("slider",4)
+                plusAbility("shoot",3)
             }
             "ややマッチョ" -> {
                 plusAbility("p",12)
@@ -251,7 +258,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         }
 
         when(a4_a){
-            "優男" -> {
+            "優しそう" -> {
                 plusAbility("c",5)
                 plusAbility("p",2)
                 plusAbility("s",3)
@@ -267,7 +274,22 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",3)
                 plusAbility("sinker",3)
             }
-            "マジメ君" -> {
+            "明るい" -> {
+                plusAbility("c",4)
+                plusAbility("p",4)
+                plusAbility("s",3)
+                plusAbility("a",4)
+                plusAbility("f",3)
+                plusAbility("b_p",5)
+                plusAbility("c_p",3)
+                plusAbility("s_p",10)
+                plusAbility("kc_p",3)
+                plusAbility("ac_p",5)
+                plusAbility("slider",3)
+                plusAbility("curb",2)
+                plusAbility("folk",3)
+            }
+            "マジメ" -> {
                 plusAbility("p",2)
                 plusAbility("s",2)
                 plusAbility("a",2)
@@ -873,6 +895,32 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("c_p",20)
                 plusAbility("kc_p",12)
             }
+            "酒豪" -> {
+                plusAbility("c",1)
+                plusAbility("p",3)
+                plusAbility("a",3)
+                plusAbility("f",-1)
+                plusSpecial("chance",0.04)
+                plusAbility("b_p",4)
+                plusAbility("c_p",-5)
+                plusAbility("s_p",5)
+                plusAbility("ac_p",3)
+                plusAbility("slider",3)
+                plusAbility("folk",4)
+            }
+            "ヘビースモーカー" -> {
+                plusAbility("c",2)
+                plusAbility("p",1)
+                plusAbility("s",2)
+                plusAbility("a",3)
+                plusAbility("f",-1)
+                plusSpecial("chance",0.02)
+                plusAbility("b_p",4)
+                plusAbility("s_p",-8)
+                plusAbility("ac_p",2)
+                plusAbility("sinker",5)
+                plusAbility("shoot",5)
+            }
             "元ヤン" -> {
                 plusAbility("p",8)
                 plusAbility("a",15)
@@ -1031,6 +1079,15 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",3)
                 plusAbility("curb",5)
             }
+            "ムッチリ" -> {
+                plusAbility("p",5)
+                plusAbility("s",-2)
+                plusAbility("a",5)
+                plusAbility("b_p",7)
+                plusAbility("s_p",7)
+                plusAbility("slider",4)
+                plusAbility("shoot",3)
+            }
             "マッチョ" -> {
                 plusAbility("p",11)
                 plusAbility("s",3)
@@ -1142,6 +1199,17 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("curb",4)
                 plusAbility("folk",3)
                 plusAbility("sinker",3)
+            }
+            "マジメ" -> {
+                plusAbility("s",1)
+                plusAbility("a",3)
+                plusAbility("f",9)
+                plusAbility("c_p",8)
+                plusAbility("s_p",2)
+                plusAbility("kc_p",1)
+                plusAbility("ac_p",1)
+                plusAbility("slider",1)
+                plusAbility("curb",3)
             }
             "こわそう" -> {
                 plusAbility("p",5)
@@ -1697,6 +1765,32 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
         }
 
         when(a5_o){
+            "酒豪" -> {
+                plusAbility("c",1)
+                plusAbility("p",3)
+                plusAbility("a",3)
+                plusAbility("f",-1)
+                plusSpecial("chance",0.04)
+                plusAbility("b_p",4)
+                plusAbility("c_p",-5)
+                plusAbility("s_p",5)
+                plusAbility("ac_p",3)
+                plusAbility("slider",3)
+                plusAbility("folk",4)
+            }
+            "ヘビースモーカー" -> {
+                plusAbility("c",2)
+                plusAbility("p",1)
+                plusAbility("s",2)
+                plusAbility("a",3)
+                plusAbility("f",-1)
+                plusSpecial("chance",0.02)
+                plusAbility("b_p",4)
+                plusAbility("s_p",-8)
+                plusAbility("ac_p",2)
+                plusAbility("sinker",5)
+                plusAbility("shoot",5)
+            }
             "ボスキャラ" -> {
                 plusAbility("c",1)
                 plusAbility("p",8)
