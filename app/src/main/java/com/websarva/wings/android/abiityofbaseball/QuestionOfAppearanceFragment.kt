@@ -35,7 +35,7 @@ class QuestionOfAppearanceFragment : Fragment() {
         val spinnerItems_1 = arrayOf("~150cm", "151~160cm", "161~170cm", "171~180cm","181cm~")
         val spinnerItems_2 = arrayOf("ふつう", "スリム", "ぽっちゃり", "ムッチリ", "マッチョ","グラマラス")
         val spinnerItems_3 = arrayOf("ふつう","カワイイ系", "美人系", "地味め", "派手め")
-        val spinnerItems_4 = arrayOf("優しそう", "マジメ", "こわそう", "元気そう", "大人しそう","チャラそう")
+        val spinnerItems_4 = arrayOf("優しそう", "マジメそう", "こわそう", "元気そう", "大人しそう","チャラそう")
         val spinnerItems_5 = arrayOf("ふつう", "オシャレ", "地味め", "派手め", "独創的")
 
 

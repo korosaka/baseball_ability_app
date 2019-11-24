@@ -47,11 +47,11 @@
 
     <string-array name="array_q4_a">
         <item>優しそう</item>
-        <item>明るい</item>
-        <item>マジメ</item>
-        <item>クール</item>
-        <item>おとぼけ</item>
-        <item>チャラ男</item>
+        <item>明るそう</item>
+        <item>マジメそう</item>
+        <item>クールそう</item>
+        <item>おとぼけ者</item>
+        <item>チャラそう</item>
     </string-array>
 
     <string-array name="array_q5_a">

@@ -274,7 +274,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",3)
                 plusAbility("sinker",3)
             }
-            "明るい" -> {
+            "明るそう" -> {
                 plusAbility("c",4)
                 plusAbility("p",4)
                 plusAbility("s",3)
@@ -289,7 +289,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("curb",2)
                 plusAbility("folk",3)
             }
-            "マジメ" -> {
+            "マジメそう" -> {
                 plusAbility("p",2)
                 plusAbility("s",2)
                 plusAbility("a",2)
@@ -304,7 +304,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("curb",3)
                 plusAbility("folk",1)
             }
-            "クール" -> {
+            "クールそう" -> {
                 plusAbility("p",2)
                 plusAbility("s",7)
                 plusAbility("a",5)
@@ -319,7 +319,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("sinker",5)
                 plusAbility("shoot",3)
             }
-            "おとぼけ" -> {
+            "おとぼけ者" -> {
                 plusAbility("c",2)
                 plusAbility("p",2)
                 plusAbility("s",3)
@@ -334,7 +334,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",5)
                 plusAbility("sinker",10)
             }
-            "チャラ男" -> {
+            "チャラそう" -> {
                 plusAbility("p",2)
                 plusAbility("s",7)
                 plusAbility("a",5)
@@ -1222,7 +1222,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",3)
                 plusAbility("sinker",3)
             }
-            "マジメ" -> {
+            "マジメそう" -> {
                 plusAbility("s",1)
                 plusAbility("a",3)
                 plusAbility("f",9)
