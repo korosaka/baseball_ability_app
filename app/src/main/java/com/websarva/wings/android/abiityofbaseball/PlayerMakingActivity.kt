@@ -189,6 +189,7 @@ class PlayerMakingActivity : AppCompatActivity(){
 
                 startActivity(intent)
             }
+            finish()
         }
         builder.setNegativeButton("いいえ",null)
         builder.show()
@@ -199,6 +200,8 @@ class PlayerMakingActivity : AppCompatActivity(){
         builder.setTitle("戻る")
         builder.setMessage("前の画面に戻りますか？")
         builder.setPositiveButton("はい") { dialog, which ->
+            val intent = Intent(this, SelectPlayerTypeActivity::class.java)
+            startActivity(intent)
             finish()
         }
         builder.setNegativeButton("キャンセル",null)

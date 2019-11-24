@@ -19,6 +19,6 @@ class TopActivity : AppCompatActivity() {
 //        val intent = Intent(this,SelectOptionActivity::class.java)
         val intent = Intent(this, SelectPlayerTypeActivity::class.java)
         startActivity(intent)
-
+        finish()
     }
 }

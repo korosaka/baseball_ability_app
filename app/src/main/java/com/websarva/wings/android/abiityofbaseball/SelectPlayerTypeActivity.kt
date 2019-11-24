@@ -86,6 +86,7 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         intent.putExtra(PLAYER_TYPE,type)
 
         startActivity(intent)
+        finish()
     }
 
     /**

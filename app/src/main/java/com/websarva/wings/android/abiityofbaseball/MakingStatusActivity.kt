@@ -250,7 +250,7 @@ class MakingStatusActivity : AppCompatActivity() {
 
         val intent = Intent(this,TopActivity::class.java)
         startActivity(intent)
-
+        finish()
     }
 
 }
