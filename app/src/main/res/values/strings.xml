@@ -72,6 +72,7 @@
 
     <string-array name="array_q2_p">
         <item>優しい</item>
+        <item>頑張り屋さん</item>
         <item>気が強い</item>
         <item>無気力</item>
         <item>目立ちたがり</item>
@@ -96,6 +97,7 @@
 
     <string-array name="array_q5_p">
         <item>ふつう</item>
+        <item>天然</item>
         <item>冗談多め</item>
         <item>話が面白い</item>
         <item>つまらない</item>

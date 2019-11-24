@@ -253,7 +253,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",2)
                 plusAbility("slider",2)
                 plusAbility("folk",2)
-                plusAbility("shoot",20)
+                plusAbility("shoot",16)
             }
         }
 
@@ -344,7 +344,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",5)
                 plusAbility("slider",5)
                 plusAbility("folk",2)
-                plusAbility("shoot",10)
+                plusAbility("shoot",9)
             }
         }
 
@@ -495,6 +495,16 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",1)
                 plusAbility("sinker",3)
             }
+            "頑張り屋さん" -> {
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",3)
+                plusAbility("f",3)
+                plusAbility("b_p",3)
+                plusAbility("s_p",15)
+                plusAbility("kc_p",1)
+                plusAbility("ac_p",1)
+            }
             "気が強い" -> {
                 plusAbility("c",-2)
                 plusAbility("a",12)
@@ -503,7 +513,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",1)
                 plusAbility("slider",2)
                 plusAbility("sinker",2)
-                plusAbility("shoot",30)
+                plusAbility("shoot",20)
             }
             "無気力" -> {
                 plusAbility("c",1)
@@ -590,7 +600,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("b_p",6)
                 plusAbility("c_p",-1)
                 plusAbility("kc_p",-2)
-                plusAbility("shoot",15)
+                plusAbility("shoot",13)
             }
             "アイデアマン" -> {
                 plusAbility("c",5)
@@ -686,6 +696,18 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("kc_p",3)
                 plusAbility("ac_p",3)
             }
+            "天然" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+                plusSpecial("chance",0.07)
+                plusAbility("b_p",1)
+                plusAbility("c_p",1)
+                plusAbility("kc_p",1)
+                plusAbility("ac_p",5)
+            }
             "冗談多め" -> {
                 plusAbility("p",4)
                 plusAbility("a",3)
@@ -724,7 +746,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",8)
                 plusAbility("a",8)
                 plusAbility("f",3)
-                plusSpecial("chance",0.05)
+                plusSpecial("chance",0.04)
                 plusAbility("b_p",7)
                 plusAbility("c_p",6)
                 plusAbility("s_p",7)
@@ -927,7 +949,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("b_p",9)
                 plusAbility("c_p",-3)
                 plusAbility("s_p",-3)
-                plusAbility("shoot",20)
+                plusAbility("shoot",15)
             }
             "特になし" -> {}
         }
@@ -1182,7 +1204,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",5)
                 plusAbility("slider",3)
                 plusAbility("folk",2)
-                plusAbility("shoot",12)
+                plusAbility("shoot",10)
             }
         }
 
@@ -1220,7 +1242,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("kc_p",2)
                 plusAbility("ac_p",5)
                 plusAbility("slider",2)
-                plusAbility("shoot",12)
+                plusAbility("shoot",10)
             }
             "元気そう" -> {
                 plusAbility("p",7)
@@ -1259,7 +1281,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("slider",4)
                 plusAbility("folk",2)
                 plusAbility("sinker",2)
-                plusAbility("shoot",10)
+                plusAbility("shoot",9)
             }
         }
 
@@ -1408,6 +1430,16 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("folk",1)
                 plusAbility("sinker",3)
             }
+            "頑張り屋さん" -> {
+                plusAbility("p",2)
+                plusAbility("s",2)
+                plusAbility("a",3)
+                plusAbility("f",3)
+                plusAbility("b_p",3)
+                plusAbility("s_p",15)
+                plusAbility("kc_p",1)
+                plusAbility("ac_p",1)
+            }
             "気が強い" -> {
                 plusAbility("c",-2)
                 plusAbility("a",12)
@@ -1417,7 +1449,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("ac_p",1)
                 plusAbility("slider",2)
                 plusAbility("sinker",2)
-                plusAbility("shoot",30)
+                plusAbility("shoot",20)
             }
             "無気力" -> {
                 plusAbility("c",1)
@@ -1441,7 +1473,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("a",5)
                 plusSpecial("chance",0.02)
                 plusAbility("b_p",6)
-                plusAbility("s_p",10)
+                plusAbility("s_p",9)
                 plusAbility("kc_p",1)
                 plusAbility("ac_p",2)
                 plusAbility("slider",4)
@@ -1500,7 +1532,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("b_p",6)
                 plusAbility("c_p",-1)
                 plusAbility("kc_p",-2)
-                plusAbility("shoot",15)
+                plusAbility("shoot",12)
             }
             "アイデアマン" -> {
                 plusAbility("c",5)
@@ -1597,6 +1629,18 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("kc_p",3)
                 plusAbility("ac_p",3)
             }
+            "天然" -> {
+                plusAbility("c",1)
+                plusAbility("p",1)
+                plusAbility("s",1)
+                plusAbility("a",1)
+                plusAbility("f",1)
+                plusSpecial("chance",0.07)
+                plusAbility("b_p",1)
+                plusAbility("c_p",1)
+                plusAbility("kc_p",1)
+                plusAbility("ac_p",5)
+            }
             "冗談多め" -> {
                 plusAbility("p",5)
                 plusAbility("a",3)
@@ -1635,7 +1679,7 @@ class CalcAbility(a1_a:String,a2_a:String,a3_a:String,a4_a:String,a5_a:String,
                 plusAbility("s",8)
                 plusAbility("a",8)
                 plusAbility("f",3)
-                plusSpecial("chance",0.05)
+                plusSpecial("chance",0.04)
                 plusAbility("b_p",7)
                 plusAbility("c_p",6)
                 plusAbility("s_p",7)
