@@ -3,10 +3,10 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_player_making.*
@@ -47,7 +47,7 @@ class PlayerMakingActivity : AppCompatActivity(){
     var playerType : String? = null
 
     private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
-    private val fragmentP:Fragment = QuestionOfPersonalityFragment.newInstance()
+    private val fragmentP: Fragment = QuestionOfPersonalityFragment.newInstance()
     private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance()
 
 
