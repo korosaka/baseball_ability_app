@@ -3,11 +3,14 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_select_player_type.*
 
@@ -19,18 +22,49 @@ class SelectPlayerTypeActivity : AppCompatActivity(){
         const val SEXID = "sex_id"
     }
 
+    private lateinit var adView: AdView
+
+    private val adSize : AdSize
+        get() {
+            val display = windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+
+            val density = outMetrics.density
+
+            var adWidthPixels = ad_view_container_on_select_player_type.width.toFloat()
+            if (adWidthPixels == 0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+
+            val adWidth = (adWidthPixels / density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
+        }
+
+    private fun loadBanner() {
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+        adView.adSize = adSize
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_player_type)
 
-        // 広告処理
-        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
-        val adRequest = AdRequest.Builder().build()
-        adView_selectType.loadAd(adRequest)
-
+        indicateAd()
         operateKeyBoard()
 
+    }
+
+    private fun indicateAd() {
+        MobileAds.initialize(this)
+        adView = AdView(this)
+        ad_view_container_on_select_player_type.addView(adView)
+        loadBanner()
     }
 
     // OKでフォーカス移してキーボード隠す
