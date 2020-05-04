@@ -5,12 +5,9 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_making_status.*
+import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
 
-class MakingStatusPitcherActivity : AppCompatActivity() {
+class MakingStatusPitcherActivity : BaseBannerActivity() {
 
     companion object {
         const val PLAYER_NAME = "playerName"
@@ -26,14 +23,10 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_making_status_pitcher)
+        setAdViewContainer(ad_view_container_on_making_status_pitcher)
+        super.onCreate(savedInstanceState)
 
-
-        // 広告処理
-        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
-        val adRequest = AdRequest.Builder().build()
-        adView_status.loadAd(adRequest)
 
         val playerPitcher = PlayerPitcherClass(
                 intent.getStringExtra(MakingStatusPitcherActivity.PLAYER_NAME),

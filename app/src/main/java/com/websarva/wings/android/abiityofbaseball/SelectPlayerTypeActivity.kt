@@ -19,7 +19,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_select_player_type)
-        super.setAdViewContainer(ad_view_container_on_select_player_type)
+        setAdViewContainer(ad_view_container_on_select_player_type)
         super.onCreate(savedInstanceState)
 
         operateKeyBoard()

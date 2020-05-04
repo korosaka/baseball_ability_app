@@ -5,16 +5,13 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 
-class PlayerMakingActivity : AppCompatActivity(){
+class PlayerMakingActivity : BaseBannerActivity(){
 
     companion object {
         const val PLAYER_NAME = "playerName"
@@ -53,13 +50,9 @@ class PlayerMakingActivity : AppCompatActivity(){
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_making)
-
-        // 広告処理
-        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
-        val adRequest = AdRequest.Builder().build()
-        adView_playerMaking.loadAd(adRequest)
+        setAdViewContainer(ad_view_container_on_player_making)
+        super.onCreate(savedInstanceState)
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_fragment,fragmentA)
