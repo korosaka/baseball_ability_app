@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 
-class PlayerMakingActivity : BaseBannerActivity(){
+class PlayerMakingActivity : BaseBannerActivity() {
 
     companion object {
         const val PLAYER_NAME = "playerName"
@@ -34,19 +34,19 @@ class PlayerMakingActivity : BaseBannerActivity(){
 
         var sex_id = -1
     }
+
     val current_A = "appearance"
     val current_P = "personality"
     val current_O = "other"
 
     var currentName = current_A
 
-    var playerName : String? = null
-    var playerType : String? = null
+    var playerName: String? = null
+    var playerType: String? = null
 
-    private val fragmentA:QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
+    private val fragmentA: QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
     private val fragmentP: Fragment = QuestionOfPersonalityFragment.newInstance()
-    private val fragmentO:Fragment = QuestionOfOtherFragment.newInstance()
-
+    private val fragmentO: Fragment = QuestionOfOtherFragment.newInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,28 +55,28 @@ class PlayerMakingActivity : BaseBannerActivity(){
         super.onCreate(savedInstanceState)
 
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.frame_for_fragment,fragmentA)
-        transaction.add(R.id.frame_for_fragment,fragmentP)
-        transaction.add(R.id.frame_for_fragment,fragmentO)
+        transaction.add(R.id.frame_for_fragment, fragmentA)
+        transaction.add(R.id.frame_for_fragment, fragmentP)
+        transaction.add(R.id.frame_for_fragment, fragmentO)
         transaction.commit()
         showHideFragment(current_A)
 
         playerName = intent.getStringExtra(PLAYER_NAME)
         playerType = intent.getStringExtra(PLAYER_TYPE)
-        sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID,-1)
+        sex_id = intent.getIntExtra(SelectPlayerTypeActivity.SEXID, -1)
 
     }
 
-    fun onClickBack(view: View){
-        when(currentName){
+    fun onClickBack(view: View) {
+        when (currentName) {
             current_A -> backToPrevious()
             current_P -> changeToAppearance()
             current_O -> changeToPerson()
         }
     }
 
-    fun onClickNext(view: View){
-        when(currentName){
+    fun onClickNext(view: View) {
+        when (currentName) {
             current_A -> changeToPerson()
             current_P -> changeToOther()
             current_O -> makePlayer()
@@ -86,34 +86,36 @@ class PlayerMakingActivity : BaseBannerActivity(){
     /**
      * -> 見た目
      */
-    fun changeToAppearance(){
+    fun changeToAppearance() {
         showHideFragment(current_A)
         currentName = current_A
         bt_next.setText("次へ")
     }
+
     /**
      * -> 性格
      */
-    fun changeToPerson(){
+    fun changeToPerson() {
         showHideFragment(current_P)
         currentName = current_P
         bt_next.setText("次へ")
     }
+
     /**
      * -> その他
      */
-    fun changeToOther(){
+    fun changeToOther() {
         showHideFragment(current_O)
         currentName = current_O
         bt_next.setText("査定結果へ")
     }
 
 
-    fun showHideFragment(fragmentName:String){
+    fun showHideFragment(fragmentName: String) {
 
         val transaction = supportFragmentManager.beginTransaction()
 
-        when(fragmentName){
+        when (fragmentName) {
             current_A -> {
                 transaction.show(fragmentA)
                 transaction.hide(fragmentP)
@@ -146,7 +148,7 @@ class PlayerMakingActivity : BaseBannerActivity(){
         transaction.commit()
     }
 
-    fun makePlayer(){
+    fun makePlayer() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("入力確認")
@@ -154,41 +156,41 @@ class PlayerMakingActivity : BaseBannerActivity(){
         builder.setPositiveButton("完了") { dialog, which ->
 
             // 全ての入力値から計算
-            val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String,spinner_q2_a.selectedItem as String,spinner_q3_a.selectedItem as String,spinner_q4_a.selectedItem as String,spinner_q5_a.selectedItem as String,
-                    spinner_q1_p.selectedItem as String,spinner_q2_p.selectedItem as String,spinner_q3_p.selectedItem as String,spinner_q4_p.selectedItem as String,spinner_q5_p.selectedItem as String,
-                    spinner_q1_o.selectedItem as String,spinner_q2_o.selectedItem as String,spinner_q3_o.selectedItem as String,spinner_q4_o.selectedItem as String,spinner_q5_o.selectedItem as String)
+            val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+                    spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
+                    spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String)
 
             if (playerType.equals("fielder")) {
-                val intent = Intent(this,MakingStatusActivity::class.java)
-                intent.putExtra(PLAYER_NAME,playerName)
-                intent.putExtra(CONTACT,calcAbility.contact)
-                intent.putExtra(POWER,calcAbility.power)
-                intent.putExtra(SPEED,calcAbility.speed)
-                intent.putExtra(ARM,calcAbility.armStrength)
-                intent.putExtra(FIELDING,calcAbility.fielding)
+                val intent = Intent(this, MakingStatusActivity::class.java)
+                intent.putExtra(PLAYER_NAME, playerName)
+                intent.putExtra(CONTACT, calcAbility.contact)
+                intent.putExtra(POWER, calcAbility.power)
+                intent.putExtra(SPEED, calcAbility.speed)
+                intent.putExtra(ARM, calcAbility.armStrength)
+                intent.putExtra(FIELDING, calcAbility.fielding)
 
-                intent.putExtra(CHANCE,calcAbility.chance)
+                intent.putExtra(CHANCE, calcAbility.chance)
 
                 startActivity(intent)
             } else {
-                val intent = Intent(this,MakingStatusPitcherActivity::class.java)
-                intent.putExtra(PLAYER_NAME,playerName)
-                intent.putExtra(BALL_SPEED,calcAbility.ballSpeed)
-                intent.putExtra(CONTROL,calcAbility.control)
-                intent.putExtra(STAMINA,calcAbility.stamina)
-                intent.putExtra(KIND_CHANGE,calcAbility.kindsOfChangeBall)
-                intent.putExtra(AMOUNT_CHANGE,calcAbility.amountOfCange)
-                intent.putExtra(PRIORITY_CHANGE,calcAbility.priorityOfChange)
+                val intent = Intent(this, MakingStatusPitcherActivity::class.java)
+                intent.putExtra(PLAYER_NAME, playerName)
+                intent.putExtra(BALL_SPEED, calcAbility.ballSpeed)
+                intent.putExtra(CONTROL, calcAbility.control)
+                intent.putExtra(STAMINA, calcAbility.stamina)
+                intent.putExtra(KIND_CHANGE, calcAbility.kindsOfChangeBall)
+                intent.putExtra(AMOUNT_CHANGE, calcAbility.amountOfCange)
+                intent.putExtra(PRIORITY_CHANGE, calcAbility.priorityOfChange)
 
                 startActivity(intent)
             }
             finish()
         }
-        builder.setNegativeButton("いいえ",null)
+        builder.setNegativeButton("いいえ", null)
         builder.show()
     }
 
-    fun backToPrevious(){
+    fun backToPrevious() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("戻る")
         builder.setMessage("前の画面に戻りますか？")
@@ -197,7 +199,7 @@ class PlayerMakingActivity : BaseBannerActivity(){
             startActivity(intent)
             finish()
         }
-        builder.setNegativeButton("キャンセル",null)
+        builder.setNegativeButton("キャンセル", null)
         builder.show()
     }
 

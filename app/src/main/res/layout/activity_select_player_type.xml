@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
@@ -25,32 +24,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:textColor="#000000"
-                android:textSize="25sp"
                 android:gravity="center_horizontal"
-                android:text="@string/require_name"/>
+                android:text="@string/require_name"
+                android:textColor="#000000"
+                android:textSize="25sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <!--<Button-->
-                    <!--android:layout_width="60dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="入力"/>-->
+                <!--android:layout_width="60dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="入力"/>-->
 
                 <EditText
                     android:id="@+id/player_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:maxLength="8"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:maxLength="8" />
 
                 <!--<Button-->
-                    <!--android:layout_width="60dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="OK"/>-->
+                <!--android:layout_width="60dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="OK"/>-->
 
             </LinearLayout>
 
@@ -66,33 +65,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textColor="#000000"
                 android:gravity="center_horizontal"
-                android:text="@string/require_sex"/>
+                android:text="@string/require_sex"
+                android:textColor="#000000"
+                android:textSize="25sp" />
 
             <RadioGroup
                 android:id="@+id/sex_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="30dp"
-                android:gravity="center_horizontal">
-                <RadioButton android:text="男性"
-                    android:checked="true"
-                    android:id="@+id/radio_m"
-                    android:layout_marginRight="20dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                </RadioButton>
-                <RadioButton android:text="女性"
-                    android:id="@+id/radio_w"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </RadioButton>
-            </RadioGroup>
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
+                <RadioButton
+                    android:id="@+id/radio_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:checked="true"
+                    android:text="男性"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="女性"></RadioButton>
+            </RadioGroup>
 
 
         </LinearLayout>
@@ -101,21 +101,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="@string/fielder_making"
-                android:onClick="onClickSelectFielder"/>
+                android:onClick="onClickSelectFielder"
+                android:text="@string/fielder_making" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/picher_making"
-                android:onClick="onClickSelectPitcher"/>
+                android:onClick="onClickSelectPitcher"
+                android:text="@string/picher_making" />
 
 
         </LinearLayout>
@@ -126,8 +126,7 @@
     <FrameLayout
         android:id="@+id/ad_view_container_on_select_player_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+        android:layout_height="wrap_content"></FrameLayout>
 
 
 </LinearLayout>
