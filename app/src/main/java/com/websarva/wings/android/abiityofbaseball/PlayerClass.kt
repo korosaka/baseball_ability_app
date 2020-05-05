@@ -1,6 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerClass(name:String,contact:Int,power:Int,speed:Int,arm:Int,fielding:Int,chance:Double) {
+class PlayerClass(name: String, contact: Int, power: Int, speed: Int, arm: Int, fielding: Int, chance: Double) {
 
     val playerName = name
     val contact_ability = contact
@@ -19,9 +19,9 @@ class PlayerClass(name:String,contact:Int,power:Int,speed:Int,arm:Int,fielding:I
     var fielding_lank = lankMaking(fielding_ability)
 
 
-    fun lankMaking(ability:Int):String{
+    fun lankMaking(ability: Int): String {
 
-        when(ability){
+        when (ability) {
 
             in -100..10 -> return "G"
             in 11..20 -> return "F"
@@ -32,7 +32,6 @@ class PlayerClass(name:String,contact:Int,power:Int,speed:Int,arm:Int,fielding:I
             else -> return "A"
         }
     }
-
 
 
 }

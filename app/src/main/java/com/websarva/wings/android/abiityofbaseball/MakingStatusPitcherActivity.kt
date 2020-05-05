@@ -3,14 +3,11 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_making_status.*
+import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
 
-class MakingStatusPitcherActivity : AppCompatActivity() {
+class MakingStatusPitcherActivity : BaseBannerActivity() {
 
     companion object {
         const val PLAYER_NAME = "playerName"
@@ -26,24 +23,20 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_making_status_pitcher)
+        setAdViewContainer(ad_view_container_on_making_status_pitcher)
+        super.onCreate(savedInstanceState)
 
-
-        // 広告処理
-        MobileAds.initialize(this,"ca-app-pub-6298264304843789~4492140864")
-        val adRequest = AdRequest.Builder().build()
-        adView_status.loadAd(adRequest)
 
         val playerPitcher = PlayerPitcherClass(
                 intent.getStringExtra(MakingStatusPitcherActivity.PLAYER_NAME),
-                intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.CONTROL,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.STAMINA,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.KIND_CHANGE,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.AMOUNT_CHANGE,0),
+                intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.CONTROL, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.STAMINA, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.KIND_CHANGE, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.AMOUNT_CHANGE, 0),
                 intent.getIntegerArrayListExtra(MakingStatusPitcherActivity.PRIORITY_CHANGE),
-                intent.getDoubleExtra(MakingStatusPitcherActivity.CHANCE,1.0)
+                intent.getDoubleExtra(MakingStatusPitcherActivity.CHANCE, 1.0)
         )
 
         val nameDisplay = findViewById<TextView>(R.id.name_display_p)
@@ -97,7 +90,7 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         shootDisplay[5] = findViewById<TextView>(R.id.shoot_6)
         shootDisplay[6] = findViewById<TextView>(R.id.shoot_7)
 
-        var changeDisplays = Array(5, {arrayOfNulls<TextView>(7)})
+        var changeDisplays = Array(5, { arrayOfNulls<TextView>(7) })
         changeDisplays[0] = sliderDisplay
         changeDisplays[1] = curbDisplay
         changeDisplays[2] = forkDisplay
@@ -128,7 +121,7 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
-        var colors = Array(5, {arrayOfNulls<Int>(7)})
+        var colors = Array(5, { arrayOfNulls<Int>(7) })
 
         var sliderColors: Array<Int?> = arrayOfNulls(7)
         sliderColors[0] = Color.parseColor("#ffe0e0")
@@ -187,7 +180,7 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
             if (playerPitcher.changeballs[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
 
-            for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)){
+            for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)) {
 
                 changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
                 changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex]!!)
@@ -197,9 +190,9 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
 
     }
 
-    fun setTextColor(alphabet:TextView){
+    fun setTextColor(alphabet: TextView) {
 
-        when(alphabet.text){
+        when (alphabet.text) {
             "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
             "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
             "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
@@ -212,13 +205,12 @@ class MakingStatusPitcherActivity : AppCompatActivity() {
     }
 
     // Topへ戻る
-    fun onClickFinish(view : View){
+    fun onClickFinish(view: View) {
 
-        val intent = Intent(this,TopActivity::class.java)
+        val intent = Intent(this, TopActivity::class.java)
         startActivity(intent)
         finish()
     }
-
 
 
 }
