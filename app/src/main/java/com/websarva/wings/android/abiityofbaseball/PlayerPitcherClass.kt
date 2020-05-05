@@ -61,7 +61,6 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     }
 
 
-
     // 変化球の球種数
     fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
         when (kindsOfChange) {

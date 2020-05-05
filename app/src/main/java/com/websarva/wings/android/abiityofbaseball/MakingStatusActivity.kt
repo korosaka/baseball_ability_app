@@ -28,14 +28,13 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         val player = PlayerClass(
                 intent.getStringExtra(PLAYER_NAME),
-                intent.getIntExtra(CONTACT,0),
-                intent.getIntExtra(POWER,0),
-                intent.getIntExtra(SPEED,0),
-                intent.getIntExtra(ARM,0),
-                intent.getIntExtra(FIELDING,0),
-                intent.getDoubleExtra(CHANCE,1.0)
+                intent.getIntExtra(CONTACT, 0),
+                intent.getIntExtra(POWER, 0),
+                intent.getIntExtra(SPEED, 0),
+                intent.getIntExtra(ARM, 0),
+                intent.getIntExtra(FIELDING, 0),
+                intent.getDoubleExtra(CHANCE, 1.0)
         )
-
 
 
         val nameDisplay = findViewById<TextView>(R.id.name_display)
@@ -52,7 +51,7 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         // 字数でサイズ変更
         var fontCount = nameDisplay.length()
-        when(fontCount){
+        when (fontCount) {
             in 0..4 -> nameDisplay.width = 500
             in 5..6 -> nameDisplay.width = 700
             else -> nameDisplay.width = 900
@@ -79,10 +78,10 @@ class MakingStatusActivity : BaseBannerActivity() {
     /**
      * 能力から成績を算出
      */
-    fun calcStats(player:PlayerClass){
+    fun calcStats(player: PlayerClass) {
 
         var ave = 85 + (player.contact_ability * 4.5).toInt() + (player.power_ability * 0.45).toInt() + (player.speed_ability * 0.15).toInt()
-        if(ave < 150) {
+        if (ave < 150) {
             ave = 120 + (ave * 0.3).toInt()
         } else if (ave < 200) {
             ave = 150 + (ave * 0.3).toInt()
@@ -90,31 +89,30 @@ class MakingStatusActivity : BaseBannerActivity() {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
         var hr = ((player.power_ability * 0.8) + (player.contact_ability * 0.1)).toInt() - 35
-        if (hr < 0){
+        if (hr < 0) {
             hr = (player.power_ability * 0.1).toInt()
         } else {
-          hr += 10
+            hr += 10
         }
         var rbi = (((player.contact_ability * 0.7) + (player.power_ability * 0.8)) * player.chance).toInt()
-        if (rbi < 0){
+        if (rbi < 0) {
             rbi = 1
-        } else if (rbi < 30){
+        } else if (rbi < 30) {
             rbi = (rbi * 0.5).toInt()
-        } else if (rbi < 50){
+        } else if (rbi < 50) {
             rbi = (rbi * 0.65).toInt()
-        } else if (rbi < 70){
+        } else if (rbi < 70) {
             rbi = (rbi * 0.8).toInt()
         }
-        if(rbi < hr){
+        if (rbi < hr) {
             rbi = hr
         }
-        var sb = (player.speed_ability * 0.8).toInt() -25
-        if (sb < -10){
+        var sb = (player.speed_ability * 0.8).toInt() - 25
+        if (sb < -10) {
             sb = (player.speed_ability * 0.1).toInt()
-        } else if (sb < 5){
+        } else if (sb < 5) {
             sb = (player.speed_ability * 0.1).toInt() + 1
-        }
-        else if (sb > 30){
+        } else if (sb > 30) {
             sb = (sb * 1.1).toInt()
         }
 
@@ -125,8 +123,8 @@ class MakingStatusActivity : BaseBannerActivity() {
         val sb_dis = findViewById<TextView>(R.id.steel_display)
 
         // 打率表示
-        var ave_string:String? = null
-        if (ave < 100){
+        var ave_string: String? = null
+        if (ave < 100) {
             ave_string = "." + "0" + Integer.toString(ave)
         } else {
             ave_string = "." + Integer.toString(ave)
@@ -145,13 +143,13 @@ class MakingStatusActivity : BaseBannerActivity() {
         val sb_string = Integer.toString(sb) + "個"
         sb_dis.setText(sb_string)
 
-        calcSaraly(ave,hr,rbi, sb, player)
+        calcSaraly(ave, hr, rbi, sb, player)
 
     }
 
-    fun setTextColor(alphabet:TextView){
+    fun setTextColor(alphabet: TextView) {
 
-        when(alphabet.text){
+        when (alphabet.text) {
             "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
             "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
             "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
@@ -166,10 +164,10 @@ class MakingStatusActivity : BaseBannerActivity() {
     /**
      * 成績・能力から年俸算出
      */
-    fun calcSaraly(ave : Int,hr : Int,rbi : Int,sb : Int,player: PlayerClass){
+    fun calcSaraly(ave: Int, hr: Int, rbi: Int, sb: Int, player: PlayerClass) {
         var salaryPoint = 0
         var salary = 0
-        when(ave){
+        when (ave) {
             in 0..199 -> salaryPoint += ave
             in 200..224 -> salaryPoint += ave * 2
             in 225..249 -> salaryPoint += ave * 4
@@ -180,7 +178,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 350..399 -> salaryPoint += ave * 45
             else -> salaryPoint += ave * 50
         }
-        when(hr){
+        when (hr) {
             in 0..9 -> salaryPoint += hr * 70
             in 10..14 -> salaryPoint += hr * 130
             in 15..19 -> salaryPoint += hr * 160
@@ -190,7 +188,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 40..49 -> salaryPoint += hr * 450
             else -> salaryPoint += hr * 500
         }
-        when(rbi){
+        when (rbi) {
             in 0..9 -> salaryPoint += rbi * 10
             in 10..19 -> salaryPoint += rbi * 15
             in 20..39 -> salaryPoint += rbi * 20
@@ -200,7 +198,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 100..129 -> salaryPoint += rbi * 50
             else -> salaryPoint += rbi * 60
         }
-        when(sb){
+        when (sb) {
             in 0..3 -> salaryPoint += sb * 10
             in 4..9 -> salaryPoint += sb * 25
             in 10..19 -> salaryPoint += sb * 50
@@ -210,17 +208,17 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
         salaryPoint += ((player.speed_ability * 0.15) * (player.arm_ability * 0.3) * (player.fielding_ability * 1.2)).toInt()
 
-        when(salaryPoint){
+        when (salaryPoint) {
             in 0..240 -> salary = 240
-            in 241..4999 -> salary = (salaryPoint/10) * 10
-            in 5000..9999 -> salary = (salaryPoint/100) * 100
-            else -> salary = (salaryPoint/1000) * 1000
+            in 241..4999 -> salary = (salaryPoint / 10) * 10
+            in 5000..9999 -> salary = (salaryPoint / 100) * 100
+            else -> salary = (salaryPoint / 1000) * 1000
         }
 
-        if (salary < 10000){
+        if (salary < 10000) {
             oku_unit.visibility = View.GONE
             man_number.text = Integer.toString(salary)
-        } else{
+        } else {
             var okuNumber = 0
             while (salary >= 10000) {
                 salary -= 10000
@@ -228,7 +226,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             }
             oku_number.text = Integer.toString(okuNumber)
 
-            if (salary == 0){
+            if (salary == 0) {
                 man_unit.visibility = View.GONE
             } else {
                 man_number.text = Integer.toString(salary)
@@ -239,9 +237,9 @@ class MakingStatusActivity : BaseBannerActivity() {
     }
 
     // Topへ戻る
-    fun onClickFinish(view : View){
+    fun onClickFinish(view: View) {
 
-        val intent = Intent(this,TopActivity::class.java)
+        val intent = Intent(this, TopActivity::class.java)
         startActivity(intent)
         finish()
     }

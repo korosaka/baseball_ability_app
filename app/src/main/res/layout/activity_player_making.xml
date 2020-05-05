@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000000">
+    android:background="#000000"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,17 +15,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/player_name_of_making"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/require_each_item"
                 android:textColor="@android:color/black"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="@string/require_each_item"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -34,42 +32,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/label_A"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
                 android:layout_margin="2dp"
-                android:gravity="center_horizontal"
+                android:layout_weight="1.0"
                 android:background="#ffffff"
+                android:gravity="center_horizontal"
+                android:text="外見"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="外見" />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/label_P"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
                 android:layout_margin="2dp"
-                android:gravity="center_horizontal"
+                android:layout_weight="1.0"
                 android:background="#ffffff"
+                android:gravity="center_horizontal"
+                android:text="性格"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="性格" />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/label_O"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
                 android:layout_margin="2dp"
-                android:gravity="center_horizontal"
+                android:layout_weight="1.0"
                 android:background="#ffffff"
+                android:gravity="center_horizontal"
+                android:text="その他"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="その他"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -77,9 +78,9 @@
             android:id="@+id/frame_for_fragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.0"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.0">
 
         </FrameLayout>
 
@@ -93,16 +94,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="戻る"
-                android:onClick="onClickBack"/>
+                android:onClick="onClickBack"
+                android:text="戻る" />
 
             <Button
                 android:id="@+id/bt_next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="次へ"
-                android:onClick="onClickNext"/>
+                android:onClick="onClickNext"
+                android:text="次へ" />
 
         </LinearLayout>
 
@@ -112,10 +113,7 @@
     <FrameLayout
         android:id="@+id/ad_view_container_on_player_making"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
-
-
+        android:layout_height="wrap_content"></FrameLayout>
 
 
 </LinearLayout>

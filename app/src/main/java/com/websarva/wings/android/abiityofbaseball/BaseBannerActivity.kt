@@ -9,7 +9,7 @@ import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 
-abstract class BaseBannerActivity : AppCompatActivity(){
+abstract class BaseBannerActivity : AppCompatActivity() {
 
     private lateinit var adView: AdView
     private lateinit var adViewContainer: FrameLayout
@@ -37,7 +37,7 @@ abstract class BaseBannerActivity : AppCompatActivity(){
      * reference
      * https://developers.google.com/admob/android/banner/adaptive
      */
-    private val adSize : AdSize
+    private val adSize: AdSize
         get() {
             val display = windowManager.defaultDisplay
             val outMetrics = DisplayMetrics()

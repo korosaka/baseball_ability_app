@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakingStatusPitcherActivity"
     android:background="#FFFFFF"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MakingStatusPitcherActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,19 +28,19 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:layout_marginTop="5dp">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/name_display_p"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:text="NAME"
                         android:textColor="@android:color/black"
                         android:textSize="38sp"
-                        android:textStyle="bold"
-                        android:text="NAME"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -57,46 +56,51 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginBottom="2dp"
-                        android:gravity="center_horizontal">
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:background="#191970"
+                            android:gravity="center"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="20sp"
+                                android:text="球速"
                                 android:textColor="@android:color/white"
-                                android:textStyle="bold"
-                                android:text="球速"/>
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
+
                                 <TextView
                                     android:id="@+id/ball_speed_display"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:textSize="32sp"
                                     android:textColor="@android:color/white"
+                                    android:textSize="32sp"
                                     android:textStyle="bold" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15sp"
+                                    android:text="km/h"
                                     android:textColor="#00ffff"
-                                    android:text="km/h"/>
+                                    android:textSize="15sp" />
 
                             </LinearLayout>
 
@@ -108,26 +112,29 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:background="#191970"
+                            android:gravity="center"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="16sp"
+                                android:text="コントロール"
                                 android:textColor="@android:color/white"
-                                android:textStyle="bold"
-                                android:text="コントロール"/>
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/control_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="32sp"
                                 android:textColor="@android:color/white"
+                                android:textSize="32sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -137,9 +144,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:background="#191970"
+                            android:gravity="center"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -147,16 +155,18 @@
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
+
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/stamina_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="32sp"
                                 android:textColor="@android:color/white"
+                                android:textSize="32sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -170,6 +180,7 @@
                         android:layout_margin="5dp"
                         android:background="#ffffff"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -185,548 +196,641 @@
                                 android:textColor="#f7f7f7"
                                 android:textSize="40sp"
                                 android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/mark_curb"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="↙︎"
                                 android:textColor="#f7f7f7"
                                 android:textSize="40sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/mark_fork"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="↓"
                                 android:textColor="#f7f7f7"
                                 android:textSize="40sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/mark_sinker"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="↘︎"
                                 android:textColor="#f7f7f7"
                                 android:textSize="40sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/mark_shoot"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="→"
                                 android:textColor="#f7f7f7"
                                 android:textSize="40sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/title_slider"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="スライダー"
                                 android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/title_curb"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="カーブ"
                                 android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/title_fork"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="フォーク"
                                 android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/title_sinker"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="シンカー"
                                 android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/title_shoot"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="シュート"
                                 android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"/>
+                                android:textStyle="bold" />
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_1"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_1"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_1"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_1"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_1"
-                                android:background="#f7f7f7"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <TextView
-                                android:id="@+id/slider_2"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <TextView
-                                android:id="@+id/curb_2"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <TextView
-                                android:id="@+id/fork_2"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <TextView
-                                android:id="@+id/sinker_2"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <TextView
-                                android:id="@+id/shoot_2"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/slider_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2" />
+
+                            <TextView
+                                android:id="@+id/curb_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2" />
+
+                            <TextView
+                                android:id="@+id/fork_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2" />
+
+                            <TextView
+                                android:id="@+id/sinker_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2" />
+
+                            <TextView
+                                android:id="@+id/shoot_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_3"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_3"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_3"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_3"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_3"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_4"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_4"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_4"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_4"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_4"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_5"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_5"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_5"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_5"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_5"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_6"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_6"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_6"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_6"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_6"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
+
                             <TextView
                                 android:id="@+id/slider_7"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/curb_7"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/fork_7"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/sinker_7"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_weight="2" />
+
                             <TextView
                                 android:id="@+id/shoot_7"
-                                android:background="#f7f7f7"
-                                android:layout_marginBottom="2dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"/>
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="2"
+                                android:background="#f7f7f7" />
+
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -739,18 +843,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:orientation="vertical"
+                android:layout_marginTop="30dp"
                 android:background="#3CB371"
-                android:layout_marginTop="30dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
+                    android:text="年間成績"
                     android:textColor="#ffffff"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:text="年間成績"/>
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -758,12 +862,13 @@
                     android:layout_margin="5dp"
                     android:background="#ffffff"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:textColor="#000000"
-                        android:text="作成中"/>
+                        android:text="作成中"
+                        android:textColor="#000000" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -779,23 +884,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:text="年俸"
                     android:textColor="#ffd700"
-                    android:text="年俸"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_margin="5dp"
-                    android:background="#ffffff">
+                    android:background="#ffffff"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textColor="#000000"
-                        android:text="作成中"/>
+                        android:text="作成中"
+                        android:textColor="#000000" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -803,8 +909,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <!--<Button-->
                 <!--android:layout_width="0dp"-->
@@ -815,10 +921,10 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
                     android:layout_marginBottom="5dp"
+                    android:layout_weight="1.0"
                     android:onClick="onClickFinish"
-                    android:text="終了"/>
+                    android:text="終了" />
 
             </LinearLayout>
 
@@ -830,9 +936,7 @@
     <FrameLayout
         android:id="@+id/ad_view_container_on_making_status_pitcher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
-
+        android:layout_height="wrap_content"></FrameLayout>
 
 
 </LinearLayout>

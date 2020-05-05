@@ -30,13 +30,13 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         val playerPitcher = PlayerPitcherClass(
                 intent.getStringExtra(MakingStatusPitcherActivity.PLAYER_NAME),
-                intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.CONTROL,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.STAMINA,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.KIND_CHANGE,0),
-                intent.getIntExtra(MakingStatusPitcherActivity.AMOUNT_CHANGE,0),
+                intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.CONTROL, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.STAMINA, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.KIND_CHANGE, 0),
+                intent.getIntExtra(MakingStatusPitcherActivity.AMOUNT_CHANGE, 0),
                 intent.getIntegerArrayListExtra(MakingStatusPitcherActivity.PRIORITY_CHANGE),
-                intent.getDoubleExtra(MakingStatusPitcherActivity.CHANCE,1.0)
+                intent.getDoubleExtra(MakingStatusPitcherActivity.CHANCE, 1.0)
         )
 
         val nameDisplay = findViewById<TextView>(R.id.name_display_p)
@@ -90,7 +90,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         shootDisplay[5] = findViewById<TextView>(R.id.shoot_6)
         shootDisplay[6] = findViewById<TextView>(R.id.shoot_7)
 
-        var changeDisplays = Array(5, {arrayOfNulls<TextView>(7)})
+        var changeDisplays = Array(5, { arrayOfNulls<TextView>(7) })
         changeDisplays[0] = sliderDisplay
         changeDisplays[1] = curbDisplay
         changeDisplays[2] = forkDisplay
@@ -121,7 +121,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
-        var colors = Array(5, {arrayOfNulls<Int>(7)})
+        var colors = Array(5, { arrayOfNulls<Int>(7) })
 
         var sliderColors: Array<Int?> = arrayOfNulls(7)
         sliderColors[0] = Color.parseColor("#ffe0e0")
@@ -180,7 +180,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
             if (playerPitcher.changeballs[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
 
-            for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)){
+            for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)) {
 
                 changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
                 changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex]!!)
@@ -190,9 +190,9 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
     }
 
-    fun setTextColor(alphabet:TextView){
+    fun setTextColor(alphabet: TextView) {
 
-        when(alphabet.text){
+        when (alphabet.text) {
             "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
             "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
             "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
@@ -205,13 +205,12 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     }
 
     // Topへ戻る
-    fun onClickFinish(view : View){
+    fun onClickFinish(view: View) {
 
-        val intent = Intent(this,TopActivity::class.java)
+        val intent = Intent(this, TopActivity::class.java)
         startActivity(intent)
         finish()
     }
-
 
 
 }

@@ -34,28 +34,28 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
 
     // 選手をつくるボタンクリックで画面遷移
     // 野手
-    fun onClickSelectFielder(view : View){
+    fun onClickSelectFielder(view: View) {
 
         val editText = player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
-        if(playerName.isNotEmpty()){
-            makeIntent(playerName,"fielder")
+        if (playerName.isNotEmpty()) {
+            makeIntent(playerName, "fielder")
         } else {
-            Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "登録名を入力してください", Toast.LENGTH_SHORT).show()
         }
     }
 
     // 投手
-    fun onClickSelectPitcher(view : View){
+    fun onClickSelectPitcher(view: View) {
 
         val editText = player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
-        if(playerName.isNotEmpty()){
-            makeIntent(playerName,"pitcher")
+        if (playerName.isNotEmpty()) {
+            makeIntent(playerName, "pitcher")
         } else {
-            Toast.makeText(applicationContext,"登録名を入力してください",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "登録名を入力してください", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -63,20 +63,20 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     /**
      * 入力情報をsetして次のページへ
      */
-    private fun makeIntent(name:String,type:String){
+    private fun makeIntent(name: String, type: String) {
 
-        val intent = Intent(this,PlayerMakingActivity::class.java)
+        val intent = Intent(this, PlayerMakingActivity::class.java)
 
         val radioGroup = sex_radio
         val id = radioGroup.checkedRadioButtonId
 
-        when(id){
-            R.id.radio_m -> intent.putExtra(SEXID,0)
-            R.id.radio_w -> intent.putExtra(SEXID,1)
+        when (id) {
+            R.id.radio_m -> intent.putExtra(SEXID, 0)
+            R.id.radio_w -> intent.putExtra(SEXID, 1)
         }
 
-        intent.putExtra(PLAYER_NAME,name)
-        intent.putExtra(PLAYER_TYPE,type)
+        intent.putExtra(PLAYER_NAME, name)
+        intent.putExtra(PLAYER_TYPE, type)
 
         startActivity(intent)
         finish()
@@ -85,18 +85,18 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     /**
      * キーボード表示操作
      */
-    private fun operateKeyBoard(){
-        player_name.setOnFocusChangeListener{ view, b ->
-                // フォーカスを取得→キーボード表示
-                if(b){
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.showSoftInput(view,0)
-                }
-                // フォーカス外れる→キーボード非表示
-                else {
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(view.getWindowToken(),0)
-                }
+    private fun operateKeyBoard() {
+        player_name.setOnFocusChangeListener { view, b ->
+            // フォーカスを取得→キーボード表示
+            if (b) {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.showSoftInput(view, 0)
+            }
+            // フォーカス外れる→キーボード非表示
+            else {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0)
+            }
         }
     }
 
