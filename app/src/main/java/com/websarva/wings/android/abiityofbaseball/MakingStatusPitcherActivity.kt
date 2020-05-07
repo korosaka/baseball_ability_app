@@ -11,6 +11,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
     companion object {
         const val PLAYER_NAME = "playerName"
+        const val PITCHER_TYPE = "pitcherType"
         const val BALL_SPEED = "ballSpeed_status"
         const val CONTROL = "control_status"
         const val STAMINA = "stamina_status"
@@ -19,8 +20,17 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         const val PRIORITY_CHANGE = "priorityOfChangeBall"
 
         const val CHANCE = "chance"
-    }
 
+        // prepare for refactoring
+        const val STARTER_DISPLAY = "先発"
+        const val MIDDLE_DISPLAY = "中継ぎ"
+        const val CLOSER_DISPLAY = "抑え"
+        private val STARTER = "starter"
+        private val MIDDLE = "middleRelief"
+        private val CLOSER = "closer"
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_making_status_pitcher)
@@ -30,6 +40,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         val playerPitcher = PlayerPitcherClass(
                 intent.getStringExtra(MakingStatusPitcherActivity.PLAYER_NAME),
+                intent.getStringExtra(MakingStatusPitcherActivity.PITCHER_TYPE),
                 intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED, 0),
                 intent.getIntExtra(MakingStatusPitcherActivity.CONTROL, 0),
                 intent.getIntExtra(MakingStatusPitcherActivity.STAMINA, 0),
@@ -114,6 +125,11 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         nameDisplay.setText(playerPitcher.playerName)
+        type_display.setText(when (playerPitcher.getPitcherType()) {
+            STARTER -> STARTER_DISPLAY
+            MIDDLE -> MIDDLE_DISPLAY
+            else -> CLOSER_DISPLAY
+        })
         ballSpeedDisplay.setText(playerPitcher.max_speed)
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)

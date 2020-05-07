@@ -4,6 +4,28 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                   a1_p: String, a2_p: String, a3_p: String, a4_p: String, a5_p: String,
                   a1_o: String, a2_o: String, a3_o: String, a4_o: String, a5_o: String) {
 
+
+    // prepare for refactoring
+    private val CONTACT = "contact"
+    private val POWER = "power"
+    private val SPEED = "speed"
+    private val ARM_STRENGH = "armStrength"
+    private val FIELDING = "fielding"
+
+    private val STARTER = "starter"
+    private val MIDDLE = "middleRelief"
+    private val CLOSER = "closer"
+    private val BALL_SPEED = "ballSpeed"
+    private val CONTROL = "control"
+    private val STAMINA = "stamina"
+    private val KINDS_OF_CHANGE_BALL = "kindsOfChangeBall"
+    private val AMOUNT_OF_CHANGE = "amountOfChange"
+    private val SLIDER = "slider"
+    private val CURB = "curb"
+    private val FOLK = "folk"
+    private val SINKER = "sinker"
+    private val SHOOT = "shoot"
+
     val a1_a = a1_a
     val a2_a = a2_a
     val a3_a = a3_a
@@ -39,6 +61,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     var kindsOfChangeBall = 0
     var amountOfCange = 0
     var priorityOfChange = arrayListOf(0, 0, 0, 0, 0)
+
+    var pitcherTypes = intArrayOf(0, 0, 0)
+    private var pitcherType = ""
+    fun getPitcherType(): String {
+        return pitcherType
+    }
 
 
     init {
@@ -389,6 +417,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility("ac_p", 3)
                 plusAbility("slider", 1)
                 plusAbility("curb", 2)
+                plusAbility(MIDDLE, 2)
             }
             "派手め" -> {
                 plusAbility("p", 5)
@@ -401,6 +430,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility("ac_p", 5)
                 plusAbility("slider", 3)
                 plusAbility("shoot", 5)
+                plusAbility(CLOSER, 2)
             }
             "独創的" -> {
                 plusAbility("p", 3)
@@ -1010,7 +1040,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 amountOfCange = (amountOfCange * 0.8).toInt()
             }
         }
-
+        setPitcherType()
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1932,6 +1962,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        setPitcherType()
+
     }
 
     fun plusAbility(initial: String, point: Int) {
@@ -1947,17 +1979,34 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             "s_p" -> stamina += point
             "kc_p" -> kindsOfChangeBall += point
             "ac_p" -> amountOfCange += point
+
             "slider" -> priorityOfChange[0] += point
             "curb" -> priorityOfChange[1] += point
             "folk" -> priorityOfChange[2] += point
             "sinker" -> priorityOfChange[3] += point
             "shoot" -> priorityOfChange[4] += point
+
+            STARTER -> pitcherTypes[0] += point
+            MIDDLE -> pitcherTypes[1] += point
+            CLOSER -> pitcherTypes[2] += point
         }
     }
 
     fun plusSpecial(initial: String, point: Double) {
         when (initial) {
             "chance" -> chance += point
+        }
+    }
+
+    // decide pitcher type
+    private fun setPitcherType() {
+        val typeIndexNum = pitcherTypes.indices.maxBy {
+            pitcherTypes[it]
+        } ?: 0
+        pitcherType = when (typeIndexNum) {
+            0 -> STARTER
+            1 -> MIDDLE
+            else -> CLOSER
         }
     }
 

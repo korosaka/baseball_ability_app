@@ -175,6 +175,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
             } else {
                 val intent = Intent(this, MakingStatusPitcherActivity::class.java)
                 intent.putExtra(PLAYER_NAME, playerName)
+                intent.putExtra(MakingStatusPitcherActivity.PITCHER_TYPE, calcAbility.getPitcherType())
                 intent.putExtra(BALL_SPEED, calcAbility.ballSpeed)
                 intent.putExtra(CONTROL, calcAbility.control)
                 intent.putExtra(STAMINA, calcAbility.stamina)

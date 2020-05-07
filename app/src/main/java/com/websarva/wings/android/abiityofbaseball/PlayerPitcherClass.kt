@@ -1,6 +1,15 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: Int, kindsOfChange: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>, chance: Double) {
+class PlayerPitcherClass(
+        name: String,
+        pitcherType: String,
+        ballSpeed: Int,
+        control: Int,
+        stamina: Int,
+        kindsOfChange: Int,
+        amountOfChange: Int,
+        priorityOfChange: ArrayList<Int>,
+        chance: Double) {
 
     val playerName = name
     val ball_speed_ability = ballSpeed
@@ -8,6 +17,10 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     val stamina_ability = stamina
     val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
     val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
+    private val pitcherType = pitcherType
+    fun getPitcherType(): String {
+        return this.pitcherType
+    }
 
     val chance = chance
 
