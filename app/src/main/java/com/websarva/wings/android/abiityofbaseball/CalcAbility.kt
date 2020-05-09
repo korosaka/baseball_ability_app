@@ -26,6 +26,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     private val SINKER = "sinker"
     private val SHOOT = "shoot"
 
+    val STARTER_INDEX = 0
+    val MIDLLE_INDEX = 1
+    val CLOSER_INDEX = 2
+    val NEEDED_STARTER_STAMINA = 65
+
+
     val a1_a = a1_a
     val a2_a = a2_a
     val a3_a = a3_a
@@ -1986,9 +1992,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             "sinker" -> priorityOfChange[3] += point
             "shoot" -> priorityOfChange[4] += point
 
-            STARTER -> pitcherTypes[0] += point
-            MIDDLE -> pitcherTypes[1] += point
-            CLOSER -> pitcherTypes[2] += point
+            STARTER -> pitcherTypes[STARTER_INDEX] += point
+            MIDDLE -> pitcherTypes[MIDLLE_INDEX] += point
+            CLOSER -> pitcherTypes[CLOSER_INDEX] += point
         }
     }
 
@@ -2000,14 +2006,27 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
     // decide pitcher type
     private fun setPitcherType() {
-        val typeIndexNum = pitcherTypes.indices.maxBy {
+
+        val typeIndex = pitcherTypes.indices.maxBy {
             pitcherTypes[it]
-        } ?: 0
-        pitcherType = when (typeIndexNum) {
-            0 -> STARTER
-            1 -> MIDDLE
-            else -> CLOSER
+        } ?: STARTER_INDEX
+        when (typeIndex) {
+            STARTER_INDEX -> {
+                pitcherType = STARTER
+                if (stamina < NEEDED_STARTER_STAMINA) setSecondType()
+            }
+            MIDLLE_INDEX -> {
+                pitcherType = MIDDLE
+            }
+            CLOSER_INDEX -> {
+                pitcherType = CLOSER
+            }
         }
+    }
+
+    private fun setSecondType() {
+        pitcherType = MIDDLE
+        if (pitcherTypes[CLOSER_INDEX] > pitcherTypes[MIDLLE_INDEX]) pitcherType = CLOSER
     }
 
 
