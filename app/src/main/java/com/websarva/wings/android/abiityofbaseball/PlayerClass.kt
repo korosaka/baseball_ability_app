@@ -23,13 +23,13 @@ class PlayerClass(name: String, contact: Int, power: Int, speed: Int, arm: Int, 
 
         when (ability) {
 
-            in -100..10 -> return "G"
-            in 11..20 -> return "F"
-            in 21..30 -> return "E"
-            in 31..40 -> return "D"
-            in 41..50 -> return "C"
-            in 51..60 -> return "B"
-            else -> return "A"
+            in -100..10 -> return Constants.LANK_G
+            in 11..20 -> return Constants.LANK_F
+            in 21..30 -> return Constants.LANK_E
+            in 31..40 -> return Constants.LANK_D
+            in 41..50 -> return Constants.LANK_C
+            in 51..60 -> return Constants.LANK_B
+            else -> return Constants.LANK_A
         }
     }
 

@@ -9,17 +9,6 @@ import kotlinx.android.synthetic.main.activity_making_status.*
 
 class MakingStatusActivity : BaseBannerActivity() {
 
-    companion object {
-        const val PLAYER_NAME = "playerName"
-        const val CONTACT = "contact_status"
-        const val POWER = "power_status"
-        const val SPEED = "speed_status"
-        const val ARM = "arm_status"
-        const val FIELDING = "fielding_status"
-
-        const val CHANCE = "chance"
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_making_status)
@@ -27,13 +16,13 @@ class MakingStatusActivity : BaseBannerActivity() {
         super.onCreate(savedInstanceState)
 
         val player = PlayerClass(
-                intent.getStringExtra(PLAYER_NAME),
-                intent.getIntExtra(CONTACT, 0),
-                intent.getIntExtra(POWER, 0),
-                intent.getIntExtra(SPEED, 0),
-                intent.getIntExtra(ARM, 0),
-                intent.getIntExtra(FIELDING, 0),
-                intent.getDoubleExtra(CHANCE, 1.0)
+                intent.getStringExtra(Constants.PLAYER_NAME),
+                intent.getIntExtra(Constants.CONTACT, 0),
+                intent.getIntExtra(Constants.POWER, 0),
+                intent.getIntExtra(Constants.SPEED, 0),
+                intent.getIntExtra(Constants.ARM_STRENGH, 0),
+                intent.getIntExtra(Constants.FIELDING, 0),
+                intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
 
 
@@ -150,14 +139,13 @@ class MakingStatusActivity : BaseBannerActivity() {
     fun setTextColor(alphabet: TextView) {
 
         when (alphabet.text) {
-            "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
-            "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
-            "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
-            "D" -> alphabet.setTextColor(Color.parseColor("#ffff00"))
-            "E" -> alphabet.setTextColor(Color.parseColor("#7cfc00"))
-            "F" -> alphabet.setTextColor(Color.parseColor("#00ffff"))
-            "G" -> alphabet.setTextColor(Color.parseColor("#696969"))
-
+            Constants.LANK_A -> alphabet.setTextColor(Color.parseColor(Constants.LANK_A_COLOR))
+            Constants.LANK_B -> alphabet.setTextColor(Color.parseColor(Constants.LANK_B_COLOR))
+            Constants.LANK_C -> alphabet.setTextColor(Color.parseColor(Constants.LANK_C_COLOR))
+            Constants.LANK_D -> alphabet.setTextColor(Color.parseColor(Constants.LANK_D_COLOR))
+            Constants.LANK_E -> alphabet.setTextColor(Color.parseColor(Constants.LANK_E_COLOR))
+            Constants.LANK_F -> alphabet.setTextColor(Color.parseColor(Constants.LANK_F_COLOR))
+            Constants.LANK_G -> alphabet.setTextColor(Color.parseColor(Constants.LANK_G_COLOR))
         }
     }
 

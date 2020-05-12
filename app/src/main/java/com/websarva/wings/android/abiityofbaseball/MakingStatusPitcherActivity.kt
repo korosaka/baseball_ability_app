@@ -5,22 +5,14 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import com.websarva.wings.android.abiityofbaseball.Constants.Companion.CLOSER_DISPLAY
+import com.websarva.wings.android.abiityofbaseball.Constants.Companion.MIDDLE
+import com.websarva.wings.android.abiityofbaseball.Constants.Companion.MIDDLE_DISPLAY
+import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER
+import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER_DISPLAY
 import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
 
 class MakingStatusPitcherActivity : BaseBannerActivity() {
-
-    companion object {
-        const val PLAYER_NAME = "playerName"
-        const val BALL_SPEED = "ballSpeed_status"
-        const val CONTROL = "control_status"
-        const val STAMINA = "stamina_status"
-        const val KIND_CHANGE = "kindsOfChangeBall_status"
-        const val AMOUNT_CHANGE = "amountOfChangeBall_status"
-        const val PRIORITY_CHANGE = "priorityOfChangeBall"
-
-        const val CHANCE = "chance"
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_making_status_pitcher)
@@ -29,14 +21,15 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         val playerPitcher = PlayerPitcherClass(
-                intent.getStringExtra(MakingStatusPitcherActivity.PLAYER_NAME),
-                intent.getIntExtra(MakingStatusPitcherActivity.BALL_SPEED, 0),
-                intent.getIntExtra(MakingStatusPitcherActivity.CONTROL, 0),
-                intent.getIntExtra(MakingStatusPitcherActivity.STAMINA, 0),
-                intent.getIntExtra(MakingStatusPitcherActivity.KIND_CHANGE, 0),
-                intent.getIntExtra(MakingStatusPitcherActivity.AMOUNT_CHANGE, 0),
-                intent.getIntegerArrayListExtra(MakingStatusPitcherActivity.PRIORITY_CHANGE),
-                intent.getDoubleExtra(MakingStatusPitcherActivity.CHANCE, 1.0)
+                intent.getStringExtra(Constants.PLAYER_NAME),
+                intent.getStringExtra(Constants.PITCHER_TYPE),
+                intent.getIntExtra(Constants.BALL_SPEED, 0),
+                intent.getIntExtra(Constants.CONTROL, 0),
+                intent.getIntExtra(Constants.STAMINA, 0),
+                intent.getIntExtra(Constants.KIND_CHANGE, 0),
+                intent.getIntExtra(Constants.AMOUNT_CHANGE, 0),
+                intent.getIntegerArrayListExtra(Constants.PRIORITY_CHANGE),
+                intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
 
         val nameDisplay = findViewById<TextView>(R.id.name_display_p)
@@ -114,6 +107,11 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         nameDisplay.setText(playerPitcher.playerName)
+        type_display.setText(when (playerPitcher.getPitcherType()) {
+            STARTER -> STARTER_DISPLAY
+            MIDDLE -> MIDDLE_DISPLAY
+            else -> CLOSER_DISPLAY
+        })
         ballSpeedDisplay.setText(playerPitcher.max_speed)
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)
@@ -193,13 +191,13 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     fun setTextColor(alphabet: TextView) {
 
         when (alphabet.text) {
-            "A" -> alphabet.setTextColor(Color.parseColor("#ff1493"))
-            "B" -> alphabet.setTextColor(Color.parseColor("#ff0000"))
-            "C" -> alphabet.setTextColor(Color.parseColor("#ffa500"))
-            "D" -> alphabet.setTextColor(Color.parseColor("#ffff00"))
-            "E" -> alphabet.setTextColor(Color.parseColor("#7cfc00"))
-            "F" -> alphabet.setTextColor(Color.parseColor("#00ffff"))
-            "G" -> alphabet.setTextColor(Color.parseColor("#696969"))
+            Constants.LANK_A -> alphabet.setTextColor(Color.parseColor(Constants.LANK_A_COLOR))
+            Constants.LANK_B -> alphabet.setTextColor(Color.parseColor(Constants.LANK_B_COLOR))
+            Constants.LANK_C -> alphabet.setTextColor(Color.parseColor(Constants.LANK_C_COLOR))
+            Constants.LANK_D -> alphabet.setTextColor(Color.parseColor(Constants.LANK_D_COLOR))
+            Constants.LANK_E -> alphabet.setTextColor(Color.parseColor(Constants.LANK_E_COLOR))
+            Constants.LANK_F -> alphabet.setTextColor(Color.parseColor(Constants.LANK_F_COLOR))
+            Constants.LANK_G -> alphabet.setTextColor(Color.parseColor(Constants.LANK_G_COLOR))
 
         }
     }

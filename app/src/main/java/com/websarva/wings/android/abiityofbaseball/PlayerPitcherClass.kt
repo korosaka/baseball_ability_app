@@ -1,6 +1,15 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: Int, kindsOfChange: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>, chance: Double) {
+class PlayerPitcherClass(
+        name: String,
+        pitcherType: String,
+        ballSpeed: Int,
+        control: Int,
+        stamina: Int,
+        kindsOfChange: Int,
+        amountOfChange: Int,
+        priorityOfChange: ArrayList<Int>,
+        chance: Double) {
 
     val playerName = name
     val ball_speed_ability = ballSpeed
@@ -8,6 +17,10 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
     val stamina_ability = stamina
     val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
     val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
+    private val pitcherType = pitcherType
+    fun getPitcherType(): String {
+        return this.pitcherType
+    }
 
     val chance = chance
 
@@ -22,13 +35,13 @@ class PlayerPitcherClass(name: String, ballSpeed: Int, control: Int, stamina: In
 
         when (ability) {
 
-            in -100..19 -> return "G"
-            in 20..39 -> return "F"
-            in 40..64 -> return "E"
-            in 65..79 -> return "D"
-            in 80..94 -> return "C"
-            in 95..109 -> return "B"
-            else -> return "A"
+            in -100..19 -> return Constants.LANK_G
+            in 20..39 -> return Constants.LANK_F
+            in 40..64 -> return Constants.LANK_E
+            in 65..79 -> return Constants.LANK_D
+            in 80..94 -> return Constants.LANK_C
+            in 95..109 -> return Constants.LANK_B
+            else -> return Constants.LANK_A
         }
     }
 
