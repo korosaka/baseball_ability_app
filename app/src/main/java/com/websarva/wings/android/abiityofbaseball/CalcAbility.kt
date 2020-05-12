@@ -376,7 +376,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SHOOT, 5)
-                plusAbility(Constants.CLOSER,-2)
+                plusAbility(Constants.CLOSER, -2)
             }
         }
 
