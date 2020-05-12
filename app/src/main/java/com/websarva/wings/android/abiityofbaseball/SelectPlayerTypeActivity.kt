@@ -10,13 +10,6 @@ import kotlinx.android.synthetic.main.activity_select_player_type.*
 
 class SelectPlayerTypeActivity : BaseBannerActivity() {
 
-    companion object {
-        const val PLAYER_NAME = "playerName"
-        const val PLAYER_TYPE = "playerType"
-        const val SEXID = "sex_id"
-    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_select_player_type)
         setAdViewContainer(ad_view_container_on_select_player_type)
@@ -40,9 +33,9 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
-            makeIntent(playerName, "fielder")
+            makeIntent(playerName, Constants.TYPE_FIELDER)
         } else {
-            Toast.makeText(applicationContext, "登録名を入力してください", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -53,9 +46,9 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
-            makeIntent(playerName, "pitcher")
+            makeIntent(playerName, Constants.TYPE_PITCHER)
         } else {
-            Toast.makeText(applicationContext, "登録名を入力してください", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -70,13 +63,14 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         val radioGroup = sex_radio
         val id = radioGroup.checkedRadioButtonId
 
+        // TODO Refactor
         when (id) {
-            R.id.radio_m -> intent.putExtra(SEXID, 0)
-            R.id.radio_w -> intent.putExtra(SEXID, 1)
+            R.id.radio_m -> intent.putExtra(Constants.SEX_ID, 0)
+            R.id.radio_w -> intent.putExtra(Constants.SEX_ID, 1)
         }
 
-        intent.putExtra(PLAYER_NAME, name)
-        intent.putExtra(PLAYER_TYPE, type)
+        intent.putExtra(Constants.PLAYER_NAME, name)
+        intent.putExtra(Constants.PLAYER_TYPE, type)
 
         startActivity(intent)
         finish()

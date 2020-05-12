@@ -35,13 +35,13 @@ class PlayerPitcherClass(
 
         when (ability) {
 
-            in -100..19 -> return "G"
-            in 20..39 -> return "F"
-            in 40..64 -> return "E"
-            in 65..79 -> return "D"
-            in 80..94 -> return "C"
-            in 95..109 -> return "B"
-            else -> return "A"
+            in -100..19 -> return Constants.LANK_G
+            in 20..39 -> return Constants.LANK_F
+            in 40..64 -> return Constants.LANK_E
+            in 65..79 -> return Constants.LANK_D
+            in 80..94 -> return Constants.LANK_C
+            in 95..109 -> return Constants.LANK_B
+            else -> return Constants.LANK_A
         }
     }
 
