@@ -12,11 +12,13 @@ class PlayerPitcherClass(
         chance: Double) {
 
     val playerName = name
+    // TODO change name !
     val ball_speed_ability = ballSpeed
     val control_ability = control
     val stamina_ability = stamina
     val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
     val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
+    // TODO refactor (getter)
     private val pitcherType = pitcherType
     fun getPitcherType(): String {
         return this.pitcherType
@@ -27,8 +29,30 @@ class PlayerPitcherClass(
 
     val control_lank = lankMaking(control_ability)
     val stamina_lank = lankMaking(stamina_ability)
-    val max_speed = Integer.toString(calculateMaxSpeed(ball_speed_ability))
+    val max_speed = calculateMaxSpeed(ball_speed_ability)
+
     val changeballs = calculateChangeBalls(kind_change_ability, amount_change_ability, priorityOfChange)
+
+    // records of season
+    val battingAveAgainst = calculateBattingAveAgainst()
+
+    fun calculateBattingAveAgainst() : Float {
+
+        var battingAveAgainstElements = arrayOf(0.15, 0.15, 0.15)
+
+        // calculate from ball speed
+        var ballSpeedPoint = max_speed - 120
+        if (pitcherType == Constants.STARTER) ballSpeedPoint -= 10
+        battingAveAgainstElements[0] -= ballSpeedPoint * 0.003
+
+        // calculate from change ball
+        battingAveAgainstElements[1] -= (amount_change_ability * (1.0 + kind_change_ability * 0.1)) * 0.005
+
+        // calculate from control
+        battingAveAgainstElements[2] -= control_ability * 0.000625
+
+        return battingAveAgainstElements.sum().toFloat()
+    }
 
 
     fun lankMaking(ability: Int): String {
@@ -61,6 +85,7 @@ class PlayerPitcherClass(
         } else {
             plusSpeed = 15 + ability / 5
         }
+        // TODO refactor
         val maxSpeed = 120 + plusSpeed
         return maxSpeed
     }

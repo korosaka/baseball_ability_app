@@ -112,7 +112,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             MIDDLE -> MIDDLE_DISPLAY
             else -> CLOSER_DISPLAY
         })
-        ballSpeedDisplay.setText(playerPitcher.max_speed)
+        ballSpeedDisplay.setText(playerPitcher.max_speed.toString())
         controlDisplay.setText(playerPitcher.control_lank)
         staminaDisplay.setText(playerPitcher.stamina_lank)
 
