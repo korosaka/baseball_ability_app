@@ -34,6 +34,7 @@ class PlayerPitcherClass(
     val changeballs = calculateChangeBalls(kind_change_ability, amount_change_ability, priorityOfChange)
 
     // records of season
+    // TODO object ??
     private val minSpeed = 120
     private val starterLossSpeed = 10
     private val addedSpeedToMin = when(pitcherType){
@@ -43,10 +44,11 @@ class PlayerPitcherClass(
     val battingAveAgainst = calculateBattingAveAgainst()
     val rateOfBB = calculateBBRate()
     val rateOfK = calculateKRate()
+    val earnedRunAverage = calculateKRateERA()
 
     private fun calculateBattingAveAgainst() : Float {
 
-        val maxAveAgainst = 0.45
+        val maxAveAgainst = 0.43
         val oneThirdOfMax = maxAveAgainst / 3.0
 
         var battingAveAgainstElements = arrayOf(oneThirdOfMax, oneThirdOfMax, oneThirdOfMax)
@@ -115,6 +117,16 @@ class PlayerPitcherClass(
 
 
         return (minKRate + elementsOfKRate.sum()).toFloat()
+    }
+
+    private fun calculateKRateERA() : Float {
+
+        val runPerHit = 0.42
+        val runPerBB = battingAveAgainst
+
+        val hitsPer9 = 27 * battingAveAgainst / (1 - battingAveAgainst)
+
+        return ((hitsPer9 * runPerHit) + (rateOfBB * runPerBB) - (rateOfK * 0.1)).toFloat()
     }
 
 
