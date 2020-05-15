@@ -34,18 +34,25 @@ class PlayerPitcherClass(
     val changeballs = calculateChangeBalls(kind_change_ability, amount_change_ability, priorityOfChange)
 
     // records of season
+    private val minSpeed = 120
+    private val starterLossSpeed = 10
+    private val addedSpeedToMin = when(pitcherType){
+        Constants.STARTER -> max_speed - starterLossSpeed - minSpeed
+        else -> max_speed - minSpeed
+    }
     val battingAveAgainst = calculateBattingAveAgainst()
     val rateOfBB = calculateBBRate()
-    val MINIMUM_BB_RATE = 0.5
+    val rateOfK = calculateKRate()
 
     private fun calculateBattingAveAgainst() : Float {
 
-        var battingAveAgainstElements = arrayOf(0.15, 0.15, 0.15)
+        val maxAveAgainst = 0.45
+        val oneThirdOfMax = maxAveAgainst / 3.0
+
+        var battingAveAgainstElements = arrayOf(oneThirdOfMax, oneThirdOfMax, oneThirdOfMax)
 
         // calculate from ball speed
-        var ballSpeedPoint = max_speed - 120
-        if (pitcherType == Constants.STARTER) ballSpeedPoint -= 10
-        battingAveAgainstElements[0] -= ballSpeedPoint * 0.003
+        battingAveAgainstElements[0] -= addedSpeedToMin * 0.003
 
         // calculate from change ball
         battingAveAgainstElements[1] -= (amount_change_ability * (1.0 + kind_change_ability * 0.1)) * 0.005
@@ -57,9 +64,57 @@ class PlayerPitcherClass(
     }
 
     private fun calculateBBRate() : Float {
-        val rateOfBB9 = (6.5 - control_ability * 0.0375).toFloat()
-        if (rateOfBB9 < MINIMUM_BB_RATE) return MINIMUM_BB_RATE.toFloat()
+
+        val minBBRate = 0.5
+        val maxBBRate = 6.5
+
+        val rateOfBB9 = (maxBBRate - control_ability * 0.0375).toFloat()
+        if (rateOfBB9 < minBBRate) return minBBRate.toFloat()
         return rateOfBB9
+    }
+
+    private fun calculateKRate() : Float {
+        val minKRate = 1.0
+        val maxKRate = 15.0
+
+        val variableKRate = maxKRate - minKRate
+
+        // total 1.0
+        val weightOfSpeed = 0.6
+        val weightOfChangeAmount = 0.2
+        val weightOfFolk = 0.15
+        val weightOfSlider = 0.05
+
+        var elementsOfKRate = arrayOf(0.0, 0.0, 0.0, 0.0)
+        val indexOfSpeed = 0
+        val indexOfChange = 1
+        val indexOfFolk = 2
+        val indexOfSlider = 3
+
+        // calculate from speed
+        val assumedMaxSpeed = 165
+        val assignmentOfSpeed = variableKRate * weightOfSpeed
+        elementsOfKRate[indexOfSpeed] = addedSpeedToMin * (assignmentOfSpeed / (assumedMaxSpeed - minSpeed))
+
+        // calculate from change ball
+        val assumedMaxChangeAmount = 16
+        val assignmentOfChange = variableKRate * weightOfChangeAmount
+        elementsOfKRate[indexOfChange] = amount_change_ability * (assignmentOfChange / assumedMaxChangeAmount)
+
+        // calculate from folk
+        val maxFolkAmount = 7
+        val assignmentOfFolk = variableKRate * weightOfFolk
+        val folkAmount = changeballs[2]
+        elementsOfKRate[indexOfFolk] = folkAmount * (assignmentOfFolk / maxFolkAmount)
+
+        // calculate from slider
+        val maxSliderAmount = 7
+        val assignmentOfSlider = variableKRate * weightOfSlider
+        val sliderAmount = changeballs[0]
+        elementsOfKRate[indexOfSlider] = sliderAmount * (assignmentOfSlider / maxSliderAmount)
+
+
+        return (minKRate + elementsOfKRate.sum()).toFloat()
     }
 
 
