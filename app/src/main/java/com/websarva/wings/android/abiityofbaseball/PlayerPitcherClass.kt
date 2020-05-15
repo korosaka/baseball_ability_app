@@ -35,8 +35,10 @@ class PlayerPitcherClass(
 
     // records of season
     val battingAveAgainst = calculateBattingAveAgainst()
+    val rateOfBB = calculateBBRate()
+    val MINIMUM_BB_RATE = 0.5
 
-    fun calculateBattingAveAgainst() : Float {
+    private fun calculateBattingAveAgainst() : Float {
 
         var battingAveAgainstElements = arrayOf(0.15, 0.15, 0.15)
 
@@ -52,6 +54,12 @@ class PlayerPitcherClass(
         battingAveAgainstElements[2] -= control_ability * 0.000625
 
         return battingAveAgainstElements.sum().toFloat()
+    }
+
+    private fun calculateBBRate() : Float {
+        val rateOfBB9 = (6.5 - control_ability * 0.0375).toFloat()
+        if (rateOfBB9 < MINIMUM_BB_RATE) return MINIMUM_BB_RATE.toFloat()
+        return rateOfBB9
     }
 
 
