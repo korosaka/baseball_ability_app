@@ -45,6 +45,7 @@ class PlayerPitcherClass(
     val rateOfBB = calculateBBRate()
     val rateOfK = calculateKRate()
     val earnedRunAverage = calculateKRateERA()
+    val totalInnings = calculateInnings()
 
     private fun calculateBattingAveAgainst() : Float {
 
@@ -127,6 +128,39 @@ class PlayerPitcherClass(
         val hitsPer9 = 27 * battingAveAgainst / (1 - battingAveAgainst)
 
         return ((hitsPer9 * runPerHit) + (rateOfBB * runPerBB) - (rateOfK * 0.1)).toFloat()
+    }
+
+    private fun calculateInnings(): Int {
+
+        var totalInnings = 0
+
+        when (pitcherType) {
+            Constants.STARTER -> {
+                val maxGames = 28
+                val minGames = 4
+                val maxRequiredERA = 3.0
+                var actualGames = (maxGames - (earnedRunAverage - maxRequiredERA) * 4).toInt()
+                if (actualGames > maxGames) actualGames = maxGames
+                if (actualGames < minGames) actualGames = minGames
+
+                val maxInningsPerGame = 8.5
+                val minInningsPerGame = 3.0
+                var inningsPerGame = stamina_ability * 0.1 - (earnedRunAverage / 2 + rateOfBB / 3)
+                if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
+                if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
+
+                totalInnings = (actualGames * inningsPerGame).toInt()
+            }
+
+            Constants.MIDDLE -> {
+                totalInnings = 0
+            }
+
+            Constants.CLOSER -> {
+                totalInnings = 0
+            }
+        }
+        return totalInnings
     }
 
 
