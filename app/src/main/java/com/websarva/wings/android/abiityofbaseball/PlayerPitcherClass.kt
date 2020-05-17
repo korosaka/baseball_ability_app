@@ -45,7 +45,11 @@ class PlayerPitcherClass(
     val rateOfBB = calculateBBRate()
     val rateOfK = calculateKRate()
     val earnedRunAverage = calculateERA()
-    val totalInnings = calculateInnings()
+    val games = calculateGames()
+    val inningsPerGame = calculateInningsPerGame()
+    val totalInnings = (games * inningsPerGame).toInt()
+    val win = calculateWin()
+    val lose = calculateLose()
 
     private fun calculateBattingAveAgainst() : Float {
 
@@ -130,8 +134,7 @@ class PlayerPitcherClass(
         return ((hitsPer9 * runPerHit) + (rateOfBB * runPerBB) - (rateOfK * 0.1)).toFloat()
     }
 
-    private fun calculateInnings(): Int {
-
+    private fun calculateGames(): Int {
         val maxGames = when(pitcherType) {
             Constants.STARTER -> 28
             Constants.MIDDLE -> 90
@@ -162,6 +165,25 @@ class PlayerPitcherClass(
         if (actualGames > maxGames) actualGames = maxGames
         if (actualGames < minGames) actualGames = minGames
 
+        return actualGames
+    }
+
+    private fun calculateInningsPerGame(): Float {
+
+        val maxRequiredERA = when(pitcherType) {
+            Constants.STARTER -> 3.0
+            Constants.MIDDLE -> 1.8
+            else -> 2.0
+        }
+        val minRequiredStamina = when(pitcherType) {
+            Constants.MIDDLE -> 50
+            Constants.CLOSER -> 40
+            else -> 0
+        }
+        var lossOfStamina = minRequiredStamina - stamina_ability
+        if (lossOfStamina < 0) lossOfStamina = 0
+
+
         val maxInningsPerGame = when(pitcherType) {
             Constants.STARTER -> 8.5
             Constants.MIDDLE -> 1.2
@@ -180,7 +202,24 @@ class PlayerPitcherClass(
         if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
         if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
 
-        return (actualGames * inningsPerGame).toInt()
+        return inningsPerGame.toFloat()
+    }
+
+    private fun calculateWin(): Int {
+        var win = (games * inningsPerGame / 9.0 * (1 - earnedRunAverage / 10) * chance).toInt()
+        if (win > games) win = games
+        if (win < 0) win = 0
+
+        return win
+    }
+
+    private fun calculateLose(): Int {
+        val nonWinGame = games - win
+        var lose = (nonWinGame * inningsPerGame / 9.0 * earnedRunAverage / 5).toInt()
+        if (lose > nonWinGame) lose = nonWinGame
+        if (lose < 0) lose = 0
+
+        return lose
     }
 
 
