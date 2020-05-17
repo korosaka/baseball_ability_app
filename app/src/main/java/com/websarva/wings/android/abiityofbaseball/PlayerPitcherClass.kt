@@ -20,6 +20,7 @@ class PlayerPitcherClass(
     val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
     // TODO refactor (getter)
     private val pitcherType = pitcherType
+
     fun getPitcherType(): String {
         return this.pitcherType
     }
@@ -37,7 +38,7 @@ class PlayerPitcherClass(
     // TODO object ??
     private val minSpeed = 120
     private val starterLossSpeed = 10
-    private val addedSpeedToMin = when(pitcherType){
+    private val addedSpeedToMin = when (pitcherType) {
         Constants.STARTER -> max_speed - starterLossSpeed - minSpeed
         else -> max_speed - minSpeed
     }
@@ -48,10 +49,11 @@ class PlayerPitcherClass(
     val games = calculateGames()
     val inningsPerGame = calculateInningsPerGame()
     val totalInnings = (games * inningsPerGame).toInt()
+    val save = calculationSave()
     val win = calculateWin()
     val lose = calculateLose()
 
-    private fun calculateBattingAveAgainst() : Float {
+    private fun calculateBattingAveAgainst(): Float {
 
         val maxAveAgainst = 0.43
         val oneThirdOfMax = maxAveAgainst / 3.0
@@ -70,7 +72,7 @@ class PlayerPitcherClass(
         return battingAveAgainstElements.sum().toFloat()
     }
 
-    private fun calculateBBRate() : Float {
+    private fun calculateBBRate(): Float {
 
         val minBBRate = 0.5
         val maxBBRate = 6.5
@@ -80,7 +82,7 @@ class PlayerPitcherClass(
         return rateOfBB9
     }
 
-    private fun calculateKRate() : Float {
+    private fun calculateKRate(): Float {
         val minKRate = 1.0
         val maxKRate = 15.0
 
@@ -124,7 +126,7 @@ class PlayerPitcherClass(
         return (minKRate + elementsOfKRate.sum()).toFloat()
     }
 
-    private fun calculateERA() : Float {
+    private fun calculateERA(): Float {
 
         val runPerHit = 0.42
         val runPerBB = battingAveAgainst
@@ -135,21 +137,21 @@ class PlayerPitcherClass(
     }
 
     private fun calculateGames(): Int {
-        val maxGames = when(pitcherType) {
+        val maxGames = when (pitcherType) {
             Constants.STARTER -> 28
             Constants.MIDDLE -> 90
             else -> 70
         }
-        val minGames = when(pitcherType) {
+        val minGames = when (pitcherType) {
             Constants.STARTER -> 4
             else -> 10
         }
-        val maxRequiredERA = when(pitcherType) {
+        val maxRequiredERA = when (pitcherType) {
             Constants.STARTER -> 3.0
             Constants.MIDDLE -> 1.8
             else -> 2.0
         }
-        val minRequiredStamina = when(pitcherType) {
+        val minRequiredStamina = when (pitcherType) {
             Constants.MIDDLE -> 50
             Constants.CLOSER -> 40
             else -> 0
@@ -157,7 +159,7 @@ class PlayerPitcherClass(
         var lossOfStamina = minRequiredStamina - stamina_ability
         if (lossOfStamina < 0) lossOfStamina = 0
 
-        var actualGames = when(pitcherType) {
+        var actualGames = when (pitcherType) {
             Constants.STARTER -> (maxGames - (earnedRunAverage - maxRequiredERA) * 4).toInt()
             Constants.MIDDLE -> ((maxGames - (earnedRunAverage - maxRequiredERA) * 20) * rateOfK * 0.1).toInt() - lossOfStamina
             else -> (maxGames - (earnedRunAverage - maxRequiredERA) * 12).toInt() - lossOfStamina
@@ -170,12 +172,12 @@ class PlayerPitcherClass(
 
     private fun calculateInningsPerGame(): Float {
 
-        val maxRequiredERA = when(pitcherType) {
+        val maxRequiredERA = when (pitcherType) {
             Constants.STARTER -> 3.0
             Constants.MIDDLE -> 1.8
             else -> 2.0
         }
-        val minRequiredStamina = when(pitcherType) {
+        val minRequiredStamina = when (pitcherType) {
             Constants.MIDDLE -> 50
             Constants.CLOSER -> 40
             else -> 0
@@ -184,17 +186,17 @@ class PlayerPitcherClass(
         if (lossOfStamina < 0) lossOfStamina = 0
 
 
-        val maxInningsPerGame = when(pitcherType) {
+        val maxInningsPerGame = when (pitcherType) {
             Constants.STARTER -> 8.5
             Constants.MIDDLE -> 1.2
             else -> 1.0
         }
-        val minInningsPerGame = when(pitcherType) {
+        val minInningsPerGame = when (pitcherType) {
             Constants.STARTER -> 3.0
             Constants.MIDDLE -> 0.4
             else -> 0.6
         }
-        var inningsPerGame = when(pitcherType) {
+        var inningsPerGame = when (pitcherType) {
             Constants.STARTER -> stamina_ability * 0.1 - (earnedRunAverage / 2 + rateOfBB / 3)
             Constants.MIDDLE -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 7 + rateOfBB / 14) - lossOfStamina / 10
             else -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 20) - lossOfStamina / 10
@@ -205,17 +207,33 @@ class PlayerPitcherClass(
         return inningsPerGame.toFloat()
     }
 
+    private fun calculationSave(): Int {
+        if (pitcherType != Constants.CLOSER) return 0
+
+        val saveSituation = games * 0.7
+        // rate of losing more than 2run in 1inning
+        val saveFailRate = earnedRunAverage / 9.0 / 2
+
+        return (saveSituation * (1 - saveFailRate)).toInt()
+    }
+
     private fun calculateWin(): Int {
-        var win = (games * inningsPerGame / 9.0 * (1 - earnedRunAverage / 10) * chance).toInt()
-        if (win > games) win = games
+        var pitchingGames = games
+        if (pitcherType == Constants.CLOSER) pitchingGames -= save
+
+        var win = (pitchingGames * inningsPerGame / 9.0 * (1 - earnedRunAverage / 10) * chance).toInt()
+        if (win > pitchingGames) win = pitchingGames
         if (win < 0) win = 0
 
         return win
     }
 
     private fun calculateLose(): Int {
-        val nonWinGame = games - win
+        var nonWinGame = games - win
+        if (pitcherType == Constants.CLOSER) nonWinGame -= save
+
         var lose = (nonWinGame * inningsPerGame / 9.0 * earnedRunAverage / 5).toInt()
+        if (pitcherType == Constants.CLOSER) lose = (nonWinGame * inningsPerGame / 9.0 * earnedRunAverage / 3).toInt()
         if (lose > nonWinGame) lose = nonWinGame
         if (lose < 0) lose = 0
 
