@@ -132,56 +132,55 @@ class PlayerPitcherClass(
 
     private fun calculateInnings(): Int {
 
-        var totalInnings = 0
-
-        when (pitcherType) {
-            Constants.STARTER -> {
-                val maxGames = 28
-                val minGames = 4
-                val maxRequiredERA = 3.0
-                var actualGames = (maxGames - (earnedRunAverage - maxRequiredERA) * 4).toInt()
-                if (actualGames > maxGames) actualGames = maxGames
-                if (actualGames < minGames) actualGames = minGames
-
-                val maxInningsPerGame = 8.5
-                val minInningsPerGame = 3.0
-                var inningsPerGame = stamina_ability * 0.1 - (earnedRunAverage / 2 + rateOfBB / 3)
-                if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
-                if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
-
-                totalInnings = (actualGames * inningsPerGame).toInt()
-            }
-
-            Constants.MIDDLE -> {
-                val maxGames = 90
-                val minGames = 10
-                val maxRequiredERA = 1.8
-                val minRequiredStamina = 50
-                var lossOfStamina = minRequiredStamina - stamina_ability
-                if (lossOfStamina < 0) lossOfStamina = 0
-
-                var actualGames = ((maxGames - (earnedRunAverage - maxRequiredERA) * 20) * rateOfK * 0.1).toInt()
-
-                actualGames -= lossOfStamina
-
-                if (actualGames > maxGames) actualGames = maxGames
-                if (actualGames < minGames) actualGames = minGames
-
-                val maxInningsPerGame = 1.2
-                val minInningsPerGame = 0.4
-                var inningsPerGame = maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 7 + rateOfBB / 14)
-                inningsPerGame -= lossOfStamina / 10
-                if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
-                if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
-
-                totalInnings = (actualGames * inningsPerGame).toInt()
-            }
-
-            Constants.CLOSER -> {
-                totalInnings = 0
-            }
+        val maxGames = when(pitcherType) {
+            Constants.STARTER -> 28
+            Constants.MIDDLE -> 90
+            else -> 70
         }
-        return totalInnings
+        val minGames = when(pitcherType) {
+            Constants.STARTER -> 4
+            else -> 10
+        }
+        val maxRequiredERA = when(pitcherType) {
+            Constants.STARTER -> 3.0
+            Constants.MIDDLE -> 1.8
+            else -> 2.0
+        }
+        val minRequiredStamina = when(pitcherType) {
+            Constants.MIDDLE -> 50
+            Constants.CLOSER -> 40
+            else -> 0
+        }
+        var lossOfStamina = minRequiredStamina - stamina_ability
+        if (lossOfStamina < 0) lossOfStamina = 0
+
+        var actualGames = when(pitcherType) {
+            Constants.STARTER -> (maxGames - (earnedRunAverage - maxRequiredERA) * 4).toInt()
+            Constants.MIDDLE -> ((maxGames - (earnedRunAverage - maxRequiredERA) * 20) * rateOfK * 0.1).toInt() - lossOfStamina
+            else -> (maxGames - (earnedRunAverage - maxRequiredERA) * 12).toInt() - lossOfStamina
+        }
+        if (actualGames > maxGames) actualGames = maxGames
+        if (actualGames < minGames) actualGames = minGames
+
+        val maxInningsPerGame = when(pitcherType) {
+            Constants.STARTER -> 8.5
+            Constants.MIDDLE -> 1.2
+            else -> 1.0
+        }
+        val minInningsPerGame = when(pitcherType) {
+            Constants.STARTER -> 3.0
+            Constants.MIDDLE -> 0.4
+            else -> 0.6
+        }
+        var inningsPerGame = when(pitcherType) {
+            Constants.STARTER -> stamina_ability * 0.1 - (earnedRunAverage / 2 + rateOfBB / 3)
+            Constants.MIDDLE -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 7 + rateOfBB / 14) - lossOfStamina / 10
+            else -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 20) - lossOfStamina / 10
+        }
+        if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
+        if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
+
+        return (actualGames * inningsPerGame).toInt()
     }
 
 
