@@ -45,10 +45,11 @@ class PlayerPitcherClass(
     val battingAveAgainst = calculateBattingAveAgainst()
     val rateOfBB = calculateBBRate()
     val rateOfK = calculateKRate()
-    val earnedRunAverage = calculateERA()
-    val games = calculateGames()
-    val inningsPerGame = calculateInningsPerGame()
+    private val theoreticalERA = calculateTheoreticalERA()
+    private val games = calculateGames()
+    private val inningsPerGame = calculateInningsPerGame()
     val totalInnings = (games * inningsPerGame).toInt()
+    val actualERA = calculateActualERA()
     val save = calculationSave()
     val win = calculateWin()
     val lose = calculateLose()
@@ -126,7 +127,7 @@ class PlayerPitcherClass(
         return (minKRate + elementsOfKRate.sum()).toFloat()
     }
 
-    private fun calculateERA(): Float {
+    private fun calculateTheoreticalERA(): Float {
 
         val runPerHit = 0.42
         val runPerBB = battingAveAgainst
@@ -160,9 +161,9 @@ class PlayerPitcherClass(
         if (lossOfStamina < 0) lossOfStamina = 0
 
         var actualGames = when (pitcherType) {
-            Constants.STARTER -> (maxGames - (earnedRunAverage - maxRequiredERA) * 4).toInt()
-            Constants.MIDDLE -> ((maxGames - (earnedRunAverage - maxRequiredERA) * 20) * rateOfK * 0.1).toInt() - lossOfStamina
-            else -> (maxGames - (earnedRunAverage - maxRequiredERA) * 12).toInt() - lossOfStamina
+            Constants.STARTER -> (maxGames - (theoreticalERA - maxRequiredERA) * 4).toInt()
+            Constants.MIDDLE -> ((maxGames - (theoreticalERA - maxRequiredERA) * 20) * rateOfK * 0.1).toInt() - lossOfStamina
+            else -> (maxGames - (theoreticalERA - maxRequiredERA) * 12).toInt() - lossOfStamina
         }
         if (actualGames > maxGames) actualGames = maxGames
         if (actualGames < minGames) actualGames = minGames
@@ -197,9 +198,9 @@ class PlayerPitcherClass(
             else -> 0.6
         }
         var inningsPerGame = when (pitcherType) {
-            Constants.STARTER -> stamina_ability * 0.1 - (earnedRunAverage / 2 + rateOfBB / 3)
-            Constants.MIDDLE -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 7 + rateOfBB / 14) - lossOfStamina / 10
-            else -> maxInningsPerGame - ((earnedRunAverage - maxRequiredERA) / 20) - lossOfStamina / 10
+            Constants.STARTER -> stamina_ability * 0.1 - (theoreticalERA / 2 + rateOfBB / 3)
+            Constants.MIDDLE -> maxInningsPerGame - ((theoreticalERA - maxRequiredERA) / 7 + rateOfBB / 14) - lossOfStamina / 10
+            else -> maxInningsPerGame - ((theoreticalERA - maxRequiredERA) / 20) - lossOfStamina / 10
         }
         if (inningsPerGame > maxInningsPerGame) inningsPerGame = maxInningsPerGame
         if (inningsPerGame < minInningsPerGame) inningsPerGame = minInningsPerGame
@@ -207,12 +208,18 @@ class PlayerPitcherClass(
         return inningsPerGame.toFloat()
     }
 
+    private fun calculateActualERA(): Float {
+        val actualRunsAllowed = Math.ceil(theoreticalERA * totalInnings / 9.0)
+        return (actualRunsAllowed / totalInnings * 9).toFloat()
+    }
+
+
     private fun calculationSave(): Int {
         if (pitcherType != Constants.CLOSER) return 0
 
         val saveSituation = games * 0.7
         // rate of losing more than 2run in 1inning
-        val saveFailRate = earnedRunAverage / 9.0 / 2
+        val saveFailRate = theoreticalERA / 9.0 / 2
 
         return (saveSituation * (1 - saveFailRate)).toInt()
     }
@@ -221,7 +228,7 @@ class PlayerPitcherClass(
         var pitchingGames = games
         if (pitcherType == Constants.CLOSER) pitchingGames -= save
 
-        var win = (pitchingGames * inningsPerGame / 9.0 * (1 - earnedRunAverage / 10) * chance).toInt()
+        var win = (pitchingGames * inningsPerGame / 9.0 * (1 - theoreticalERA / 10) * chance).toInt()
         if (win > pitchingGames) win = pitchingGames
         if (win < 0) win = 0
 
@@ -232,8 +239,8 @@ class PlayerPitcherClass(
         var nonWinGame = games - win
         if (pitcherType == Constants.CLOSER) nonWinGame -= save
 
-        var lose = (nonWinGame * inningsPerGame / 9.0 * earnedRunAverage / 5).toInt()
-        if (pitcherType == Constants.CLOSER) lose = (nonWinGame * inningsPerGame / 9.0 * earnedRunAverage / 3).toInt()
+        var lose = (nonWinGame * inningsPerGame / 9.0 * theoreticalERA / 5).toInt()
+        if (pitcherType == Constants.CLOSER) lose = (nonWinGame * inningsPerGame / 9.0 * theoreticalERA / 3).toInt()
         if (lose > nonWinGame) lose = nonWinGame
         if (lose < 0) lose = 0
 

@@ -119,6 +119,18 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
+        win_display.setText(playerPitcher.win.toString())
+        lose_display.setText(playerPitcher.lose.toString())
+        save_display.setText(playerPitcher.save.toString())
+        era_display.setText(String.format("%.2f", playerPitcher.actualERA))
+        innings_display.setText(playerPitcher.totalInnings.toString())
+        k_display.setText((playerPitcher.rateOfK / 9 * playerPitcher.totalInnings).toInt().toString())
+        bb_display.setText((playerPitcher.rateOfBB / 9 * playerPitcher.totalInnings).toInt().toString())
+        val intAveAgainst = Math.round(playerPitcher.battingAveAgainst * 1000)
+        var displayAveAgainst = "." + intAveAgainst.toString()
+        if (intAveAgainst < 100) displayAveAgainst = "." + "0" + intAveAgainst.toString()
+        ave_against_display.setText(displayAveAgainst)
+
         var colors = Array(5, { arrayOfNulls<Int>(7) })
 
         var sliderColors: Array<Int?> = arrayOfNulls(7)
