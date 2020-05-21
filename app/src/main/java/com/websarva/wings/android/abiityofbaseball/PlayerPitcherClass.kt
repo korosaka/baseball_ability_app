@@ -27,7 +27,7 @@ class PlayerPitcherClass(
 
     val chance = chance
 
-
+    private val minSpeed = 120
     val control_lank = lankMaking(control_ability)
     val stamina_lank = lankMaking(stamina_ability)
     val max_speed = calculateMaxSpeed(ball_speed_ability)
@@ -37,7 +37,6 @@ class PlayerPitcherClass(
     // records of season
     // TODO object ??
     private val assumedMaxSpeed = 165
-    private val minSpeed = 120
     private val assumedMaxChangeAmount = 16
     private val starterLossSpeed = 10
     private val assumedMaxControl = 160
@@ -94,7 +93,7 @@ class PlayerPitcherClass(
         val assumedMaxKindOfChange = 4
         val kindOfChangeCoefficient = 0.1
         val assumedMaxChangePointForCalc = assumedMaxChangeAmount * (1.0 + assumedMaxKindOfChange * kindOfChangeCoefficient)
-        val changeCoefficient = variableRangeEach /  assumedMaxChangePointForCalc
+        val changeCoefficient = variableRangeEach / assumedMaxChangePointForCalc
         val kindOfChangeWeight = 1.0 + kind_change_ability * kindOfChangeCoefficient
         val changePointForCalc = amount_change_ability * kindOfChangeWeight
         battingAveAgainstElements[changeBallIndex] -= changePointForCalc * changeCoefficient
@@ -183,7 +182,7 @@ class PlayerPitcherClass(
             else -> 10
         }
 
-        val eraCoefficient = when(pitcherType) {
+        val eraCoefficient = when (pitcherType) {
             Constants.STARTER -> 4
             Constants.MIDDLE -> 20
             else -> 12
@@ -214,20 +213,20 @@ class PlayerPitcherClass(
             else -> 0.6
         }
         val staminaCoefficient = 0.1
-        val staminaContribution = when(pitcherType) {
+        val staminaContribution = when (pitcherType) {
             Constants.STARTER -> stamina_ability * staminaCoefficient
             else -> lossOfStamina * staminaCoefficient
         }
-        val eraCoefficient = when(pitcherType) {
+        val eraCoefficient = when (pitcherType) {
             Constants.STARTER -> 0.2
             Constants.MIDDLE -> 0.15
             else -> 0.05
         }
-        val eraContribution = when(pitcherType) {
+        val eraContribution = when (pitcherType) {
             Constants.STARTER -> theoreticalERA * eraCoefficient
             else -> (theoreticalERA - maxRequiredERA) * eraCoefficient
         }
-        val bbCoefficient = when(pitcherType) {
+        val bbCoefficient = when (pitcherType) {
             Constants.STARTER -> 0.33
             else -> 0.07
         }
@@ -277,7 +276,7 @@ class PlayerPitcherClass(
         var nonWinGame = games - win
         if (pitcherType == Constants.CLOSER) nonWinGame -= save
 
-        val adjustmentCoefficient = when(pitcherType) {
+        val adjustmentCoefficient = when (pitcherType) {
             Constants.CLOSER -> 0.35
             else -> 0.2
         }
@@ -290,24 +289,23 @@ class PlayerPitcherClass(
     }
 
 
-    fun lankMaking(ability: Int): String {
+    private fun lankMaking(ability: Int): String {
 
-        when (ability) {
-
-            in -100..19 -> return Constants.LANK_G
-            in 20..39 -> return Constants.LANK_F
-            in 40..64 -> return Constants.LANK_E
-            in 65..79 -> return Constants.LANK_D
-            in 80..94 -> return Constants.LANK_C
-            in 95..109 -> return Constants.LANK_B
-            else -> return Constants.LANK_A
+        return when (ability) {
+            in -100..19 -> Constants.LANK_G
+            in 20..39 -> Constants.LANK_F
+            in 40..64 -> Constants.LANK_E
+            in 65..79 -> Constants.LANK_D
+            in 80..94 -> Constants.LANK_C
+            in 95..109 -> Constants.LANK_B
+            else -> Constants.LANK_A
         }
     }
 
     /**
      * 球速計算
      */
-    fun calculateMaxSpeed(ability: Int): Int {
+    private fun calculateMaxSpeed(ability: Int): Int {
         var plusSpeed = 0
         if (ability < 10) {
             plusSpeed = 0
@@ -320,35 +318,32 @@ class PlayerPitcherClass(
         } else {
             plusSpeed = 15 + ability / 5
         }
-        // TODO refactor
-        val maxSpeed = 120 + plusSpeed
-        return maxSpeed
+        return minSpeed + plusSpeed
     }
 
     /**
      * 総変化量計算
      */
-    fun calculateTotalChangeAmount(changeAmount: Int, kindsOfChange: Int): Int {
+    private fun calculateTotalChangeAmount(changeAmount: Int, kindsOfChange: Int): Int {
         if (kindsOfChange > 2) return changeAmount / 15 * 2
         return changeAmount / 15 * kindsOfChange
     }
 
 
     // 変化球の球種数
-    fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
-        when (kindsOfChange) {
-
-            in -100..5 -> return 0
-            in 6..39 -> return 1
-            in 40..79 -> return 2
-            in 80..119 -> return 3
-            in 120..139 -> return 4
-            else -> return 5
+    private fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
+        return when (kindsOfChange) {
+            in -100..5 -> 0
+            in 6..39 -> 1
+            in 40..79 -> 2
+            in 80..119 -> 3
+            in 120..139 -> 4
+            else -> 5
         }
     }
 
     // 変化球球種・変化量
-    fun calculateChangeBalls(kind_change_ability: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
+    private fun calculateChangeBalls(kind_change_ability: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
 
         val newPriorityChange: ArrayList<Int> = remakePriorityOfChange(kind_change_ability, priorityOfChange)
         var changeballs: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
@@ -369,7 +364,7 @@ class PlayerPitcherClass(
     }
 
     // 変化球優先順位と種類数上限から優先順位再生成
-    fun remakePriorityOfChange(kind_change_ability: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
+    private fun remakePriorityOfChange(kind_change_ability: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
         var newPriorityChange: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
         var oldPriorityChange = priorityOfChange
 
