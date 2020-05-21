@@ -52,8 +52,7 @@ class Constants {
         const val CONTACT = "contact"
         const val POWER = "power"
         const val SPEED = "speed"
-        // TODO refactor
-        const val ARM_STRENGH = "armStrength"
+        const val ARM_STRENGTH = "armStrength"
         const val FIELDING = "fielding"
 
         const val APPEARANCE = "appearance"
