@@ -124,8 +124,8 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         save_display.setText(playerPitcher.save.toString())
         era_display.setText(String.format("%.2f", playerPitcher.actualERA))
         innings_display.setText(playerPitcher.totalInnings.toString())
-        k_display.setText((playerPitcher.rateOfK / 9 * playerPitcher.totalInnings).toInt().toString())
-        bb_display.setText((playerPitcher.rateOfBB / 9 * playerPitcher.totalInnings).toInt().toString())
+        k_display.setText(playerPitcher.totalK.toString())
+        bb_display.setText(playerPitcher.totalBB.toString())
         val intAveAgainst = Math.round(playerPitcher.battingAveAgainst * 1000)
         var displayAveAgainst = "." + intAveAgainst.toString()
         if (intAveAgainst < 100) displayAveAgainst = "." + "0" + intAveAgainst.toString()
@@ -197,10 +197,12 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             }
         }
 
+        salary_display.setText(calcSalary(playerPitcher).toString())
+
 
     }
 
-    fun setTextColor(alphabet: TextView) {
+    private fun setTextColor(alphabet: TextView) {
 
         when (alphabet.text) {
             Constants.LANK_A -> alphabet.setTextColor(Color.parseColor(Constants.LANK_A_COLOR))
@@ -212,6 +214,62 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             Constants.LANK_G -> alphabet.setTextColor(Color.parseColor(Constants.LANK_G_COLOR))
 
         }
+    }
+
+    private fun calcSalary(pitcher: PlayerPitcherClass): Int {
+        // STARTER
+        val pricePerWin = when (pitcher.win) {
+            in 0..5 -> 100
+            in 6..9 -> 200
+            else -> 500
+        }
+        val priceForWin = pitcher.win * pricePerWin
+
+        val pricePerInning = when (pitcher.totalInnings) {
+            in 0..49 -> 10
+            in 50..99 -> 20
+            in 100..142 -> 30
+            else -> 50
+        }
+        val priceForInning = pitcher.totalInnings * pricePerInning
+
+
+        val coefficientOfERA = when (pitcher.actualERA) {
+            in 0.0..0.49 -> 4.0
+            in 0.5..0.99 -> 3.5
+            in 1.0..1.49 -> 3.0
+            in 1.5..1.99 -> 2.5
+            in 2.0..2.49 -> 2.25
+            in 2.5..2.99 -> 2.0
+            in 3.0..3.49 -> 1.75
+            in 3.5..3.99 -> 1.5
+            in 4.0..4.49 -> 1.25
+            in 4.5..4.99 -> 1.0
+            in 5.0..5.99 -> 0.8
+            else -> 0.5
+        }
+
+        val coefficientOfWinRate = pitcher.winRate + 0.6
+
+        val baseSalary = ((priceForWin + priceForInning) * coefficientOfERA * coefficientOfWinRate).toInt()
+
+        val bonusOfK = when (pitcher.totalK) {
+            in 0..99 -> 0
+            in 100..149 -> 500
+            in 150..199 -> 1000
+            in 200..249 -> 4000
+            else -> 5000
+        }
+
+        val totalSalary = baseSalary + bonusOfK
+
+        return when (totalSalary) {
+            in 0..440 -> 440
+            in 441..4999 -> (totalSalary / 10) * 10
+            in 5000..9999 -> (totalSalary / 100) * 100
+            else -> (totalSalary / 1000) * 1000
+        }
+
     }
 
     // Topへ戻る

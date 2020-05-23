@@ -67,10 +67,13 @@ class PlayerPitcherClass(
     private val games = calculateGames()
     private val inningsPerGame = calculateInningsPerGame()
     val totalInnings = (games * inningsPerGame).toInt()
+    val totalK = (rateOfK / 9 * totalInnings).toInt()
+    val totalBB = (rateOfBB / 9 * totalInnings).toInt()
     val actualERA = calculateActualERA()
     val save = calculationSave()
     val win = calculateWin()
     val lose = calculateLose()
+    val winRate = calculateWinRate()
 
     private fun calculateBattingAveAgainst(): Float {
 
@@ -244,7 +247,15 @@ class PlayerPitcherClass(
 
     private fun calculateActualERA(): Float {
         val actualRunsAllowed = Math.ceil(theoreticalERA * totalInnings / oneGameInnings)
-        return (actualRunsAllowed / totalInnings * oneGameInnings).toFloat()
+        return roundNum(actualRunsAllowed / totalInnings * oneGameInnings)
+    }
+
+    private fun roundNum(decimalNum: Double): Float {
+        return (Math.round(decimalNum * 100) / 100.0).toFloat()
+    }
+
+    private fun calculateWinRate(): Float {
+        return ((win * 1.0) / (win + lose)).toFloat()
     }
 
 
