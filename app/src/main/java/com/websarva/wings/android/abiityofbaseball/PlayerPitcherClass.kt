@@ -247,17 +247,12 @@ class PlayerPitcherClass(
 
     private fun calculateActualERA(): Float {
         val actualRunsAllowed = Math.ceil(theoreticalERA * totalInnings / oneGameInnings)
-        return roundNum(actualRunsAllowed / totalInnings * oneGameInnings)
-    }
-
-    private fun roundNum(decimalNum: Double): Float {
-        return (Math.round(decimalNum * 100) / 100.0).toFloat()
+        return (actualRunsAllowed / totalInnings * oneGameInnings).toFloat()
     }
 
     private fun calculateWinRate(): Float {
         return ((win * 1.0) / (win + lose)).toFloat()
     }
-
 
     private fun calculationSave(): Int {
         if (pitcherType != Constants.CLOSER) return 0
