@@ -197,7 +197,11 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             }
         }
 
-        salary_display.setText(calcSalary(playerPitcher).toString())
+        val playerSalary = when(playerPitcher.getPitcherType()){
+            Constants.STARTER -> calcSalaryStarter(playerPitcher)
+            else -> calcSalaryMiddle(playerPitcher)
+        }
+        salary_display.setText(playerSalary.toString())
 
 
     }
@@ -216,7 +220,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         }
     }
 
-    private fun calcSalary(pitcher: PlayerPitcherClass): Int {
+    private fun calcSalaryStarter(pitcher: PlayerPitcherClass): Int {
         // STARTER
         val pricePerWin = when (pitcher.win) {
             in 0..5 -> 100
@@ -271,6 +275,39 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         }
 
     }
+
+    private fun calcSalaryMiddle(pitcher: PlayerPitcherClass): Int {
+        // Middle
+        val pricePerWin = 300
+        val priceForWin = pitcher.win * pricePerWin
+
+        val pricePerInning = when (pitcher.totalInnings) {
+            in 0..9 -> 50
+            in 10..29 -> 100
+            in 30..49 -> 150
+            in 50..64 -> 220
+            in 65..79 -> 280
+            else -> 350
+        }
+        val priceForInning = pitcher.totalInnings * pricePerInning
+
+
+        val maxCoefficientOfERA = 1.8
+        val minCoefficientOfERA = 0.5
+        var coefficientOfERA = maxCoefficientOfERA - (pitcher.actualERA / 5.0)
+        if (coefficientOfERA < minCoefficientOfERA) coefficientOfERA = minCoefficientOfERA
+
+        val totalSalary = ((priceForWin + priceForInning) * coefficientOfERA).toInt()
+
+        return when (totalSalary) {
+            in 0..440 -> 440
+            in 441..4999 -> (totalSalary / 10) * 10
+            in 5000..9999 -> (totalSalary / 100) * 100
+            else -> (totalSalary / 1000) * 1000
+        }
+
+    }
+
 
     // Topへ戻る
     fun onClickFinish(view: View) {
