@@ -199,7 +199,8 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         val playerSalary = when(playerPitcher.getPitcherType()){
             Constants.STARTER -> calcSalaryStarter(playerPitcher)
-            else -> calcSalaryMiddle(playerPitcher)
+            Constants.MIDDLE -> calcSalaryMiddle(playerPitcher)
+            else -> calcSalaryCloser(playerPitcher)
         }
         salary_display.setText(playerSalary.toString())
 
@@ -223,35 +224,25 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     private fun calcSalaryStarter(pitcher: PlayerPitcherClass): Int {
         // STARTER
         val pricePerWin = when (pitcher.win) {
-            in 0..5 -> 100
-            in 6..9 -> 200
-            else -> 500
+            in 0..5 -> 200
+            in 6..9 -> 300
+            else -> 600
         }
         val priceForWin = pitcher.win * pricePerWin
 
         val pricePerInning = when (pitcher.totalInnings) {
-            in 0..49 -> 10
-            in 50..99 -> 20
-            in 100..142 -> 30
-            else -> 50
+            in 0..49 -> 15
+            in 50..99 -> 25
+            in 100..142 -> 40
+            else -> 70
         }
         val priceForInning = pitcher.totalInnings * pricePerInning
 
 
-        val coefficientOfERA = when (pitcher.actualERA) {
-            in 0.0..0.49 -> 4.0
-            in 0.5..0.99 -> 3.5
-            in 1.0..1.49 -> 3.0
-            in 1.5..1.99 -> 2.5
-            in 2.0..2.49 -> 2.25
-            in 2.5..2.99 -> 2.0
-            in 3.0..3.49 -> 1.75
-            in 3.5..3.99 -> 1.5
-            in 4.0..4.49 -> 1.25
-            in 4.5..4.99 -> 1.0
-            in 5.0..5.99 -> 0.8
-            else -> 0.5
-        }
+        val maxCoefficientOfERA = 1.8
+        val minCoefficientOfERA = 0.5
+        var coefficientOfERA = maxCoefficientOfERA - (pitcher.actualERA / 5.0)
+        if (coefficientOfERA < minCoefficientOfERA) coefficientOfERA = minCoefficientOfERA
 
         val coefficientOfWinRate = pitcher.winRate + 0.6
 
@@ -298,6 +289,46 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         if (coefficientOfERA < minCoefficientOfERA) coefficientOfERA = minCoefficientOfERA
 
         val totalSalary = ((priceForWin + priceForInning) * coefficientOfERA).toInt()
+
+        return when (totalSalary) {
+            in 0..440 -> 440
+            in 441..4999 -> (totalSalary / 10) * 10
+            in 5000..9999 -> (totalSalary / 100) * 100
+            else -> (totalSalary / 1000) * 1000
+        }
+
+    }
+
+    private fun calcSalaryCloser(pitcher: PlayerPitcherClass): Int {
+        // Closer
+        val pricePerWin = 200
+        val priceForWin = pitcher.win * pricePerWin
+
+        val pricePerInning = when (pitcher.totalInnings) {
+            in 0..9 -> 50
+            in 10..29 -> 100
+            in 30..44 -> 180
+            in 45..59 -> 250
+            else -> 300
+        }
+        val priceForInning = pitcher.totalInnings * pricePerInning
+
+        val pricePerSave = when (pitcher.save) {
+            in 0..9 -> 100
+            in 10..19 -> 150
+            in 20..29 -> 220
+            in 30..39 -> 280
+            else -> 350
+        }
+        val priceForSave = pitcher.totalInnings * pricePerSave
+
+
+        val maxCoefficientOfERA = 1.8
+        val minCoefficientOfERA = 0.5
+        var coefficientOfERA = maxCoefficientOfERA - (pitcher.actualERA / 5.0)
+        if (coefficientOfERA < minCoefficientOfERA) coefficientOfERA = minCoefficientOfERA
+
+        val totalSalary = ((priceForWin + priceForInning + priceForSave) * coefficientOfERA).toInt()
 
         return when (totalSalary) {
             in 0..440 -> 440
