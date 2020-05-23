@@ -145,7 +145,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
                 intent.putExtra(Constants.CONTACT, calcAbility.contact)
                 intent.putExtra(Constants.POWER, calcAbility.power)
                 intent.putExtra(Constants.SPEED, calcAbility.speed)
-                intent.putExtra(Constants.ARM_STRENGH, calcAbility.armStrength)
+                intent.putExtra(Constants.ARM_STRENGTH, calcAbility.armStrength)
                 intent.putExtra(Constants.FIELDING, calcAbility.fielding)
 
                 intent.putExtra(Constants.CHANCE, calcAbility.chance)

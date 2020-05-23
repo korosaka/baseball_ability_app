@@ -20,7 +20,7 @@ class MakingStatusActivity : BaseBannerActivity() {
                 intent.getIntExtra(Constants.CONTACT, 0),
                 intent.getIntExtra(Constants.POWER, 0),
                 intent.getIntExtra(Constants.SPEED, 0),
-                intent.getIntExtra(Constants.ARM_STRENGH, 0),
+                intent.getIntExtra(Constants.ARM_STRENGTH, 0),
                 intent.getIntExtra(Constants.FIELDING, 0),
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
