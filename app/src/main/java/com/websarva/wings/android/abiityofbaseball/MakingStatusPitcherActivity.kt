@@ -197,7 +197,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             }
         }
 
-        salary_display.setText(calcSalary(playerPitcher).toString())
+        displaySalary(calcSalary(playerPitcher))
 
 
     }
@@ -316,6 +316,18 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             in 150..199 -> 1000
             in 200..249 -> 4000
             else -> 5000
+        }
+    }
+
+    private fun displaySalary(salary: Int) {
+        if (salary < 10000) {
+            hundred_million_unit.visibility = View.GONE
+            ten_thousand_number.text = salary.toString()
+        } else {
+            hundred_million_number.text = (salary / 10000).toString()
+            val tenThousandPartOfSalary = salary % 10000
+            if (tenThousandPartOfSalary == 0) ten_thousand_unit.visibility = View.GONE
+            else ten_thousand_number.text = tenThousandPartOfSalary.toString()
         }
     }
 
