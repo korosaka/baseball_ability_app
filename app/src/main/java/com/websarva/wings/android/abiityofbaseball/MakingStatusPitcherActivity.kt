@@ -106,26 +106,26 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
 
-        nameDisplay.setText(playerPitcher.playerName)
-        type_display.setText(when (playerPitcher.getPitcherType()) {
+        nameDisplay.text = playerPitcher.playerName
+        type_display.text = when (playerPitcher.getPitcherType()) {
             STARTER -> STARTER_DISPLAY
             MIDDLE -> MIDDLE_DISPLAY
             else -> CLOSER_DISPLAY
-        })
-        ballSpeedDisplay.setText(playerPitcher.max_speed.toString())
-        controlDisplay.setText(playerPitcher.control_lank)
-        staminaDisplay.setText(playerPitcher.stamina_lank)
+        }
+        ballSpeedDisplay.text = playerPitcher.max_speed.toString()
+        controlDisplay.text = playerPitcher.control_lank
+        staminaDisplay.text = playerPitcher.stamina_lank
 
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
-        win_display.setText(playerPitcher.win.toString())
-        lose_display.setText(playerPitcher.lose.toString())
-        save_display.setText(playerPitcher.save.toString())
-        era_display.setText(String.format("%.2f", playerPitcher.actualERA))
-        innings_display.setText(playerPitcher.totalInnings.toString())
-        k_display.setText((playerPitcher.rateOfK / 9 * playerPitcher.totalInnings).toInt().toString())
-        bb_display.setText((playerPitcher.rateOfBB / 9 * playerPitcher.totalInnings).toInt().toString())
+        win_display.text = playerPitcher.win.toString()
+        lose_display.text = playerPitcher.lose.toString()
+        save_display.text = playerPitcher.save.toString()
+        era_display.text = String.format("%.2f", playerPitcher.actualERA)
+        innings_display.text = playerPitcher.totalInnings.toString()
+        k_display.text = playerPitcher.totalK.toString()
+        bb_display.text = playerPitcher.totalBB.toString()
         val intAveAgainst = Math.round(playerPitcher.battingAveAgainst * 1000)
         var displayAveAgainst = "." + intAveAgainst.toString()
         if (intAveAgainst < 100) displayAveAgainst = "." + "0" + intAveAgainst.toString()
@@ -197,10 +197,12 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             }
         }
 
+        displaySalary(calcSalary(playerPitcher))
+
 
     }
 
-    fun setTextColor(alphabet: TextView) {
+    private fun setTextColor(alphabet: TextView) {
 
         when (alphabet.text) {
             Constants.LANK_A -> alphabet.setTextColor(Color.parseColor(Constants.LANK_A_COLOR))
@@ -213,6 +215,122 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         }
     }
+
+    private fun calcSalary(pitcher: PlayerPitcherClass): Int {
+
+        val priceForWin = calcPriceForWin(pitcher)
+        val priceForInning = calcPriceForInning(pitcher)
+
+        val coefficientOfERA = calcCoefficientOfERA(pitcher)
+        var priceForSave = 0
+        if (pitcher.getPitcherType() == Constants.CLOSER) priceForSave = calcPriceForSave(pitcher)
+        val minCoefficientOfWinRate = 0.6
+        val coefficientOfWinRate = pitcher.winRate + minCoefficientOfWinRate
+        val bonusOfK = calcBonusOfK(pitcher)
+
+        var totalSalary = ((priceForWin + priceForInning + priceForSave) * coefficientOfERA).toInt()
+        if (pitcher.getPitcherType() == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
+
+        return when (totalSalary) {
+            in 0..440 -> 440
+            in 441..4999 -> (totalSalary / 10) * 10
+            in 5000..9999 -> (totalSalary / 100) * 100
+            else -> (totalSalary / 1000) * 1000
+        }
+    }
+
+    private fun calcPriceForWin(pitcher: PlayerPitcherClass): Int {
+        val pricePerWin = when (pitcher.getPitcherType()) {
+            Constants.STARTER -> {
+                when (pitcher.win) {
+                    in 0..5 -> 200
+                    in 6..9 -> 300
+                    else -> 600
+                }
+            }
+            else -> 200
+        }
+        return pitcher.win * pricePerWin
+    }
+
+    private fun calcPriceForInning(pitcher: PlayerPitcherClass): Int {
+        val pricePerInning = when (pitcher.getPitcherType()) {
+            Constants.STARTER -> {
+                when (pitcher.totalInnings) {
+                    in 0..49 -> 15
+                    in 50..99 -> 25
+                    in 100..142 -> 40
+                    else -> 70
+                }
+            }
+            Constants.MIDDLE -> {
+                when (pitcher.totalInnings) {
+                    in 0..9 -> 50
+                    in 10..29 -> 100
+                    in 30..49 -> 150
+                    in 50..64 -> 220
+                    in 65..79 -> 280
+                    else -> 350
+                }
+            }
+            else -> {
+                when (pitcher.totalInnings) {
+                    in 0..9 -> 50
+                    in 10..29 -> 100
+                    in 30..44 -> 180
+                    in 45..59 -> 250
+                    else -> 300
+                }
+            }
+        }
+        return pitcher.totalInnings * pricePerInning
+    }
+
+    private fun calcCoefficientOfERA(pitcher: PlayerPitcherClass): Float {
+
+        val maxCoefficientOfERA = 1.8
+        val minCoefficientOfERA = 0.5
+        var coefficientOfERA = maxCoefficientOfERA - (pitcher.actualERA / 5.0)
+        if (coefficientOfERA < minCoefficientOfERA) coefficientOfERA = minCoefficientOfERA
+
+        return coefficientOfERA.toFloat()
+    }
+
+    private fun calcPriceForSave(pitcher: PlayerPitcherClass): Int {
+
+        val pricePerSave = when (pitcher.save) {
+            in 0..9 -> 150
+            in 10..19 -> 200
+            in 20..29 -> 250
+            in 30..39 -> 350
+            else -> 400
+        }
+
+        return pitcher.save * pricePerSave
+    }
+
+    private fun calcBonusOfK(pitcher: PlayerPitcherClass): Int {
+        return when (pitcher.totalK) {
+            in 0..99 -> 0
+            in 100..149 -> 500
+            in 150..199 -> 1000
+            in 200..249 -> 4000
+            else -> 5000
+        }
+    }
+
+    private fun displaySalary(salary: Int) {
+        if (salary < 10000) {
+            hundred_million_unit.visibility = View.GONE
+            ten_thousand_number.text = salary.toString()
+        } else {
+            hundred_million_number.text = (salary / 10000).toString()
+            val tenThousandPartOfSalary = salary % 10000
+            if (tenThousandPartOfSalary == 0) ten_thousand_unit.visibility = View.GONE
+            else ten_thousand_number.text = tenThousandPartOfSalary.toString()
+        }
+    }
+
 
     // Topへ戻る
     fun onClickFinish(view: View) {
