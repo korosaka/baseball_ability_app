@@ -106,26 +106,26 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
 
-        nameDisplay.setText(playerPitcher.playerName)
-        type_display.setText(when (playerPitcher.getPitcherType()) {
+        nameDisplay.text = playerPitcher.playerName
+        type_display.text = when (playerPitcher.getPitcherType()) {
             STARTER -> STARTER_DISPLAY
             MIDDLE -> MIDDLE_DISPLAY
             else -> CLOSER_DISPLAY
-        })
-        ballSpeedDisplay.setText(playerPitcher.max_speed.toString())
-        controlDisplay.setText(playerPitcher.control_lank)
-        staminaDisplay.setText(playerPitcher.stamina_lank)
+        }
+        ballSpeedDisplay.text = playerPitcher.max_speed.toString()
+        controlDisplay.text = playerPitcher.control_lank
+        staminaDisplay.text = playerPitcher.stamina_lank
 
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
-        win_display.setText(playerPitcher.win.toString())
-        lose_display.setText(playerPitcher.lose.toString())
-        save_display.setText(playerPitcher.save.toString())
-        era_display.setText(String.format("%.2f", playerPitcher.actualERA))
-        innings_display.setText(playerPitcher.totalInnings.toString())
-        k_display.setText(playerPitcher.totalK.toString())
-        bb_display.setText(playerPitcher.totalBB.toString())
+        win_display.text = playerPitcher.win.toString()
+        lose_display.text = playerPitcher.lose.toString()
+        save_display.text = playerPitcher.save.toString()
+        era_display.text = String.format("%.2f", playerPitcher.actualERA)
+        innings_display.text = playerPitcher.totalInnings.toString()
+        k_display.text = playerPitcher.totalK.toString()
+        bb_display.text = playerPitcher.totalBB.toString()
         val intAveAgainst = Math.round(playerPitcher.battingAveAgainst * 1000)
         var displayAveAgainst = "." + intAveAgainst.toString()
         if (intAveAgainst < 100) displayAveAgainst = "." + "0" + intAveAgainst.toString()

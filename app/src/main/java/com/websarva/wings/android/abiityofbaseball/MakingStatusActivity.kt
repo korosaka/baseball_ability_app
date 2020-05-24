@@ -34,7 +34,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         val fieldDisplay = findViewById<TextView>(R.id.field_display)
 
 
-        nameDisplay.setText(player.playerName)
+        nameDisplay.text = player.playerName
         // TODO ポジションで条件分岐
         nameDisplay.setBackgroundColor(Color.YELLOW)
 
@@ -47,11 +47,11 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
 
-        contactDisplay.setText(player.contact_lank)
-        powerDisplay.setText(player.power_lank)
-        speedDisplay.setText(player.speed_lank)
-        armDisplay.setText(player.arm_lank)
-        fieldDisplay.setText(player.fielding_lank)
+        contactDisplay.text = player.contact_lank
+        powerDisplay.text = player.power_lank
+        speedDisplay.text = player.speed_lank
+        armDisplay.text = player.arm_lank
+        fieldDisplay.text = player.fielding_lank
 
         setTextColor(contactDisplay)
         setTextColor(powerDisplay)
@@ -118,19 +118,19 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else {
             ave_string = "." + Integer.toString(ave)
         }
-        ave_dis.setText(ave_string)
+        ave_dis.text = ave_string
 
         // HR表示
         val hr_string = Integer.toString(hr) + "本"
-        hr_dis.setText(hr_string)
+        hr_dis.text = hr_string
 
         // 打点表示
         val rbi_string = Integer.toString(rbi) + "点"
-        rbi_dis.setText(rbi_string)
+        rbi_dis.text = rbi_string
 
         // 盗塁表示
         val sb_string = Integer.toString(sb) + "個"
-        sb_dis.setText(sb_string)
+        sb_dis.text = sb_string
 
         calcSaraly(ave, hr, rbi, sb, player)
 
