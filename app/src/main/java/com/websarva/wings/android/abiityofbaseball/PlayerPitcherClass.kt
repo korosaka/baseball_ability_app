@@ -39,7 +39,7 @@ class PlayerPitcherClass(
     private val assumedMaxSpeed = 160
     private val assumedMaxChangeAmount = 15
     private val starterLossSpeed = 6
-    private val assumedMaxControl = 160
+    private val assumedMaxControl = 150
     private val oneGameInnings = 9.0
     private val maxRequiredERA = when (pitcherType) {
         Constants.STARTER -> 3.0
@@ -111,10 +111,10 @@ class PlayerPitcherClass(
     private fun calculateBBRate(): Float {
 
         val minBBRate = when(pitcherType) {
-            Constants.STARTER -> 0.5
-            else -> 1.0
+            Constants.STARTER -> 0.8
+            else -> 1.2
         }
-        val maxBBRate = 6.5
+        val maxBBRate = 7.0
         val variableRange = maxBBRate - minBBRate
         val controlCoefficient = variableRange / assumedMaxControl
 
@@ -218,8 +218,8 @@ class PlayerPitcherClass(
         }
         val minInningsPerGame = when (pitcherType) {
             Constants.STARTER -> 3.0
-            Constants.MIDDLE -> 0.4
-            else -> 0.6
+            Constants.MIDDLE -> 0.6
+            else -> 0.7
         }
         val staminaCoefficient = 0.1
         val staminaContribution = when (pitcherType) {
@@ -227,7 +227,7 @@ class PlayerPitcherClass(
             else -> lossOfStamina * staminaCoefficient
         }
         val eraCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.6
+            Constants.STARTER -> 0.57
             Constants.MIDDLE -> 0.15
             else -> 0.05
         }
