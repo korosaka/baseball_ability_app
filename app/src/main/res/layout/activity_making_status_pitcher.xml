@@ -21,8 +21,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginRight="3dp"
                 android:layout_marginBottom="2dp"
                 android:background="#87ceeb"
@@ -50,8 +50,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="#e0ffff"
                     android:orientation="vertical">
@@ -221,8 +221,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="1dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="3dp"
                         android:background="#ffffff"
@@ -861,8 +861,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="3dp"
                 android:layout_marginBottom="2dp"
                 android:background="#3CB371"
@@ -871,8 +871,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:layout_marginBottom="2dp"
+                    android:gravity="center_horizontal"
                     android:text="年間成績"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
@@ -881,8 +881,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="#ffffff"
                     android:orientation="vertical">
@@ -1129,8 +1129,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="3dp"
                 android:background="#191970"
                 android:orientation="vertical">
@@ -1138,8 +1138,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:layout_marginBottom="2dp"
+                    android:gravity="center_horizontal"
                     android:text="年俸"
                     android:textColor="#ffd700"
                     android:textSize="20sp"

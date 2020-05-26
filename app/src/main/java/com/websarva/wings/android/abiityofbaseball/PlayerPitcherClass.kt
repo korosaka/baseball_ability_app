@@ -110,7 +110,7 @@ class PlayerPitcherClass(
 
     private fun calculateBBRate(): Float {
 
-        val minBBRate = when(pitcherType) {
+        val minBBRate = when (pitcherType) {
             Constants.STARTER -> 0.8
             else -> 1.2
         }
@@ -125,7 +125,7 @@ class PlayerPitcherClass(
 
     private fun calculateKRate(): Float {
         val minKRate = 1.0
-        val maxKRate = when(pitcherType) {
+        val maxKRate = when (pitcherType) {
             Constants.STARTER -> 12.5
             else -> 15.0
         }
