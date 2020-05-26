@@ -36,10 +36,10 @@ class PlayerPitcherClass(
 
     // records of season
     // TODO object ??
-    private val assumedMaxSpeed = 165
-    private val assumedMaxChangeAmount = 16
-    private val starterLossSpeed = 10
-    private val assumedMaxControl = 160
+    private val assumedMaxSpeed = 160
+    private val assumedMaxChangeAmount = 15
+    private val starterLossSpeed = 6
+    private val assumedMaxControl = 150
     private val oneGameInnings = 9.0
     private val maxRequiredERA = when (pitcherType) {
         Constants.STARTER -> 3.0
@@ -77,7 +77,7 @@ class PlayerPitcherClass(
 
     private fun calculateBattingAveAgainst(): Float {
 
-        val maxAveAgainst = 0.44
+        val maxAveAgainst = 0.42
         val oneThirdOfMax = maxAveAgainst / 3.0
         val minAveAgainst = 0.15
         val oneThirdOfMin = minAveAgainst / 3.0
@@ -110,8 +110,11 @@ class PlayerPitcherClass(
 
     private fun calculateBBRate(): Float {
 
-        val minBBRate = 0.5
-        val maxBBRate = 6.5
+        val minBBRate = when (pitcherType) {
+            Constants.STARTER -> 0.8
+            else -> 1.2
+        }
+        val maxBBRate = 7.0
         val variableRange = maxBBRate - minBBRate
         val controlCoefficient = variableRange / assumedMaxControl
 
@@ -122,7 +125,10 @@ class PlayerPitcherClass(
 
     private fun calculateKRate(): Float {
         val minKRate = 1.0
-        val maxKRate = 15.0
+        val maxKRate = when (pitcherType) {
+            Constants.STARTER -> 12.5
+            else -> 15.0
+        }
 
         val variableRange = maxKRate - minKRate
 
@@ -164,7 +170,7 @@ class PlayerPitcherClass(
 
     private fun calculateTheoreticalERA(): Float {
 
-        val runPerHit = 0.42
+        val runPerHit = 0.4
         val runPerBB = battingAveAgainst
 
         val batters = 27
@@ -206,14 +212,14 @@ class PlayerPitcherClass(
     private fun calculateInningsPerGame(): Float {
 
         val maxInningsPerGame = when (pitcherType) {
-            Constants.STARTER -> 8.5
+            Constants.STARTER -> 9.0
             Constants.MIDDLE -> 1.2
             else -> 1.0
         }
         val minInningsPerGame = when (pitcherType) {
             Constants.STARTER -> 3.0
-            Constants.MIDDLE -> 0.4
-            else -> 0.6
+            Constants.MIDDLE -> 0.6
+            else -> 0.7
         }
         val staminaCoefficient = 0.1
         val staminaContribution = when (pitcherType) {
@@ -221,7 +227,7 @@ class PlayerPitcherClass(
             else -> lossOfStamina * staminaCoefficient
         }
         val eraCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.2
+            Constants.STARTER -> 0.57
             Constants.MIDDLE -> 0.15
             else -> 0.05
         }
@@ -230,7 +236,7 @@ class PlayerPitcherClass(
             else -> (theoreticalERA - maxRequiredERA) * eraCoefficient
         }
         val bbCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.33
+            Constants.STARTER -> 0.85
             else -> 0.07
         }
         val bbContribution = rateOfBB * bbCoefficient
