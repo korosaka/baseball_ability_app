@@ -21,14 +21,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
                 android:background="#87ceeb"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -39,7 +41,7 @@
                         android:gravity="center"
                         android:text="NAME"
                         android:textColor="@android:color/black"
-                        android:textSize="38sp"
+                        android:textSize="32sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -48,22 +50,22 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#e0ffff"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="2dp"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_margin="2dp"
                             android:layout_weight="1"
                             android:background="#191970"
                             android:gravity="center"
@@ -74,7 +76,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="球速"
                                 android:textColor="@android:color/white"
-                                android:textSize="20sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <View
@@ -91,8 +93,9 @@
                                     android:id="@+id/ball_speed_display"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:text="100"
                                     android:textColor="@android:color/white"
-                                    android:textSize="32sp"
+                                    android:textSize="26sp"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -100,7 +103,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="km/h"
                                     android:textColor="#00ffff"
-                                    android:textSize="15sp" />
+                                    android:textSize="13sp" />
 
                             </LinearLayout>
 
@@ -110,7 +113,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="5dp"
+                            android:layout_margin="2dp"
                             android:layout_weight="1"
                             android:background="#191970"
                             android:gravity="center"
@@ -119,9 +122,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="1sp"
+                                android:layout_marginBottom="1sp"
                                 android:text="コントロール"
                                 android:textColor="@android:color/white"
-                                android:textSize="16sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold" />
 
                             <View
@@ -133,8 +138,9 @@
                                 android:id="@+id/control_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="T"
                                 android:textColor="@android:color/white"
-                                android:textSize="32sp"
+                                android:textSize="26sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -142,7 +148,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="5dp"
+                            android:layout_margin="2dp"
                             android:layout_weight="1"
                             android:background="#191970"
                             android:gravity="center"
@@ -153,7 +159,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="スタミナ"
                                 android:textColor="@android:color/white"
-                                android:textSize="20sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <View
@@ -161,12 +167,50 @@
                                 android:layout_height="0dp"
                                 android:layout_weight="1" />
 
+
                             <TextView
                                 android:id="@+id/stamina_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="T"
                                 android:textColor="@android:color/white"
-                                android:textSize="32sp"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1"
+                            android:background="#191970"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="起用"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+
+                            <TextView
+                                android:id="@+id/type_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3sp"
+                                android:layout_marginBottom="3sp"
+                                android:text="テスト"
+                                android:textColor="@android:color/white"
+                                android:textSize="22sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -177,7 +221,10 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="3dp"
                         android:background="#ffffff"
                         android:orientation="vertical">
 
@@ -194,7 +241,7 @@
                                 android:gravity="center"
                                 android:text="←"
                                 android:textColor="#f7f7f7"
-                                android:textSize="40sp"
+                                android:textSize="34sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -205,7 +252,7 @@
                                 android:gravity="center"
                                 android:text="↙︎"
                                 android:textColor="#f7f7f7"
-                                android:textSize="40sp"
+                                android:textSize="34sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -216,7 +263,7 @@
                                 android:gravity="center"
                                 android:text="↓"
                                 android:textColor="#f7f7f7"
-                                android:textSize="40sp"
+                                android:textSize="34sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -227,7 +274,7 @@
                                 android:gravity="center"
                                 android:text="↘︎"
                                 android:textColor="#f7f7f7"
-                                android:textSize="40sp"
+                                android:textSize="34sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -238,7 +285,7 @@
                                 android:gravity="center"
                                 android:text="→"
                                 android:textColor="#f7f7f7"
-                                android:textSize="40sp"
+                                android:textSize="34sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -246,7 +293,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -304,6 +351,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -315,7 +363,6 @@
                                 android:id="@+id/slider_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -328,7 +375,6 @@
                                 android:id="@+id/curb_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -341,7 +387,6 @@
                                 android:id="@+id/fork_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -354,7 +399,6 @@
                                 android:id="@+id/sinker_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -367,7 +411,6 @@
                                 android:id="@+id/shoot_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -380,6 +423,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -391,7 +435,6 @@
                                 android:id="@+id/slider_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -404,7 +447,6 @@
                                 android:id="@+id/curb_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -417,7 +459,6 @@
                                 android:id="@+id/fork_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -430,7 +471,6 @@
                                 android:id="@+id/sinker_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -443,7 +483,6 @@
                                 android:id="@+id/shoot_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -456,6 +495,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -467,7 +507,6 @@
                                 android:id="@+id/slider_3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -480,7 +519,6 @@
                                 android:id="@+id/curb_3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -493,7 +531,6 @@
                                 android:id="@+id/fork_3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -506,7 +543,6 @@
                                 android:id="@+id/sinker_3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -519,7 +555,6 @@
                                 android:id="@+id/shoot_3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -532,6 +567,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -543,7 +579,6 @@
                                 android:id="@+id/slider_4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -556,7 +591,6 @@
                                 android:id="@+id/curb_4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -569,7 +603,6 @@
                                 android:id="@+id/fork_4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -582,7 +615,6 @@
                                 android:id="@+id/sinker_4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -595,7 +627,6 @@
                                 android:id="@+id/shoot_4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -608,6 +639,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -619,7 +651,6 @@
                                 android:id="@+id/slider_5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -632,7 +663,6 @@
                                 android:id="@+id/curb_5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -645,7 +675,6 @@
                                 android:id="@+id/fork_5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -658,7 +687,6 @@
                                 android:id="@+id/sinker_5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -671,7 +699,6 @@
                                 android:id="@+id/shoot_5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -684,6 +711,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -695,7 +723,6 @@
                                 android:id="@+id/slider_6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -708,7 +735,6 @@
                                 android:id="@+id/curb_6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -721,7 +747,6 @@
                                 android:id="@+id/fork_6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -734,7 +759,6 @@
                                 android:id="@+id/sinker_6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -747,7 +771,6 @@
                                 android:id="@+id/shoot_6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -760,6 +783,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
                             android:orientation="horizontal">
 
                             <View
@@ -771,7 +795,6 @@
                                 android:id="@+id/slider_7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -784,7 +807,6 @@
                                 android:id="@+id/curb_7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -797,7 +819,6 @@
                                 android:id="@+id/fork_7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -810,7 +831,6 @@
                                 android:id="@+id/sinker_7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -823,7 +843,6 @@
                                 android:id="@+id/shoot_7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="2dp"
                                 android:layout_weight="2"
                                 android:background="#f7f7f7" />
 
@@ -842,66 +861,336 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
                 android:background="#3CB371"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
                     android:gravity="center_horizontal"
                     android:text="年間成績"
                     android:textColor="#ffffff"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#ffffff"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:text="作成中"
-                        android:textColor="#000000" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/win_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text="勝"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/lose_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text="負"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/save_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text="S"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="3dp"
+                                android:text="防"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/era_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.00"
+                                android:textColor="@android:color/black"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/innings_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:text="イニング"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2dp"
+                                android:text="奪三振"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/k_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="21sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2dp"
+                                android:text="与四死球"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/bb_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="21sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2dp"
+                                android:text="被打率"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/ave_against_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=".250"
+                                android:textColor="@android:color/black"
+                                android:textSize="21sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
                 android:background="#191970"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
                     android:gravity="center_horizontal"
                     android:text="年俸"
                     android:textColor="#ffd700"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#ffffff"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/hundred_million_number"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="作成中"
-                        android:textColor="#000000" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/hundred_million_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="億"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/ten_thousand_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/ten_thousand_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="万"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="円"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -909,7 +1198,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <!--<Button-->
