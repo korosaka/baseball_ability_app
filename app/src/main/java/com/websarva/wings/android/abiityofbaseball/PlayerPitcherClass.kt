@@ -221,13 +221,17 @@ class PlayerPitcherClass(
             Constants.MIDDLE -> 0.6
             else -> 0.7
         }
-        val staminaCoefficient = 0.1
+        val staminaCoefficient = when (pitcherType) {
+            Constants.STARTER -> 0.05
+            else -> 0.1
+        }
+        val minStarterStaminaContribution = 9.5
         val staminaContribution = when (pitcherType) {
-            Constants.STARTER -> stamina_ability * staminaCoefficient
+            Constants.STARTER -> minStarterStaminaContribution + (stamina_ability - Constants.NEEDED_STARTER_STAMINA) * staminaCoefficient
             else -> lossOfStamina * staminaCoefficient
         }
         val eraCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.57
+            Constants.STARTER -> 1.0
             Constants.MIDDLE -> 0.15
             else -> 0.05
         }
@@ -236,7 +240,7 @@ class PlayerPitcherClass(
             else -> (theoreticalERA - maxRequiredERA) * eraCoefficient
         }
         val bbCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.85
+            Constants.STARTER -> 0.5
             else -> 0.07
         }
         val bbContribution = rateOfBB * bbCoefficient

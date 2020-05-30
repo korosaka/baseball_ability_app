@@ -8,7 +8,6 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     val STARTER_INDEX = 0
     val MIDLLE_INDEX = 1
     val CLOSER_INDEX = 2
-    val NEEDED_STARTER_STAMINA = 77
 
 
     val a1_a = a1_a
@@ -2139,7 +2138,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
         when (typeIndex) {
             STARTER_INDEX -> {
                 pitcherType = Constants.STARTER
-                if (stamina < NEEDED_STARTER_STAMINA) setSecondType()
+                if (stamina < Constants.NEEDED_STARTER_STAMINA) setSecondType()
             }
             MIDLLE_INDEX -> {
                 pitcherType = Constants.MIDDLE
