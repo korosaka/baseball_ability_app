@@ -24,6 +24,7 @@ class Constants {
         const val STARTER = "starter"
         const val MIDDLE = "middleRelief"
         const val CLOSER = "closer"
+        const val NEEDED_STARTER_STAMINA = 77
 
 
         const val LANK_A = "A"
