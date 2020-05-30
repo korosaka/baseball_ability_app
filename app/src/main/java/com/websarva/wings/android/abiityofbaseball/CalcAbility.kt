@@ -234,10 +234,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 7)
                 plusAbility(Constants.KIND_CHANGE, 10)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
-                plusAbility(Constants.SLIDER, 1)
+                plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.SINKER, 3)
-                plusAbility(Constants.SHOOT, 1)
+                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 5)
             }
             "ワイルド" -> {
@@ -267,8 +267,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 5)
-                plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.SINKER, 5)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.MIDDLE, 4)
             }
             "強面" -> {
@@ -298,9 +298,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 6)
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
-                plusAbility(Constants.CURB, 4)
-                plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.MIDDLE, 2)
             }
             "明るそう" -> {
@@ -346,7 +346,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 3)
             }
             "おとぼけ者" -> {
@@ -463,7 +463,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.CURB, 1)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -2)
             }
@@ -534,9 +535,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 4)
                 plusAbility(Constants.KIND_CHANGE, 7)
                 plusAbility(Constants.AMOUNT_CHANGE, 7)
-                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.FOLK, 1)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SINKER, 1)
             }
             "頑張り屋さん" -> {
                 plusAbility(Constants.POWER, 2)
@@ -710,7 +711,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SINKER, 2)
             }
             "頭からっぽ" -> {
                 plusAbility(Constants.CONTACT, -1)
@@ -970,7 +971,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 16)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
-                plusAbility(Constants.SINKER, 5)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.MIDDLE, -5)
             }
@@ -1019,7 +1020,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.STAMINA, -8)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
-                plusAbility(Constants.SINKER, 4)
+                plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 3)
             }
@@ -1227,7 +1228,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 9)
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.SLIDER, 1)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, -5)
             }
@@ -1259,9 +1260,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 15)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
-                plusAbility(Constants.CURB, 5)
-                plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.SINKER, 5)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -10)
             }
             "美人系" -> {
@@ -1277,7 +1278,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 15)
                 plusAbility(Constants.SLIDER, 5)
                 plusAbility(Constants.FOLK, 5)
-                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SINKER, 1)
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 6)
             }
@@ -1320,9 +1321,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 9)
-                plusAbility(Constants.CURB, 4)
-                plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.SINKER, 1)
             }
             "マジメそう" -> {
                 plusAbility(Constants.SPEED, 1)
@@ -1369,9 +1370,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.SLIDER, 1)
-                plusAbility(Constants.CURB, 3)
-                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, 5)
             }
             "チャラそう" -> {
@@ -1416,9 +1416,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 4)
                 plusAbility(Constants.KIND_CHANGE, 13)
                 plusAbility(Constants.AMOUNT_CHANGE, 7)
-                plusAbility(Constants.SLIDER, 1)
+                plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 2)
             }
             "地味め" -> {
@@ -1471,7 +1471,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 7)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 3)
             }
             "おとなしい" -> {
                 plusAbility(Constants.CONTACT, 2)
@@ -1540,8 +1541,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 6)
                 plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.CURB, 3)
-                plusAbility(Constants.FOLK, 1)
-                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.SINKER, 1)
             }
             "頑張り屋さん" -> {
                 plusAbility(Constants.POWER, 2)
@@ -1638,7 +1639,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.SLIDER, 2)
-                plusAbility(Constants.SINKER, 4)
+                plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.CLOSER, -4)
             }
             "批評家" -> {
@@ -1708,9 +1709,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 13)
                 plusAbility(Constants.AMOUNT_CHANGE, 7)
-                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SINKER, 4)
+                plusAbility(Constants.SINKER, 2)
             }
             "頭からっぽ" -> {
                 plusAbility(Constants.CONTACT, -1)
@@ -1974,7 +1975,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.STAMINA, -7)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
-                plusAbility(Constants.SINKER, 4)
+                plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -6)
             }
