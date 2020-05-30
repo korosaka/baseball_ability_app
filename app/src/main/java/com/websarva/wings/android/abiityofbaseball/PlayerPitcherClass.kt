@@ -42,8 +42,8 @@ class PlayerPitcherClass(
     private val assumedMaxControl = 150
     private val oneGameInnings = 9.0
     private val maxRequiredERA = when (pitcherType) {
-        Constants.STARTER -> 3.0
-        Constants.MIDDLE -> 1.8
+        Constants.STARTER -> 4.0
+        Constants.MIDDLE -> 2.8
         else -> 2.0
     }
     private val minRequiredStamina = when (pitcherType) {
@@ -222,7 +222,7 @@ class PlayerPitcherClass(
             else -> 0.7
         }
         val staminaCoefficient = when (pitcherType) {
-            Constants.STARTER -> 0.05
+            Constants.STARTER -> 0.06
             else -> 0.1
         }
         val minStarterStaminaContribution = 9.5
