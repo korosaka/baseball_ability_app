@@ -1,35 +1,37 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerClass(name: String, contact: Int, power: Int, speed: Int, arm: Int, fielding: Int, chance: Double) {
+class PlayerClass(name: String, contact: Int, power: Int, speed: Int, arm: Int, fielding: Int, catching: Int, chance: Double) {
 
     val playerName = name
-    val contact_ability = contact
-    val power_ability = power
-    val speed_ability = speed
-    val arm_ability = arm
-    val fielding_ability = fielding
+    val contactAbility = contact
+    val powerAbility = power
+    val speedAbility = speed
+    val armAbility = arm
+    val fieldingAbility = fielding
+    val catchingAbility = catching
 
     val chance = chance
 
 
-    val contact_lank = lankMaking(contact_ability)
-    var power_lank = lankMaking(power_ability)
-    var speed_lank = lankMaking(speed_ability)
-    var arm_lank = lankMaking(arm_ability)
-    var fielding_lank = lankMaking(fielding_ability)
+    val contactLank = lankMaking(contactAbility)
+    var powerLank = lankMaking(powerAbility)
+    var speedLank = lankMaking(speedAbility)
+    var armLank = lankMaking(armAbility)
+    var fieldingLank = lankMaking(fieldingAbility)
+    val catchingLank = lankMaking(catchingAbility)
 
 
-    fun lankMaking(ability: Int): String {
+    private fun lankMaking(ability: Int): String {
 
-        when (ability) {
+        return when (ability) {
 
-            in -100..10 -> return Constants.LANK_G
-            in 11..20 -> return Constants.LANK_F
-            in 21..30 -> return Constants.LANK_E
-            in 31..40 -> return Constants.LANK_D
-            in 41..50 -> return Constants.LANK_C
-            in 51..60 -> return Constants.LANK_B
-            else -> return Constants.LANK_A
+            in -100..10 -> Constants.LANK_G
+            in 11..20 -> Constants.LANK_F
+            in 21..30 -> Constants.LANK_E
+            in 31..40 -> Constants.LANK_D
+            in 41..50 -> Constants.LANK_C
+            in 51..60 -> Constants.LANK_B
+            else -> Constants.LANK_A
         }
     }
 

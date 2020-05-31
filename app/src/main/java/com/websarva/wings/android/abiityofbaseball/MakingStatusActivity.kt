@@ -22,42 +22,37 @@ class MakingStatusActivity : BaseBannerActivity() {
                 intent.getIntExtra(Constants.SPEED, 0),
                 intent.getIntExtra(Constants.ARM_STRENGTH, 0),
                 intent.getIntExtra(Constants.FIELDING, 0),
+                intent.getIntExtra(Constants.CATCHING, 0),
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
 
 
-        val nameDisplay = findViewById<TextView>(R.id.name_display)
-        val contactDisplay = findViewById<TextView>(R.id.contact_display)
-        val powerDisplay = findViewById<TextView>(R.id.power_display)
-        val speedDisplay = findViewById<TextView>(R.id.speed_display)
-        val armDisplay = findViewById<TextView>(R.id.arm_display)
-        val fieldDisplay = findViewById<TextView>(R.id.field_display)
-
-
-        nameDisplay.text = player.playerName
+        name_display.text = player.playerName
         // TODO ポジションで条件分岐
-        nameDisplay.setBackgroundColor(Color.YELLOW)
+        name_display.setBackgroundColor(Color.YELLOW)
 
         // 字数でサイズ変更
-        var fontCount = nameDisplay.length()
+        var fontCount = name_display.length()
         when (fontCount) {
-            in 0..4 -> nameDisplay.width = 500
-            in 5..6 -> nameDisplay.width = 700
-            else -> nameDisplay.width = 900
+            in 0..4 -> name_display.width = 500
+            in 5..6 -> name_display.width = 700
+            else -> name_display.width = 900
         }
 
 
-        contactDisplay.text = player.contact_lank
-        powerDisplay.text = player.power_lank
-        speedDisplay.text = player.speed_lank
-        armDisplay.text = player.arm_lank
-        fieldDisplay.text = player.fielding_lank
+        contact_display.text = player.contactLank
+        power_display.text = player.powerLank
+        speed_display.text = player.speedLank
+        arm_display.text = player.armLank
+        field_display.text = player.fieldingLank
+        catching_display.text = player.catchingLank
 
-        setTextColor(contactDisplay)
-        setTextColor(powerDisplay)
-        setTextColor(speedDisplay)
-        setTextColor(armDisplay)
-        setTextColor(fieldDisplay)
+        setTextColor(contact_display)
+        setTextColor(power_display)
+        setTextColor(speed_display)
+        setTextColor(arm_display)
+        setTextColor(field_display)
+        setTextColor(catching_display)
 
 
         calcStats(player)
@@ -69,7 +64,7 @@ class MakingStatusActivity : BaseBannerActivity() {
      */
     fun calcStats(player: PlayerClass) {
 
-        var ave = 85 + (player.contact_ability * 4.5).toInt() + (player.power_ability * 0.45).toInt() + (player.speed_ability * 0.15).toInt()
+        var ave = 85 + (player.contactAbility * 4.5).toInt() + (player.powerAbility * 0.45).toInt() + (player.speedAbility * 0.15).toInt()
         if (ave < 150) {
             ave = 120 + (ave * 0.3).toInt()
         } else if (ave < 200) {
@@ -77,13 +72,13 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else if (ave > 300) {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
-        var hr = ((player.power_ability * 0.8) + (player.contact_ability * 0.1)).toInt() - 35
+        var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 35
         if (hr < 0) {
-            hr = (player.power_ability * 0.1).toInt()
+            hr = (player.powerAbility * 0.1).toInt()
         } else {
             hr += 10
         }
-        var rbi = (((player.contact_ability * 0.7) + (player.power_ability * 0.8)) * player.chance).toInt()
+        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.8)) * player.chance).toInt()
         if (rbi < 0) {
             rbi = 1
         } else if (rbi < 30) {
@@ -96,11 +91,11 @@ class MakingStatusActivity : BaseBannerActivity() {
         if (rbi < hr) {
             rbi = hr
         }
-        var sb = (player.speed_ability * 0.8).toInt() - 25
+        var sb = (player.speedAbility * 0.8).toInt() - 25
         if (sb < -10) {
-            sb = (player.speed_ability * 0.1).toInt()
+            sb = (player.speedAbility * 0.1).toInt()
         } else if (sb < 5) {
-            sb = (player.speed_ability * 0.1).toInt() + 1
+            sb = (player.speedAbility * 0.1).toInt() + 1
         } else if (sb > 30) {
             sb = (sb * 1.1).toInt()
         }
@@ -194,7 +189,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 30..39 -> salaryPoint += sb * 120
             else -> salaryPoint += sb * 150
         }
-        salaryPoint += ((player.speed_ability * 0.15) * (player.arm_ability * 0.3) * (player.fielding_ability * 1.2)).toInt()
+        salaryPoint += ((player.speedAbility * 0.15) * (player.armAbility * 0.3) * (player.fieldingAbility * 1.2)).toInt()
 
         when (salaryPoint) {
             in 0..440 -> salary = 440

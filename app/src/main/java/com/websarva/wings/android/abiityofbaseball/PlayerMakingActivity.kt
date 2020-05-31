@@ -65,32 +65,32 @@ class PlayerMakingActivity : BaseBannerActivity() {
     /**
      * -> 見た目
      */
-    fun changeToAppearance() {
+    private fun changeToAppearance() {
         showHideFragment(Constants.APPEARANCE)
         currentName = Constants.APPEARANCE
-        bt_next.setText(Constants.GO_NEXT)
+        bt_next.text = Constants.GO_NEXT
     }
 
     /**
      * -> 性格
      */
-    fun changeToPerson() {
+    private fun changeToPerson() {
         showHideFragment(Constants.PERSONALITY)
         currentName = Constants.PERSONALITY
-        bt_next.setText(Constants.GO_NEXT)
+        bt_next.text = Constants.GO_NEXT
     }
 
     /**
      * -> 人気
      */
-    fun changeToPopularity() {
+    private fun changeToPopularity() {
         showHideFragment(Constants.POPULARITY)
         currentName = Constants.POPULARITY
-        bt_next.setText(Constants.GO_TO_RESULT)
+        bt_next.text = Constants.GO_TO_RESULT
     }
 
 
-    fun showHideFragment(fragmentName: String) {
+    private fun showHideFragment(fragmentName: String) {
 
         val transaction = supportFragmentManager.beginTransaction()
 
@@ -127,7 +127,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
         transaction.commit()
     }
 
-    fun makePlayer() {
+    private fun makePlayer() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(Constants.CONFIRM_INPUT)
@@ -147,7 +147,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
                 intent.putExtra(Constants.SPEED, calcAbility.speed)
                 intent.putExtra(Constants.ARM_STRENGTH, calcAbility.armStrength)
                 intent.putExtra(Constants.FIELDING, calcAbility.fielding)
-
+                intent.putExtra(Constants.CATCHING, calcAbility.catching)
                 intent.putExtra(Constants.CHANCE, calcAbility.chance)
 
                 startActivity(intent)
@@ -170,7 +170,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
         builder.show()
     }
 
-    fun backToPrevious() {
+    private fun backToPrevious() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(Constants.GO_BACK)
         builder.setMessage(Constants.DO_YOU_GO_BACK)

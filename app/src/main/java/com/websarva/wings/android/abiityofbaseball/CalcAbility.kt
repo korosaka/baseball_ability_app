@@ -35,6 +35,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     var speed = 0
     var armStrength = 0
     var fielding = 0
+    var catching = 0
 
     var chance = 1.0
 
@@ -1046,6 +1047,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.3).toInt()
                 armStrength = (armStrength * 1.3).toInt()
                 fielding = (fielding * 1.3).toInt()
+                catching = (catching * 1.3).toInt()
                 ballSpeed = (ballSpeed * 1.15).toInt()
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
@@ -1058,6 +1060,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.15).toInt()
                 armStrength = (armStrength * 1.15).toInt()
                 fielding = (fielding * 1.15).toInt()
+                catching = (catching * 1.15).toInt()
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
@@ -1072,6 +1075,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.1).toInt()
                 armStrength = (armStrength * 1.1).toInt()
                 fielding = (fielding * 1.1).toInt()
+                catching = (catching * 1.1).toInt()
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
@@ -1084,6 +1088,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 0.8).toInt()
                 armStrength = (armStrength * 0.8).toInt()
                 fielding = (fielding * 0.8).toInt()
+                catching = (catching * 0.8).toInt()
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()
@@ -2048,6 +2053,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.3).toInt()
                 armStrength = (armStrength * 1.3).toInt()
                 fielding = (fielding * 1.3).toInt()
+                catching = (catching * 1.3).toInt()
                 ballSpeed = (ballSpeed * 1.15).toInt()
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
@@ -2060,6 +2066,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.15).toInt()
                 armStrength = (armStrength * 1.15).toInt()
                 fielding = (fielding * 1.15).toInt()
+                catching = (catching * 1.15).toInt()
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
@@ -2074,6 +2081,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 1.1).toInt()
                 armStrength = (armStrength * 1.1).toInt()
                 fielding = (fielding * 1.1).toInt()
+                catching = (catching * 1.1).toInt()
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
@@ -2087,6 +2095,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 speed = (speed * 0.8).toInt()
                 armStrength = (armStrength * 0.8).toInt()
                 fielding = (fielding * 0.8).toInt()
+                catching = (catching * 0.8).toInt()
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()
@@ -2105,6 +2114,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             Constants.SPEED -> speed += point
             Constants.ARM_STRENGTH -> armStrength += point
             Constants.FIELDING -> fielding += point
+            Constants.CATCHING -> catching += point
 
             Constants.BALL_SPEED -> ballSpeed += point
             Constants.CONTROL -> control += point
