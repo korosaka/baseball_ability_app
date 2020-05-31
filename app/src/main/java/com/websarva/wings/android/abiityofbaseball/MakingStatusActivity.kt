@@ -27,7 +27,12 @@ class MakingStatusActivity : BaseBannerActivity() {
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
 
+        displayPlayerInfo(player)
+        calcRecord(player)
 
+    }
+
+    private fun displayPlayerInfo(player: PlayerClass) {
         name_display.text = player.playerName
         // TODO ポジションで条件分岐
         name_display.setBackgroundColor(Color.YELLOW)
@@ -41,7 +46,10 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
 
-        ballisticAbility_display.text = player.ballisticAbility.toString()
+        ballistic_display.text = player.ballisticAbility.toString()
+        setBallisticArrow(ballistic_arrow, player.ballisticAbility)
+        setBallisticColor(ballistic_arrow, player.ballisticAbility)
+
         contact_display.text = player.contactLank
         power_display.text = player.powerLank
         speed_display.text = player.speedLank
@@ -49,22 +57,18 @@ class MakingStatusActivity : BaseBannerActivity() {
         field_display.text = player.fieldingLank
         catching_display.text = player.catchingLank
 
-        setTextColor(contact_display)
-        setTextColor(power_display)
-        setTextColor(speed_display)
-        setTextColor(arm_display)
-        setTextColor(field_display)
-        setTextColor(catching_display)
-
-
-        calcStats(player)
-
+        setLankColor(contact_display)
+        setLankColor(power_display)
+        setLankColor(speed_display)
+        setLankColor(arm_display)
+        setLankColor(field_display)
+        setLankColor(catching_display)
     }
 
     /**
      * 能力から成績を算出
      */
-    fun calcStats(player: PlayerClass) {
+    private fun calcRecord(player: PlayerClass) {
 
         var ave = 85 + (player.contactAbility * 4.5).toInt() + (player.powerAbility * 0.45).toInt() + (player.speedAbility * 0.15).toInt()
         if (ave < 150) {
@@ -92,15 +96,15 @@ class MakingStatusActivity : BaseBannerActivity() {
             3 -> (hr * 0.85).toInt()
             else -> hr
         }
-        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.9)) * player.chance).toInt()
+        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.8)) * player.chance).toInt()
         if (rbi < 0) {
             rbi = 1
         } else if (rbi < 30) {
-            rbi = (rbi * 0.5).toInt()
+            rbi = (rbi * 0.2).toInt()
         } else if (rbi < 50) {
-            rbi = (rbi * 0.65).toInt()
+            rbi = (rbi * 0.45).toInt()
         } else if (rbi < 70) {
-            rbi = (rbi * 0.8).toInt()
+            rbi = (rbi * 0.75).toInt()
         }
         if (rbi < hr) {
             rbi = hr
@@ -141,11 +145,11 @@ class MakingStatusActivity : BaseBannerActivity() {
         val sb_string = Integer.toString(sb) + "個"
         sb_dis.text = sb_string
 
-        calcSaraly(ave, hr, rbi, sb, player)
+        calcSalary(ave, hr, rbi, sb, player)
 
     }
 
-    fun setTextColor(alphabet: TextView) {
+    private fun setLankColor(alphabet: TextView) {
 
         when (alphabet.text) {
             Constants.LANK_A -> alphabet.setTextColor(Color.parseColor(Constants.LANK_A_COLOR))
@@ -158,58 +162,77 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
     }
 
+    private fun setBallisticArrow(arrow: TextView, ballistic: Int) {
+        arrow.text = when(ballistic) {
+            1 -> Constants.BALLISTIC_1_ARROW
+            4 -> Constants.BALLISTIC_4_ARROW
+            else -> Constants.BALLISTIC_2_OR_3_ARROW
+        }
+    }
+
+    private fun setBallisticColor(arrow: TextView, ballistic: Int) {
+        when(ballistic) {
+            1 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_1_COLOR))
+            2 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_2_COLOR))
+            3 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_3_COLOR))
+            else -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_4_COLOR))
+        }
+    }
+
     /**
      * 成績・能力から年俸算出
      */
-    fun calcSaraly(ave: Int, hr: Int, rbi: Int, sb: Int, player: PlayerClass) {
-        var salaryPoint = 0
-        var salary = 0
-        when (ave) {
-            in 0..199 -> salaryPoint += ave
-            in 200..224 -> salaryPoint += ave * 2
-            in 225..249 -> salaryPoint += ave * 4
-            in 250..274 -> salaryPoint += ave * 8
-            in 275..299 -> salaryPoint += ave * 15
-            in 300..332 -> salaryPoint += ave * 25
-            in 333..349 -> salaryPoint += ave * 35
-            in 350..399 -> salaryPoint += ave * 45
-            else -> salaryPoint += ave * 50
-        }
-        when (hr) {
-            in 0..9 -> salaryPoint += hr * 70
-            in 10..14 -> salaryPoint += hr * 130
-            in 15..19 -> salaryPoint += hr * 160
-            in 20..24 -> salaryPoint += hr * 220
-            in 25..29 -> salaryPoint += hr * 250
-            in 30..39 -> salaryPoint += hr * 360
-            in 40..49 -> salaryPoint += hr * 450
-            else -> salaryPoint += hr * 500
-        }
-        when (rbi) {
-            in 0..9 -> salaryPoint += rbi * 10
-            in 10..19 -> salaryPoint += rbi * 15
-            in 20..39 -> salaryPoint += rbi * 20
-            in 40..59 -> salaryPoint += rbi * 25
-            in 60..79 -> salaryPoint += rbi * 30
-            in 80..99 -> salaryPoint += rbi * 35
-            in 100..129 -> salaryPoint += rbi * 50
-            else -> salaryPoint += rbi * 60
-        }
-        when (sb) {
-            in 0..3 -> salaryPoint += sb * 10
-            in 4..9 -> salaryPoint += sb * 25
-            in 10..19 -> salaryPoint += sb * 50
-            in 20..29 -> salaryPoint += sb * 80
-            in 30..39 -> salaryPoint += sb * 120
-            else -> salaryPoint += sb * 150
-        }
-        salaryPoint += (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1000.0).toInt()
+    private fun calcSalary(ave: Int, hr: Int, rbi: Int, sb: Int, player: PlayerClass) {
 
-        salary = when (salaryPoint) {
+        val avePoint = when (ave) {
+            in 0..199 -> ave
+            in 200..224 -> ave * 2
+            in 225..249 -> ave * 4
+            in 250..274 -> ave * 8
+            in 275..299 -> ave * 15
+            in 300..332 -> ave * 25
+            in 333..349 -> ave * 35
+            in 350..399 -> ave * 45
+            else -> ave * 50
+        }
+
+        val hrPoint = when (hr) {
+            in 0..9 -> hr * 70
+            in 10..14 -> hr * 130
+            in 15..19 -> hr * 160
+            in 20..24 -> hr * 220
+            in 25..29 -> hr * 250
+            in 30..39 -> hr * 360
+            in 40..49 -> hr * 450
+            else -> hr * 500
+        }
+        val rbiPoint = when (rbi) {
+            in 0..9 -> rbi * 10
+            in 10..19 -> rbi * 15
+            in 20..39 -> rbi * 20
+            in 40..59 -> rbi * 25
+            in 60..79 -> rbi * 30
+            in 80..99 -> rbi * 35
+            in 100..129 -> rbi * 50
+            else -> rbi * 60
+        }
+        val sbPoint = when (sb) {
+            in 0..3 -> sb * 10
+            in 4..9 -> sb * 25
+            in 10..19 -> sb * 50
+            in 20..29 -> sb * 80
+            in 30..39 -> sb * 120
+            else -> sb * 150
+        }
+        val otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1000.0).toInt()
+
+        var salary = avePoint + hrPoint + rbiPoint + sbPoint + otherPoint
+
+        salary = when (salary) {
             in 0..440 -> 440
-            in 441..4999 -> (salaryPoint / 10) * 10
-            in 5000..9999 -> (salaryPoint / 100) * 100
-            else -> (salaryPoint / 1000) * 1000
+            in 441..4999 -> (salary / 10) * 10
+            in 5000..9999 -> (salary / 100) * 100
+            else -> (salary / 1000) * 1000
         }
 
         if (salary < 10000) {

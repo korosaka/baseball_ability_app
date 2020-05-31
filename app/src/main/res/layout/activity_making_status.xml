@@ -69,12 +69,20 @@
                             android:textColor="@android:color/black"
                             android:textSize="32sp"
                             android:textStyle="bold" />
-
                         <TextView
-                            android:id="@+id/ballisticAbility_display"
+                            android:id="@+id/ballistic_arrow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
+                            android:text="↗︎"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/ballistic_display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:text="0"
                             android:textSize="32sp"
                             android:textStyle="bold" />
                     </LinearLayout>
