@@ -17,6 +17,7 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         val player = PlayerClass(
                 intent.getStringExtra(Constants.PLAYER_NAME),
+                intent.getIntExtra(Constants.BALLISTIC, 1),
                 intent.getIntExtra(Constants.CONTACT, 0),
                 intent.getIntExtra(Constants.POWER, 0),
                 intent.getIntExtra(Constants.SPEED, 0),
@@ -40,6 +41,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
 
+        ballisticAbility_display.text = player.ballisticAbility.toString()
         contact_display.text = player.contactLank
         power_display.text = player.powerLank
         speed_display.text = player.speedLank
@@ -189,13 +191,13 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 30..39 -> salaryPoint += sb * 120
             else -> salaryPoint += sb * 150
         }
-        salaryPoint += ((player.speedAbility) * (player.armAbility) * (player.fieldingAbility * (player.catchingAbility / 100.0) * 0.1)).toInt()
+        salaryPoint += (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1000.0).toInt()
 
-        when (salaryPoint) {
-            in 0..440 -> salary = 440
-            in 441..4999 -> salary = (salaryPoint / 10) * 10
-            in 5000..9999 -> salary = (salaryPoint / 100) * 100
-            else -> salary = (salaryPoint / 1000) * 1000
+        salary = when (salaryPoint) {
+            in 0..440 -> 440
+            in 441..4999 -> (salaryPoint / 10) * 10
+            in 5000..9999 -> (salaryPoint / 100) * 100
+            else -> (salaryPoint / 1000) * 1000
         }
 
         if (salary < 10000) {

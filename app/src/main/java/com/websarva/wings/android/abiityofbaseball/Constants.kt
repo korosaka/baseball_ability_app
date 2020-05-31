@@ -50,6 +50,7 @@ class Constants {
         const val SHOOT = "shoot"
 
 
+        const val BALLISTIC = "ballistic"
         const val CONTACT = "contact"
         const val POWER = "power"
         const val SPEED = "speed"

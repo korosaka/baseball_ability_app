@@ -30,6 +30,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     val a5_o = a5_o
 
     // 野手能力ポイント
+    var ballistic = 0
     var contact = 0
     var power = 0
     var speed = 0
@@ -1142,6 +1143,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
         setPitcherType()
+        calcBallistic()
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2197,11 +2199,13 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
         }
 
         setPitcherType()
+        calcBallistic()
 
     }
 
     private fun plusAbility(initial: String, point: Int) {
         when (initial) {
+            Constants.BALLISTIC -> ballistic += point
             Constants.CONTACT -> contact += point
             Constants.POWER -> power += point
             Constants.SPEED -> speed += point
@@ -2227,7 +2231,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
         }
     }
 
-    fun plusSpecial(initial: String, point: Double) {
+    private fun plusSpecial(initial: String, point: Double) {
         when (initial) {
             Constants.CHANCE -> chance += point
         }
@@ -2256,6 +2260,22 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     private fun setSecondType() {
         pitcherType = Constants.MIDDLE
         if (pitcherTypes[CLOSER_INDEX] > pitcherTypes[MIDLLE_INDEX]) pitcherType = Constants.CLOSER
+    }
+
+    private fun calcBallistic() {
+        ballistic = when(ballistic) {
+            in 0..15 -> 1
+            in 16..30 -> 2
+            in 31..45 -> when(power) {
+                in 0..20 -> 2
+                else -> 3
+            }
+            else -> when(power) {
+                in 0..20 -> 2
+                in 21..30 -> 3
+                else -> 4
+            }
+        }
     }
 
 
