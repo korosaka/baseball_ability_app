@@ -43,6 +43,15 @@ class Constants {
         const val LANK_F_COLOR = "#00ffff"
         const val LANK_G_COLOR = "#696969"
 
+        const val BALLISTIC_1_ARROW = "→"
+        const val BALLISTIC_2_OR_3_ARROW = "↗︎"
+        const val BALLISTIC_4_ARROW = "↑"
+
+        const val BALLISTIC_1_COLOR = "#ebd842"
+        const val BALLISTIC_2_COLOR = "#ffa500"
+        const val BALLISTIC_3_COLOR = "#ff0000"
+        const val BALLISTIC_4_COLOR = "#ff1493"
+
         const val SLIDER = "slider"
         const val CURB = "curb"
         const val FOLK = "folk"
@@ -50,6 +59,7 @@ class Constants {
         const val SHOOT = "shoot"
 
 
+        const val BALLISTIC = "ballistic"
         const val CONTACT = "contact"
         const val POWER = "power"
         const val SPEED = "speed"

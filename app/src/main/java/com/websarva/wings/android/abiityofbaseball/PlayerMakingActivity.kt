@@ -142,6 +142,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
             if (playerType.equals(Constants.TYPE_FIELDER)) {
                 val intent = Intent(this, MakingStatusActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)
+                intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
                 intent.putExtra(Constants.CONTACT, calcAbility.contact)
                 intent.putExtra(Constants.POWER, calcAbility.power)
                 intent.putExtra(Constants.SPEED, calcAbility.speed)
