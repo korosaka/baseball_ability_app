@@ -74,13 +74,25 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else if (ave > 300) {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
-        var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 35
+        ave = when(player.ballisticAbility) {
+            1 -> ave
+            2 -> (ave * 0.99).toInt()
+            3 -> (ave * 0.97).toInt()
+            else -> (ave * 0.94).toInt()
+        }
+        var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 30
         if (hr < 0) {
             hr = (player.powerAbility * 0.1).toInt()
         } else {
             hr += 10
         }
-        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.8)) * player.chance).toInt()
+        hr = when(player.ballisticAbility) {
+            1 -> (hr * 0.4).toInt()
+            2 -> (hr * 0.65).toInt()
+            3 -> (hr * 0.85).toInt()
+            else -> hr
+        }
+        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.9)) * player.chance).toInt()
         if (rbi < 0) {
             rbi = 1
         } else if (rbi < 30) {
