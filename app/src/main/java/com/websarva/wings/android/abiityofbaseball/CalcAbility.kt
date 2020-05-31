@@ -2358,14 +2358,14 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     }
 
     private fun calcBallistic() {
-        ballistic = when(ballistic) {
+        ballistic = when (ballistic) {
             in 0..10 -> 1
             in 11..20 -> 2
-            in 21..30 -> when(power) {
+            in 21..30 -> when (power) {
                 in 0..20 -> 2
                 else -> 3
             }
-            else -> when(power) {
+            else -> when (power) {
                 in 0..20 -> 2
                 in 21..30 -> 3
                 else -> 4
