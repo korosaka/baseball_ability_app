@@ -35,7 +35,7 @@ class MakingStatusActivity : BaseBannerActivity() {
     private fun displayPlayerInfo(player: PlayerClass) {
         name_display.text = player.playerName
         // TODO ポジションで条件分岐
-        name_display.setBackgroundColor(Color.YELLOW)
+//        name_display.setBackgroundColor(Color.YELLOW)
 
         // 字数でサイズ変更
         var fontCount = name_display.length()
@@ -78,7 +78,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else if (ave > 300) {
             ave = ((ave - 300) * 0.5).toInt() + 300
         }
-        ave = when(player.ballisticAbility) {
+        ave = when (player.ballisticAbility) {
             1 -> ave
             2 -> (ave * 0.99).toInt()
             3 -> (ave * 0.97).toInt()
@@ -90,7 +90,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else {
             hr += 10
         }
-        hr = when(player.ballisticAbility) {
+        hr = when (player.ballisticAbility) {
             1 -> (hr * 0.4).toInt()
             2 -> (hr * 0.65).toInt()
             3 -> (hr * 0.85).toInt()
@@ -163,7 +163,7 @@ class MakingStatusActivity : BaseBannerActivity() {
     }
 
     private fun setBallisticArrow(arrow: TextView, ballistic: Int) {
-        arrow.text = when(ballistic) {
+        arrow.text = when (ballistic) {
             1 -> Constants.BALLISTIC_1_ARROW
             4 -> Constants.BALLISTIC_4_ARROW
             else -> Constants.BALLISTIC_2_OR_3_ARROW
@@ -171,7 +171,7 @@ class MakingStatusActivity : BaseBannerActivity() {
     }
 
     private fun setBallisticColor(arrow: TextView, ballistic: Int) {
-        when(ballistic) {
+        when (ballistic) {
             1 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_1_COLOR))
             2 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_2_COLOR))
             3 -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_3_COLOR))
