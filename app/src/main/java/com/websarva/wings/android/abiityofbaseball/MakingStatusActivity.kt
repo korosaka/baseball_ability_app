@@ -189,7 +189,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 30..39 -> salaryPoint += sb * 120
             else -> salaryPoint += sb * 150
         }
-        salaryPoint += ((player.speedAbility * 0.15) * (player.armAbility * 0.3) * (player.fieldingAbility * 1.2)).toInt()
+        salaryPoint += ((player.speedAbility) * (player.armAbility) * (player.fieldingAbility * (player.catchingAbility / 100.0) * 0.1)).toInt()
 
         when (salaryPoint) {
             in 0..440 -> salary = 440
