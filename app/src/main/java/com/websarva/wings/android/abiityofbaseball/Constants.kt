@@ -55,6 +55,7 @@ class Constants {
         const val SPEED = "speed"
         const val ARM_STRENGTH = "armStrength"
         const val FIELDING = "fielding"
+        const val CATCHING = "catching"
 
         const val APPEARANCE = "appearance"
         const val PERSONALITY = "personality"
