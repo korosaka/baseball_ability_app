@@ -17,6 +17,7 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         val player = PlayerClass(
                 intent.getStringExtra(Constants.PLAYER_NAME),
+                intent.getStringExtra(Constants.POSITION),
                 intent.getIntExtra(Constants.BALLISTIC, 1),
                 intent.getIntExtra(Constants.CONTACT, 0),
                 intent.getIntExtra(Constants.POWER, 0),
@@ -34,8 +35,32 @@ class MakingStatusActivity : BaseBannerActivity() {
 
     private fun displayPlayerInfo(player: PlayerClass) {
         name_display.text = player.playerName
-        // TODO ポジションで条件分岐
-//        name_display.setBackgroundColor(Color.YELLOW)
+        when (player.mainPosition) {
+            Constants.CATCHER -> {
+                position_display.text = Constants.CATCHER_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.CATCHER_COLOR))
+            }
+            Constants.FIRST_BASE -> {
+                position_display.text = Constants.FIRST_BASE_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.INFIELD_COLOR))
+            }
+            Constants.SECOND_BASE -> {
+                position_display.text = Constants.SECOND_BASE_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.INFIELD_COLOR))
+            }
+            Constants.THIRD_BASE -> {
+                position_display.text = Constants.THIRD_BASE_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.INFIELD_COLOR))
+            }
+            Constants.SHORTSTOP -> {
+                position_display.text = Constants.SHORTSTOP_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.INFIELD_COLOR))
+            }
+            Constants.OUTFIELD -> {
+                position_display.text = Constants.OUTFIELD_SYMBOL
+                name_display.setBackgroundColor(Color.parseColor(Constants.OUTFIELD_COLOR))
+            }
+        }
 
         // 字数でサイズ変更
         var fontCount = name_display.length()

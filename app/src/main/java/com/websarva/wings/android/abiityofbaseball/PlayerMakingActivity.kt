@@ -142,6 +142,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
             if (playerType.equals(Constants.TYPE_FIELDER)) {
                 val intent = Intent(this, MakingStatusActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)
+                intent.putExtra(Constants.POSITION, calcAbility.position)
                 intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
                 intent.putExtra(Constants.CONTACT, calcAbility.contact)
                 intent.putExtra(Constants.POWER, calcAbility.power)
@@ -155,7 +156,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
             } else {
                 val intent = Intent(this, MakingStatusPitcherActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)
-                intent.putExtra(Constants.PITCHER_TYPE, calcAbility.getPitcherType())
+                intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
                 intent.putExtra(Constants.BALL_SPEED, calcAbility.ballSpeed)
                 intent.putExtra(Constants.CONTROL, calcAbility.control)
                 intent.putExtra(Constants.STAMINA, calcAbility.stamina)

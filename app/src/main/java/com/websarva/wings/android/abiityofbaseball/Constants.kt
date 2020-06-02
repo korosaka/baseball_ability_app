@@ -15,6 +15,23 @@ class Constants {
         const val AMOUNT_CHANGE = "amountOfChangeBall_status"
         const val PRIORITY_CHANGE = "priorityOfChangeBall"
 
+        const val POSITION = "position"
+        const val CATCHER = "catcher"
+        const val FIRST_BASE = "firstBase"
+        const val SECOND_BASE = "secondBase"
+        const val THIRD_BASE = "thirdBase"
+        const val SHORTSTOP = "shortStop"
+        const val OUTFIELD = "outField"
+        const val CATCHER_SYMBOL = "捕"
+        const val FIRST_BASE_SYMBOL = "一"
+        const val SECOND_BASE_SYMBOL = "二"
+        const val THIRD_BASE_SYMBOL = "三"
+        const val SHORTSTOP_SYMBOL = "遊"
+        const val OUTFIELD_SYMBOL = "外"
+        const val CATCHER_COLOR = "#00ffff"
+        const val INFIELD_COLOR = "#ffff00"
+        const val OUTFIELD_COLOR = "#7cfc00"
+
         const val CHANCE = "chance"
 
         const val PITCHER_TYPE = "pitcherType"

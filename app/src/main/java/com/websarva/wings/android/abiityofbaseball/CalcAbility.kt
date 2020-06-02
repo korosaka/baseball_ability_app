@@ -5,11 +5,6 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                   a1_o: String, a2_o: String, a3_o: String, a4_o: String, a5_o: String) {
 
 
-    val STARTER_INDEX = 0
-    val MIDLLE_INDEX = 1
-    val CLOSER_INDEX = 2
-
-
     val a1_a = a1_a
     val a2_a = a2_a
     val a3_a = a3_a
@@ -38,6 +33,15 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     var fielding = 0
     var catching = 0
 
+    private val CATCHER_INDEX = 0
+    private val FIRST_BASE_INDEX = 1
+    private val SECOND_BASE_INDEX = 2
+    private val THIRD_BASE_INDEX = 3
+    private val SHORTSTOP_INDEX = 4
+    private val OUTFIELD_INDEX = 5
+    private var positions = intArrayOf(0, 0, 0, 0, 0, 0)
+    lateinit var position: String
+
     var chance = 1.0
 
     // 投手能力ポイント
@@ -48,11 +52,11 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     var amountOfCange = 0
     var priorityOfChange = arrayListOf(0, 0, 0, 0, 0)
 
-    var pitcherTypes = intArrayOf(0, 0, 0)
-    private var pitcherType = ""
-    fun getPitcherType(): String {
-        return pitcherType
-    }
+    private val STARTER_INDEX = 0
+    private val MIDLLE_INDEX = 1
+    private val CLOSER_INDEX = 2
+    private var pitcherTypes = intArrayOf(0, 0, 0)
+    lateinit var pitcherType: String
 
 
     init {
@@ -69,6 +73,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a1_a) {
             "~160cm" -> {
+                // TODO position test
+                plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.SPEED, 4)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.CONTACT, 2)
@@ -1189,6 +1195,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
         }
         setPitcherType()
         calcBallistic()
+        setPosition()
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2295,6 +2302,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         setPitcherType()
         calcBallistic()
+        setPosition()
 
     }
 
@@ -2307,6 +2315,13 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             Constants.ARM_STRENGTH -> armStrength += point
             Constants.FIELDING -> fielding += point
             Constants.CATCHING -> catching += point
+
+            Constants.CATCHER -> positions[CATCHER_INDEX] += point
+            Constants.FIRST_BASE -> positions[FIRST_BASE_INDEX] += point
+            Constants.SECOND_BASE -> positions[SECOND_BASE_INDEX] += point
+            Constants.THIRD_BASE -> positions[THIRD_BASE_INDEX] += point
+            Constants.SHORTSTOP -> positions[SHORTSTOP_INDEX] += point
+            Constants.OUTFIELD -> positions[OUTFIELD_INDEX] += point
 
             Constants.BALL_SPEED -> ballSpeed += point
             Constants.CONTROL -> control += point
@@ -2355,6 +2370,20 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     private fun setSecondType() {
         pitcherType = Constants.MIDDLE
         if (pitcherTypes[CLOSER_INDEX] > pitcherTypes[MIDLLE_INDEX]) pitcherType = Constants.CLOSER
+    }
+
+    private fun setPosition() {
+        val positionIndex = positions.indices.maxBy {
+            positions[it]
+        }
+        position = when (positionIndex) {
+            CATCHER_INDEX -> Constants.CATCHER
+            FIRST_BASE_INDEX -> Constants.FIRST_BASE
+            SECOND_BASE_INDEX -> Constants.SECOND_BASE
+            THIRD_BASE_INDEX -> Constants.THIRD_BASE
+            SHORTSTOP_INDEX -> Constants.SHORTSTOP
+            else -> Constants.OUTFIELD
+        }
     }
 
     private fun calcBallistic() {

@@ -107,7 +107,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         nameDisplay.text = playerPitcher.playerName
-        type_display.text = when (playerPitcher.getPitcherType()) {
+        type_display.text = when (playerPitcher.pitcherType) {
             STARTER -> STARTER_DISPLAY
             MIDDLE -> MIDDLE_DISPLAY
             else -> CLOSER_DISPLAY
@@ -223,13 +223,13 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         val coefficientOfERA = calcCoefficientOfERA(pitcher)
         var priceForSave = 0
-        if (pitcher.getPitcherType() == Constants.CLOSER) priceForSave = calcPriceForSave(pitcher)
+        if (pitcher.pitcherType == Constants.CLOSER) priceForSave = calcPriceForSave(pitcher)
         val minCoefficientOfWinRate = 0.6
         val coefficientOfWinRate = pitcher.winRate + minCoefficientOfWinRate
         val bonusOfK = calcBonusOfK(pitcher)
 
         var totalSalary = ((priceForWin + priceForInning + priceForSave) * coefficientOfERA).toInt()
-        if (pitcher.getPitcherType() == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
+        if (pitcher.pitcherType == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
 
         return when (totalSalary) {
             in 0..440 -> 440
@@ -240,7 +240,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     }
 
     private fun calcPriceForWin(pitcher: PlayerPitcherClass): Int {
-        val pricePerWin = when (pitcher.getPitcherType()) {
+        val pricePerWin = when (pitcher.pitcherType) {
             Constants.STARTER -> {
                 when (pitcher.win) {
                     in 0..5 -> 200
@@ -254,7 +254,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     }
 
     private fun calcPriceForInning(pitcher: PlayerPitcherClass): Int {
-        val pricePerInning = when (pitcher.getPitcherType()) {
+        val pricePerInning = when (pitcher.pitcherType) {
             Constants.STARTER -> {
                 when (pitcher.totalInnings) {
                     in 0..49 -> 30
