@@ -88,6 +88,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
             }
             "161~170cm" -> {
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 2)
