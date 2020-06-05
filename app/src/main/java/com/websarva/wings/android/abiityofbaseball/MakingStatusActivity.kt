@@ -143,6 +143,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
 
+        // TODO refactor ?
         val ave_dis = findViewById<TextView>(R.id.average_display)
         val hr_dis = findViewById<TextView>(R.id.homer_display)
         val rbi_dis = findViewById<TextView>(R.id.rbi_display)
@@ -156,18 +157,9 @@ class MakingStatusActivity : BaseBannerActivity() {
             ave_string = "." + Integer.toString(ave)
         }
         ave_dis.text = ave_string
-
-        // HR表示
-        val hr_string = Integer.toString(hr) + "本"
-        hr_dis.text = hr_string
-
-        // 打点表示
-        val rbi_string = Integer.toString(rbi) + "点"
-        rbi_dis.text = rbi_string
-
-        // 盗塁表示
-        val sb_string = Integer.toString(sb) + "個"
-        sb_dis.text = sb_string
+        hr_dis.text = Integer.toString(hr)
+        rbi_dis.text = Integer.toString(rbi)
+        sb_dis.text = Integer.toString(sb)
 
         calcSalary(ave, hr, rbi, sb, player)
 
