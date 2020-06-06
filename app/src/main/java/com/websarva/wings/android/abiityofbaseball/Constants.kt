@@ -86,9 +86,9 @@ class Constants {
         const val POPULARITY = "popularity"
 
 
-        const val GO_NEXT = "次へ"
-        const val GO_BACK = "戻る"
-        const val GO_TO_RESULT = "査定結果へ"
+        const val GO_NEXT = "次へ ▶"
+        const val GO_BACK = "◀ 戻る"
+        const val GO_TO_RESULT = "査定結果 ▶"
         const val YES = "はい"
         const val NO = "いいえ"
         const val CANCEL = "キャンセル"
