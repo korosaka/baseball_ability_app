@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import com.websarva.wings.android.abiityofbaseball.Constants.Companion.CLOSER_DISPLAY
@@ -107,6 +108,12 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         nameDisplay.text = playerPitcher.playerName
+        when (nameDisplay.length()) {
+            6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,11F, resources.displayMetrics)
+            7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,9F, resources.displayMetrics)
+            8 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,8F, resources.displayMetrics)
+        }
+
         type_display.text = when (playerPitcher.pitcherType) {
             STARTER -> STARTER_DISPLAY
             MIDDLE -> MIDDLE_DISPLAY

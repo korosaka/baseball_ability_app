@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_making_status.*
@@ -62,11 +63,10 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
         // 字数でサイズ変更
-        var fontCount = name_display.length()
-        when (fontCount) {
-            in 0..4 -> name_display.width = 500
-            in 5..6 -> name_display.width = 700
-            else -> name_display.width = 900
+        when (name_display.length()) {
+            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,11F, resources.displayMetrics)
+            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,9F, resources.displayMetrics)
+            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,8F, resources.displayMetrics)
         }
 
 
