@@ -973,6 +973,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1017,6 +1018,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1061,6 +1063,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1107,6 +1110,7 @@
                                 android:id="@+id/era_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:text="3.56"
                                 android:textColor="@android:color/white"
                                 android:textSize="25sp"
@@ -1146,6 +1150,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1191,6 +1196,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1236,6 +1242,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1283,6 +1290,7 @@
                                 android:id="@+id/ave_against_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
                                 android:text=".247"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
