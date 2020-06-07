@@ -109,15 +109,25 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         nameDisplay.text = playerPitcher.playerName
         when (nameDisplay.length()) {
-            6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,11F, resources.displayMetrics)
-            7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,9F, resources.displayMetrics)
-            8 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,8F, resources.displayMetrics)
+            5 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
+            6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
+            7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)
+            8 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
         }
 
-        type_display.text = when (playerPitcher.pitcherType) {
-            STARTER -> STARTER_DISPLAY
-            MIDDLE -> MIDDLE_DISPLAY
-            else -> CLOSER_DISPLAY
+        when (playerPitcher.pitcherType) {
+            STARTER -> {
+                type_display.text = STARTER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            MIDDLE -> {
+                type_display.text = MIDDLE_DISPLAY
+                type_display.setBackgroundResource(R.drawable.outfielder_name_background)
+            }
+            else -> {
+                type_display.text = CLOSER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.catcher_name_background)
+            }
         }
         ballSpeedDisplay.text = playerPitcher.max_speed.toString()
         controlDisplay.text = playerPitcher.control_lank

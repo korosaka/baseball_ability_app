@@ -39,6 +39,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         when (player.mainPosition) {
             Constants.CATCHER -> {
                 position_display.text = Constants.CATCHER_SYMBOL
+                name_display.setBackgroundResource(R.drawable.catcher_name_background)
             }
             Constants.FIRST_BASE -> {
                 position_display.text = Constants.FIRST_BASE_SYMBOL
@@ -64,9 +65,10 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         // 字数でサイズ変更
         when (name_display.length()) {
-            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,11F, resources.displayMetrics)
-            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,9F, resources.displayMetrics)
-            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,8F, resources.displayMetrics)
+            5 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
+            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
+            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)
+            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
         }
 
 
