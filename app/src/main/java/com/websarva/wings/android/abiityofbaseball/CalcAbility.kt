@@ -122,9 +122,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
             }
             "181~190cm" -> {
-                plusAbility(Constants.FIRST_BASE, 2)
+                plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 16)
                 plusAbility(Constants.ARM_STRENGTH, 3)
@@ -141,6 +142,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -5)
                 plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 7)
                 plusAbility(Constants.POWER, 20)
                 plusAbility(Constants.ARM_STRENGTH, 5)
@@ -1531,6 +1533,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a1_a) {
             "~150cm" -> {
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 2)
                 plusAbility(Constants.SPEED, 4)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.CONTROL, 4)
@@ -1542,6 +1547,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 5)
             }
             "151~160cm" -> {
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.SPEED, 2)
@@ -1555,6 +1564,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 3)
             }
             "161~170cm" -> {
+                plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.POWER, 6)
                 plusAbility(Constants.ARM_STRENGTH, 1)
@@ -1569,6 +1579,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 2)
             }
             "171~180cm" -> {
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 11)
                 plusAbility(Constants.ARM_STRENGTH, 3)
@@ -1582,6 +1596,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
             }
             "181cm~" -> {
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 7)
                 plusAbility(Constants.POWER, 15)
                 plusAbility(Constants.ARM_STRENGTH, 5)
@@ -1610,6 +1628,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
             }
             "スリム" -> {
+                plusAbility(Constants.CATCHER, -2)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.SPEED, 8)
                 plusAbility(Constants.ARM_STRENGTH, 2)
@@ -1624,6 +1645,11 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -2)
             }
             "ぽっちゃり" -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.FIRST_BASE, 4)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.BALLISTIC, 18)
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, -5)
@@ -1635,6 +1661,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, -5)
             }
             "ムッチリ" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -5)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, -2)
                 plusAbility(Constants.ARM_STRENGTH, 4)
@@ -1646,6 +1678,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 2)
             }
             "マッチョ" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 11)
                 plusAbility(Constants.SPEED, 3)
@@ -1660,6 +1698,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
             }
             "グラマラス" -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, -5)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 20)
                 plusAbility(Constants.CONTACT, 10)
                 plusAbility(Constants.POWER, 9)
@@ -1693,6 +1737,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
             }
             "カワイイ系" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, -4)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 9)
                 plusAbility(Constants.POWER, 3)
@@ -1711,6 +1761,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -10)
             }
             "美人系" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.POWER, 5)
@@ -1730,6 +1786,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 6)
             }
             "地味め" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 10)
@@ -1744,6 +1806,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -7)
             }
             "派手め" -> {
+                plusAbility(Constants.CATCHER, -4)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 8)
@@ -1763,6 +1831,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a4_a) {
             "優しそう" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.SPEED, 3)
@@ -1778,6 +1852,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 1)
             }
             "マジメそう" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.SPEED, 1)
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 9)
@@ -1792,6 +1872,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -4)
             }
             "こわそう" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 4)
@@ -1805,6 +1891,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 5)
             }
             "元気そう" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 6)
@@ -1819,6 +1911,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 7)
             }
             "大人しそう" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, -5)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, -1)
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.SPEED, 2)
                 plusAbility(Constants.FIELDING, 6)
@@ -1832,6 +1930,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 5)
             }
             "チャラそう" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 6)
@@ -1867,6 +1971,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
             }
             "オシャレ" -> {
+                plusAbility(Constants.CATCHER, -2)
+                plusAbility(Constants.FIRST_BASE, -5)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.POWER, 2)
@@ -1885,6 +1995,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
             }
             "地味め" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.ARM_STRENGTH, 3)
@@ -1900,6 +2016,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -6)
             }
             "派手め" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 5)
@@ -1914,6 +2036,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, -6)
             }
             "独創的" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.ARM_STRENGTH, 3)
@@ -1928,6 +2056,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a1_p) {
             "穏やか" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 4)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 2)
@@ -1944,6 +2078,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 3)
             }
             "おとなしい" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, -5)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, -1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 5)
@@ -1958,6 +2098,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -5)
             }
             "サバサバ" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 2)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, -1)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.SPEED, 3)
@@ -1971,6 +2117,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 6)
             }
             "うるさい" -> {
+                plusAbility(Constants.CATCHER, -2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, -2)
                 plusAbility(Constants.POWER, 4)
@@ -1988,9 +2140,14 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 2)
             }
             "メンヘラ" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.CONTACT, -3)
-                plusAbility(Constants.FIELDING, -6)
-                plusAbility(Constants.CATCHING, -3)
+                plusAbility(Constants.FIELDING, -5)
+                plusAbility(Constants.CATCHING, -8)
                 plusSpecial(Constants.CHANCE, -0.1)
                 plusAbility(Constants.CONTROL, -7)
                 plusAbility(Constants.STAMINA, -3)
@@ -2004,6 +2161,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a2_p) {
             "優しい" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 2)
@@ -2021,6 +2184,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 1)
             }
             "頑張り屋さん" -> {
+                plusAbility(Constants.CATCHER, 4)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, 2)
@@ -2034,6 +2203,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 9)
             }
             "気が強い" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, -2)
                 plusAbility(Constants.ARM_STRENGTH, 9)
@@ -2046,6 +2221,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 5)
             }
             "無気力" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 1)
@@ -2054,6 +2231,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 8)
             }
             "かまってちゃん" -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 4)
@@ -2065,6 +2248,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 3)
             }
             "一匹オオカミ" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.SPEED, 4)
@@ -2082,6 +2271,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a3_p) {
             "リーダー" -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.FIRST_BASE, -5)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 5)
@@ -2100,6 +2295,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 9)
             }
             "控えめ" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, -5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, -2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.FIELDING, 6)
                 plusAbility(Constants.CATCHING, 4)
@@ -2113,6 +2314,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, -7)
             }
             "ムードメーカー" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 4)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 5)
@@ -2131,6 +2338,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -4)
             }
             "批評家" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, -1)
                 plusAbility(Constants.CONTACT, -2)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, -2)
@@ -2144,6 +2357,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 7)
             }
             "アイデアマン" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, -4)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 3)
@@ -2179,6 +2398,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
             }
             "お勉強得意" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, -4)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, -1)
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.SPEED, 3)
@@ -2194,6 +2419,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -5)
             }
             "頭キレキレ" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.SPEED, 9)
@@ -2211,6 +2442,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
             }
             "頭からっぽ" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 4)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, -1)
                 plusAbility(Constants.POWER, 4)
@@ -2225,6 +2462,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, -4)
             }
             "脳筋" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 4)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 2)
@@ -2255,6 +2498,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
             "天然" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 5)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
@@ -2268,6 +2517,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             "冗談多め" -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.OUTFIELD, 4)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.ARM_STRENGTH, 3)
@@ -2280,6 +2535,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             "話が面白い" -> {
+                plusAbility(Constants.CATCHER, 4)
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 3)
@@ -2296,6 +2557,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
             }
             "つまらない" -> {
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.OUTFIELD, -3)
                 plusAbility(Constants.POWER, -2)
                 plusAbility(Constants.FIELDING, -2)
                 plusAbility(Constants.CATCHING, -2)
@@ -2305,6 +2568,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, -3)
             }
             "芸人" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, -5)
+                plusAbility(Constants.OUTFIELD, 4)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 6)
@@ -2323,6 +2592,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a1_o) {
             "マドンナ" -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, -5)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 9)
                 plusAbility(Constants.CONTACT, 13)
                 plusAbility(Constants.POWER, 8)
@@ -2338,6 +2613,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 6)
             }
             "モテる" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 6)
                 plusAbility(Constants.CONTACT, 9)
                 plusAbility(Constants.POWER, 6)
@@ -2353,6 +2634,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
             }
             "一部から" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 6)
                 plusAbility(Constants.POWER, 5)
@@ -2371,6 +2658,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
             }
             "ぷぅ〜" -> {
+                plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, -3)
                 plusAbility(Constants.SPEED, -2)
@@ -2387,6 +2675,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a2_o) {
             "大人気" -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 8)
@@ -2401,6 +2691,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 6)
             }
             "まぁまぁ" -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 5)
@@ -2428,6 +2720,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, 6)
             }
             "あんまり" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.ARM_STRENGTH, 1)
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.BALL_SPEED, 1)
@@ -2435,6 +2729,8 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STAMINA, -1)
             }
             "ぷぅ〜" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.CONTACT, -1)
                 plusAbility(Constants.POWER, -1)
                 plusAbility(Constants.SPEED, -1)
@@ -2472,6 +2768,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         when (a5_o) {
             "酒豪" -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 7)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 3)
@@ -2487,6 +2789,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 5)
             }
             "ヘビースモーカー" -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 1)
@@ -2503,6 +2811,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, -6)
             }
             "ボスキャラ" -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 6)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 8)
@@ -2518,6 +2832,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 15)
             }
             "お色気" -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, 4)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 20)
                 plusAbility(Constants.CONTACT, 10)
                 plusAbility(Constants.POWER, 15)
@@ -2536,6 +2856,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, -8)
             }
             "大和撫子" -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, -4)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 5)
@@ -2553,6 +2879,12 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 6)
             }
             "スポーツ少女" -> {
+                plusAbility(Constants.CATCHER, 1)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 5)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 14)
