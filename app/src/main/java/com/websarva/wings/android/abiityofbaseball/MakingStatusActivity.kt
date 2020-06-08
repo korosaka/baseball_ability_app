@@ -239,10 +239,19 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 4..9 -> sb * 25
             in 10..19 -> sb * 50
             in 20..29 -> sb * 80
-            in 30..39 -> sb * 120
-            else -> sb * 150
+            in 30..39 -> sb * 110
+            else -> sb * 125
         }
-        val otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1000.0).toInt()
+        var otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1200.0).toInt()
+        val positionBonus = when(player.mainPosition) {
+            Constants.CATCHER -> 1.5
+            Constants.SECOND_BASE -> 1.3
+            Constants.SHORTSTOP -> 1.35
+            Constants.THIRD_BASE -> 1.1
+            Constants.OUTFIELD -> 1.1
+            else -> 1.0
+        }
+        otherPoint = (otherPoint * positionBonus).toInt()
 
         var salary = avePoint + hrPoint + rbiPoint + sbPoint + otherPoint
 
