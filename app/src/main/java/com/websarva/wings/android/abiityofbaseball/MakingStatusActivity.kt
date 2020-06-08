@@ -243,7 +243,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             else -> sb * 125
         }
         var otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1200.0).toInt()
-        val positionBonus = when(player.mainPosition) {
+        val positionBonus = when (player.mainPosition) {
             Constants.CATCHER -> 1.5
             Constants.SECOND_BASE -> 1.3
             Constants.SHORTSTOP -> 1.35
