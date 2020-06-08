@@ -19,11 +19,8 @@ class PlayerPitcherClass(
     val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
     val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
     // TODO refactor (getter)
-    private val pitcherType = pitcherType
+    val pitcherType = pitcherType
 
-    fun getPitcherType(): String {
-        return this.pitcherType
-    }
 
     val chance = chance
 

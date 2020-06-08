@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import com.websarva.wings.android.abiityofbaseball.Constants.Companion.CLOSER_DISPLAY
@@ -107,10 +108,26 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         nameDisplay.text = playerPitcher.playerName
-        type_display.text = when (playerPitcher.getPitcherType()) {
-            STARTER -> STARTER_DISPLAY
-            MIDDLE -> MIDDLE_DISPLAY
-            else -> CLOSER_DISPLAY
+        when (nameDisplay.length()) {
+            5 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
+            6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
+            7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)
+            8 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
+        }
+
+        when (playerPitcher.pitcherType) {
+            STARTER -> {
+                type_display.text = STARTER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            MIDDLE -> {
+                type_display.text = MIDDLE_DISPLAY
+                type_display.setBackgroundResource(R.drawable.outfielder_name_background)
+            }
+            else -> {
+                type_display.text = CLOSER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.catcher_name_background)
+            }
         }
         ballSpeedDisplay.text = playerPitcher.max_speed.toString()
         controlDisplay.text = playerPitcher.control_lank
@@ -223,13 +240,13 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         val coefficientOfERA = calcCoefficientOfERA(pitcher)
         var priceForSave = 0
-        if (pitcher.getPitcherType() == Constants.CLOSER) priceForSave = calcPriceForSave(pitcher)
+        if (pitcher.pitcherType == Constants.CLOSER) priceForSave = calcPriceForSave(pitcher)
         val minCoefficientOfWinRate = 0.6
         val coefficientOfWinRate = pitcher.winRate + minCoefficientOfWinRate
         val bonusOfK = calcBonusOfK(pitcher)
 
         var totalSalary = ((priceForWin + priceForInning + priceForSave) * coefficientOfERA).toInt()
-        if (pitcher.getPitcherType() == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
+        if (pitcher.pitcherType == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
 
         return when (totalSalary) {
             in 0..440 -> 440
@@ -240,7 +257,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     }
 
     private fun calcPriceForWin(pitcher: PlayerPitcherClass): Int {
-        val pricePerWin = when (pitcher.getPitcherType()) {
+        val pricePerWin = when (pitcher.pitcherType) {
             Constants.STARTER -> {
                 when (pitcher.win) {
                     in 0..5 -> 200
@@ -254,7 +271,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
     }
 
     private fun calcPriceForInning(pitcher: PlayerPitcherClass): Int {
-        val pricePerInning = when (pitcher.getPitcherType()) {
+        val pricePerInning = when (pitcher.pitcherType) {
             Constants.STARTER -> {
                 when (pitcher.totalInnings) {
                     in 0..49 -> 30

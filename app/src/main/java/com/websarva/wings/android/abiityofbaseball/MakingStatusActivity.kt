@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_making_status.*
@@ -17,6 +18,7 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         val player = PlayerClass(
                 intent.getStringExtra(Constants.PLAYER_NAME),
+                intent.getStringExtra(Constants.POSITION),
                 intent.getIntExtra(Constants.BALLISTIC, 1),
                 intent.getIntExtra(Constants.CONTACT, 0),
                 intent.getIntExtra(Constants.POWER, 0),
@@ -34,15 +36,39 @@ class MakingStatusActivity : BaseBannerActivity() {
 
     private fun displayPlayerInfo(player: PlayerClass) {
         name_display.text = player.playerName
-        // TODO ポジションで条件分岐
-//        name_display.setBackgroundColor(Color.YELLOW)
+        when (player.mainPosition) {
+            Constants.CATCHER -> {
+                position_display.text = Constants.CATCHER_SYMBOL
+                name_display.setBackgroundResource(R.drawable.catcher_name_background)
+            }
+            Constants.FIRST_BASE -> {
+                position_display.text = Constants.FIRST_BASE_SYMBOL
+                name_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            Constants.SECOND_BASE -> {
+                position_display.text = Constants.SECOND_BASE_SYMBOL
+                name_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            Constants.THIRD_BASE -> {
+                position_display.text = Constants.THIRD_BASE_SYMBOL
+                name_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            Constants.SHORTSTOP -> {
+                position_display.text = Constants.SHORTSTOP_SYMBOL
+                name_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            Constants.OUTFIELD -> {
+                position_display.text = Constants.OUTFIELD_SYMBOL
+                name_display.setBackgroundResource(R.drawable.outfielder_name_background)
+            }
+        }
 
         // 字数でサイズ変更
-        var fontCount = name_display.length()
-        when (fontCount) {
-            in 0..4 -> name_display.width = 500
-            in 5..6 -> name_display.width = 700
-            else -> name_display.width = 900
+        when (name_display.length()) {
+            5 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
+            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
+            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)
+            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
         }
 
 
@@ -119,6 +145,7 @@ class MakingStatusActivity : BaseBannerActivity() {
         }
 
 
+        // TODO refactor ?
         val ave_dis = findViewById<TextView>(R.id.average_display)
         val hr_dis = findViewById<TextView>(R.id.homer_display)
         val rbi_dis = findViewById<TextView>(R.id.rbi_display)
@@ -132,18 +159,9 @@ class MakingStatusActivity : BaseBannerActivity() {
             ave_string = "." + Integer.toString(ave)
         }
         ave_dis.text = ave_string
-
-        // HR表示
-        val hr_string = Integer.toString(hr) + "本"
-        hr_dis.text = hr_string
-
-        // 打点表示
-        val rbi_string = Integer.toString(rbi) + "点"
-        rbi_dis.text = rbi_string
-
-        // 盗塁表示
-        val sb_string = Integer.toString(sb) + "個"
-        sb_dis.text = sb_string
+        hr_dis.text = Integer.toString(hr)
+        rbi_dis.text = Integer.toString(rbi)
+        sb_dis.text = Integer.toString(sb)
 
         calcSalary(ave, hr, rbi, sb, player)
 
@@ -221,10 +239,19 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 4..9 -> sb * 25
             in 10..19 -> sb * 50
             in 20..29 -> sb * 80
-            in 30..39 -> sb * 120
-            else -> sb * 150
+            in 30..39 -> sb * 110
+            else -> sb * 125
         }
-        val otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1000.0).toInt()
+        var otherPoint = (player.speedAbility * player.armAbility * player.fieldingAbility * player.catchingAbility / 1200.0).toInt()
+        val positionBonus = when (player.mainPosition) {
+            Constants.CATCHER -> 1.5
+            Constants.SECOND_BASE -> 1.3
+            Constants.SHORTSTOP -> 1.35
+            Constants.THIRD_BASE -> 1.1
+            Constants.OUTFIELD -> 1.1
+            else -> 1.0
+        }
+        otherPoint = (otherPoint * positionBonus).toInt()
 
         var salary = avePoint + hrPoint + rbiPoint + sbPoint + otherPoint
 
