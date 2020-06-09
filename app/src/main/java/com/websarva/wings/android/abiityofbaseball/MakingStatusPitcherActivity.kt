@@ -260,9 +260,9 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         val pricePerWin = when (pitcher.pitcherType) {
             Constants.STARTER -> {
                 when (pitcher.win) {
-                    in 0..5 -> 200
-                    in 6..9 -> 300
-                    else -> 600
+                    in 0..5 -> 180
+                    in 6..9 -> 250
+                    else -> 500
                 }
             }
             else -> 200
@@ -275,9 +275,9 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
             Constants.STARTER -> {
                 when (pitcher.totalInnings) {
                     in 0..49 -> 30
-                    in 50..99 -> 40
-                    in 100..142 -> 50
-                    else -> 75
+                    in 50..99 -> 35
+                    in 100..142 -> 40
+                    else -> 80
                 }
             }
             Constants.MIDDLE -> {
