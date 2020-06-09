@@ -100,5 +100,7 @@ class Constants {
         const val DO_YOU_GO_BACK = "前の画面に戻りますか？"
         const val PLEASE_INPUT_NAME = "登録名を入力してください"
 
+        const val HALF_SPACE = " "
+
     }
 }

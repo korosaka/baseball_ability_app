@@ -109,6 +109,8 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         nameDisplay.text = playerPitcher.playerName
         when (nameDisplay.length()) {
+            2 -> nameDisplay.text = (playerPitcher.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + playerPitcher.playerName[1])
+            3 -> nameDisplay.text = (playerPitcher.playerName[0] + Constants.HALF_SPACE + playerPitcher.playerName[1] + Constants.HALF_SPACE + playerPitcher.playerName[2])
             5 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
             6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
             7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)

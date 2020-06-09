@@ -65,6 +65,8 @@ class MakingStatusActivity : BaseBannerActivity() {
 
         // 字数でサイズ変更
         when (name_display.length()) {
+            2 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + player.playerName[1])
+            3 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + player.playerName[1] + Constants.HALF_SPACE + player.playerName[2])
             5 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12F, resources.displayMetrics)
             6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10.5F, resources.displayMetrics)
             7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9F, resources.displayMetrics)
@@ -122,7 +124,7 @@ class MakingStatusActivity : BaseBannerActivity() {
             3 -> (hr * 0.85).toInt()
             else -> hr
         }
-        var rbi = (((player.contactAbility * 0.7) + (player.powerAbility * 0.8)) * player.chance).toInt()
+        var rbi = (((player.contactAbility * 0.5) + (player.powerAbility * 1.0)) * player.chance).toInt()
         if (rbi < 0) {
             rbi = 1
         } else if (rbi < 30) {
@@ -226,8 +228,8 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 25..29 -> hr * 250
             in 30..39 -> hr * 360
             in 40..49 -> hr * 450
-            in 50.. 54 -> hr * 500
-            in 55.. 59 -> hr * 550
+            in 50..54 -> hr * 500
+            in 55..59 -> hr * 550
             else -> hr * 600
         }
         val rbiPoint = when (rbi) {
