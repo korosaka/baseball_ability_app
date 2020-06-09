@@ -128,9 +128,13 @@ class MakingStatusActivity : BaseBannerActivity() {
         } else if (rbi < 30) {
             rbi = (rbi * 0.2).toInt()
         } else if (rbi < 50) {
-            rbi = (rbi * 0.45).toInt()
+            rbi = (rbi * 0.35).toInt()
+        } else if (rbi < 60) {
+            rbi = (rbi * 0.6).toInt()
         } else if (rbi < 70) {
             rbi = (rbi * 0.75).toInt()
+        } else if (rbi < 80) {
+            rbi = (rbi * 0.9).toInt()
         }
         if (rbi < hr) {
             rbi = hr
@@ -222,7 +226,9 @@ class MakingStatusActivity : BaseBannerActivity() {
             in 25..29 -> hr * 250
             in 30..39 -> hr * 360
             in 40..49 -> hr * 450
-            else -> hr * 500
+            in 50.. 54 -> hr * 500
+            in 55.. 59 -> hr * 550
+            else -> hr * 600
         }
         val rbiPoint = when (rbi) {
             in 0..9 -> rbi * 10
