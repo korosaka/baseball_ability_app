@@ -65,32 +65,32 @@ class PlayerMakingActivity : BaseBannerActivity() {
     /**
      * -> 見た目
      */
-    fun changeToAppearance() {
+    private fun changeToAppearance() {
         showHideFragment(Constants.APPEARANCE)
         currentName = Constants.APPEARANCE
-        bt_next.setText(Constants.GO_NEXT)
+        bt_next.text = Constants.GO_NEXT
     }
 
     /**
      * -> 性格
      */
-    fun changeToPerson() {
+    private fun changeToPerson() {
         showHideFragment(Constants.PERSONALITY)
         currentName = Constants.PERSONALITY
-        bt_next.setText(Constants.GO_NEXT)
+        bt_next.text = Constants.GO_NEXT
     }
 
     /**
      * -> 人気
      */
-    fun changeToPopularity() {
+    private fun changeToPopularity() {
         showHideFragment(Constants.POPULARITY)
         currentName = Constants.POPULARITY
-        bt_next.setText(Constants.GO_TO_RESULT)
+        bt_next.text = Constants.GO_TO_RESULT
     }
 
 
-    fun showHideFragment(fragmentName: String) {
+    private fun showHideFragment(fragmentName: String) {
 
         val transaction = supportFragmentManager.beginTransaction()
 
@@ -127,7 +127,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
         transaction.commit()
     }
 
-    fun makePlayer() {
+    private fun makePlayer() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(Constants.CONFIRM_INPUT)
@@ -142,19 +142,21 @@ class PlayerMakingActivity : BaseBannerActivity() {
             if (playerType.equals(Constants.TYPE_FIELDER)) {
                 val intent = Intent(this, MakingStatusActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)
+                intent.putExtra(Constants.POSITION, calcAbility.position)
+                intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
                 intent.putExtra(Constants.CONTACT, calcAbility.contact)
                 intent.putExtra(Constants.POWER, calcAbility.power)
                 intent.putExtra(Constants.SPEED, calcAbility.speed)
                 intent.putExtra(Constants.ARM_STRENGTH, calcAbility.armStrength)
                 intent.putExtra(Constants.FIELDING, calcAbility.fielding)
-
+                intent.putExtra(Constants.CATCHING, calcAbility.catching)
                 intent.putExtra(Constants.CHANCE, calcAbility.chance)
 
                 startActivity(intent)
             } else {
                 val intent = Intent(this, MakingStatusPitcherActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)
-                intent.putExtra(Constants.PITCHER_TYPE, calcAbility.getPitcherType())
+                intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
                 intent.putExtra(Constants.BALL_SPEED, calcAbility.ballSpeed)
                 intent.putExtra(Constants.CONTROL, calcAbility.control)
                 intent.putExtra(Constants.STAMINA, calcAbility.stamina)
@@ -170,7 +172,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
         builder.show()
     }
 
-    fun backToPrevious() {
+    private fun backToPrevious() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(Constants.GO_BACK)
         builder.setMessage(Constants.DO_YOU_GO_BACK)

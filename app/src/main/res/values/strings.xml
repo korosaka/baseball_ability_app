@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">野球人化</string>
+    <string name="app_name">野球能力診断</string>
     <string name="title1">＜パワプロ風＞</string>
-    <string name="title2">野球能力査定アプリ</string>
+    <string name="title2">野球能力診断アプリ</string>
     <string name="app_start">はじめる</string>
     <string name="player_making">野球選手をつくる</string>
     <string name="check_data">つくった選手をみる</string>

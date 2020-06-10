@@ -15,6 +15,20 @@ class Constants {
         const val AMOUNT_CHANGE = "amountOfChangeBall_status"
         const val PRIORITY_CHANGE = "priorityOfChangeBall"
 
+        const val POSITION = "position"
+        const val CATCHER = "catcher"
+        const val FIRST_BASE = "firstBase"
+        const val SECOND_BASE = "secondBase"
+        const val THIRD_BASE = "thirdBase"
+        const val SHORTSTOP = "shortStop"
+        const val OUTFIELD = "outField"
+        const val CATCHER_SYMBOL = "捕"
+        const val FIRST_BASE_SYMBOL = "一"
+        const val SECOND_BASE_SYMBOL = "二"
+        const val THIRD_BASE_SYMBOL = "三"
+        const val SHORTSTOP_SYMBOL = "遊"
+        const val OUTFIELD_SYMBOL = "外"
+
         const val CHANCE = "chance"
 
         const val PITCHER_TYPE = "pitcherType"
@@ -43,6 +57,15 @@ class Constants {
         const val LANK_F_COLOR = "#00ffff"
         const val LANK_G_COLOR = "#696969"
 
+        const val BALLISTIC_1_ARROW = "→"
+        const val BALLISTIC_2_OR_3_ARROW = "↗︎"
+        const val BALLISTIC_4_ARROW = "↑"
+
+        const val BALLISTIC_1_COLOR = "#ebd842"
+        const val BALLISTIC_2_COLOR = "#ffa500"
+        const val BALLISTIC_3_COLOR = "#ff0000"
+        const val BALLISTIC_4_COLOR = "#ff1493"
+
         const val SLIDER = "slider"
         const val CURB = "curb"
         const val FOLK = "folk"
@@ -50,20 +73,22 @@ class Constants {
         const val SHOOT = "shoot"
 
 
+        const val BALLISTIC = "ballistic"
         const val CONTACT = "contact"
         const val POWER = "power"
         const val SPEED = "speed"
         const val ARM_STRENGTH = "armStrength"
         const val FIELDING = "fielding"
+        const val CATCHING = "catching"
 
         const val APPEARANCE = "appearance"
         const val PERSONALITY = "personality"
         const val POPULARITY = "popularity"
 
 
-        const val GO_NEXT = "次へ"
-        const val GO_BACK = "戻る"
-        const val GO_TO_RESULT = "査定結果へ"
+        const val GO_NEXT = "次へ ▶"
+        const val GO_BACK = "◀ 戻る"
+        const val GO_TO_RESULT = "査定結果 ▶"
         const val YES = "はい"
         const val NO = "いいえ"
         const val CANCEL = "キャンセル"
@@ -74,6 +99,8 @@ class Constants {
 
         const val DO_YOU_GO_BACK = "前の画面に戻りますか？"
         const val PLEASE_INPUT_NAME = "登録名を入力してください"
+
+        const val HALF_SPACE = " "
 
     }
 }
