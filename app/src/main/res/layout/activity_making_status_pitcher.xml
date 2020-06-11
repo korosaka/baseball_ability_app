@@ -47,9 +47,9 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:padding="2dp"
-                        android:text="NAME"
+                        android:text="アイウエ"
                         android:textColor="@android:color/black"
-                        android:textSize="35sp"
+                        android:textSize="33sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -57,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="0.9"
+                        android:maxLines="1"
                         android:background="@drawable/batter_record_background"
                         android:orientation="vertical">
 
@@ -361,8 +362,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="スライダー"
+                                android:maxLines="1"
                                 android:textColor="@android:color/white"
-                                android:textSize="10sp" />
+                                android:textSize="8sp" />
 
                             <TextView
                                 android:id="@+id/title_curb"
@@ -371,8 +373,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="カーブ"
+                                android:maxLines="1"
                                 android:textColor="@android:color/white"
-                                android:textSize="10sp" />
+                                android:textSize="8sp" />
 
                             <TextView
                                 android:id="@+id/title_fork"
@@ -381,8 +384,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="フォーク"
+                                android:maxLines="1"
                                 android:textColor="@android:color/white"
-                                android:textSize="10sp" />
+                                android:textSize="8sp" />
 
                             <TextView
                                 android:id="@+id/title_sinker"
@@ -391,8 +395,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="シンカー"
+                                android:maxLines="1"
                                 android:textColor="@android:color/white"
-                                android:textSize="10sp" />
+                                android:textSize="8sp" />
 
                             <TextView
                                 android:id="@+id/title_shoot"
@@ -401,8 +406,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="シュート"
+                                android:maxLines="1"
                                 android:textColor="@android:color/white"
-                                android:textSize="10sp" />
+                                android:textSize="8sp" />
 
                         </LinearLayout>
 
