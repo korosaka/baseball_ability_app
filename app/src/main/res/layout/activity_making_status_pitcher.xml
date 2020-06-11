@@ -57,7 +57,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="0.9"
-                        android:maxLines="1"
                         android:background="@drawable/batter_record_background"
                         android:orientation="vertical">
 
@@ -76,6 +75,7 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:layout_marginBottom="5dp"
+                            android:maxLines="1"
                             android:background="@drawable/white_round_background"
                             android:gravity="center_horizontal"
                             android:orientation="horizontal">
