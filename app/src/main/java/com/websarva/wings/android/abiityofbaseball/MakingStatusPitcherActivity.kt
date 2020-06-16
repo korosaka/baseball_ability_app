@@ -22,14 +22,14 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
 
         val playerPitcher = PlayerPitcherClass(
-                intent.getStringExtra(Constants.PLAYER_NAME),
-                intent.getStringExtra(Constants.PITCHER_TYPE),
+                intent.getStringExtra(Constants.PLAYER_NAME)!!,
+                intent.getStringExtra(Constants.PITCHER_TYPE)!!,
                 intent.getIntExtra(Constants.BALL_SPEED, 0),
                 intent.getIntExtra(Constants.CONTROL, 0),
                 intent.getIntExtra(Constants.STAMINA, 0),
                 intent.getIntExtra(Constants.KIND_CHANGE, 0),
                 intent.getIntExtra(Constants.AMOUNT_CHANGE, 0),
-                intent.getIntegerArrayListExtra(Constants.PRIORITY_CHANGE),
+                intent.getIntegerArrayListExtra(Constants.PRIORITY_CHANGE)!!,
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
 
