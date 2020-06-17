@@ -1,38 +1,29 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import kotlin.math.ceil
+
 class PlayerPitcherClass(
-        name: String,
-        pitcherType: String,
-        ballSpeed: Int,
-        control: Int,
-        stamina: Int,
+        val playerName: String,
+        val pitcherType: String,
+        private val ballSpeedAbility: Int,
+        private val controlAbility: Int,
+        private val staminaAbility: Int,
         kindsOfChange: Int,
         amountOfChange: Int,
         priorityOfChange: ArrayList<Int>,
-        chance: Double) {
+        private val chance: Double) {
 
-    val playerName = name
-    // TODO change name !
-    val ball_speed_ability = ballSpeed
-    val control_ability = control
-    val stamina_ability = stamina
-    val kind_change_ability = calculateNumberOfChangeBalls(kindsOfChange)
-    val amount_change_ability = calculateTotalChangeAmount(amountOfChange, kind_change_ability)
-    // TODO refactor (getter)
-    val pitcherType = pitcherType
-
-
-    val chance = chance
+    private val kindChangeAbility = calculateNumberOfChangeBalls(kindsOfChange)
+    private val amountChangeAbility = calculateTotalChangeAmount(amountOfChange, kindChangeAbility)
 
     private val minSpeed = 120
-    val control_lank = lankMaking(control_ability)
-    val stamina_lank = lankMaking(stamina_ability)
-    val max_speed = calculateMaxSpeed(ball_speed_ability)
+    val controlLank = lankMaking(controlAbility)
+    val staminaLank = lankMaking(staminaAbility)
+    val maxSpeed = calculateMaxSpeed(ballSpeedAbility)
 
-    val changeballs = calculateChangeBalls(kind_change_ability, amount_change_ability, priorityOfChange)
+    val changeBalls = calculateChangeBalls(kindChangeAbility, amountChangeAbility, priorityOfChange)
 
     // records of season
-    // TODO object ??
     private val assumedMaxSpeed = 160
     private val assumedMaxChangeAmount = 15
     private val starterLossSpeed = 6
@@ -49,17 +40,17 @@ class PlayerPitcherClass(
         else -> 0
     }
     private val lossOfStamina = when {
-        stamina_ability < minRequiredStamina -> minRequiredStamina - stamina_ability
+        staminaAbility < minRequiredStamina -> minRequiredStamina - staminaAbility
         else -> 0
     }
 
     private val addedSpeedToMin = when (pitcherType) {
-        Constants.STARTER -> max_speed - starterLossSpeed - minSpeed
-        else -> max_speed - minSpeed
+        Constants.STARTER -> maxSpeed - starterLossSpeed - minSpeed
+        else -> maxSpeed - minSpeed
     }
     val battingAveAgainst = calculateBattingAveAgainst()
-    val rateOfBB = calculateBBRate()
-    val rateOfK = calculateKRate()
+    private val rateOfBB = calculateBBRate()
+    private val rateOfK = calculateKRate()
     private val theoreticalERA = calculateTheoreticalERA()
     private val games = calculateGames()
     private val inningsPerGame = calculateInningsPerGame()
@@ -94,13 +85,13 @@ class PlayerPitcherClass(
         val kindOfChangeCoefficient = 0.1
         val assumedMaxChangePointForCalc = assumedMaxChangeAmount * (1.0 + assumedMaxKindOfChange * kindOfChangeCoefficient)
         val changeCoefficient = variableRangeEach / assumedMaxChangePointForCalc
-        val kindOfChangeWeight = 1.0 + kind_change_ability * kindOfChangeCoefficient
-        val changePointForCalc = amount_change_ability * kindOfChangeWeight
+        val kindOfChangeWeight = 1.0 + kindChangeAbility * kindOfChangeCoefficient
+        val changePointForCalc = amountChangeAbility * kindOfChangeWeight
         battingAveAgainstElements[changeBallIndex] -= changePointForCalc * changeCoefficient
 
         // calculate from control
         val controlCoefficient = variableRangeEach / assumedMaxControl
-        battingAveAgainstElements[controlIndex] -= control_ability * controlCoefficient
+        battingAveAgainstElements[controlIndex] -= controlAbility * controlCoefficient
 
         return battingAveAgainstElements.sum().toFloat()
     }
@@ -115,7 +106,7 @@ class PlayerPitcherClass(
         val variableRange = maxBBRate - minBBRate
         val controlCoefficient = variableRange / assumedMaxControl
 
-        val rateOfBB9 = (maxBBRate - control_ability * controlCoefficient).toFloat()
+        val rateOfBB9 = (maxBBRate - controlAbility * controlCoefficient).toFloat()
         if (rateOfBB9 < minBBRate) return minBBRate.toFloat()
         return rateOfBB9
     }
@@ -135,7 +126,7 @@ class PlayerPitcherClass(
         val weightOfFolk = 0.15
         val weightOfSlider = 0.05
 
-        var elementsOfKRate = arrayOf(0.0, 0.0, 0.0, 0.0)
+        val elementsOfKRate = arrayOf(0.0, 0.0, 0.0, 0.0)
         val indexOfSpeed = 0
         val indexOfChange = 1
         val indexOfFolk = 2
@@ -147,18 +138,18 @@ class PlayerPitcherClass(
 
         // calculate from change ball
         val assignmentOfChange = variableRange * weightOfChangeAmount
-        elementsOfKRate[indexOfChange] = amount_change_ability * (assignmentOfChange / assumedMaxChangeAmount)
+        elementsOfKRate[indexOfChange] = amountChangeAbility * (assignmentOfChange / assumedMaxChangeAmount)
 
         // calculate from folk
         val maxFolkAmount = 7
         val assignmentOfFolk = variableRange * weightOfFolk
-        val folkAmount = changeballs[2]
+        val folkAmount = changeBalls[2]
         elementsOfKRate[indexOfFolk] = folkAmount * (assignmentOfFolk / maxFolkAmount)
 
         // calculate from slider
         val maxSliderAmount = 7
         val assignmentOfSlider = variableRange * weightOfSlider
-        val sliderAmount = changeballs[0]
+        val sliderAmount = changeBalls[0]
         elementsOfKRate[indexOfSlider] = sliderAmount * (assignmentOfSlider / maxSliderAmount)
 
 
@@ -224,7 +215,7 @@ class PlayerPitcherClass(
         }
         val minStarterStaminaContribution = 9.5
         val staminaContribution = when (pitcherType) {
-            Constants.STARTER -> minStarterStaminaContribution + (stamina_ability - Constants.NEEDED_STARTER_STAMINA) * staminaCoefficient
+            Constants.STARTER -> minStarterStaminaContribution + (staminaAbility - Constants.NEEDED_STARTER_STAMINA) * staminaCoefficient
             else -> lossOfStamina * staminaCoefficient
         }
         val eraCoefficient = when (pitcherType) {
@@ -253,7 +244,7 @@ class PlayerPitcherClass(
     }
 
     private fun calculateActualERA(): Float {
-        val actualRunsAllowed = Math.ceil(theoreticalERA * totalInnings / oneGameInnings)
+        val actualRunsAllowed = ceil(theoreticalERA * totalInnings / oneGameInnings)
         return (actualRunsAllowed / totalInnings * oneGameInnings).toFloat()
     }
 
@@ -275,7 +266,7 @@ class PlayerPitcherClass(
     }
 
     private fun calculateWin(): Int {
-        var pitchingGames = games - save
+        val pitchingGames = games - save
 
         val contributionOfERA = 1 - theoreticalERA / 10
         var win = (pitchingGames * inningsPerGame / oneGameInnings * contributionOfERA * chance).toInt()
@@ -319,17 +310,22 @@ class PlayerPitcherClass(
      * 球速計算
      */
     private fun calculateMaxSpeed(ability: Int): Int {
-        var plusSpeed = 0
-        if (ability < 10) {
-            plusSpeed = 0
-        } else if (ability < 30) {
-            plusSpeed = ability / 2
-        } else if (ability < 60) {
-            plusSpeed = 5 + ability / 3
-        } else if (ability < 100) {
-            plusSpeed = 10 + ability / 4
-        } else {
-            plusSpeed = 15 + ability / 5
+        val plusSpeed = when {
+            ability < 10 -> {
+                0
+            }
+            ability < 30 -> {
+                ability / 2
+            }
+            ability < 60 -> {
+                5 + ability / 3
+            }
+            ability < 100 -> {
+                10 + ability / 4
+            }
+            else -> {
+                15 + ability / 5
+            }
         }
         return minSpeed + plusSpeed
     }
@@ -356,36 +352,33 @@ class PlayerPitcherClass(
     }
 
     // 変化球球種・変化量
-    private fun calculateChangeBalls(kind_change_ability: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
+    private fun calculateChangeBalls(kindChangeAbility: Int, amountOfChange: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
 
-        val newPriorityChange: ArrayList<Int> = remakePriorityOfChange(kind_change_ability, priorityOfChange)
-        var changeballs: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
+        val newPriorityChange: ArrayList<Int> = remakePriorityOfChange(kindChangeAbility, priorityOfChange)
+        val changeBalls: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
         // 分母
         var denominator = 0
-        for (i in 0..newPriorityChange.size - 1) {
+        for (i in 0 until newPriorityChange.size) {
             denominator += newPriorityChange[i]
         }
 
-        if (denominator == 0) return changeballs
-        for (i in 0..newPriorityChange.size - 1) {
-            changeballs[i] = (amountOfChange * newPriorityChange[i] / denominator)
-            if (changeballs[i] < 0) changeballs[i] = 0
-            if (changeballs[i] > 7) changeballs[i] = 7
+        if (denominator == 0) return changeBalls
+        for (i in 0 until newPriorityChange.size) {
+            changeBalls[i] = (amountOfChange * newPriorityChange[i] / denominator)
+            if (changeBalls[i] < 0) changeBalls[i] = 0
+            if (changeBalls[i] > 7) changeBalls[i] = 7
         }
 
-        return changeballs
+        return changeBalls
     }
 
     // 変化球優先順位と種類数上限から優先順位再生成
-    private fun remakePriorityOfChange(kind_change_ability: Int, priorityOfChange: ArrayList<Int>): ArrayList<Int> {
-        var newPriorityChange: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
-        var oldPriorityChange = priorityOfChange
+    private fun remakePriorityOfChange(kindChangeAbility: Int, oldPriorityChange: ArrayList<Int>): ArrayList<Int> {
+        val newPriorityChange: ArrayList<Int> = arrayListOf(0, 0, 0, 0, 0)
+        if (kindChangeAbility == 0) return newPriorityChange
 
-        if (kind_change_ability == 0) return newPriorityChange
-
-        for (i in 1..kind_change_ability) {
-            val maxChange = oldPriorityChange.max()
-            if (maxChange == null) return newPriorityChange
+        for (i in 1..kindChangeAbility) {
+            val maxChange = oldPriorityChange.max() ?: return newPriorityChange
             val maxIndex = oldPriorityChange.indexOf(maxChange)
             newPriorityChange[maxIndex] = maxChange
             oldPriorityChange[maxIndex] = 0

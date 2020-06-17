@@ -131,9 +131,9 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
                 type_display.setBackgroundResource(R.drawable.catcher_name_background)
             }
         }
-        ballSpeedDisplay.text = playerPitcher.max_speed.toString()
-        controlDisplay.text = playerPitcher.control_lank
-        staminaDisplay.text = playerPitcher.stamina_lank
+        ballSpeedDisplay.text = playerPitcher.maxSpeed.toString()
+        controlDisplay.text = playerPitcher.controlLank
+        staminaDisplay.text = playerPitcher.staminaLank
 
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
@@ -205,11 +205,11 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         colors[4] = shootColors
 
 
-        for (changeKindIndex in 0..(playerPitcher.changeballs.size - 1)) {
+        for (changeKindIndex in 0..(playerPitcher.changeBalls.size - 1)) {
 
-            if (playerPitcher.changeballs[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
+            if (playerPitcher.changeBalls[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
 
-            for (changeAmountIndex in 0..(playerPitcher.changeballs[changeKindIndex] - 1)) {
+            for (changeAmountIndex in 0..(playerPitcher.changeBalls[changeKindIndex] - 1)) {
 
                 changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
                 changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex]!!)
