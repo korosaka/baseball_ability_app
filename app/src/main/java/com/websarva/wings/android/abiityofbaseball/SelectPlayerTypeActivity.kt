@@ -60,11 +60,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
 
         val intent = Intent(this, PlayerMakingActivity::class.java)
 
-        val radioGroup = sex_radio
-        val id = radioGroup.checkedRadioButtonId
-
-        // TODO Refactor
-        when (id) {
+        when (sex_radio.checkedRadioButtonId) {
             R.id.radio_m -> intent.putExtra(Constants.SEX_ID, 0)
             R.id.radio_w -> intent.putExtra(Constants.SEX_ID, 1)
         }
