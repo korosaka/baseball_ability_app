@@ -1,19 +1,16 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class PlayerClass(name: String, position: String, ballistic: Int, contact: Int, power: Int, speed: Int, arm: Int, fielding: Int, catching: Int, chance: Double) {
-
-    val playerName = name
-    val mainPosition = position
-    val ballisticAbility = ballistic
-    val contactAbility = contact
-    val powerAbility = power
-    val speedAbility = speed
-    val armAbility = arm
-    val fieldingAbility = fielding
-    val catchingAbility = catching
-
-    val chance = chance
-
+class PlayerClass(
+        val playerName: String,
+        val mainPosition: String,
+        val ballisticAbility: Int,
+        val contactAbility: Int,
+        val powerAbility: Int,
+        val speedAbility: Int,
+        val armAbility: Int,
+        val fieldingAbility: Int,
+        val catchingAbility: Int,
+        val chance: Double) {
 
     val contactLank = lankMaking(contactAbility)
     var powerLank = lankMaking(powerAbility)
