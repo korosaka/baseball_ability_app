@@ -17,8 +17,8 @@ class MakingStatusActivity : BaseBannerActivity() {
         super.onCreate(savedInstanceState)
 
         val player = PlayerClass(
-                intent.getStringExtra(Constants.PLAYER_NAME),
-                intent.getStringExtra(Constants.POSITION),
+                intent.getStringExtra(Constants.PLAYER_NAME)!!,
+                intent.getStringExtra(Constants.POSITION)!!,
                 intent.getIntExtra(Constants.BALLISTIC, 1),
                 intent.getIntExtra(Constants.CONTACT, 0),
                 intent.getIntExtra(Constants.POWER, 0),

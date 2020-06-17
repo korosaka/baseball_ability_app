@@ -39,24 +39,24 @@ class QuestionOfPersonalityFragment : Fragment() {
         val spinnerItems_5 = arrayOf("ふつう", "天然", "冗談多め", "話が面白い", "つまらない", "芸人")
 
 
-        var adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems_1)
+        var adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_1)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q1_p.adapter = adapter
 
-        adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems_2)
+        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_2)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q2_p.adapter = adapter
 
 
-        adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems_3)
+        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_3)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q3_p.adapter = adapter
 
-        adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems_4)
+        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_4)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q4_p.adapter = adapter
 
-        adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems_5)
+        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_5)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_q5_p.adapter = adapter
 
