@@ -163,7 +163,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
                 intent.putExtra(Constants.CONTROL, calcAbility.control)
                 intent.putExtra(Constants.STAMINA, calcAbility.stamina)
                 intent.putExtra(Constants.KIND_CHANGE, calcAbility.kindsOfChangeBall)
-                intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.amountOfCange)
+                intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.amountOfChange)
                 intent.putExtra(Constants.PRIORITY_CHANGE, calcAbility.priorityOfChange)
 
                 startActivity(intent)

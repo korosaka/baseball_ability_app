@@ -13,7 +13,9 @@ abstract class BaseBannerActivity : AppCompatActivity() {
 
     private lateinit var adView: AdView
     private lateinit var adViewContainer: FrameLayout
-    private val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/6300978111"
+    companion object {
+        const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/6300978111"
+    }
 
     protected fun setAdViewContainer(container: FrameLayout) {
         adViewContainer = container

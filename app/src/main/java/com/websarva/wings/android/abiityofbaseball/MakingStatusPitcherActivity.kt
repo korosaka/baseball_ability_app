@@ -138,6 +138,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         setTextColor(controlDisplay)
         setTextColor(staminaDisplay)
 
+        // TODO check
         win_display.text = playerPitcher.win.toString()
         lose_display.text = playerPitcher.lose.toString()
         save_display.text = playerPitcher.save.toString()
@@ -152,6 +153,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         var colors = Array(5, { arrayOfNulls<Int>(7) })
 
+        // TODO use Constants class
         var sliderColors: Array<Int?> = arrayOfNulls(7)
         sliderColors[0] = Color.parseColor("#ffe0e0")
         sliderColors[1] = Color.parseColor("#ffd6d6")
@@ -205,6 +207,7 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         colors[4] = shootColors
 
 
+        // TODO check
         for (changeKindIndex in 0..(playerPitcher.changeBalls.size - 1)) {
 
             if (playerPitcher.changeBalls[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)

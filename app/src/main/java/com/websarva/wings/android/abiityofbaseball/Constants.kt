@@ -87,6 +87,7 @@ class Constants {
         const val POPULARITY = "popularity"
 
 
+        // TODO move to strings.xml
         const val GO_NEXT = "次へ ▶"
         const val GO_BACK = "◀ 戻る"
         const val GO_TO_RESULT = "査定結果 ▶"

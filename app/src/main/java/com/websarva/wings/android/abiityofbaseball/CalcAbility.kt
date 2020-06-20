@@ -11,6 +11,18 @@ class CalcAbility(
         private val a1_p: String, private val a2_p: String, private val a3_p: String, private val a4_p: String, private val a5_p: String,
         private val a1_o: String, private val a2_o: String, private val a3_o: String, private val a4_o: String, private val a5_o: String) {
 
+    companion object {
+        const val CATCHER_INDEX = 0
+        const val FIRST_BASE_INDEX = 1
+        const val SECOND_BASE_INDEX = 2
+        const val THIRD_BASE_INDEX = 3
+        const val SHORTSTOP_INDEX = 4
+        const val OUTFIELD_INDEX = 5
+
+        const val STARTER_INDEX = 0
+        const val MIDDLE_INDEX = 1
+        const val CLOSER_INDEX = 2
+    }
 
     // 野手能力ポイント
     var ballistic = 0
@@ -21,12 +33,6 @@ class CalcAbility(
     var fielding = 0
     var catching = 0
 
-    private val CATCHER_INDEX = 0
-    private val FIRST_BASE_INDEX = 1
-    private val SECOND_BASE_INDEX = 2
-    private val THIRD_BASE_INDEX = 3
-    private val SHORTSTOP_INDEX = 4
-    private val OUTFIELD_INDEX = 5
     private var positions = intArrayOf(0, 0, 0, 0, 0, 0)
     lateinit var position: String
 
@@ -37,12 +43,9 @@ class CalcAbility(
     var control = 0
     var stamina = 0
     var kindsOfChangeBall = 0
-    var amountOfCange = 0
+    var amountOfChange = 0
     var priorityOfChange = arrayListOf(0, 0, 0, 0, 0)
 
-    private val STARTER_INDEX = 0
-    private val MIDLLE_INDEX = 1
-    private val CLOSER_INDEX = 2
     private var pitcherTypes = intArrayOf(0, 0, 0)
     lateinit var pitcherType: String
 
@@ -1472,7 +1475,7 @@ class CalcAbility(
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
-                amountOfCange = (amountOfCange * 1.3).toInt()
+                amountOfChange = (amountOfChange * 1.3).toInt()
             }
             manAnswersPop4[1] -> {
                 contact = (contact * 1.1).toInt()
@@ -1485,7 +1488,7 @@ class CalcAbility(
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
-                amountOfCange = (amountOfCange * 1.15).toInt()
+                amountOfChange = (amountOfChange * 1.15).toInt()
             }
             manAnswersPop4[2] -> {
             }
@@ -1500,7 +1503,7 @@ class CalcAbility(
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
-                amountOfCange = (amountOfCange * 1.1).toInt()
+                amountOfChange = (amountOfChange * 1.1).toInt()
             }
             manAnswersPop4[4] -> {
                 contact = (contact * 0.9).toInt()
@@ -1512,7 +1515,7 @@ class CalcAbility(
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()
-                amountOfCange = (amountOfCange * 0.8).toInt()
+                amountOfChange = (amountOfChange * 0.8).toInt()
             }
         }
         setPitcherType()
@@ -2926,7 +2929,7 @@ class CalcAbility(
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
-                amountOfCange = (amountOfCange * 1.3).toInt()
+                amountOfChange = (amountOfChange * 1.3).toInt()
             }
             womanAnswersPop4[1] -> {
                 contact = (contact * 1.1).toInt()
@@ -2939,7 +2942,7 @@ class CalcAbility(
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
-                amountOfCange = (amountOfCange * 1.15).toInt()
+                amountOfChange = (amountOfChange * 1.15).toInt()
             }
             womanAnswersPop4[2] -> {
             }
@@ -2954,7 +2957,7 @@ class CalcAbility(
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
-                amountOfCange = (amountOfCange * 1.1).toInt()
+                amountOfChange = (amountOfChange * 1.1).toInt()
             }
             womanAnswersPop4[4] -> {
                 contact = (contact * 0.9).toInt()
@@ -2966,7 +2969,7 @@ class CalcAbility(
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()
-                amountOfCange = (amountOfCange * 0.8).toInt()
+                amountOfChange = (amountOfChange * 0.8).toInt()
             }
         }
 
@@ -2997,7 +3000,7 @@ class CalcAbility(
             Constants.CONTROL -> control += point
             Constants.STAMINA -> stamina += point
             Constants.KIND_CHANGE -> kindsOfChangeBall += point
-            Constants.AMOUNT_CHANGE -> amountOfCange += point
+            Constants.AMOUNT_CHANGE -> amountOfChange += point
 
             // TODO HashMap ?
             Constants.SLIDER -> priorityOfChange[0] += point
@@ -3007,7 +3010,7 @@ class CalcAbility(
             Constants.SHOOT -> priorityOfChange[4] += point
 
             Constants.STARTER -> pitcherTypes[STARTER_INDEX] += point
-            Constants.MIDDLE -> pitcherTypes[MIDLLE_INDEX] += point
+            Constants.MIDDLE -> pitcherTypes[MIDDLE_INDEX] += point
             Constants.CLOSER -> pitcherTypes[CLOSER_INDEX] += point
         }
     }
@@ -3029,7 +3032,7 @@ class CalcAbility(
                 pitcherType = Constants.STARTER
                 if (stamina < Constants.NEEDED_STARTER_STAMINA) setSecondType()
             }
-            MIDLLE_INDEX -> {
+            MIDDLE_INDEX -> {
                 pitcherType = Constants.MIDDLE
             }
             CLOSER_INDEX -> {
@@ -3040,7 +3043,7 @@ class CalcAbility(
 
     private fun setSecondType() {
         pitcherType = Constants.MIDDLE
-        if (pitcherTypes[CLOSER_INDEX] > pitcherTypes[MIDLLE_INDEX]) pitcherType = Constants.CLOSER
+        if (pitcherTypes[CLOSER_INDEX] > pitcherTypes[MIDDLE_INDEX]) pitcherType = Constants.CLOSER
     }
 
     private fun setPosition() {
