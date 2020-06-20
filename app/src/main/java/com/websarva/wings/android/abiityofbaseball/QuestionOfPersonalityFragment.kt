@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 
 
 class QuestionOfPersonalityFragment : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,44 +23,26 @@ class QuestionOfPersonalityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (PlayerMakingActivity.sex_id == 1) {
-            textChange()
+            changeChoices()
         }
         setSpinner()
     }
 
-    private fun textChange() {
-
-        val spinnerItems_1 = arrayOf("穏やか", "おとなしい", "サバサバ", "うるさい", "メンヘラ")
-        val spinnerItems_2 = arrayOf("優しい", "頑張り屋さん", "気が強い", "無気力", "かまってちゃん", "一匹オオカミ")
-        val spinnerItems_3 = arrayOf("リーダー", "控えめ", "ムードメーカー", "批評家", "アイデアマン")
-        val spinnerItems_4 = arrayOf("ふつう", "お勉強得意", "頭キレキレ", "頭からっぽ", "脳筋")
-        val spinnerItems_5 = arrayOf("ふつう", "天然", "冗談多め", "話が面白い", "つまらない", "芸人")
-
-
-        var adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_1)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner_q1_p.adapter = adapter
-
-        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_2)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner_q2_p.adapter = adapter
-
-
-        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_3)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner_q3_p.adapter = adapter
-
-        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_4)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner_q4_p.adapter = adapter
-
-        adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, spinnerItems_5)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner_q5_p.adapter = adapter
-
+    private fun changeChoices() {
+        changeAdapter(spinner_q1_p, resources.getStringArray(R.array.w_array_q1_p))
+        changeAdapter(spinner_q2_p, resources.getStringArray(R.array.w_array_q2_p))
+        changeAdapter(spinner_q3_p, resources.getStringArray(R.array.w_array_q3_p))
+        changeAdapter(spinner_q4_p, resources.getStringArray(R.array.w_array_q4_p))
+        changeAdapter(spinner_q5_p, resources.getStringArray(R.array.w_array_q5_p))
     }
 
-    fun setSpinner() {
+    private fun changeAdapter(spinner: Spinner, choices: Array<String>) {
+        val adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, choices)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+    }
+
+    private fun setSpinner() {
         spinner_q1_p.setSelection(0)
         spinner_q2_p.setSelection(0)
         spinner_q3_p.setSelection(0)

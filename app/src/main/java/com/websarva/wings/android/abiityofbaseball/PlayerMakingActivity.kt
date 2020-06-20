@@ -23,6 +23,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
     var playerName: String? = null
     var playerType: String? = null
 
+    // TODO
     private val appearanceFrag: QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
     private val personalityFrag: Fragment = QuestionOfPersonalityFragment.newInstance()
     private val popularityFrag: Fragment = QuestionOfPopularityFragment.newInstance()
@@ -135,7 +136,8 @@ class PlayerMakingActivity : BaseBannerActivity() {
         builder.setPositiveButton(Constants.DONE) { dialog, which ->
 
             // 全ての入力値から計算
-            val calcAbility = CalcAbility(spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+            val calcAbility = CalcAbility(this,
+                    spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
                     spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
                     spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String)
 

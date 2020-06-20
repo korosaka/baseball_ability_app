@@ -1,28 +1,16 @@
 package com.websarva.wings.android.abiityofbaseball
 
-class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: String,
-                  a1_p: String, a2_p: String, a3_p: String, a4_p: String, a5_p: String,
-                  a1_o: String, a2_o: String, a3_o: String, a4_o: String, a5_o: String) {
+import android.app.PendingIntent.getActivity
+import android.content.Context
+import android.content.res.Resources
+import android.provider.Settings.Global.getString
 
+class CalcAbility(
+        private val context: Context,
+        private val a1_a: String, private val a2_a: String, private val a3_a: String, private val a4_a: String, private val a5_a: String,
+        private val a1_p: String, private val a2_p: String, private val a3_p: String, private val a4_p: String, private val a5_p: String,
+        private val a1_o: String, private val a2_o: String, private val a3_o: String, private val a4_o: String, private val a5_o: String) {
 
-    val a1_a = a1_a
-    val a2_a = a2_a
-    val a3_a = a3_a
-    val a4_a = a4_a
-    val a5_a = a5_a
-
-    val a1_p = a1_p
-    val a2_p = a2_p
-    val a3_p = a3_p
-    val a4_p = a4_p
-    val a5_p = a5_p
-
-
-    val a1_o = a1_o
-    val a2_o = a2_o
-    val a3_o = a3_o
-    val a4_o = a4_o
-    val a5_o = a5_o
 
     // 野手能力ポイント
     var ballistic = 0
@@ -70,9 +58,10 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
     }
 
     fun calcAbility_m() {
+        val manAnswersA1 = context.resources.getStringArray(R.array.m_array_q1_a)
 
         when (a1_a) {
-            "~160cm" -> {
+            manAnswersA1[0] -> {
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 6)
                 plusAbility(Constants.SHORTSTOP, 2)
@@ -89,7 +78,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 5)
 
             }
-            "161~170cm" -> {
+            manAnswersA1[1] -> {
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, 3)
                 plusAbility(Constants.SHORTSTOP, 1)
@@ -107,7 +96,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 3)
 
             }
-            "171~180cm" -> {
+            manAnswersA1[2] -> {
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 10)
@@ -122,7 +111,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.STARTER, 3)
             }
-            "181~190cm" -> {
+            manAnswersA1[3] -> {
                 plusAbility(Constants.FIRST_BASE, 4)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.SHORTSTOP, -1)
@@ -139,7 +128,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
                 plusAbility(Constants.MIDDLE, -3)
             }
-            "191cm~" -> {
+            manAnswersA1[4] -> {
                 plusAbility(Constants.FIRST_BASE, 6)
                 plusAbility(Constants.SECOND_BASE, -5)
                 plusAbility(Constants.SHORTSTOP, -3)
@@ -158,9 +147,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
             }
         }
-
+        val manAnswersA2 = context.resources.getStringArray(R.array.m_array_q2_a)
         when (a2_a) {
-            "ふつう" -> {
+            manAnswersA2[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, 2)
@@ -173,7 +162,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
 
             }
-            "スリム" -> {
+            manAnswersA2[1] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.SHORTSTOP, 1)
@@ -188,7 +177,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.CLOSER, -3)
             }
-            "ぽっちゃり" -> {
+            manAnswersA2[2] -> {
                 plusAbility(Constants.CATCHER, 6)
                 plusAbility(Constants.FIRST_BASE, 6)
                 plusAbility(Constants.SECOND_BASE, -15)
@@ -205,7 +194,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 5)
                 plusAbility(Constants.CLOSER, 1)
             }
-            "ムッチリ" -> {
+            manAnswersA2[3] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -9)
@@ -223,7 +212,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.CLOSER, 2)
             }
-            "ややマッチョ" -> {
+            manAnswersA2[4] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -244,7 +233,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 5)
             }
-            "ゴリマッチョ" -> {
+            manAnswersA2[5] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, 4)
                 plusAbility(Constants.SECOND_BASE, -15)
@@ -266,9 +255,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 4)
             }
         }
-
+        val manAnswersA3 = context.resources.getStringArray(R.array.m_array_q3_a)
         when (a3_a) {
-            "ふつう" -> {
+            manAnswersA3[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 2)
@@ -283,7 +272,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 1)
             }
-            "イケメン" -> {
+            manAnswersA3[1] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -308,7 +297,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 5)
             }
-            "ワイルド" -> {
+            manAnswersA3[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -329,7 +318,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 5)
 
             }
-            "かわいい" -> {
+            manAnswersA3[3] -> {
                 plusAbility(Constants.CATCHER, -4)
                 plusAbility(Constants.FIRST_BASE, -4)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -354,7 +343,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.MIDDLE, 4)
             }
-            "強面" -> {
+            manAnswersA3[4] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -375,9 +364,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 10)
             }
         }
-
+        val manAnswersA4 = context.resources.getStringArray(R.array.m_array_q4_a)
         when (a4_a) {
-            "優しそう" -> {
+            manAnswersA4[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -401,7 +390,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "明るそう" -> {
+            manAnswersA4[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -425,7 +414,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.STARTER, 3)
             }
-            "マジメそう" -> {
+            manAnswersA4[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -447,7 +436,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 1)
                 plusAbility(Constants.CLOSER, -3)
             }
-            "クールそう" -> {
+            manAnswersA4[3] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -469,7 +458,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 3)
             }
-            "おとぼけ者" -> {
+            manAnswersA4[4] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -493,7 +482,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 7)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "チャラそう" -> {
+            manAnswersA4[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -514,9 +503,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, -2)
             }
         }
-
+        val manAnswersA5 = context.resources.getStringArray(R.array.m_array_q5_a)
         when (a5_a) {
-            "ふつう" -> {
+            manAnswersA5[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 2)
@@ -532,7 +521,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 1)
             }
-            "オシャレ" -> {
+            manAnswersA5[1] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -556,7 +545,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.STARTER, 1)
             }
-            "地味め" -> {
+            manAnswersA5[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -577,7 +566,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, 4)
             }
-            "派手め" -> {
+            manAnswersA5[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -598,7 +587,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.CLOSER, 4)
             }
-            "独創的" -> {
+            manAnswersA5[4] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -617,9 +606,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, -5)
             }
         }
-
+        val manAnswersP1 = context.resources.getStringArray(R.array.m_array_q1_p)
         when (a1_p) {
-            "穏やか" -> {
+            manAnswersP1[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 4)
@@ -643,7 +632,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -2)
             }
-            "おとなしい" -> {
+            manAnswersP1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -662,7 +651,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
                 plusAbility(Constants.MIDDLE, 3)
             }
-            "淡々" -> {
+            manAnswersP1[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -681,7 +670,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "騒がしい" -> {
+            manAnswersP1[3] -> {
                 plusAbility(Constants.CATCHER, -4)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -705,7 +694,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 2)
 
             }
-            "ミステリアス" -> {
+            manAnswersP1[4] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -725,9 +714,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 2)
             }
         }
-
+        val manAnswersP2 = context.resources.getStringArray(R.array.m_array_q2_p)
         when (a2_p) {
-            "優しい" -> {
+            manAnswersP2[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -749,7 +738,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 1)
                 plusAbility(Constants.SINKER, 1)
             }
-            "頑張り屋さん" -> {
+            manAnswersP2[1] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -768,7 +757,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.STARTER, 10)
             }
-            "気が強い" -> {
+            manAnswersP2[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -787,7 +776,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 12)
                 plusAbility(Constants.CLOSER, 4)
             }
-            "無気力" -> {
+            manAnswersP2[3] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.CONTACT, 1)
@@ -795,7 +784,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.MIDDLE, 4)
             }
-            "目立ちたがり" -> {
+            manAnswersP2[4] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -817,7 +806,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CLOSER, 6)
 
             }
-            "一匹オオカミ" -> {
+            manAnswersP2[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 4)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -839,9 +828,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 4)
             }
         }
-
+        val manAnswersP3 = context.resources.getStringArray(R.array.m_array_q3_p)
         when (a3_p) {
-            "リーダー" -> {
+            manAnswersP3[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -865,7 +854,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 10)
             }
-            "控えめ" -> {
+            manAnswersP3[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -883,7 +872,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
                 plusAbility(Constants.MIDDLE, 3)
             }
-            "ムードメーカー" -> {
+            manAnswersP3[2] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -907,7 +896,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.MIDDLE, 1)
             }
-            "批評家" -> {
+            manAnswersP3[3] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -926,7 +915,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 7)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "アイデアマン" -> {
+            manAnswersP3[4] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -949,9 +938,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 1)
             }
         }
-
+        val manAnswersP4 = context.resources.getStringArray(R.array.m_array_q4_p)
         when (a4_p) {
-            "ふつう" -> {
+            manAnswersP4[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
@@ -966,7 +955,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 1)
             }
-            "お勉強得意" -> {
+            manAnswersP4[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -986,7 +975,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.CLOSER, -2)
             }
-            "頭キレキレ" -> {
+            manAnswersP4[2] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -1009,7 +998,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.SINKER, 2)
             }
-            "頭からっぽ" -> {
+            manAnswersP4[3] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -1030,7 +1019,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, -4)
                 plusAbility(Constants.MIDDLE, -2)
             }
-            "脳筋" -> {
+            manAnswersP4[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -1052,9 +1041,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 5)
             }
         }
-
+        val manAnswersP5 = context.resources.getStringArray(R.array.m_array_q5_p)
         when (a5_p) {
-            "ふつう" -> {
+            manAnswersP5[0] -> {
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 1)
@@ -1066,7 +1055,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
-            "天然" -> {
+            manAnswersP5[1] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1086,7 +1075,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
-            "冗談多め" -> {
+            manAnswersP5[2] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1104,7 +1093,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
             }
-            "話が面白い" -> {
+            manAnswersP5[3] -> {
                 plusAbility(Constants.CATCHER, 4)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1126,7 +1115,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 3)
             }
-            "つまらない" -> {
+            manAnswersP5[4] -> {
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.OUTFIELD, -3)
                 plusAbility(Constants.POWER, -2)
@@ -1137,7 +1126,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, -3)
                 plusAbility(Constants.AMOUNT_CHANGE, -3)
             }
-            "芸人" -> {
+            manAnswersP5[5] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -1159,9 +1148,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
             }
         }
-
+        val manAnswersPop1 = context.resources.getStringArray(R.array.m_array_q1_o)
         when (a1_o) {
-            "王子様" -> {
+            manAnswersPop1[0] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -1182,7 +1171,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, 4)
             }
-            "モテる" -> {
+            manAnswersPop1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -1203,7 +1192,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.STARTER, 2)
             }
-            "ハンター" -> {
+            manAnswersPop1[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1222,7 +1211,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, -3)
             }
-            "ふつう" -> {
+            manAnswersPop1[3] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.ARM_STRENGTH, 2)
@@ -1233,7 +1222,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "ぷぅ〜" -> {
+            manAnswersPop1[4] -> {
                 plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, -3)
@@ -1249,9 +1238,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, 3)
             }
         }
-
+        val manAnswersPop2 = context.resources.getStringArray(R.array.m_array_q2_o)
         when (a2_o) {
-            "大人気" -> {
+            manAnswersPop2[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 4)
@@ -1268,7 +1257,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 5)
 
             }
-            "まぁまぁ" -> {
+            manAnswersPop2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.CONTACT, 2)
@@ -1285,7 +1274,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.STARTER, 3)
 
             }
-            "ふつう" -> {
+            manAnswersPop2[2] -> {
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 5)
@@ -1295,7 +1284,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 5)
             }
-            "あんまり" -> {
+            manAnswersPop2[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.ARM_STRENGTH, -1)
@@ -1304,7 +1293,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.STAMINA, -4)
             }
-            "ぷぅ〜" -> {
+            manAnswersPop2[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.SECOND_BASE, -2)
                 plusAbility(Constants.CONTACT, -1)
@@ -1320,31 +1309,33 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, -2)
             }
         }
-
+        val manAnswersPop3 = context.resources.getStringArray(R.array.m_array_q3_o)
         when (a3_o) {
-            "最強" -> {
+            manAnswersPop3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
                 plusAbility(Constants.CLOSER, 3)
 
             }
-            "なかなか" -> {
+            manAnswersPop3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
                 plusAbility(Constants.CLOSER, 2)
             }
-            "ふつう" -> {
+            manAnswersPop3[2] -> {
             }
-            "あんまり" -> {
+            manAnswersPop3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "豆腐メンタル" -> {
+            manAnswersPop3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
                 plusAbility(Constants.MIDDLE, 4)
             }
         }
-
+        val manAnswersPop5 = context.resources.getStringArray(R.array.m_array_q5_o)
         when (a5_o) {
-            "カリスマ" -> {
+            manAnswersPop5[0] -> {
+            }
+            manAnswersPop5[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -1369,7 +1360,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.MIDDLE, -5)
             }
-            "スポーツマン" -> {
+            manAnswersPop5[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -1391,7 +1382,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 8)
             }
-            "天才頭脳" -> {
+            manAnswersPop5[3] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 4)
@@ -1406,7 +1397,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CONTROL, 17)
                 plusAbility(Constants.KIND_CHANGE, 12)
             }
-            "酒豪" -> {
+            manAnswersPop5[4] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1427,7 +1418,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.CLOSER, 3)
             }
-            "ヘビースモーカー" -> {
+            manAnswersPop5[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -1449,7 +1440,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 3)
             }
-            "元ヤン" -> {
+            manAnswersPop5[6] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -1466,14 +1457,11 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 9)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            "特になし" -> {
-            }
         }
 
-
-        // TODO same in women
+        val manAnswersPop4 = context.resources.getStringArray(R.array.m_array_q4_o)
         when (a4_o) {
-            "大好き" -> {
+            manAnswersPop4[0] -> {
                 contact = (contact * 1.2).toInt()
                 power = (power * 1.2).toInt()
                 speed = (speed * 1.2).toInt()
@@ -1486,7 +1474,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
                 amountOfCange = (amountOfCange * 1.3).toInt()
             }
-            "まぁまぁ" -> {
+            manAnswersPop4[1] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -1499,9 +1487,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
                 amountOfCange = (amountOfCange * 1.15).toInt()
             }
-            "ふつう" -> {
+            manAnswersPop4[2] -> {
             }
-            "興味深い" -> {
+            manAnswersPop4[3] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -1514,7 +1502,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
                 amountOfCange = (amountOfCange * 1.1).toInt()
             }
-            "アンチ" -> {
+            manAnswersPop4[4] -> {
                 contact = (contact * 0.9).toInt()
                 power = (power * 0.9).toInt()
                 speed = (speed * 0.9).toInt()
@@ -1536,8 +1524,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
     fun calcAbility_w() {
 
+        val womanAnswersA1 = context.resources.getStringArray(R.array.w_array_q1_a)
         when (a1_a) {
-            "~150cm" -> {
+            womanAnswersA1[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 6)
@@ -1552,7 +1541,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 5)
                 plusAbility(Constants.MIDDLE, 5)
             }
-            "151~160cm" -> {
+            womanAnswersA1[1] -> {
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, 3)
                 plusAbility(Constants.SHORTSTOP, 1)
@@ -1569,7 +1558,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 1)
                 plusAbility(Constants.MIDDLE, 3)
             }
-            "161~170cm" -> {
+            womanAnswersA1[2] -> {
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 6)
@@ -1584,7 +1573,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.STARTER, 2)
             }
-            "171~180cm" -> {
+            womanAnswersA1[3] -> {
                 plusAbility(Constants.FIRST_BASE, 4)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.SHORTSTOP, -1)
@@ -1601,7 +1590,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, -2)
                 plusAbility(Constants.STARTER, 3)
             }
-            "181cm~" -> {
+            womanAnswersA1[4] -> {
                 plusAbility(Constants.FIRST_BASE, 6)
                 plusAbility(Constants.SECOND_BASE, -5)
                 plusAbility(Constants.SHORTSTOP, -3)
@@ -1620,8 +1609,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersA2 = context.resources.getStringArray(R.array.w_array_q2_a)
         when (a2_a) {
-            "ふつう" -> {
+            womanAnswersA2[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, 2)
@@ -1633,7 +1623,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 2)
             }
-            "スリム" -> {
+            womanAnswersA2[1] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.SHORTSTOP, 1)
@@ -1650,7 +1640,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.CLOSER, -2)
             }
-            "ぽっちゃり" -> {
+            womanAnswersA2[2] -> {
                 plusAbility(Constants.CATCHER, 6)
                 plusAbility(Constants.FIRST_BASE, 6)
                 plusAbility(Constants.SECOND_BASE, -15)
@@ -1667,7 +1657,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 5)
                 plusAbility(Constants.STARTER, -5)
             }
-            "ムッチリ" -> {
+            womanAnswersA2[3] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -9)
@@ -1684,7 +1674,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.CLOSER, 2)
             }
-            "マッチョ" -> {
+            womanAnswersA2[4] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -9)
@@ -1704,7 +1694,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.MIDDLE, -3)
                 plusAbility(Constants.STARTER, 3)
             }
-            "グラマラス" -> {
+            womanAnswersA2[5] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 20)
                 plusAbility(Constants.SECOND_BASE, -20)
@@ -1729,8 +1719,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersA3 = context.resources.getStringArray(R.array.w_array_q3_a)
         when (a3_a) {
-            "ふつう" -> {
+            womanAnswersA3[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 3)
@@ -1746,7 +1737,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 2)
             }
-            "カワイイ系" -> {
+            womanAnswersA3[1] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -4)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -1770,7 +1761,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -10)
             }
-            "美人系" -> {
+            womanAnswersA3[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -1795,7 +1786,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 6)
             }
-            "地味め" -> {
+            womanAnswersA3[3] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -1815,7 +1806,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.CLOSER, -7)
             }
-            "派手め" -> {
+            womanAnswersA3[4] -> {
                 plusAbility(Constants.CATCHER, -4)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -1839,8 +1830,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersA4 = context.resources.getStringArray(R.array.w_array_q4_a)
         when (a4_a) {
-            "優しそう" -> {
+            womanAnswersA4[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -1861,7 +1853,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
             }
-            "マジメそう" -> {
+            womanAnswersA4[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -1881,7 +1873,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.CLOSER, -4)
             }
-            "こわそう" -> {
+            womanAnswersA4[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -1900,7 +1892,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 7)
                 plusAbility(Constants.CLOSER, 5)
             }
-            "元気そう" -> {
+            womanAnswersA4[3] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -1920,7 +1912,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 7)
             }
-            "大人しそう" -> {
+            womanAnswersA4[4] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -1939,7 +1931,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, 5)
             }
-            "チャラそう" -> {
+            womanAnswersA4[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -1963,8 +1955,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersA5 = context.resources.getStringArray(R.array.w_array_q5_a)
         when (a5_a) {
-            "ふつう" -> {
+            womanAnswersA5[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 2)
@@ -1980,7 +1973,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 1)
             }
-            "オシャレ" -> {
+            womanAnswersA5[1] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -2004,7 +1997,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 2)
             }
-            "地味め" -> {
+            womanAnswersA5[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -2025,7 +2018,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.CLOSER, -6)
             }
-            "派手め" -> {
+            womanAnswersA5[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -2045,7 +2038,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.MIDDLE, -6)
             }
-            "独創的" -> {
+            womanAnswersA5[4] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -2064,8 +2057,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersP1 = context.resources.getStringArray(R.array.w_array_q1_p)
         when (a1_p) {
-            "穏やか" -> {
+            womanAnswersP1[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 4)
@@ -2087,7 +2081,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.CURB, 3)
             }
-            "おとなしい" -> {
+            womanAnswersP1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -2107,7 +2101,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.CLOSER, -5)
             }
-            "サバサバ" -> {
+            womanAnswersP1[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -2126,7 +2120,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.SHOOT, 6)
             }
-            "うるさい" -> {
+            womanAnswersP1[3] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -2149,7 +2143,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 2)
             }
-            "メンヘラ" -> {
+            womanAnswersP1[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.THIRD_BASE, -3)
@@ -2169,8 +2163,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         }
 
+        val womanAnswersP2 = context.resources.getStringArray(R.array.w_array_q2_p)
         when (a2_p) {
-            "優しい" -> {
+            womanAnswersP2[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -2193,7 +2188,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
             }
-            "頑張り屋さん" -> {
+            womanAnswersP2[1] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -2212,7 +2207,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.STARTER, 9)
             }
-            "気が強い" -> {
+            womanAnswersP2[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2230,7 +2225,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 12)
                 plusAbility(Constants.CLOSER, 5)
             }
-            "無気力" -> {
+            womanAnswersP2[3] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.CONTACT, 1)
@@ -2240,7 +2235,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.MIDDLE, 8)
             }
-            "かまってちゃん" -> {
+            womanAnswersP2[4] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -2257,7 +2252,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.FOLK, 3)
             }
-            "一匹オオカミ" -> {
+            womanAnswersP2[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -2279,8 +2274,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersP3 = context.resources.getStringArray(R.array.w_array_q3_p)
         when (a3_p) {
-            "リーダー" -> {
+            womanAnswersP3[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -2304,7 +2300,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 9)
             }
-            "控えめ" -> {
+            womanAnswersP3[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -2323,7 +2319,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, -7)
             }
-            "ムードメーカー" -> {
+            womanAnswersP3[2] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2347,7 +2343,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.CLOSER, -4)
             }
-            "批評家" -> {
+            womanAnswersP3[3] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2366,7 +2362,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, -2)
                 plusAbility(Constants.SHOOT, 7)
             }
-            "アイデアマン" -> {
+            womanAnswersP3[4] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -2391,8 +2387,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
 
         }
 
+        val womanAnswersP4 = context.resources.getStringArray(R.array.w_array_q4_p)
         when (a4_p) {
-            "ふつう" -> {
+            womanAnswersP4[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 2)
@@ -2407,7 +2404,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.CURB, 1)
             }
-            "お勉強得意" -> {
+            womanAnswersP4[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -2427,7 +2424,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.CLOSER, -5)
             }
-            "頭キレキレ" -> {
+            womanAnswersP4[2] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -2450,7 +2447,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.SINKER, 2)
             }
-            "頭からっぽ" -> {
+            womanAnswersP4[3] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -2470,7 +2467,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, -5)
                 plusAbility(Constants.AMOUNT_CHANGE, -4)
             }
-            "脳筋" -> {
+            womanAnswersP4[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -2493,8 +2490,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersP5 = context.resources.getStringArray(R.array.w_array_q5_p)
         when (a5_p) {
-            "ふつう" -> {
+            womanAnswersP5[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 2)
@@ -2506,7 +2504,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
-            "天然" -> {
+            womanAnswersP5[1] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2525,7 +2523,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
-            "冗談多め" -> {
+            womanAnswersP5[2] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2543,7 +2541,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
-            "話が面白い" -> {
+            womanAnswersP5[3] -> {
                 plusAbility(Constants.CATCHER, 4)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -2565,7 +2563,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 3)
             }
-            "つまらない" -> {
+            womanAnswersP5[4] -> {
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.OUTFIELD, -3)
                 plusAbility(Constants.BALLISTIC, -3)
@@ -2577,7 +2575,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, -3)
                 plusAbility(Constants.AMOUNT_CHANGE, -3)
             }
-            "芸人" -> {
+            womanAnswersP5[5] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -2600,8 +2598,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersPop1 = context.resources.getStringArray(R.array.w_array_q1_o)
         when (a1_o) {
-            "マドンナ" -> {
+            womanAnswersPop1[0] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -2622,7 +2621,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 18)
                 plusAbility(Constants.STARTER, 6)
             }
-            "モテる" -> {
+            womanAnswersPop1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -2643,7 +2642,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, 3)
             }
-            "一部から" -> {
+            womanAnswersPop1[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -2659,7 +2658,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
-            "ふつう" -> {
+            womanAnswersPop1[3] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 3)
@@ -2667,7 +2666,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
             }
-            "ぷぅ〜" -> {
+            womanAnswersPop1[4] -> {
                 plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, -3)
@@ -2683,8 +2682,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersPop2 = context.resources.getStringArray(R.array.w_array_q2_o)
         when (a2_o) {
-            "大人気" -> {
+            womanAnswersPop2[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 5)
@@ -2700,7 +2700,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 6)
             }
-            "まぁまぁ" -> {
+            womanAnswersPop2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.CONTACT, 2)
@@ -2716,7 +2716,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.STARTER, 3)
             }
-            "ふつう" -> {
+            womanAnswersPop2[2] -> {
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 3)
@@ -2729,7 +2729,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 6)
             }
-            "あんまり" -> {
+            womanAnswersPop2[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.ARM_STRENGTH, 1)
@@ -2738,7 +2738,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.CONTROL, -5)
                 plusAbility(Constants.STAMINA, -1)
             }
-            "ぷぅ〜" -> {
+            womanAnswersPop2[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.CONTACT, -1)
@@ -2755,72 +2755,52 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             }
         }
 
+        val womanAnswersPop3 = context.resources.getStringArray(R.array.w_array_q3_o)
         when (a3_o) {
-            "最強" -> {
+            womanAnswersPop3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
                 plusAbility(Constants.CLOSER, 5)
             }
-            "なかなか" -> {
+            womanAnswersPop3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
                 plusAbility(Constants.CLOSER, 2)
             }
-            "ふつう" -> {
+            womanAnswersPop3[2] -> {
             }
-            "あんまり" -> {
+            womanAnswersPop3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
                 plusAbility(Constants.CLOSER, -2)
             }
-            "豆腐メンタル" -> {
+            womanAnswersPop3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
                 plusAbility(Constants.CLOSER, -5)
             }
         }
 
+        val womanAnswersPop5 = context.resources.getStringArray(R.array.w_array_q5_o)
         when (a5_o) {
-            "酒豪" -> {
-                plusAbility(Constants.CATCHER, -1)
-                plusAbility(Constants.FIRST_BASE, 5)
-                plusAbility(Constants.SECOND_BASE, -3)
-                plusAbility(Constants.THIRD_BASE, 5)
-                plusAbility(Constants.SHORTSTOP, -1)
-                plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 7)
-                plusAbility(Constants.CONTACT, 1)
-                plusAbility(Constants.POWER, 3)
-                plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.FIELDING, -1)
-                plusAbility(Constants.CATCHING, -3)
-                plusSpecial(Constants.CHANCE, 0.02)
-                plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.CONTROL, -5)
+            womanAnswersPop5[0] -> {
+            }
+            womanAnswersPop5[1] -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, 7)
+                plusAbility(Constants.BALLISTIC, 4)
+                plusAbility(Constants.POWER, 7)
+                plusAbility(Constants.SPEED, 14)
+                plusAbility(Constants.ARM_STRENGTH, 10)
+                plusAbility(Constants.BALL_SPEED, 14)
+                plusAbility(Constants.STAMINA, 18)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.SLIDER, 2)
-                plusAbility(Constants.FOLK, 4)
-                plusAbility(Constants.CLOSER, 5)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SHOOT, 3)
+                plusAbility(Constants.STARTER, 6)
             }
-            "ヘビースモーカー" -> {
-                plusAbility(Constants.CATCHER, -5)
-                plusAbility(Constants.FIRST_BASE, 5)
-                plusAbility(Constants.SECOND_BASE, -5)
-                plusAbility(Constants.THIRD_BASE, 3)
-                plusAbility(Constants.SHORTSTOP, -2)
-                plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 3)
-                plusAbility(Constants.CONTACT, 2)
-                plusAbility(Constants.POWER, 1)
-                plusAbility(Constants.SPEED, 2)
-                plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.FIELDING, -1)
-                plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.STAMINA, -7)
-                plusAbility(Constants.AMOUNT_CHANGE, 2)
-                plusAbility(Constants.SINKER, 2)
-                plusAbility(Constants.SHOOT, 4)
-                plusAbility(Constants.STARTER, -6)
-            }
-            "ボスキャラ" -> {
+            womanAnswersPop5[2] -> {
                 plusAbility(Constants.CATCHER, 10)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -2841,7 +2821,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 15)
             }
-            "お色気" -> {
+            womanAnswersPop5[3] -> {
                 plusAbility(Constants.CATCHER, -8)
                 plusAbility(Constants.FIRST_BASE, 10)
                 plusAbility(Constants.SECOND_BASE, -10)
@@ -2865,7 +2845,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -8)
             }
-            "大和撫子" -> {
+            womanAnswersPop5[4] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -2888,32 +2868,54 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.STARTER, 6)
             }
-            "スポーツ少女" -> {
-                plusAbility(Constants.CATCHER, 3)
-                plusAbility(Constants.FIRST_BASE, -2)
-                plusAbility(Constants.SECOND_BASE, -2)
-                plusAbility(Constants.THIRD_BASE, 4)
-                plusAbility(Constants.SHORTSTOP, 2)
-                plusAbility(Constants.OUTFIELD, 7)
-                plusAbility(Constants.BALLISTIC, 4)
-                plusAbility(Constants.POWER, 7)
-                plusAbility(Constants.SPEED, 14)
-                plusAbility(Constants.ARM_STRENGTH, 10)
-                plusAbility(Constants.BALL_SPEED, 14)
-                plusAbility(Constants.STAMINA, 18)
-                plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.SLIDER, 3)
-                plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SHOOT, 3)
-                plusAbility(Constants.STARTER, 6)
+            womanAnswersPop5[5] -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.CONTACT, 2)
+                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.SPEED, 2)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.FIELDING, -1)
+                plusAbility(Constants.CATCHING, -2)
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 4)
+                plusAbility(Constants.STAMINA, -7)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.STARTER, -6)
             }
-            "特になし" -> {
+            womanAnswersPop5[6] -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 7)
+                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.FIELDING, -1)
+                plusAbility(Constants.CATCHING, -3)
+                plusSpecial(Constants.CHANCE, 0.02)
+                plusAbility(Constants.BALL_SPEED, 4)
+                plusAbility(Constants.CONTROL, -5)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 4)
+                plusAbility(Constants.CLOSER, 5)
             }
         }
 
-
+        val womanAnswersPop4 = context.resources.getStringArray(R.array.w_array_q4_o)
         when (a4_o) {
-            "大好き" -> {
+            womanAnswersPop4[0] -> {
                 contact = (contact * 1.2).toInt()
                 power = (power * 1.2).toInt()
                 speed = (speed * 1.2).toInt()
@@ -2926,7 +2928,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
                 amountOfCange = (amountOfCange * 1.3).toInt()
             }
-            "まぁまぁ" -> {
+            womanAnswersPop4[1] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -2939,9 +2941,9 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
                 amountOfCange = (amountOfCange * 1.15).toInt()
             }
-            "ふつう" -> {
+            womanAnswersPop4[2] -> {
             }
-            "興味深い" -> {
+            womanAnswersPop4[3] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -2954,7 +2956,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
                 amountOfCange = (amountOfCange * 1.1).toInt()
             }
-            "アンチ" -> {
+            womanAnswersPop4[4] -> {
                 contact = (contact * 0.9).toInt()
                 power = (power * 0.9).toInt()
                 speed = (speed * 0.9).toInt()
@@ -2997,6 +2999,7 @@ class CalcAbility(a1_a: String, a2_a: String, a3_a: String, a4_a: String, a5_a: 
             Constants.KIND_CHANGE -> kindsOfChangeBall += point
             Constants.AMOUNT_CHANGE -> amountOfCange += point
 
+            // TODO HashMap ?
             Constants.SLIDER -> priorityOfChange[0] += point
             Constants.CURB -> priorityOfChange[1] += point
             Constants.FOLK -> priorityOfChange[2] += point

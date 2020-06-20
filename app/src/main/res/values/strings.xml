@@ -20,15 +20,22 @@
         <item>5</item>
     </string-array>
 
-    <string-array name="array_q1_a">
+    <string-array name="m_array_q1_a">
         <item>~160cm</item>
         <item>161~170cm</item>
         <item>171~180cm</item>
         <item>181~190cm</item>
         <item>191cm~</item>
     </string-array>
+    <string-array name="w_array_q1_a">
+        <item>~150cm</item>
+        <item>151~160cm</item>
+        <item>161~170cm</item>
+        <item>171~180cm</item>
+        <item>181cm~</item>
+    </string-array>
 
-    <string-array name="array_q2_a">
+    <string-array name="m_array_q2_a">
         <item>ふつう</item>
         <item>スリム</item>
         <item>ぽっちゃり</item>
@@ -36,16 +43,31 @@
         <item>ややマッチョ</item>
         <item>ゴリマッチョ</item>
     </string-array>
+    <string-array name="w_array_q2_a">
+        <item>ふつう</item>
+        <item>スリム</item>
+        <item>ぽっちゃり</item>
+        <item>ムッチリ</item>
+        <item>マッチョ</item>
+        <item>グラマラス</item>
+    </string-array>
 
-    <string-array name="array_q3_a">
+    <string-array name="m_array_q3_a">
         <item>ふつう</item>
         <item>イケメン</item>
         <item>ワイルド</item>
         <item>かわいい</item>
         <item>強面</item>
     </string-array>
+    <string-array name="w_array_q3_a">
+        <item>ふつう</item>
+        <item>カワイイ系</item>
+        <item>美人系</item>
+        <item>地味め</item>
+        <item>派手め</item>
+    </string-array>
 
-    <string-array name="array_q4_a">
+    <string-array name="m_array_q4_a">
         <item>優しそう</item>
         <item>明るそう</item>
         <item>マジメそう</item>
@@ -53,8 +75,23 @@
         <item>おとぼけ者</item>
         <item>チャラそう</item>
     </string-array>
+    <string-array name="w_array_q4_a">
+        <item>優しそう</item>
+        <item>マジメそう</item>
+        <item>こわそう</item>
+        <item>元気そう</item>
+        <item>大人しそう</item>
+        <item>チャラそう</item>
+    </string-array>
 
-    <string-array name="array_q5_a">
+    <string-array name="m_array_q5_a">
+        <item>ふつう</item>
+        <item>オシャレ</item>
+        <item>地味め</item>
+        <item>派手め</item>
+        <item>独創的</item>
+    </string-array>
+    <string-array name="w_array_q5_a">
         <item>ふつう</item>
         <item>オシャレ</item>
         <item>地味め</item>
@@ -62,15 +99,23 @@
         <item>独創的</item>
     </string-array>
 
-    <string-array name="array_q1_p">
+    <string-array name="m_array_q1_p">
         <item>穏やか</item>
         <item>おとなしい</item>
         <item>淡々</item>
         <item>騒がしい</item>
         <item>ミステリアス</item>
     </string-array>
+    <string-array name="w_array_q1_p">
+        <item>穏やか</item>
+        <item>おとなしい</item>
+        <item>サバサバ</item>
+        <item>うるさい</item>
+        <item>メンヘラ</item>
+    </string-array>
 
-    <string-array name="array_q2_p">
+
+    <string-array name="m_array_q2_p">
         <item>優しい</item>
         <item>頑張り屋さん</item>
         <item>気が強い</item>
@@ -78,8 +123,24 @@
         <item>目立ちたがり</item>
         <item>一匹オオカミ</item>
     </string-array>
+    <string-array name="w_array_q2_p">
+        <item>優しい</item>
+        <item>頑張り屋さん</item>
+        <item>気が強い</item>
+        <item>無気力</item>
+        <item>かまってちゃん</item>
+        <item>一匹オオカミ</item>
+    </string-array>
 
-    <string-array name="array_q3_p">
+
+    <string-array name="m_array_q3_p">
+        <item>リーダー</item>
+        <item>控えめ</item>
+        <item>ムードメーカー</item>
+        <item>批評家</item>
+        <item>アイデアマン</item>
+    </string-array>
+    <string-array name="w_array_q3_p">
         <item>リーダー</item>
         <item>控えめ</item>
         <item>ムードメーカー</item>
@@ -87,7 +148,14 @@
         <item>アイデアマン</item>
     </string-array>
 
-    <string-array name="array_q4_p">
+    <string-array name="m_array_q4_p">
+        <item>ふつう</item>
+        <item>お勉強得意</item>
+        <item>頭キレキレ</item>
+        <item>頭からっぽ</item>
+        <item>脳筋</item>
+    </string-array>
+    <string-array name="w_array_q4_p">
         <item>ふつう</item>
         <item>お勉強得意</item>
         <item>頭キレキレ</item>
@@ -95,7 +163,16 @@
         <item>脳筋</item>
     </string-array>
 
-    <string-array name="array_q5_p">
+
+    <string-array name="m_array_q5_p">
+        <item>ふつう</item>
+        <item>天然</item>
+        <item>冗談多め</item>
+        <item>話が面白い</item>
+        <item>つまらない</item>
+        <item>芸人</item>
+    </string-array>
+    <string-array name="w_array_q5_p">
         <item>ふつう</item>
         <item>天然</item>
         <item>冗談多め</item>
@@ -104,15 +181,29 @@
         <item>芸人</item>
     </string-array>
 
-    <string-array name="array_q1_o">
+    <string-array name="m_array_q1_o">
         <item>王子様</item>
         <item>モテる</item>
         <item>ハンター</item>
         <item>ふつう</item>
         <item>ぷぅ〜</item>
     </string-array>
+    <string-array name="w_array_q1_o">
+        <item>マドンナ</item>
+        <item>モテる</item>
+        <item>一部から</item>
+        <item>ふつう</item>
+        <item>ぷぅ〜</item>
+    </string-array>
 
-    <string-array name="array_q2_o">
+    <string-array name="m_array_q2_o">
+        <item>大人気</item>
+        <item>まぁまぁ</item>
+        <item>ふつう</item>
+        <item>あんまり</item>
+        <item>ぷぅ〜</item>
+    </string-array>
+    <string-array name="w_array_q2_o">
         <item>大人気</item>
         <item>まぁまぁ</item>
         <item>ふつう</item>
@@ -120,7 +211,14 @@
         <item>ぷぅ〜</item>
     </string-array>
 
-    <string-array name="array_q3_o">
+    <string-array name="m_array_q3_o">
+        <item>最強</item>
+        <item>なかなか</item>
+        <item>ふつう</item>
+        <item>あんまり</item>
+        <item>豆腐メンタル</item>
+    </string-array>
+    <string-array name="w_array_q3_o">
         <item>最強</item>
         <item>なかなか</item>
         <item>ふつう</item>
@@ -128,7 +226,14 @@
         <item>豆腐メンタル</item>
     </string-array>
 
-    <string-array name="array_q4_o">
+    <string-array name="m_array_q4_o">
+        <item>大好き</item>
+        <item>まぁまぁ</item>
+        <item>ふつう</item>
+        <item>興味深い</item>
+        <item>アンチ</item>
+    </string-array>
+    <string-array name="w_array_q4_o">
         <item>大好き</item>
         <item>まぁまぁ</item>
         <item>ふつう</item>
@@ -136,7 +241,7 @@
         <item>アンチ</item>
     </string-array>
 
-    <string-array name="array_q5_o">
+    <string-array name="m_array_q5_o">
         <item>特になし</item>
         <item>カリスマ</item>
         <item>スポーツマン</item>
@@ -145,7 +250,17 @@
         <item>ヘビースモーカー</item>
         <item>元ヤン</item>
     </string-array>
-    <string name="title_activity_making_status_pitcher">MakingStatusPitcherActivity</string>
+    <string-array name="w_array_q5_o">
+        <item>特になし</item>
+        <item>スポーツ少女</item>
+        <item>ボスキャラ</item>
+        <item>お色気</item>
+        <item>大和撫子</item>
+        <item>ヘビースモーカー</item>
+        <item>酒豪</item>
+    </string-array>
+
+    <!--    <string name="title_activity_making_status_pitcher">MakingStatusPitcherActivity</string>-->
 
 
 </resources>

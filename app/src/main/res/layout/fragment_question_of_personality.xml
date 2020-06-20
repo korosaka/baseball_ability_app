@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q1_p" />
+                android:entries="@array/m_array_q1_p" />
         </LinearLayout>
 
     </LinearLayout>
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q2_p" />
+                android:entries="@array/m_array_q2_p" />
         </LinearLayout>
 
     </LinearLayout>
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q3_p" />
+                android:entries="@array/m_array_q3_p" />
         </LinearLayout>
 
     </LinearLayout>
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q4_p" />
+                android:entries="@array/m_array_q4_p" />
         </LinearLayout>
 
     </LinearLayout>
@@ -168,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q5_p" />
+                android:entries="@array/m_array_q5_p" />
         </LinearLayout>
 
     </LinearLayout>

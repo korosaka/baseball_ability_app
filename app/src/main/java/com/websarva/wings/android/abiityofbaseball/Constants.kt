@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
+// TODO enum ?
 class Constants {
     companion object {
         const val PLAYER_NAME = "playerName"
