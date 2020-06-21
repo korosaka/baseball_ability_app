@@ -12,6 +12,7 @@ import com.websarva.wings.android.abiityofbaseball.Constants.Companion.MIDDLE_DI
 import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER
 import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER_DISPLAY
 import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
+import kotlin.math.roundToInt
 
 class MakingStatusPitcherActivity : BaseBannerActivity() {
 
@@ -20,8 +21,17 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_making_status_pitcher)
         super.onCreate(savedInstanceState)
 
+        val playerPitcher = makePitcher()
 
-        val playerPitcher = PlayerPitcherClass(
+        displayName(playerPitcher)
+        displayTotalAbility(playerPitcher)
+        displayPitcherRecords(playerPitcher)
+        displaySalary(calcSalary(playerPitcher))
+    }
+
+    private fun makePitcher(): PlayerPitcherClass {
+
+        return PlayerPitcherClass(
                 intent.getStringExtra(Constants.PLAYER_NAME)!!,
                 intent.getStringExtra(Constants.PITCHER_TYPE)!!,
                 intent.getIntExtra(Constants.BALL_SPEED, 0),
@@ -32,196 +42,64 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
                 intent.getIntegerArrayListExtra(Constants.PRIORITY_CHANGE)!!,
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
+    }
 
-        val nameDisplay = findViewById<TextView>(R.id.name_display_p)
-        val ballSpeedDisplay = findViewById<TextView>(R.id.ball_speed_display)
-        val controlDisplay = findViewById<TextView>(R.id.control_display)
-        val staminaDisplay = findViewById<TextView>(R.id.stamina_display)
+    private fun displayTotalAbility(playerPitcher: PlayerPitcherClass) {
+        displayPitcherType(playerPitcher)
+        ball_speed_display.text = playerPitcher.maxSpeed.toString()
+        control_display.text = playerPitcher.controlLank
+        stamina_display.text = playerPitcher.staminaLank
+        setTextColor(control_display)
+        setTextColor(stamina_display)
 
-        // 各変化球
-        var sliderDisplay: Array<TextView?> = arrayOfNulls(7)
-        sliderDisplay[0] = findViewById<TextView>(R.id.slider_1)
-        sliderDisplay[1] = findViewById<TextView>(R.id.slider_2)
-        sliderDisplay[2] = findViewById<TextView>(R.id.slider_3)
-        sliderDisplay[3] = findViewById<TextView>(R.id.slider_4)
-        sliderDisplay[4] = findViewById<TextView>(R.id.slider_5)
-        sliderDisplay[5] = findViewById<TextView>(R.id.slider_6)
-        sliderDisplay[6] = findViewById<TextView>(R.id.slider_7)
+        displayChangeBallAbility(playerPitcher)
 
-        var curbDisplay: Array<TextView?> = arrayOfNulls(7)
-        curbDisplay[0] = findViewById<TextView>(R.id.curb_1)
-        curbDisplay[1] = findViewById<TextView>(R.id.curb_2)
-        curbDisplay[2] = findViewById<TextView>(R.id.curb_3)
-        curbDisplay[3] = findViewById<TextView>(R.id.curb_4)
-        curbDisplay[4] = findViewById<TextView>(R.id.curb_5)
-        curbDisplay[5] = findViewById<TextView>(R.id.curb_6)
-        curbDisplay[6] = findViewById<TextView>(R.id.curb_7)
+    }
 
-        var forkDisplay: Array<TextView?> = arrayOfNulls(7)
-        forkDisplay[0] = findViewById<TextView>(R.id.fork_1)
-        forkDisplay[1] = findViewById<TextView>(R.id.fork_2)
-        forkDisplay[2] = findViewById<TextView>(R.id.fork_3)
-        forkDisplay[3] = findViewById<TextView>(R.id.fork_4)
-        forkDisplay[4] = findViewById<TextView>(R.id.fork_5)
-        forkDisplay[5] = findViewById<TextView>(R.id.fork_6)
-        forkDisplay[6] = findViewById<TextView>(R.id.fork_7)
+    private fun displayChangeBallAbility(playerPitcher: PlayerPitcherClass) {
+        val changeDisplays = getChangeBallDisplay()
+        val changeBallMarks = arrayOf(mark_slider, mark_curb, mark_fork, mark_sinker, mark_shoot)
+        val changeBallTitles = arrayOf(title_slider, title_curb, title_fork, title_sinker, title_shoot)
+        val colors = getChangeBallColors()
+        for (changeKindIndex in 0 until playerPitcher.changeBalls.size) {
 
-        var sinkerDisplay: Array<TextView?> = arrayOfNulls(7)
-        sinkerDisplay[0] = findViewById<TextView>(R.id.sinker_1)
-        sinkerDisplay[1] = findViewById<TextView>(R.id.sinker_2)
-        sinkerDisplay[2] = findViewById<TextView>(R.id.sinker_3)
-        sinkerDisplay[3] = findViewById<TextView>(R.id.sinker_4)
-        sinkerDisplay[4] = findViewById<TextView>(R.id.sinker_5)
-        sinkerDisplay[5] = findViewById<TextView>(R.id.sinker_6)
-        sinkerDisplay[6] = findViewById<TextView>(R.id.sinker_7)
+            if (playerPitcher.changeBalls[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.visibility = View.INVISIBLE
 
-        var shootDisplay: Array<TextView?> = arrayOfNulls(7)
-        shootDisplay[0] = findViewById<TextView>(R.id.shoot_1)
-        shootDisplay[1] = findViewById<TextView>(R.id.shoot_2)
-        shootDisplay[2] = findViewById<TextView>(R.id.shoot_3)
-        shootDisplay[3] = findViewById<TextView>(R.id.shoot_4)
-        shootDisplay[4] = findViewById<TextView>(R.id.shoot_5)
-        shootDisplay[5] = findViewById<TextView>(R.id.shoot_6)
-        shootDisplay[6] = findViewById<TextView>(R.id.shoot_7)
+            for (changeAmountIndex in 0 until playerPitcher.changeBalls[changeKindIndex]) {
 
-        var changeDisplays = Array(5, { arrayOfNulls<TextView>(7) })
-        changeDisplays[0] = sliderDisplay
-        changeDisplays[1] = curbDisplay
-        changeDisplays[2] = forkDisplay
-        changeDisplays[3] = sinkerDisplay
-        changeDisplays[4] = shootDisplay
-
-        var changeBallMarks: Array<TextView?> = arrayOfNulls(5)
-        changeBallMarks[0] = findViewById<TextView>(R.id.mark_slider)
-        changeBallMarks[1] = findViewById<TextView>(R.id.mark_curb)
-        changeBallMarks[2] = findViewById<TextView>(R.id.mark_fork)
-        changeBallMarks[3] = findViewById<TextView>(R.id.mark_sinker)
-        changeBallMarks[4] = findViewById<TextView>(R.id.mark_shoot)
-
-        var changeBallTitles: Array<TextView?> = arrayOfNulls(5)
-        changeBallTitles[0] = findViewById<TextView>(R.id.title_slider)
-        changeBallTitles[1] = findViewById<TextView>(R.id.title_curb)
-        changeBallTitles[2] = findViewById<TextView>(R.id.title_fork)
-        changeBallTitles[3] = findViewById<TextView>(R.id.title_sinker)
-        changeBallTitles[4] = findViewById<TextView>(R.id.title_shoot)
-
-
-
-        nameDisplay.text = playerPitcher.playerName
-        when (nameDisplay.length()) {
-            2 -> nameDisplay.text = (playerPitcher.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + playerPitcher.playerName[1])
-            3 -> nameDisplay.text = (playerPitcher.playerName[0] + Constants.HALF_SPACE + playerPitcher.playerName[1] + Constants.HALF_SPACE + playerPitcher.playerName[2])
-            5 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, resources.displayMetrics)
-            6 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
-            7 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, resources.displayMetrics)
-            8 -> nameDisplay.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, resources.displayMetrics)
-        }
-
-        when (playerPitcher.pitcherType) {
-            STARTER -> {
-                type_display.text = STARTER_DISPLAY
-                type_display.setBackgroundResource(R.drawable.infielder_name_background)
-            }
-            MIDDLE -> {
-                type_display.text = MIDDLE_DISPLAY
-                type_display.setBackgroundResource(R.drawable.outfielder_name_background)
-            }
-            else -> {
-                type_display.text = CLOSER_DISPLAY
-                type_display.setBackgroundResource(R.drawable.catcher_name_background)
-            }
-        }
-        ballSpeedDisplay.text = playerPitcher.maxSpeed.toString()
-        controlDisplay.text = playerPitcher.controlLank
-        staminaDisplay.text = playerPitcher.staminaLank
-
-        setTextColor(controlDisplay)
-        setTextColor(staminaDisplay)
-
-        // TODO check
-        win_display.text = playerPitcher.win.toString()
-        lose_display.text = playerPitcher.lose.toString()
-        save_display.text = playerPitcher.save.toString()
-        era_display.text = String.format("%.2f", playerPitcher.actualERA)
-        innings_display.text = playerPitcher.totalInnings.toString()
-        k_display.text = playerPitcher.totalK.toString()
-        bb_display.text = playerPitcher.totalBB.toString()
-        val intAveAgainst = Math.round(playerPitcher.battingAveAgainst * 1000)
-        var displayAveAgainst = "." + intAveAgainst.toString()
-        if (intAveAgainst < 100) displayAveAgainst = "." + "0" + intAveAgainst.toString()
-        ave_against_display.setText(displayAveAgainst)
-
-        var colors = Array(5, { arrayOfNulls<Int>(7) })
-
-        // TODO use Constants class
-        var sliderColors: Array<Int?> = arrayOfNulls(7)
-        sliderColors[0] = Color.parseColor("#ffe0e0")
-        sliderColors[1] = Color.parseColor("#ffd6d6")
-        sliderColors[2] = Color.parseColor("#ffc6c6")
-        sliderColors[3] = Color.parseColor("#ffa3a3")
-        sliderColors[4] = Color.parseColor("#ff7f7f")
-        sliderColors[5] = Color.parseColor("#ff3d3d")
-        sliderColors[6] = Color.parseColor("#ff0000")
-
-        var curbColors: Array<Int?> = arrayOfNulls(7)
-        curbColors[0] = Color.parseColor("#ffefe0")
-        curbColors[1] = Color.parseColor("#ffe8d1")
-        curbColors[2] = Color.parseColor("#ffe2c6")
-        curbColors[3] = Color.parseColor("#ffd1a3")
-        curbColors[4] = Color.parseColor("#ffbf7f")
-        curbColors[5] = Color.parseColor("#ff9e3d")
-        curbColors[6] = Color.parseColor("#ff7f00")
-
-        var forkColors: Array<Int?> = arrayOfNulls(7)
-        forkColors[0] = Color.parseColor("#ffffc6")
-        forkColors[1] = Color.parseColor("#ffffa8")
-        forkColors[2] = Color.parseColor("#ffff7f")
-        forkColors[3] = Color.parseColor("#ffff00")
-        forkColors[4] = Color.parseColor("#fef263")
-        forkColors[5] = Color.parseColor("#ffea00")
-        forkColors[6] = Color.parseColor("#ffd900")
-
-        var sinkerColors: Array<Int?> = arrayOfNulls(7)
-        sinkerColors[0] = Color.parseColor("#e0ffe0")
-        sinkerColors[1] = Color.parseColor("#d1ffd1")
-        sinkerColors[2] = Color.parseColor("#c6ffc6")
-        sinkerColors[3] = Color.parseColor("#a3ffa3")
-        sinkerColors[4] = Color.parseColor("#7fff7f")
-        sinkerColors[5] = Color.parseColor("#3dff3d")
-        sinkerColors[6] = Color.parseColor("#00ff00")
-
-        var shootColors: Array<Int?> = arrayOfNulls(7)
-        shootColors[0] = Color.parseColor("#e0ffff")
-        shootColors[1] = Color.parseColor("#d1ffff")
-        shootColors[2] = Color.parseColor("#c6ffff")
-        shootColors[3] = Color.parseColor("#a3ffff")
-        shootColors[4] = Color.parseColor("#7fffff")
-        shootColors[5] = Color.parseColor("#3dffff")
-        shootColors[6] = Color.parseColor("#00ffff")
-
-
-        colors[0] = sliderColors
-        colors[1] = curbColors
-        colors[2] = forkColors
-        colors[3] = sinkerColors
-        colors[4] = shootColors
-
-
-        // TODO check
-        for (changeKindIndex in 0..(playerPitcher.changeBalls.size - 1)) {
-
-            if (playerPitcher.changeBalls[changeKindIndex] == 0) changeBallTitles[changeKindIndex]!!.setVisibility(View.INVISIBLE)
-
-            for (changeAmountIndex in 0..(playerPitcher.changeBalls[changeKindIndex] - 1)) {
-
-                changeDisplays[changeKindIndex][changeAmountIndex]!!.setBackgroundColor(colors[changeKindIndex][changeAmountIndex]!!)
-                changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex]!!)
+                changeDisplays[changeKindIndex][changeAmountIndex].setBackgroundColor(colors[changeKindIndex][changeAmountIndex])
+                changeBallMarks[changeKindIndex]!!.setTextColor(colors[changeKindIndex][changeAmountIndex])
             }
         }
 
-        displaySalary(calcSalary(playerPitcher))
+    }
 
+    private fun getChangeBallDisplay(): Array<Array<TextView>> {
+        val sliderDisplay = arrayOf(slider_1, slider_2, slider_3, slider_4, slider_5, slider_6, slider_7)
+        val curbDisplay = arrayOf(curb_1, curb_2, curb_3, curb_4, curb_5, curb_6, curb_7)
+        val forkDisplay = arrayOf(fork_1, fork_2, fork_3, fork_4, fork_5, fork_6, fork_7)
+        val sinkerDisplay = arrayOf(sinker_1, sinker_2, sinker_3, sinker_4, sinker_5, sinker_6, sinker_7)
+        val shootDisplay = arrayOf(shoot_1, shoot_2, shoot_3, shoot_4, shoot_5, shoot_6, shoot_7)
 
+        return arrayOf(
+                sliderDisplay,
+                curbDisplay,
+                forkDisplay,
+                sinkerDisplay,
+                shootDisplay
+        )
+    }
+
+    private fun displayName(pitcher: PlayerPitcherClass) {
+        name_display_p.text = pitcher.playerName
+        when (name_display_p.length()) {
+            2 -> name_display_p.text = (pitcher.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + pitcher.playerName[1])
+            3 -> name_display_p.text = (pitcher.playerName[0] + Constants.HALF_SPACE + pitcher.playerName[1] + Constants.HALF_SPACE + pitcher.playerName[2])
+            5 -> name_display_p.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, resources.displayMetrics)
+            6 -> name_display_p.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
+            7 -> name_display_p.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, resources.displayMetrics)
+            8 -> name_display_p.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, resources.displayMetrics)
+        }
     }
 
     private fun setTextColor(alphabet: TextView) {
@@ -237,6 +115,94 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
         }
     }
+
+    private fun displayPitcherType(pitcher: PlayerPitcherClass) {
+        when (pitcher.pitcherType) {
+            STARTER -> {
+                type_display.text = STARTER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.infielder_name_background)
+            }
+            MIDDLE -> {
+                type_display.text = MIDDLE_DISPLAY
+                type_display.setBackgroundResource(R.drawable.outfielder_name_background)
+            }
+            else -> {
+                type_display.text = CLOSER_DISPLAY
+                type_display.setBackgroundResource(R.drawable.catcher_name_background)
+            }
+        }
+    }
+
+    private fun getChangeBallColors(): Array<Array<Int>> {
+        val sliderColors = arrayOf(
+                Color.parseColor(Constants.SLIDER_COLOR_1),
+                Color.parseColor(Constants.SLIDER_COLOR_2),
+                Color.parseColor(Constants.SLIDER_COLOR_3),
+                Color.parseColor(Constants.SLIDER_COLOR_4),
+                Color.parseColor(Constants.SLIDER_COLOR_5),
+                Color.parseColor(Constants.SLIDER_COLOR_6),
+                Color.parseColor(Constants.SLIDER_COLOR_7)
+        )
+        val curbColors = arrayOf(
+                Color.parseColor(Constants.CURB_COLOR_1),
+                Color.parseColor(Constants.CURB_COLOR_2),
+                Color.parseColor(Constants.CURB_COLOR_3),
+                Color.parseColor(Constants.CURB_COLOR_4),
+                Color.parseColor(Constants.CURB_COLOR_5),
+                Color.parseColor(Constants.CURB_COLOR_6),
+                Color.parseColor(Constants.CURB_COLOR_7)
+        )
+        val forkColors = arrayOf(
+                Color.parseColor(Constants.FORK_COLOR_1),
+                Color.parseColor(Constants.FORK_COLOR_2),
+                Color.parseColor(Constants.FORK_COLOR_3),
+                Color.parseColor(Constants.FORK_COLOR_4),
+                Color.parseColor(Constants.FORK_COLOR_5),
+                Color.parseColor(Constants.FORK_COLOR_6),
+                Color.parseColor(Constants.FORK_COLOR_7)
+        )
+        val sinkerColors = arrayOf(
+                Color.parseColor(Constants.SINKER_COLOR_1),
+                Color.parseColor(Constants.SINKER_COLOR_2),
+                Color.parseColor(Constants.SINKER_COLOR_3),
+                Color.parseColor(Constants.SINKER_COLOR_4),
+                Color.parseColor(Constants.SINKER_COLOR_5),
+                Color.parseColor(Constants.SINKER_COLOR_6),
+                Color.parseColor(Constants.SINKER_COLOR_7)
+        )
+        val shootColors = arrayOf(
+                Color.parseColor(Constants.SHOOT_COLOR_1),
+                Color.parseColor(Constants.SHOOT_COLOR_2),
+                Color.parseColor(Constants.SHOOT_COLOR_3),
+                Color.parseColor(Constants.SHOOT_COLOR_4),
+                Color.parseColor(Constants.SHOOT_COLOR_5),
+                Color.parseColor(Constants.SHOOT_COLOR_6),
+                Color.parseColor(Constants.SHOOT_COLOR_7)
+        )
+
+        return arrayOf(
+                sliderColors,
+                curbColors,
+                forkColors,
+                sinkerColors,
+                shootColors
+        )
+    }
+
+    private fun displayPitcherRecords(playerPitcher: PlayerPitcherClass) {
+        win_display.text = playerPitcher.win.toString()
+        lose_display.text = playerPitcher.lose.toString()
+        save_display.text = playerPitcher.save.toString()
+        era_display.text = String.format("%.2f", playerPitcher.actualERA)
+        innings_display.text = playerPitcher.totalInnings.toString()
+        k_display.text = playerPitcher.totalK.toString()
+        bb_display.text = playerPitcher.totalBB.toString()
+        val intAveAgainst = (playerPitcher.battingAveAgainst * 1000).roundToInt()
+        var displayAveAgainst = ".$intAveAgainst"
+        if (intAveAgainst < 100) displayAveAgainst = ".0$intAveAgainst"
+        ave_against_display.text = displayAveAgainst
+    }
+
 
     private fun calcSalary(pitcher: PlayerPitcherClass): Int {
 
