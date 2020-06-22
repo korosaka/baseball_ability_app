@@ -5,12 +5,35 @@
     <string name="app_start">はじめる</string>
     <string name="player_making">野球選手をつくる</string>
     <string name="check_data">つくった選手をみる</string>
-    <string name="picher_making">投手でつくる</string>
+    <string name="pitcher_making">投手でつくる</string>
     <string name="fielder_making">野手でつくる</string>
     <string name="require_name">名前を登録してください</string>
     <string name="require_sex">性別を選んでください</string>
-    <string name="unable_pitcher">※投手版は作成中です💦</string>
     <string name="require_each_item">各項目を登録してください！</string>
+    <string name="go_next">次へ ▶</string>
+    <string name="go_back">◀ 戻る</string>
+    <string name="go_result">査定結果 ▶</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="cancel">キャンセル</string>
+    <string name="confirm_input">入力確認</string>
+    <string name="ask_complete">入力はお済みでしょうか</string>
+    <string name="done">完了</string>
+    <string name="ask_go_back">前の画面に戻りますか？</string>
+    <string name="input_name">登録名を入力してください</string>
+
+    <string name="position_catcher">捕</string>
+    <string name="position_first_base">一</string>
+    <string name="position_second_base">二</string>
+    <string name="position_third_base">三</string>
+    <string name="position_shortstop">遊</string>
+    <string name="position_outfield">外</string>
+
+    <string name="starter">先発</string>
+    <string name="middle_relief">中継ぎ</string>
+    <string name="closer">抑え</string>
+
+
 
     <string-array name="array_for_spinner">
         <item>1</item>

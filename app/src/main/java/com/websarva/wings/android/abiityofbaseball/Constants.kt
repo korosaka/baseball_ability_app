@@ -23,19 +23,10 @@ class Constants {
         const val THIRD_BASE = "thirdBase"
         const val SHORTSTOP = "shortStop"
         const val OUTFIELD = "outField"
-        const val CATCHER_SYMBOL = "捕"
-        const val FIRST_BASE_SYMBOL = "一"
-        const val SECOND_BASE_SYMBOL = "二"
-        const val THIRD_BASE_SYMBOL = "三"
-        const val SHORTSTOP_SYMBOL = "遊"
-        const val OUTFIELD_SYMBOL = "外"
 
         const val CHANCE = "chance"
 
         const val PITCHER_TYPE = "pitcherType"
-        const val STARTER_DISPLAY = "先発"
-        const val MIDDLE_DISPLAY = "中継ぎ"
-        const val CLOSER_DISPLAY = "抑え"
         const val STARTER = "starter"
         const val MIDDLE = "middleRelief"
         const val CLOSER = "closer"
@@ -121,22 +112,6 @@ class Constants {
         const val APPEARANCE = "appearance"
         const val PERSONALITY = "personality"
         const val POPULARITY = "popularity"
-
-
-        // TODO move to strings.xml
-        const val GO_NEXT = "次へ ▶"
-        const val GO_BACK = "◀ 戻る"
-        const val GO_TO_RESULT = "査定結果 ▶"
-        const val YES = "はい"
-        const val NO = "いいえ"
-        const val CANCEL = "キャンセル"
-
-        const val CONFIRM_INPUT = "入力確認"
-        const val DO_YOU_FINISH_INPUT = "入力はお済みでしょうか"
-        const val DONE = "完了"
-
-        const val DO_YOU_GO_BACK = "前の画面に戻りますか？"
-        const val PLEASE_INPUT_NAME = "登録名を入力してください"
 
         const val HALF_SPACE = " "
 

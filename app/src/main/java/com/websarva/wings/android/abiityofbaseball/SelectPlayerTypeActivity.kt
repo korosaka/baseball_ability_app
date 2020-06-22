@@ -35,7 +35,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         if (playerName.isNotEmpty()) {
             makeIntent(playerName, Constants.TYPE_FIELDER)
         } else {
-            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, resources.getString(R.string.input_name), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -48,7 +48,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         if (playerName.isNotEmpty()) {
             makeIntent(playerName, Constants.TYPE_PITCHER)
         } else {
-            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, resources.getString(R.string.input_name), Toast.LENGTH_SHORT).show()
         }
     }
 

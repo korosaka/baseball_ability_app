@@ -6,11 +6,6 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
-import com.websarva.wings.android.abiityofbaseball.Constants.Companion.CLOSER_DISPLAY
-import com.websarva.wings.android.abiityofbaseball.Constants.Companion.MIDDLE
-import com.websarva.wings.android.abiityofbaseball.Constants.Companion.MIDDLE_DISPLAY
-import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER
-import com.websarva.wings.android.abiityofbaseball.Constants.Companion.STARTER_DISPLAY
 import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
 import kotlin.math.roundToInt
 
@@ -118,16 +113,16 @@ class MakingStatusPitcherActivity : BaseBannerActivity() {
 
     private fun displayPitcherType(pitcher: PlayerPitcherClass) {
         when (pitcher.pitcherType) {
-            STARTER -> {
-                type_display.text = STARTER_DISPLAY
+            Constants.STARTER -> {
+                type_display.text = resources.getString(R.string.starter)
                 type_display.setBackgroundResource(R.drawable.infielder_name_background)
             }
-            MIDDLE -> {
-                type_display.text = MIDDLE_DISPLAY
+            Constants.MIDDLE -> {
+                type_display.text = resources.getString(R.string.middle_relief)
                 type_display.setBackgroundResource(R.drawable.outfielder_name_background)
             }
-            else -> {
-                type_display.text = CLOSER_DISPLAY
+            Constants.CLOSER -> {
+                type_display.text = resources.getString(R.string.closer)
                 type_display.setBackgroundResource(R.drawable.catcher_name_background)
             }
         }

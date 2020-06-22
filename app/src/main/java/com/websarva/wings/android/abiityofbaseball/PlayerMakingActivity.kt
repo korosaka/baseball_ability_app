@@ -69,7 +69,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
     private fun changeToAppearance() {
         showHideFragment(Constants.APPEARANCE)
         currentName = Constants.APPEARANCE
-        bt_next.text = Constants.GO_NEXT
+        bt_next.text = resources.getString(R.string.go_next)
     }
 
     /**
@@ -78,7 +78,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
     private fun changeToPerson() {
         showHideFragment(Constants.PERSONALITY)
         currentName = Constants.PERSONALITY
-        bt_next.text = Constants.GO_NEXT
+        bt_next.text = resources.getString(R.string.go_next)
     }
 
     /**
@@ -87,7 +87,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
     private fun changeToPopularity() {
         showHideFragment(Constants.POPULARITY)
         currentName = Constants.POPULARITY
-        bt_next.text = Constants.GO_TO_RESULT
+        bt_next.text = resources.getString(R.string.go_result)
     }
 
 
@@ -131,9 +131,9 @@ class PlayerMakingActivity : BaseBannerActivity() {
     private fun makePlayer() {
 
         val builder = AlertDialog.Builder(this)
-        builder.setTitle(Constants.CONFIRM_INPUT)
-        builder.setMessage(Constants.DO_YOU_FINISH_INPUT)
-        builder.setPositiveButton(Constants.DONE) { dialog, which ->
+        builder.setTitle(resources.getString(R.string.confirm_input))
+        builder.setMessage(resources.getString(R.string.ask_complete))
+        builder.setPositiveButton(resources.getString(R.string.done)) { dialog, which ->
 
             // 全ての入力値から計算
             val calcAbility = CalcAbility(this,
@@ -170,20 +170,20 @@ class PlayerMakingActivity : BaseBannerActivity() {
             }
             finish()
         }
-        builder.setNegativeButton(Constants.NO, null)
+        builder.setNegativeButton(resources.getString(R.string.no), null)
         builder.show()
     }
 
     private fun backToPrevious() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle(Constants.GO_BACK)
-        builder.setMessage(Constants.DO_YOU_GO_BACK)
-        builder.setPositiveButton(Constants.YES) { dialog, which ->
+        builder.setTitle(resources.getString(R.string.go_back))
+        builder.setMessage(resources.getString(R.string.ask_go_back))
+        builder.setPositiveButton(resources.getString(R.string.yes)) { dialog, which ->
             val intent = Intent(this, SelectPlayerTypeActivity::class.java)
             startActivity(intent)
             finish()
         }
-        builder.setNegativeButton(Constants.CANCEL, null)
+        builder.setNegativeButton(resources.getString(R.string.cancel), null)
         builder.show()
     }
 

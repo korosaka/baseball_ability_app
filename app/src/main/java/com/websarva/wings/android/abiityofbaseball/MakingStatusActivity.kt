@@ -38,27 +38,27 @@ class MakingStatusActivity : BaseBannerActivity() {
         name_display.text = player.playerName
         when (player.mainPosition) {
             Constants.CATCHER -> {
-                position_display.text = Constants.CATCHER_SYMBOL
+                position_display.text = resources.getString(R.string.position_catcher)
                 name_display.setBackgroundResource(R.drawable.catcher_name_background)
             }
             Constants.FIRST_BASE -> {
-                position_display.text = Constants.FIRST_BASE_SYMBOL
+                position_display.text = resources.getString(R.string.position_first_base)
                 name_display.setBackgroundResource(R.drawable.infielder_name_background)
             }
             Constants.SECOND_BASE -> {
-                position_display.text = Constants.SECOND_BASE_SYMBOL
+                position_display.text = resources.getString(R.string.position_second_base)
                 name_display.setBackgroundResource(R.drawable.infielder_name_background)
             }
             Constants.THIRD_BASE -> {
-                position_display.text = Constants.THIRD_BASE_SYMBOL
+                position_display.text = resources.getString(R.string.position_third_base)
                 name_display.setBackgroundResource(R.drawable.infielder_name_background)
             }
             Constants.SHORTSTOP -> {
-                position_display.text = Constants.SHORTSTOP_SYMBOL
+                position_display.text = resources.getString(R.string.position_shortstop)
                 name_display.setBackgroundResource(R.drawable.infielder_name_background)
             }
             Constants.OUTFIELD -> {
-                position_display.text = Constants.OUTFIELD_SYMBOL
+                position_display.text = resources.getString(R.string.position_outfield)
                 name_display.setBackgroundResource(R.drawable.outfielder_name_background)
             }
         }
