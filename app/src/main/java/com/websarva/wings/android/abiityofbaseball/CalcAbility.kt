@@ -22,6 +22,12 @@ class CalcAbility(
         const val STARTER_INDEX = 0
         const val MIDDLE_INDEX = 1
         const val CLOSER_INDEX = 2
+
+        const val SLIDER_INDEX = 0
+        const val CURB_INDEX = 1
+        const val FOLK_INDEX = 2
+        const val SINKER_INDEX = 3
+        const val SHOOT_INDEX = 4
     }
 
     // 野手能力ポイント
@@ -53,14 +59,14 @@ class CalcAbility(
     init {
 
         if (PlayerMakingActivity.sex_id == Constants.ID_MAN) {
-            calcAbility_m()
+            calcManAbility()
         } else {
-            calcAbility_w()
+            calcWomanAbility()
         }
 
     }
 
-    fun calcAbility_m() {
+    private fun calcManAbility() {
         val manAnswersA1 = context.resources.getStringArray(R.array.m_array_q1_a)
 
         when (a1_a) {
@@ -1525,7 +1531,7 @@ class CalcAbility(
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    fun calcAbility_w() {
+    private fun calcWomanAbility() {
 
         val womanAnswersA1 = context.resources.getStringArray(R.array.w_array_q1_a)
         when (a1_a) {
@@ -3002,12 +3008,11 @@ class CalcAbility(
             Constants.KIND_CHANGE -> kindsOfChangeBall += point
             Constants.AMOUNT_CHANGE -> amountOfChange += point
 
-            // TODO HashMap ?
-            Constants.SLIDER -> priorityOfChange[0] += point
-            Constants.CURB -> priorityOfChange[1] += point
-            Constants.FOLK -> priorityOfChange[2] += point
-            Constants.SINKER -> priorityOfChange[3] += point
-            Constants.SHOOT -> priorityOfChange[4] += point
+            Constants.SLIDER -> priorityOfChange[SLIDER_INDEX] += point
+            Constants.CURB -> priorityOfChange[CURB_INDEX] += point
+            Constants.FOLK -> priorityOfChange[FOLK_INDEX] += point
+            Constants.SINKER -> priorityOfChange[SINKER_INDEX] += point
+            Constants.SHOOT -> priorityOfChange[SHOOT_INDEX] += point
 
             Constants.STARTER -> pitcherTypes[STARTER_INDEX] += point
             Constants.MIDDLE -> pitcherTypes[MIDDLE_INDEX] += point
