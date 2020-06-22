@@ -16,7 +16,15 @@ class MakingStatusActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_making_status_batter)
         super.onCreate(savedInstanceState)
 
-        val player = PlayerClass(
+        val player = makePlayer()
+
+        displayPlayerInfo(player)
+        calcRecord(player)
+
+    }
+
+    private fun makePlayer(): PlayerClass {
+        return PlayerClass(
                 intent.getStringExtra(Constants.PLAYER_NAME)!!,
                 intent.getStringExtra(Constants.POSITION)!!,
                 intent.getIntExtra(Constants.BALLISTIC, 1),
@@ -28,14 +36,30 @@ class MakingStatusActivity : BaseBannerActivity() {
                 intent.getIntExtra(Constants.CATCHING, 0),
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
-
-        displayPlayerInfo(player)
-        calcRecord(player)
-
     }
 
     private fun displayPlayerInfo(player: PlayerClass) {
+        displayPlayerName(player)
+        displayPosition(player)
+        displayAbility(player)
+    }
+
+    private fun displayPlayerName(player: PlayerClass) {
         name_display.text = player.playerName
+
+        // 字数でサイズ変更
+        when (name_display.length()) {
+            2 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + player.playerName[1])
+            3 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + player.playerName[1] + Constants.HALF_SPACE + player.playerName[2])
+            5 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, resources.displayMetrics)
+            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
+            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, resources.displayMetrics)
+            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, resources.displayMetrics)
+        }
+
+    }
+
+    private fun displayPosition(player: PlayerClass) {
         when (player.mainPosition) {
             Constants.CATCHER -> {
                 position_display.text = resources.getString(R.string.position_catcher)
@@ -62,18 +86,9 @@ class MakingStatusActivity : BaseBannerActivity() {
                 name_display.setBackgroundResource(R.drawable.outfielder_name_background)
             }
         }
+    }
 
-        // 字数でサイズ変更
-        when (name_display.length()) {
-            2 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + player.playerName[1])
-            3 -> name_display.text = (player.playerName[0] + Constants.HALF_SPACE + player.playerName[1] + Constants.HALF_SPACE + player.playerName[2])
-            5 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, resources.displayMetrics)
-            6 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, resources.displayMetrics)
-            7 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, resources.displayMetrics)
-            8 -> name_display.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, resources.displayMetrics)
-        }
-
-
+    private fun displayAbility(player: PlayerClass) {
         ballistic_display.text = player.ballisticAbility.toString()
         setBallisticArrow(ballistic_arrow, player.ballisticAbility)
         setBallisticColor(ballistic_arrow, player.ballisticAbility)
@@ -98,6 +113,26 @@ class MakingStatusActivity : BaseBannerActivity() {
      */
     private fun calcRecord(player: PlayerClass) {
 
+        val ave = calcAve(player)
+        val hr = calcHr(player)
+        val rbi = calcRbi(player, hr)
+        val sb = calcSb(player)
+
+        displayRecord(ave, hr, rbi, sb)
+        calcSalary(ave, hr, rbi, sb, player)
+    }
+
+    private fun displayRecord(ave: Int, hr: Int, rbi: Int, sb: Int) {
+        average_display.text = when{
+            ave < 100 -> ".0$ave"
+            else -> ".$ave"
+        }
+        homer_display.text = hr.toString()
+        rbi_display.text = rbi.toString()
+        steel_display.text = sb.toString()
+    }
+
+    private fun calcAve(player: PlayerClass): Int {
         var ave = 85 + (player.contactAbility * 4.5).toInt() + (player.powerAbility * 0.45).toInt() + (player.speedAbility * 0.15).toInt()
         when {
             ave < 150 -> {
@@ -117,6 +152,11 @@ class MakingStatusActivity : BaseBannerActivity() {
             3 -> (ave * 0.97).toInt()
             else -> (ave * 0.94).toInt()
         }
+
+        return ave
+    }
+
+    private fun calcHr(player: PlayerClass): Int {
         var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 30
         if (hr < 0) {
             hr = (player.powerAbility * 0.1).toInt()
@@ -129,6 +169,11 @@ class MakingStatusActivity : BaseBannerActivity() {
             3 -> (hr * 0.85).toInt()
             else -> hr
         }
+
+        return hr
+    }
+
+    private fun calcRbi(player: PlayerClass, hr: Int): Int {
         var rbi = (((player.contactAbility * 0.5) + (player.powerAbility * 1.0)) * player.chance).toInt()
         when {
             rbi < 0 -> {
@@ -151,6 +196,11 @@ class MakingStatusActivity : BaseBannerActivity() {
             }
         }
         if (rbi < hr) rbi = hr
+
+        return rbi
+    }
+
+    private fun calcSb(player: PlayerClass): Int {
         var sb = (player.speedAbility * 0.8).toInt() - 25
         when {
             sb < -10 -> {
@@ -162,19 +212,9 @@ class MakingStatusActivity : BaseBannerActivity() {
             sb > 30 -> {
                 sb = (sb * 1.1).toInt()
             }
-
         }
 
-
-        var aveString = ".$ave"
-        if (ave < 100) aveString = ".0$ave"
-        average_display.text = aveString
-        homer_display.text = hr.toString()
-        rbi_display.text = rbi.toString()
-        steel_display.text = sb.toString()
-
-        calcSalary(ave, hr, rbi, sb, player)
-
+        return sb
     }
 
     private fun setLankColor(alphabet: TextView) {

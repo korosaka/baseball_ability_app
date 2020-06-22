@@ -1,12 +1,12 @@
 package com.websarva.wings.android.abiityofbaseball
 
-// TODO enum ?
 class Constants {
     companion object {
         const val PLAYER_NAME = "playerName"
         const val PLAYER_TYPE = "playerType"
         const val TYPE_FIELDER = "fielder"
         const val TYPE_PITCHER = "pitcher"
+
         const val SEX_ID = "sex_id"
         const val ID_MAN = 0
         const val ID_WOMAN = 1
@@ -102,7 +102,6 @@ class Constants {
         const val FOLK = "folk"
         const val SINKER = "sinker"
         const val SHOOT = "shoot"
-
 
         const val BALLISTIC = "ballistic"
         const val CONTACT = "contact"
