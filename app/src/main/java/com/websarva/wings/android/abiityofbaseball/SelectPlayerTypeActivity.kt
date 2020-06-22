@@ -60,10 +60,9 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
 
         val intent = Intent(this, PlayerMakingActivity::class.java)
 
-        // TODO use const
         when (sex_radio.checkedRadioButtonId) {
-            R.id.radio_m -> intent.putExtra(Constants.SEX_ID, 0)
-            R.id.radio_w -> intent.putExtra(Constants.SEX_ID, 1)
+            R.id.radio_m -> intent.putExtra(Constants.SEX_ID, Constants.ID_MAN)
+            R.id.radio_w -> intent.putExtra(Constants.SEX_ID, Constants.ID_WOMAN)
         }
 
         intent.putExtra(Constants.PLAYER_NAME, name)
@@ -76,7 +75,6 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     /**
      * キーボード表示操作
      */
-    // TODO check
     private fun operateKeyBoard() {
         player_name.setOnFocusChangeListener { view, b ->
             // フォーカスを取得→キーボード表示
@@ -87,7 +85,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
             // フォーカス外れる→キーボード非表示
             else {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0)
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
             }
         }
     }

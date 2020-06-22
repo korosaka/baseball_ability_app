@@ -43,7 +43,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
 
         playerName = intent.getStringExtra(Constants.PLAYER_NAME)
         playerType = intent.getStringExtra(Constants.PLAYER_TYPE)
-        sex_id = intent.getIntExtra(Constants.SEX_ID, -1)
+        sex_id = intent.getIntExtra(Constants.SEX_ID, Constants.ID_ERROR)
 
     }
 

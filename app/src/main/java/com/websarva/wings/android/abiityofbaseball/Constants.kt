@@ -8,6 +8,9 @@ class Constants {
         const val TYPE_FIELDER = "fielder"
         const val TYPE_PITCHER = "pitcher"
         const val SEX_ID = "sex_id"
+        const val ID_MAN = 0
+        const val ID_WOMAN = 1
+        const val ID_ERROR = -1
 
         const val BALL_SPEED = "ballSpeed_status"
         const val CONTROL = "control_status"

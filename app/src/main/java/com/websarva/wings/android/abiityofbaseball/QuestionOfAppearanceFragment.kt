@@ -20,7 +20,7 @@ class QuestionOfAppearanceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (PlayerMakingActivity.sex_id == 1) {
+        if (PlayerMakingActivity.sex_id == Constants.ID_WOMAN) {
             changeChoices()
         }
         setSpinner()

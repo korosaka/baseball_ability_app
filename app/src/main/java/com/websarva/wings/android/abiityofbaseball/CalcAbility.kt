@@ -52,7 +52,7 @@ class CalcAbility(
 
     init {
 
-        if (PlayerMakingActivity.sex_id == 0) {
+        if (PlayerMakingActivity.sex_id == Constants.ID_MAN) {
             calcAbility_m()
         } else {
             calcAbility_w()
