@@ -23,10 +23,9 @@ class PlayerMakingActivity : BaseBannerActivity() {
     var playerName: String? = null
     var playerType: String? = null
 
-    // TODO
-    private val appearanceFrag: QuestionOfAppearanceFragment = QuestionOfAppearanceFragment.newInstance()
-    private val personalityFrag: Fragment = QuestionOfPersonalityFragment.newInstance()
-    private val popularityFrag: Fragment = QuestionOfPopularityFragment.newInstance()
+    private val appearanceFrag = QuestionOfAppearanceFragment()
+    private val personalityFrag = QuestionOfPersonalityFragment()
+    private val popularityFrag = QuestionOfPopularityFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

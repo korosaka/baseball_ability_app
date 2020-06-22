@@ -50,11 +50,4 @@ class QuestionOfPersonalityFragment : Fragment() {
         spinner_q5_p.setSelection(0)
     }
 
-
-    companion object {
-        @JvmStatic
-        fun newInstance(): QuestionOfPersonalityFragment {
-            return QuestionOfPersonalityFragment()
-        }
-    }
 }
