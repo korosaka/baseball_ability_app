@@ -140,6 +140,7 @@ class PlayerMakingActivity : BaseBannerActivity() {
                     spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
                     spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String)
 
+            // TODO
             if (playerType.equals(Constants.TYPE_FIELDER)) {
                 val intent = Intent(this, MakingStatusActivity::class.java)
                 intent.putExtra(Constants.PLAYER_NAME, playerName)

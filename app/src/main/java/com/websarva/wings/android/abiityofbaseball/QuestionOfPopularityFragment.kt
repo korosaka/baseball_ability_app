@@ -4,14 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_popularity.*
 
 
-class QuestionOfPopularityFragment : Fragment() {
+class QuestionOfPopularityFragment : QuestionParentFragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -20,16 +16,7 @@ class QuestionOfPopularityFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_question_of_popularity, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        if (PlayerMakingActivity.sex_id == Constants.ID_WOMAN) {
-            changeChoices()
-        }
-        setSpinner()
-    }
-
-    private fun changeChoices() {
+    override fun changeChoices() {
         changeAdapter(spinner_q1_o, resources.getStringArray(R.array.w_array_q1_o))
         changeAdapter(spinner_q2_o, resources.getStringArray(R.array.w_array_q2_o))
         changeAdapter(spinner_q3_o, resources.getStringArray(R.array.w_array_q3_o))
@@ -37,13 +24,7 @@ class QuestionOfPopularityFragment : Fragment() {
         changeAdapter(spinner_q5_o, resources.getStringArray(R.array.w_array_q5_o))
     }
 
-    private fun changeAdapter(spinner: Spinner, choices: Array<String>) {
-        val adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, choices)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
-    }
-
-    private fun setSpinner() {
+    override fun setSpinner() {
         spinner_q1_o.setSelection(3)
         spinner_q2_o.setSelection(2)
         spinner_q3_o.setSelection(2)
