@@ -15,23 +15,38 @@ class PlayerMakingActivity : BaseBannerActivity() {
 
     // for using on child fragment
     companion object {
-        var sex_id = -1
+        var sex_id = Constants.ID_ERROR
     }
 
     var currentName = Constants.APPEARANCE
 
-    var playerName: String? = null
-    var playerType: String? = null
+    private lateinit var playerName: String
+    private lateinit var playerType: String
 
-    private val appearanceFrag = QuestionOfAppearanceFragment()
-    private val personalityFrag = QuestionOfPersonalityFragment()
-    private val popularityFrag = QuestionOfPopularityFragment()
-
+    private lateinit var appearanceFrag: Fragment
+    private lateinit var personalityFrag: Fragment
+    private lateinit var popularityFrag: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_player_making)
         setAdViewContainer(ad_view_container_on_player_making)
         super.onCreate(savedInstanceState)
+
+        addFragments()
+
+        takeInfo()
+    }
+
+    private fun takeInfo() {
+        playerName = intent.getStringExtra(Constants.PLAYER_NAME).toString()
+        playerType = intent.getStringExtra(Constants.PLAYER_TYPE).toString()
+        sex_id = intent.getIntExtra(Constants.SEX_ID, Constants.ID_ERROR)
+    }
+
+    private fun addFragments() {
+        appearanceFrag = QuestionOfAppearanceFragment()
+        personalityFrag = QuestionOfPersonalityFragment()
+        popularityFrag = QuestionOfPopularityFragment()
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_fragment, appearanceFrag)
@@ -39,11 +54,6 @@ class PlayerMakingActivity : BaseBannerActivity() {
         transaction.add(R.id.frame_for_fragment, popularityFrag)
         transaction.commit()
         showHideFragment(Constants.APPEARANCE)
-
-        playerName = intent.getStringExtra(Constants.PLAYER_NAME)
-        playerType = intent.getStringExtra(Constants.PLAYER_TYPE)
-        sex_id = intent.getIntExtra(Constants.SEX_ID, Constants.ID_ERROR)
-
     }
 
     fun onClickBack(view: View) {
@@ -133,45 +143,50 @@ class PlayerMakingActivity : BaseBannerActivity() {
         builder.setTitle(resources.getString(R.string.confirm_input))
         builder.setMessage(resources.getString(R.string.ask_complete))
         builder.setPositiveButton(resources.getString(R.string.done)) { dialog, which ->
-
             // 全ての入力値から計算
             val calcAbility = CalcAbility(this,
                     spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
                     spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
                     spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String)
 
-            // TODO
-            if (playerType.equals(Constants.TYPE_FIELDER)) {
-                val intent = Intent(this, MakingStatusActivity::class.java)
-                intent.putExtra(Constants.PLAYER_NAME, playerName)
-                intent.putExtra(Constants.POSITION, calcAbility.position)
-                intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
-                intent.putExtra(Constants.CONTACT, calcAbility.contact)
-                intent.putExtra(Constants.POWER, calcAbility.power)
-                intent.putExtra(Constants.SPEED, calcAbility.speed)
-                intent.putExtra(Constants.ARM_STRENGTH, calcAbility.armStrength)
-                intent.putExtra(Constants.FIELDING, calcAbility.fielding)
-                intent.putExtra(Constants.CATCHING, calcAbility.catching)
-                intent.putExtra(Constants.CHANCE, calcAbility.chance)
-
-                startActivity(intent)
-            } else {
-                val intent = Intent(this, MakingStatusPitcherActivity::class.java)
-                intent.putExtra(Constants.PLAYER_NAME, playerName)
-                intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
-                intent.putExtra(Constants.BALL_SPEED, calcAbility.ballSpeed)
-                intent.putExtra(Constants.CONTROL, calcAbility.control)
-                intent.putExtra(Constants.STAMINA, calcAbility.stamina)
-                intent.putExtra(Constants.KIND_CHANGE, calcAbility.kindsOfChangeBall)
-                intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.amountOfChange)
-                intent.putExtra(Constants.PRIORITY_CHANGE, calcAbility.priorityOfChange)
-
-                startActivity(intent)
+            when(playerType) {
+                Constants.TYPE_FIELDER -> startFielderActivity(calcAbility)
+                Constants.TYPE_PITCHER -> startPitcherActivity(calcAbility)
             }
             finish()
         }
         builder.setNegativeButton(resources.getString(R.string.no), null)
         builder.show()
+    }
+
+    private fun startFielderActivity(calcAbility: CalcAbility) {
+        val intent = Intent(this, MakingStatusActivity::class.java)
+        intent.putExtra(Constants.PLAYER_NAME, playerName)
+        intent.putExtra(Constants.POSITION, calcAbility.position)
+        intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
+        intent.putExtra(Constants.CONTACT, calcAbility.contact)
+        intent.putExtra(Constants.POWER, calcAbility.power)
+        intent.putExtra(Constants.SPEED, calcAbility.speed)
+        intent.putExtra(Constants.ARM_STRENGTH, calcAbility.armStrength)
+        intent.putExtra(Constants.FIELDING, calcAbility.fielding)
+        intent.putExtra(Constants.CATCHING, calcAbility.catching)
+        intent.putExtra(Constants.CHANCE, calcAbility.chance)
+
+        startActivity(intent)
+    }
+
+    private fun startPitcherActivity(calcAbility: CalcAbility) {
+        val intent = Intent(this, MakingStatusPitcherActivity::class.java)
+        intent.putExtra(Constants.PLAYER_NAME, playerName)
+        intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
+        intent.putExtra(Constants.BALL_SPEED, calcAbility.ballSpeed)
+        intent.putExtra(Constants.CONTROL, calcAbility.control)
+        intent.putExtra(Constants.STAMINA, calcAbility.stamina)
+        intent.putExtra(Constants.KIND_CHANGE, calcAbility.kindsOfChangeBall)
+        intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.amountOfChange)
+        intent.putExtra(Constants.PRIORITY_CHANGE, calcAbility.priorityOfChange)
+
+        startActivity(intent)
     }
 
     private fun backToPrevious() {
