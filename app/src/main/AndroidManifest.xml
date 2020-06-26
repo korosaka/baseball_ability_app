@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShowResultActivity"></activity>
         <activity
             android:name=".TopActivity"
             android:screenOrientation="portrait">
@@ -31,16 +32,16 @@
             android:name=".MakingStatusActivity"
             android:screenOrientation="portrait" />
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6298264304843789~4492140864" />
+        <activity
+            android:name=".MakingStatusPitcherActivity"
+            android:screenOrientation="portrait" />
         <meta-data
             android:name="google_analytics_adid_collection_enabled"
             android:value="false" />
 
-        <activity
-            android:name=".MakingStatusPitcherActivity"
-            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6298264304843789~4492140864" />
     </application>
 
 </manifest>
