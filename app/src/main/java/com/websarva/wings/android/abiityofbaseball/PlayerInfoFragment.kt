@@ -27,15 +27,10 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun setPlayerWithBundle() {
-        val myActivity = activity ?: return
         arguments?.let {
-            when (myActivity.localClassName) {
-                Constants.FIELDER_ACTIVITY -> {
-                    fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
-                }
-                Constants.PITCHER_ACTIVITY -> {
-                    pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
-                }
+            when (PlayerMakingActivity.playerType) {
+                Constants.TYPE_FIELDER -> fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+                Constants.TYPE_PITCHER -> pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
             }
         }
     }
@@ -52,24 +47,26 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun displayName() {
-        val myActivity = activity ?: return
-        val name = when (myActivity.localClassName) {
-            Constants.FIELDER_ACTIVITY -> fielderPlayer?.playerName
+
+        val name = when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielderPlayer?.playerName
             else -> pitcherPlayer?.playerName
         }
         val nameFrag = NameFragment.newInstance(name!!)
 
+        val myActivity = activity ?: return
         val transaction = myActivity.supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_name, nameFrag)
         transaction.commit()
     }
 
     private fun displayAbility() {
-        val myActivity = activity ?: return
-        val abilityFrag = when (myActivity.localClassName) {
-            Constants.FIELDER_ACTIVITY -> FielderAbilityFragment.newInstance(fielderPlayer!!)
+        val abilityFrag = when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> FielderAbilityFragment.newInstance(fielderPlayer!!)
             else -> PitcherAbilityFragment.newInstance(pitcherPlayer!!)
         }
+
+        val myActivity = activity ?: return
         val transaction = myActivity.supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_ability, abilityFrag)
         transaction.commit()

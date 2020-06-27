@@ -16,12 +16,12 @@ class PlayerMakingActivity : BaseBannerActivity() {
     // for using on child fragment
     companion object {
         var sex_id = Constants.ID_ERROR
+        lateinit var playerType: String
     }
 
     var currentName = Constants.APPEARANCE
 
     private lateinit var playerName: String
-    private lateinit var playerType: String
 
     private lateinit var appearanceFrag: Fragment
     private lateinit var personalityFrag: Fragment
