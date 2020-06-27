@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import java.io.Serializable
 
 
 /**
@@ -13,15 +14,45 @@ import android.view.ViewGroup
  * create an instance of this fragment.
  */
 class PlayerInfoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var fielderPlayer: PlayerClass? = null
     private var pitcherPlayer: PlayerPitcherClass? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
+
+        setPlayerWithBundle()
+        displayName()
     }
+
+    private fun setPlayerWithBundle() {
+        val myActivity = activity ?: return
+        arguments?.let {
+            when (myActivity.localClassName) {
+                Constants.FIELDER_ACTIVITY -> {
+                    fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+                }
+                Constants.PITCHER_ACTIVITY -> {
+                    pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
+                }
+            }
+        }
+
+    }
+
+    private fun displayName() {
+        val myActivity = activity ?: return
+        val name = when (myActivity.localClassName) {
+            Constants.FIELDER_ACTIVITY -> fielderPlayer?.playerName
+            else -> pitcherPlayer?.playerName
+        }
+        val nameFrag = NameFragment.newInstance(name!!)
+
+        val transaction = myActivity.supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frame_for_name,nameFrag)
+        transaction.commit()
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -30,21 +61,20 @@ class PlayerInfoFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PlayerInfoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(fielder: PlayerClass) =
                 PlayerInfoFragment().apply {
                     arguments = Bundle().apply {
-//                        putString(Constants.TYPE_FIELDER, fielder)
+                        putSerializable(Constants.TYPE_FIELDER, fielder)
                     }
                 }
+
+        fun newInstance(pitcher: PlayerPitcherClass) =
+                PlayerInfoFragment().apply {
+                    arguments = Bundle().apply {
+                        putSerializable(Constants.TYPE_PITCHER, pitcher)
+                    }
+                }
+
     }
 }

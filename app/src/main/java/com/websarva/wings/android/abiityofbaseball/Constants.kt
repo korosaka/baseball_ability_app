@@ -117,5 +117,8 @@ class Constants {
 
         const val HALF_SPACE = " "
 
+        const val FIELDER_ACTIVITY = "MakingStatusActivity"
+        const val PITCHER_ACTIVITY = "MakingStatusPitcherActivity"
+
     }
 }

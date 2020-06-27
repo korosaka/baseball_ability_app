@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import java.io.Serializable
 import kotlin.math.ceil
 
 class PlayerPitcherClass(
@@ -11,7 +12,7 @@ class PlayerPitcherClass(
         kindsOfChange: Int,
         amountOfChange: Int,
         priorityOfChange: ArrayList<Int>,
-        private val chance: Double) {
+        private val chance: Double): Serializable {
 
     private val kindChangeAbility = calculateNumberOfChangeBalls(kindsOfChange)
     private val amountChangeAbility = calculateTotalChangeAmount(amountOfChange, kindChangeAbility)
