@@ -7,15 +7,15 @@ class PlayerPitcherClass(
         val playerName: String,
         val pitcherType: String,
         private val ballSpeedAbility: Int,
-        private val controlAbility: Int,
-        private val staminaAbility: Int,
+        val controlAbility: Int,
+        val staminaAbility: Int,
         kindsOfChange: Int,
         amountOfChange: Int,
         priorityOfChange: ArrayList<Int>,
-        private val chance: Double): Serializable {
+        val chance: Double) : Serializable {
 
-    private val kindChangeAbility = calculateNumberOfChangeBalls(kindsOfChange)
-    private val amountChangeAbility = calculateTotalChangeAmount(amountOfChange, kindChangeAbility)
+    val kindChangeAbility = calculateNumberOfChangeBalls(kindsOfChange)
+    val amountChangeAbility = calculateTotalChangeAmount(amountOfChange, kindChangeAbility)
 
     private val minSpeed = 120
     val controlLank = lankMaking(controlAbility)
