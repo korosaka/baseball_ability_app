@@ -1,18 +1,15 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_making_status.*
+import kotlin.properties.Delegates
 
 class FielderSalaryFragment : SalaryParentFragment() {
-    private var fielderPlayer: PlayerClass? = null
-    private var ave: Int? = null
-    private var hr: Int? = null
-    private var rbi: Int? = null
-    private var sb: Int? = null
+    private lateinit var fielderPlayer: PlayerClass
+    private var ave by Delegates.notNull<Int>()
+    private var hr by Delegates.notNull<Int>()
+    private var rbi by Delegates.notNull<Int>()
+    private var sb by Delegates.notNull<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +24,7 @@ class FielderSalaryFragment : SalaryParentFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val salary = calcSalary(fielderPlayer!!, ave!!, hr!!, rbi!!, sb!!)
+        val salary = calcSalary(fielderPlayer, ave, hr, rbi, sb)
         displaySalary(salary)
     }
 

@@ -1,12 +1,16 @@
 package com.websarva.wings.android.abiityofbaseball
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import kotlinx.android.synthetic.main.activity_show_result.*
 
-class ShowResultActivity : AppCompatActivity() {
+class ShowResultActivity : BaseBannerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_result)
+        setAdViewContainer(ad_view_container_on_show_result)
+        super.onCreate(savedInstanceState)
 
         displayPlayerInfo()
     }
@@ -50,4 +54,12 @@ class ShowResultActivity : AppCompatActivity() {
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
     }
+
+    fun onClickFinish(view: View) {
+
+        val intent = Intent(this, TopActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }

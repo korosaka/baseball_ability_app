@@ -7,15 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
+import kotlinx.android.synthetic.main.fragment_pitcher_ability.*
 
 class PitcherAbilityFragment : AbilityParentFragment() {
-    private var pitcherPlayer: PlayerPitcherClass? = null
+    private lateinit var pitcherPlayer: PlayerPitcherClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
+            pitcherPlayer = it.getSerializable(Constants.TYPE_PITCHER) as PlayerPitcherClass
         }
     }
 
@@ -27,7 +27,7 @@ class PitcherAbilityFragment : AbilityParentFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pitcherPlayer?.let { displayAbility(it) }
+        displayAbility(pitcherPlayer)
     }
 
     private fun displayAbility(player: PlayerPitcherClass) {

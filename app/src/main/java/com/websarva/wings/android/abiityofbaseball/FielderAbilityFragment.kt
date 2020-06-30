@@ -2,15 +2,14 @@ package com.websarva.wings.android.abiityofbaseball
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_making_status.*
+import kotlinx.android.synthetic.main.fragment_fielder_ability.*
 
 class FielderAbilityFragment : AbilityParentFragment() {
-    private var fielderPlayer: PlayerClass? = null
+    private lateinit var fielderPlayer: PlayerClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +25,7 @@ class FielderAbilityFragment : AbilityParentFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fielderPlayer?.let { displayAbility(it) }
+        displayAbility(fielderPlayer)
     }
 
     private fun displayAbility(player: PlayerClass) {
@@ -69,7 +68,7 @@ class FielderAbilityFragment : AbilityParentFragment() {
     }
 
     private fun displayPosition() {
-        position_display.text = when (fielderPlayer!!.mainPosition) {
+        position_display.text = when (fielderPlayer.mainPosition) {
             Constants.CATCHER -> resources.getString(R.string.position_catcher)
             Constants.FIRST_BASE -> resources.getString(R.string.position_first_base)
             Constants.SECOND_BASE -> resources.getString(R.string.position_second_base)

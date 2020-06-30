@@ -160,7 +160,6 @@ class PlayerMakingActivity : BaseBannerActivity() {
     }
 
     private fun startFielderActivity(calcAbility: CalcAbility) {
-//        val intent = Intent(this, MakingStatusActivity::class.java)
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.POSITION, calcAbility.position)
@@ -177,7 +176,6 @@ class PlayerMakingActivity : BaseBannerActivity() {
     }
 
     private fun startPitcherActivity(calcAbility: CalcAbility) {
-//        val intent = Intent(this, MakingStatusPitcherActivity::class.java)
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)

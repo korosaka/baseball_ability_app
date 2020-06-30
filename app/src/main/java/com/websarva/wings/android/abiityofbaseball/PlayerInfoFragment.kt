@@ -1,22 +1,19 @@
 package com.websarva.wings.android.abiityofbaseball
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import java.io.Serializable
-import kotlin.properties.Delegates
 
 
 class PlayerInfoFragment : Fragment() {
 
-    private var fielderPlayer: PlayerClass? = null
-    private var pitcherPlayer: PlayerPitcherClass? = null
+    private lateinit var fielderPlayer: PlayerClass
+    private lateinit var pitcherPlayer: PlayerPitcherClass
 
-    private var fielderRecord: FielderRecordFragment? = null
-    private var pitcherRecord: PitcherRecordFragment? = null
+    private lateinit var fielderRecord: FielderRecordFragment
+    private lateinit var pitcherRecord: PitcherRecordFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +26,7 @@ class PlayerInfoFragment : Fragment() {
         arguments?.let {
             when (PlayerMakingActivity.playerType) {
                 Constants.TYPE_FIELDER -> fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
-                Constants.TYPE_PITCHER -> pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
+                Constants.TYPE_PITCHER -> pitcherPlayer = it.getSerializable(Constants.TYPE_PITCHER) as PlayerPitcherClass
             }
         }
     }
@@ -50,11 +47,11 @@ class PlayerInfoFragment : Fragment() {
     private fun displayName() {
 
         val name = when (PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> fielderPlayer!!.playerName
-            else -> pitcherPlayer!!.playerName
+            Constants.TYPE_FIELDER -> fielderPlayer.playerName
+            else -> pitcherPlayer.playerName
         }
         val nameFrag = NameFragment.newInstance(name, when(PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> fielderPlayer!!.mainPosition
+            Constants.TYPE_FIELDER -> fielderPlayer.mainPosition
             else -> Constants.TYPE_PITCHER
         })
         val myActivity = activity ?: return
@@ -65,8 +62,8 @@ class PlayerInfoFragment : Fragment() {
 
     private fun displayAbility() {
         val abilityFrag = when (PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> FielderAbilityFragment.newInstance(fielderPlayer!!)
-            else -> PitcherAbilityFragment.newInstance(pitcherPlayer!!)
+            Constants.TYPE_FIELDER -> FielderAbilityFragment.newInstance(fielderPlayer)
+            else -> PitcherAbilityFragment.newInstance(pitcherPlayer)
         }
 
         val myActivity = activity ?: return
@@ -77,8 +74,8 @@ class PlayerInfoFragment : Fragment() {
 
     private fun displayRecord() {
         when (PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> fielderRecord = FielderRecordFragment.newInstance(fielderPlayer!!)
-            Constants.TYPE_PITCHER -> pitcherRecord = PitcherRecordFragment.newInstance(pitcherPlayer!!)
+            Constants.TYPE_FIELDER -> fielderRecord = FielderRecordFragment.newInstance(fielderPlayer)
+            Constants.TYPE_PITCHER -> pitcherRecord = PitcherRecordFragment.newInstance(pitcherPlayer)
         }
 
         val myActivity = activity ?: return
@@ -86,17 +83,17 @@ class PlayerInfoFragment : Fragment() {
         when (PlayerMakingActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderRecord
             else -> pitcherRecord
-        }?.let { transaction.add(R.id.frame_for_record, it) }
+        }.let { transaction.add(R.id.frame_for_record, it) }
         transaction.commit()
     }
 
     private fun displaySalary() {
         val salaryFrag = when (PlayerMakingActivity.playerType) {
             Constants.TYPE_FIELDER -> FielderSalaryFragment.newInstance(
-                    fielderPlayer!!, fielderRecord!!.ave, fielderRecord!!.hr, fielderRecord!!.rbi, fielderRecord!!.sb)
+                    fielderPlayer, fielderRecord.ave, fielderRecord.hr, fielderRecord.rbi, fielderRecord.sb)
             else -> PitcherSalaryFragment.newInstance(
-                    pitcherPlayer!!, pitcherRecord!!.win, pitcherRecord!!.save, pitcherRecord!!.totalInnings,
-                    pitcherRecord!!.totalK, pitcherRecord!!.actualERA, pitcherRecord!!.winRate)
+                    pitcherPlayer, pitcherRecord.win, pitcherRecord.save, pitcherRecord.totalInnings,
+                    pitcherRecord.totalK, pitcherRecord.actualERA, pitcherRecord.winRate)
         }
 
         val myActivity = activity ?: return

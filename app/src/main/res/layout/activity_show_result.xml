@@ -63,4 +63,9 @@
 
     </ScrollView>
 
+    <FrameLayout
+        android:id="@+id/ad_view_container_on_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
+
 </LinearLayout>

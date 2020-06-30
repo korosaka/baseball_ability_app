@@ -1,25 +1,22 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
+import kotlin.properties.Delegates
 
 class PitcherSalaryFragment : SalaryParentFragment() {
-    private var pitcherPlayer: PlayerPitcherClass? = null
-    private var win: Int? = null
-    private var save: Int? = null
-    private var totalInnings: Int? = null
-    private var totalK: Int? = null
-    private var actualERA: Float? = null
-    private var winRate: Float? = null
+    private lateinit var pitcherPlayer: PlayerPitcherClass
+    private var win by Delegates.notNull<Int>()
+    private var save by Delegates.notNull<Int>()
+    private var totalInnings by Delegates.notNull<Int>()
+    private var totalK by Delegates.notNull<Int>()
+    private var actualERA by Delegates.notNull<Float>()
+    private var winRate by Delegates.notNull<Float>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            pitcherPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerPitcherClass
+            pitcherPlayer = it.getSerializable(Constants.TYPE_PITCHER) as PlayerPitcherClass
             win = it.getInt(KEY_WIN)
             save = it.getInt(KEY_SAVE)
             totalInnings = it.getInt(KEY_INNINGS)
@@ -37,18 +34,18 @@ class PitcherSalaryFragment : SalaryParentFragment() {
 
     private fun calcSalary(): Int {
 
-        val priceForWin = calcPriceForWin(pitcherPlayer!!, win!!)
-        val priceForInning = calcPriceForInning(pitcherPlayer!!, totalInnings!!)
+        val priceForWin = calcPriceForWin(pitcherPlayer, win)
+        val priceForInning = calcPriceForInning(pitcherPlayer, totalInnings)
 
-        val coefficientOfERA = calcCoefficientOfERA(pitcherPlayer!!, actualERA!!)
+        val coefficientOfERA = calcCoefficientOfERA(pitcherPlayer, actualERA)
         var priceForSave = 0
-        if (pitcherPlayer!!.pitcherType == Constants.CLOSER) priceForSave = calcPriceForSave(pitcherPlayer!!, save!!)
+        if (pitcherPlayer.pitcherType == Constants.CLOSER) priceForSave = calcPriceForSave(pitcherPlayer, save)
         val minCoefficientOfWinRate = 0.6
-        val coefficientOfWinRate = winRate!! + minCoefficientOfWinRate
-        val bonusOfK = calcBonusOfK(pitcherPlayer!!, totalK!!)
+        val coefficientOfWinRate = winRate + minCoefficientOfWinRate
+        val bonusOfK = calcBonusOfK(pitcherPlayer, totalK)
 
         var totalSalary = ((priceForWin + priceForInning + priceForSave) * coefficientOfERA).toInt()
-        if (pitcherPlayer!!.pitcherType == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
+        if (pitcherPlayer.pitcherType == Constants.STARTER) totalSalary = (totalSalary * coefficientOfWinRate + bonusOfK).toInt()
 
         return when (totalSalary) {
             in 0..440 -> 440

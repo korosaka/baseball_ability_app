@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowResultActivity"></activity>
         <activity
             android:name=".TopActivity"
             android:screenOrientation="portrait">
@@ -29,12 +28,9 @@
             android:name=".PlayerMakingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MakingStatusActivity"
+            android:name=".ShowResultActivity"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".MakingStatusPitcherActivity"
-            android:screenOrientation="portrait" />
         <meta-data
             android:name="google_analytics_adid_collection_enabled"
             android:value="false" />

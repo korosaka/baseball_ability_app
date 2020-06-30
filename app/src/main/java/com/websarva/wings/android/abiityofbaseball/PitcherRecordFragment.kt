@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_making_status_pitcher.*
+import kotlinx.android.synthetic.main.fragment_pitcher_record.*
 import kotlin.math.ceil
 import kotlin.math.roundToInt
 import kotlin.properties.Delegates
 
 class PitcherRecordFragment : Fragment() {
-    private var pitcherPlayer: PlayerPitcherClass? = null
+    private lateinit var pitcherPlayer: PlayerPitcherClass
 
     // presupposition
     private val assumedMaxSpeed = 160
@@ -26,20 +26,20 @@ class PitcherRecordFragment : Fragment() {
     private var lossOfStamina by Delegates.notNull<Int>()
 
     // records
-    var battingAveAgainst by Delegates.notNull<Float>()
-    var rateOfBB by Delegates.notNull<Float>()
-    var rateOfK by Delegates.notNull<Float>()
-    var theoreticalERA by Delegates.notNull<Float>()
-    var actualERA by Delegates.notNull<Float>()
-    var games by Delegates.notNull<Int>()
-    var inningsPerGame by Delegates.notNull<Float>()
-    var totalInnings by Delegates.notNull<Int>()
-    var totalK by Delegates.notNull<Int>()
-    var totalBB by Delegates.notNull<Int>()
-    var win by Delegates.notNull<Int>()
-    var lose by Delegates.notNull<Int>()
-    var save by Delegates.notNull<Int>()
-    var winRate by Delegates.notNull<Float>()
+    private var battingAveAgainst = 0.0f
+    var rateOfBB = 0.0f
+    var rateOfK = 0.0f
+    var theoreticalERA = 0.0f
+    var actualERA = 0.0f
+    var games = 0
+    var inningsPerGame = 0.0f
+    var totalInnings = 0
+    var totalK = 0
+    var totalBB = 0
+    var win = 0
+    var lose = 0
+    var save = 0
+    var winRate = 0.0f
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,10 +56,8 @@ class PitcherRecordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pitcherPlayer?.let {
-            substitutePresupposition(it)
-            calcRecords(it)
-        }
+        substitutePresupposition(pitcherPlayer)
+        calcRecords(pitcherPlayer)
         displayRecords()
     }
 
