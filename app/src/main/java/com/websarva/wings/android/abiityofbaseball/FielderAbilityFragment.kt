@@ -69,7 +69,7 @@ class FielderAbilityFragment : AbilityParentFragment() {
     companion object {
         @JvmStatic
         fun newInstance(fielder: PlayerClass) =
-                PlayerInfoFragment().apply {
+                FielderAbilityFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_FIELDER, fielder)
                     }

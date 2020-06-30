@@ -140,7 +140,7 @@ class FielderRecordFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(fielder: PlayerClass) =
-                PlayerInfoFragment().apply {
+                FielderRecordFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_FIELDER, fielder)
                     }

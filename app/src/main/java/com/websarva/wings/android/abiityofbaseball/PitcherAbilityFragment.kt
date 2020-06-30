@@ -153,7 +153,7 @@ class PitcherAbilityFragment : AbilityParentFragment() {
     companion object {
         @JvmStatic
         fun newInstance(pitcher: PlayerPitcherClass) =
-                PlayerInfoFragment().apply {
+                PitcherAbilityFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_PITCHER, pitcher)
                     }

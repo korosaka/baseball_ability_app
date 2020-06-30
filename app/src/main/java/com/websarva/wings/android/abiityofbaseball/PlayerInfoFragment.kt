@@ -7,17 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import java.io.Serializable
+import kotlin.properties.Delegates
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PlayerInfoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PlayerInfoFragment : Fragment() {
 
     private var fielderPlayer: PlayerClass? = null
     private var pitcherPlayer: PlayerPitcherClass? = null
+
+    private var fielderRecord: FielderRecordFragment? = null
+    private var pitcherRecord: PitcherRecordFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +43,8 @@ class PlayerInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         displayName()
         displayAbility()
+        displayRecord()
+        displaySalary()
     }
 
     private fun displayName() {
@@ -70,6 +71,37 @@ class PlayerInfoFragment : Fragment() {
         val transaction = myActivity.supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_ability, abilityFrag)
         transaction.commit()
+    }
+
+    private fun displayRecord() {
+        when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielderRecord = FielderRecordFragment.newInstance(fielderPlayer!!)
+            Constants.TYPE_PITCHER -> pitcherRecord = PitcherRecordFragment.newInstance(pitcherPlayer!!)
+        }
+
+        val myActivity = activity ?: return
+        val transaction = myActivity.supportFragmentManager.beginTransaction()
+        when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielderRecord
+            else -> pitcherRecord
+        }?.let { transaction.add(R.id.frame_for_record, it) }
+        transaction.commit()
+    }
+
+    private fun displaySalary() {
+        val salaryFrag = when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> FielderSalaryFragment.newInstance(
+                    fielderPlayer!!, fielderRecord!!.ave, fielderRecord!!.hr, fielderRecord!!.rbi, fielderRecord!!.sb)
+            else -> PitcherSalaryFragment.newInstance(
+                    pitcherPlayer!!, pitcherRecord!!.win, pitcherRecord!!.save, pitcherRecord!!.totalInnings,
+                    pitcherRecord!!.totalK, pitcherRecord!!.actualERA, pitcherRecord!!.winRate)
+        }
+
+        val myActivity = activity ?: return
+        val transaction = myActivity.supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frame_for_salary, salaryFrag)
+        transaction.commit()
+
     }
 
 
