@@ -6,15 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_making_status.*
 import kotlinx.android.synthetic.main.fragment_name.*
 
 class NameFragment : Fragment() {
     private var playerName: String? = null
+    private var position: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             playerName = it.getString(Constants.PLAYER_NAME)
+            position = it.getString(KEY_POSITION)
         }
     }
 
@@ -27,6 +30,7 @@ class NameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         displayPlayerName(playerName)
+        displayPositionColor()
     }
 
     private fun displayPlayerName(name: String?) {
@@ -45,12 +49,25 @@ class NameFragment : Fragment() {
 
     }
 
+    private fun displayPositionColor() {
+        when (position) {
+            Constants.TYPE_PITCHER -> name_display.setBackgroundResource(R.drawable.pitcher_name_background)
+            Constants.CATCHER -> name_display.setBackgroundResource(R.drawable.catcher_name_background)
+            Constants.OUTFIELD -> name_display.setBackgroundResource(R.drawable.outfielder_name_background)
+            else -> name_display.setBackgroundResource(R.drawable.infielder_name_background)
+        }
+    }
+
+
     companion object {
+        private const val KEY_POSITION = "position"
+
         @JvmStatic
-        fun newInstance(name: String) =
+        fun newInstance(name: String, position: String) =
                 NameFragment().apply {
                     arguments = Bundle().apply {
                         putString(Constants.PLAYER_NAME, name)
+                        putString(KEY_POSITION, position)
                     }
                 }
     }

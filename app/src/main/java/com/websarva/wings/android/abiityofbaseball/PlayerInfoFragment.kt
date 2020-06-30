@@ -50,11 +50,13 @@ class PlayerInfoFragment : Fragment() {
     private fun displayName() {
 
         val name = when (PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> fielderPlayer?.playerName
-            else -> pitcherPlayer?.playerName
+            Constants.TYPE_FIELDER -> fielderPlayer!!.playerName
+            else -> pitcherPlayer!!.playerName
         }
-        val nameFrag = NameFragment.newInstance(name!!)
-
+        val nameFrag = NameFragment.newInstance(name, when(PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielderPlayer!!.mainPosition
+            else -> Constants.TYPE_PITCHER
+        })
         val myActivity = activity ?: return
         val transaction = myActivity.supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_name, nameFrag)

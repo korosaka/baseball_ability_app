@@ -47,6 +47,8 @@ class FielderAbilityFragment : AbilityParentFragment() {
         changeLankColor(arm_display)
         changeLankColor(field_display)
         changeLankColor(catching_display)
+
+        displayPosition()
     }
 
     private fun setBallisticArrow(arrow: TextView, ballistic: Int) {
@@ -65,6 +67,18 @@ class FielderAbilityFragment : AbilityParentFragment() {
             else -> arrow.setTextColor(Color.parseColor(Constants.BALLISTIC_4_COLOR))
         }
     }
+
+    private fun displayPosition() {
+        position_display.text = when (fielderPlayer!!.mainPosition) {
+            Constants.CATCHER -> resources.getString(R.string.position_catcher)
+            Constants.FIRST_BASE -> resources.getString(R.string.position_first_base)
+            Constants.SECOND_BASE -> resources.getString(R.string.position_second_base)
+            Constants.THIRD_BASE -> resources.getString(R.string.position_third_base)
+            Constants.SHORTSTOP -> resources.getString(R.string.position_shortstop)
+            else -> resources.getString(R.string.position_outfield)
+        }
+    }
+
 
     companion object {
         @JvmStatic
