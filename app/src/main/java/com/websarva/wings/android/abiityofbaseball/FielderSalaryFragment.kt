@@ -105,6 +105,11 @@ class FielderSalaryFragment : SalaryParentFragment() {
                 FielderSalaryFragment().apply {
                     arguments = Bundle().apply {
 
+                        /**
+                         * at this time, FielderRecordFragment's fields are still null
+                         * (because of fragment's lifecycle)
+                         * so, calculate records
+                         */
                         putSerializable(Constants.TYPE_FIELDER, fielder)
                         putInt(KEY_AVE, fielderRecord.calcAve(fielder))
                         putInt(KEY_HR, fielderRecord.calcHr(fielder))

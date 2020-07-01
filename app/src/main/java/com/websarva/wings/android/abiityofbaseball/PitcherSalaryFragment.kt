@@ -151,6 +151,11 @@ class PitcherSalaryFragment : SalaryParentFragment() {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_PITCHER, pitcher)
 
+                        /**
+                         * at this time, PitcherRecordFragment's fields are still null
+                         * (because of fragment's lifecycle)
+                         * so, calculate records
+                         */
                         val battingAveAgainst = calcBattingAveAgainst(pitcher, pitcherRecord)
                         val rateOfBB = calcRateOfBB(pitcher, pitcherRecord)
                         val rateOfK = calcRateOfK(pitcher, pitcherRecord)
