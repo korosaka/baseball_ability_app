@@ -1,10 +1,10 @@
-package com.websarva.wings.android.abiityofbaseball.Activity
+package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.websarva.wings.android.abiityofbaseball.*
-import com.websarva.wings.android.abiityofbaseball.Fragment.PlayerInfoFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.PlayerInfoFragment
 import kotlinx.android.synthetic.main.activity_show_result.*
 
 class ShowResultActivity : BaseBannerActivity() {

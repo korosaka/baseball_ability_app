@@ -1,7 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
-import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
+import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
 
 class CalcAbility(
         private val context: Context,

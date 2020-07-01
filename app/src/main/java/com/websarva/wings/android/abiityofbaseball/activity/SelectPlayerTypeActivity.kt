@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.Activity
+package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.content.Context
 import android.content.Intent

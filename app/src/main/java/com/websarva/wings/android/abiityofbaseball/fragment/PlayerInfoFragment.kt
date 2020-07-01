@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.Fragment
+package com.websarva.wings.android.abiityofbaseball.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.websarva.wings.android.abiityofbaseball.*
-import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
+import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
 
 
 class PlayerInfoFragment : Fragment() {

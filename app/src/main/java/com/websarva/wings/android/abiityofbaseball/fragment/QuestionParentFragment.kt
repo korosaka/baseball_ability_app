@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.Fragment
+package com.websarva.wings.android.abiityofbaseball.fragment
 
 import android.R
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
-import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
+import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
 import com.websarva.wings.android.abiityofbaseball.Constants
 
 abstract class QuestionParentFragment : Fragment() {

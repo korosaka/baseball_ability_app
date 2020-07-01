@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.Activity
+package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,9 +7,9 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.websarva.wings.android.abiityofbaseball.*
-import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfAppearanceFragment
-import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfPersonalityFragment
-import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfPopularityFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.QuestionOfAppearanceFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.QuestionOfPersonalityFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.QuestionOfPopularityFragment
 import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
