@@ -146,22 +146,86 @@ class PitcherSalaryFragment : SalaryParentFragment() {
 
         @JvmStatic
         fun newInstance(pitcher: PlayerPitcherClass,
-                        win: Int,
-                        save: Int,
-                        totalInnings: Int,
-                        totalK: Int,
-                        era: Float,
-                        winRate: Float) =
+                        pitcherRecord: PitcherRecordFragment) =
                 PitcherSalaryFragment().apply {
                     arguments = Bundle().apply {
+                        putSerializable(Constants.TYPE_PITCHER, pitcher)
+
+                        val battingAveAgainst = calcBattingAveAgainst(pitcher, pitcherRecord)
+                        val rateOfBB = calcRateOfBB(pitcher, pitcherRecord)
+                        val rateOfK = calcRateOfK(pitcher, pitcherRecord)
+                        val theoreticalERA = calcTheoreticalERA(pitcherRecord, battingAveAgainst, rateOfBB, rateOfK)
+                        val games = calcGames(pitcher, pitcherRecord, theoreticalERA, rateOfK)
+                        val inningsPerGame = calcInningsPerGame(pitcher, pitcherRecord, theoreticalERA, rateOfBB)
+                        val totalInnings = calcTotalInnings(pitcherRecord, games, inningsPerGame)
+                        val totalK = calcTotalK(pitcherRecord, rateOfK, totalInnings)
+                        val actualERA = calcActualERA(pitcherRecord, theoreticalERA, totalInnings)
+                        val save = calcSave(pitcher, pitcherRecord, games, theoreticalERA)
+                        val win = calcWin(pitcher, pitcherRecord, games, save, theoreticalERA, inningsPerGame)
+                        val lose = calcLose(pitcher, pitcherRecord, games, win, save, theoreticalERA, inningsPerGame)
+                        val winRate = calcWinRate(pitcherRecord, win, lose)
+
                         putSerializable(Constants.TYPE_PITCHER, pitcher)
                         putInt(KEY_WIN, win)
                         putInt(KEY_SAVE, save)
                         putInt(KEY_INNINGS, totalInnings)
                         putInt(KEY_K, totalK)
-                        putFloat(KEY_ERA, era)
+                        putFloat(KEY_ERA, actualERA)
                         putFloat(KEY_WIN_RATE, winRate)
                     }
                 }
     }
+
+    private fun calcBattingAveAgainst(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment): Float {
+        return pitcherRecord.calcBattingAveAgainst(pitcherPlayer)
+    }
+
+    private fun calcRateOfBB(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment): Float {
+        return pitcherRecord.calcBBRate(pitcherPlayer)
+    }
+
+    private fun calcRateOfK(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment): Float {
+        return pitcherRecord.calcKRate(pitcherPlayer)
+    }
+
+    private fun calcTheoreticalERA(pitcherRecord: PitcherRecordFragment, battingAveAgainst: Float, rateOfBB: Float, rateOfK: Float): Float {
+        return pitcherRecord.calcTheoreticalERA(battingAveAgainst, rateOfBB, rateOfK)
+    }
+
+    private fun calcGames(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment, theoreticalERA: Float, rateOfK: Float): Int {
+        return pitcherRecord.calcGames(pitcherPlayer, theoreticalERA, rateOfK)
+    }
+
+    private fun calcInningsPerGame(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment, theoreticalERA: Float, rateOfBB: Float): Float {
+        return pitcherRecord.calcInningsPerGame(pitcherPlayer, theoreticalERA, rateOfBB)
+    }
+
+    private fun calcTotalInnings(pitcherRecord: PitcherRecordFragment, games: Int, inningsPerGame: Float): Int {
+        return pitcherRecord.calcTotalInnings(games, inningsPerGame)
+    }
+
+    private fun calcTotalK(pitcherRecord: PitcherRecordFragment, rateOfK: Float, totalInnings: Int): Int {
+        return pitcherRecord.calcTotalK(rateOfK, totalInnings)
+    }
+
+    private fun calcActualERA(pitcherRecord: PitcherRecordFragment, theoreticalERA: Float, totalInnings: Int): Float {
+        return pitcherRecord.calcActualERA(theoreticalERA, totalInnings)
+    }
+
+    private fun calcSave(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment, games: Int, theoreticalERA: Float): Int {
+        return pitcherRecord.calcSave(pitcherPlayer, games, theoreticalERA)
+    }
+
+    private fun calcWin(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment, games: Int, save: Int, theoreticalERA: Float, inningsPerGame: Float): Int {
+        return pitcherRecord.calcWin(pitcherPlayer, games, save, theoreticalERA, inningsPerGame)
+    }
+
+    private fun calcLose(pitcherPlayer: PlayerPitcherClass, pitcherRecord: PitcherRecordFragment, games: Int, win: Int, save: Int, theoreticalERA: Float, inningsPerGame: Float): Int {
+        return pitcherRecord.calcLose(pitcherPlayer, games, win, save, theoreticalERA, inningsPerGame)
+    }
+
+    private fun calcWinRate(pitcherRecord: PitcherRecordFragment, win: Int, lose: Int): Float {
+        return pitcherRecord.calcWinRate(win, lose)
+    }
+
 }

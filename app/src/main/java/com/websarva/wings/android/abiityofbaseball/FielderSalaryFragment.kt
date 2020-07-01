@@ -101,17 +101,15 @@ class FielderSalaryFragment : SalaryParentFragment() {
 
         @JvmStatic
         fun newInstance(fielder: PlayerClass,
-                        ave: Int,
-                        hr: Int,
-                        rbi: Int,
-                        sb: Int) =
+                        fielderRecord: FielderRecordFragment) =
                 FielderSalaryFragment().apply {
                     arguments = Bundle().apply {
+
                         putSerializable(Constants.TYPE_FIELDER, fielder)
-                        putInt(KEY_AVE, ave)
-                        putInt(KEY_HR, hr)
-                        putInt(KEY_RBI, rbi)
-                        putInt(KEY_SB, sb)
+                        putInt(KEY_AVE, fielderRecord.calcAve(fielder))
+                        putInt(KEY_HR, fielderRecord.calcHr(fielder))
+                        putInt(KEY_RBI, fielderRecord.calcRbi(fielder))
+                        putInt(KEY_SB, fielderRecord.calcSb(fielder))
                     }
                 }
     }

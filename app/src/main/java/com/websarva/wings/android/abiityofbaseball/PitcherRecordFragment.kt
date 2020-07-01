@@ -20,26 +20,22 @@ class PitcherRecordFragment : Fragment() {
     private val assumedMaxControl = 150
     private val oneGameInnings = 9.0
     private val minSpeed = 120
-    private var maxRequiredERA by Delegates.notNull<Double>()
-    private var minRequiredStamina by Delegates.notNull<Int>()
-    private var addedSpeedToMin by Delegates.notNull<Int>()
-    private var lossOfStamina by Delegates.notNull<Int>()
 
     // records
-    private var battingAveAgainst = 0.0f
-    var rateOfBB = 0.0f
-    var rateOfK = 0.0f
-    var theoreticalERA = 0.0f
-    var actualERA = 0.0f
-    var games = 0
-    var inningsPerGame = 0.0f
-    var totalInnings = 0
-    var totalK = 0
-    var totalBB = 0
-    var win = 0
-    var lose = 0
-    var save = 0
-    var winRate = 0.0f
+    private var battingAveAgainst by Delegates.notNull<Float>()
+    private var rateOfBB by Delegates.notNull<Float>()
+    private var rateOfK by Delegates.notNull<Float>()
+    private var theoreticalERA by Delegates.notNull<Float>()
+    private var actualERA by Delegates.notNull<Float>()
+    private var games by Delegates.notNull<Int>()
+    private var inningsPerGame by Delegates.notNull<Float>()
+    private var totalInnings by Delegates.notNull<Int>()
+    private var totalK by Delegates.notNull<Int>()
+    private var totalBB by Delegates.notNull<Int>()
+    private var win by Delegates.notNull<Int>()
+    private var lose by Delegates.notNull<Int>()
+    private var save by Delegates.notNull<Int>()
+    private var winRate by Delegates.notNull<Float>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,51 +52,72 @@ class PitcherRecordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        substitutePresupposition(pitcherPlayer)
         calcRecords(pitcherPlayer)
         displayRecords()
     }
 
 
-    private fun substitutePresupposition(pitcher: PlayerPitcherClass) {
-        maxRequiredERA = when (pitcher.pitcherType) {
-            Constants.STARTER -> 4.0
-            Constants.MIDDLE -> 2.2
-            else -> 2.0
+    private fun maxRequiredERA(pitcher: PlayerPitcherClass): Float {
+        return when (pitcher.pitcherType) {
+            Constants.STARTER -> 4.0f
+            Constants.MIDDLE -> 2.2f
+            else -> 2.0f
         }
-        minRequiredStamina = when (pitcher.pitcherType) {
+    }
+
+    private fun minRequiredStamina(pitcher: PlayerPitcherClass): Int {
+        return when (pitcher.pitcherType) {
             Constants.MIDDLE -> 50
             Constants.CLOSER -> 40
             else -> 0
         }
-        addedSpeedToMin = when (pitcher.pitcherType) {
+    }
+
+    private fun addedSpeedToMin(pitcher: PlayerPitcherClass): Int {
+        return when (pitcher.pitcherType) {
             Constants.STARTER -> pitcher.maxSpeed - starterLossSpeed - minSpeed
             else -> pitcher.maxSpeed - minSpeed
         }
-        lossOfStamina = when {
-            pitcher.staminaAbility < minRequiredStamina -> minRequiredStamina - pitcher.staminaAbility
+    }
+
+    private fun lossOfStamina(pitcher: PlayerPitcherClass): Int {
+        return when {
+            pitcher.staminaAbility < minRequiredStamina(pitcher) ->
+                minRequiredStamina(pitcher) - pitcher.staminaAbility
             else -> 0
         }
     }
 
     private fun calcRecords(pitcher: PlayerPitcherClass) {
-        battingAveAgainst = calculateBattingAveAgainst(pitcher)
-        rateOfBB = calculateBBRate(pitcher)
-        rateOfK = calculateKRate(pitcher)
-        theoreticalERA = calculateTheoreticalERA()
-        games = calculateGames(pitcher)
-        inningsPerGame = calculateInningsPerGame(pitcher)
-        totalInnings = (games * inningsPerGame).toInt()
-        totalK = (rateOfK / 9 * totalInnings).toInt()
-        totalBB = (rateOfBB / 9 * totalInnings).toInt()
-        actualERA = calculateActualERA()
-        save = calculationSave(pitcher)
-        win = calculateWin(pitcher)
-        lose = calculateLose(pitcher)
-        winRate = calculateWinRate()
+        battingAveAgainst = calcBattingAveAgainst(pitcher)
+        rateOfBB = calcBBRate(pitcher)
+        rateOfK = calcKRate(pitcher)
+        theoreticalERA = calcTheoreticalERA(battingAveAgainst, rateOfBB, rateOfK)
+        games = calcGames(pitcher, theoreticalERA, rateOfK)
+        inningsPerGame = calcInningsPerGame(pitcher, theoreticalERA, rateOfBB)
+        totalInnings = calcTotalInnings(games, inningsPerGame)
+        totalK = calcTotalK(rateOfK, totalInnings)
+        totalBB = calcTotalBB(rateOfBB, totalInnings)
+        actualERA = calcActualERA(theoreticalERA, totalInnings)
+        save = calcSave(pitcher, games, theoreticalERA)
+        win = calcWin(pitcher, games, save, theoreticalERA, inningsPerGame)
+        lose = calcLose(pitcher, games, win, save, theoreticalERA, inningsPerGame)
+        winRate = calcWinRate(win, lose)
     }
 
-    private fun calculateBattingAveAgainst(pitcher: PlayerPitcherClass): Float {
+    fun calcTotalInnings(games: Int, inningsPerGame: Float): Int {
+        return (games * inningsPerGame).toInt()
+    }
+
+    fun calcTotalK(rateOfK: Float, totalInnings: Int): Int {
+        return (rateOfK / 9 * totalInnings).toInt()
+    }
+
+    private fun calcTotalBB(rateOfBB: Float, totalInnings: Int): Int {
+        return (rateOfBB / 9 * totalInnings).toInt()
+    }
+
+    fun calcBattingAveAgainst(pitcher: PlayerPitcherClass): Float {
 
         val maxAveAgainst = 0.42
         val oneThirdOfMax = maxAveAgainst / 3.0
@@ -115,7 +132,7 @@ class PitcherRecordFragment : Fragment() {
 
         // calculate from ball speed
         val speedCoefficient = variableRangeEach / (assumedMaxSpeed - minSpeed)
-        battingAveAgainstElements[speedIndex] -= addedSpeedToMin * speedCoefficient
+        battingAveAgainstElements[speedIndex] -= addedSpeedToMin(pitcher) * speedCoefficient
 
         // calculate from change ball
         val assumedMaxKindOfChange = 4
@@ -133,7 +150,7 @@ class PitcherRecordFragment : Fragment() {
         return battingAveAgainstElements.sum().toFloat()
     }
 
-    private fun calculateBBRate(pitcher: PlayerPitcherClass): Float {
+    fun calcBBRate(pitcher: PlayerPitcherClass): Float {
 
         val minBBRate = when (pitcher.pitcherType) {
             Constants.STARTER -> 0.6
@@ -148,7 +165,7 @@ class PitcherRecordFragment : Fragment() {
         return rateOfBB9
     }
 
-    private fun calculateKRate(pitcher: PlayerPitcherClass): Float {
+    fun calcKRate(pitcher: PlayerPitcherClass): Float {
         val minKRate = 1.0
         val maxKRate = when (pitcher.pitcherType) {
             Constants.STARTER -> 12.5
@@ -171,7 +188,7 @@ class PitcherRecordFragment : Fragment() {
 
         // calculate from speed
         val assignmentOfSpeed = variableRange * weightOfSpeed
-        elementsOfKRate[indexOfSpeed] = addedSpeedToMin * (assignmentOfSpeed / (assumedMaxSpeed - minSpeed))
+        elementsOfKRate[indexOfSpeed] = addedSpeedToMin(pitcher) * (assignmentOfSpeed / (assumedMaxSpeed - minSpeed))
 
         // calculate from change ball
         val assignmentOfChange = variableRange * weightOfChangeAmount
@@ -193,7 +210,7 @@ class PitcherRecordFragment : Fragment() {
         return (minKRate + elementsOfKRate.sum()).toFloat()
     }
 
-    private fun calculateTheoreticalERA(): Float {
+    fun calcTheoreticalERA(battingAveAgainst: Float, rateOfBB: Float, rateOfK: Float): Float {
 
         val runPerHit = 0.4
         val runPerBB = battingAveAgainst
@@ -205,7 +222,7 @@ class PitcherRecordFragment : Fragment() {
         return ((hitsPer9 * runPerHit) + (rateOfBB * runPerBB) - (rateOfK * kCoefficient)).toFloat()
     }
 
-    private fun calculateGames(pitcher: PlayerPitcherClass): Int {
+    fun calcGames(pitcher: PlayerPitcherClass, theoreticalERA: Float, rateOfK: Float): Int {
         val maxGames = when (pitcher.pitcherType) {
             Constants.STARTER -> 28
             Constants.MIDDLE -> 85
@@ -221,12 +238,12 @@ class PitcherRecordFragment : Fragment() {
             Constants.MIDDLE -> 20
             else -> 12
         }
-        val eraContribution = ((theoreticalERA - maxRequiredERA) * eraCoefficient).toInt()
+        val eraContribution = ((theoreticalERA - maxRequiredERA(pitcher)) * eraCoefficient).toInt()
         val kCoefficient = 0.1
         val kRateContribution = rateOfK * kCoefficient
         var actualGames = when (pitcher.pitcherType) {
-            Constants.MIDDLE -> ((maxGames - eraContribution) * kRateContribution).toInt() - lossOfStamina
-            else -> (maxGames - eraContribution) - lossOfStamina
+            Constants.MIDDLE -> ((maxGames - eraContribution) * kRateContribution).toInt() - lossOfStamina(pitcher)
+            else -> (maxGames - eraContribution) - lossOfStamina(pitcher)
         }
         if (actualGames > maxGames) actualGames = maxGames
         if (actualGames < minGames) actualGames = minGames
@@ -234,7 +251,7 @@ class PitcherRecordFragment : Fragment() {
         return actualGames
     }
 
-    private fun calculateInningsPerGame(pitcher: PlayerPitcherClass): Float {
+    fun calcInningsPerGame(pitcher: PlayerPitcherClass, theoreticalERA: Float, rateOfBB: Float): Float {
 
         val maxInningsPerGame = when (pitcher.pitcherType) {
             Constants.STARTER -> 9.0
@@ -253,7 +270,7 @@ class PitcherRecordFragment : Fragment() {
         val minStarterStaminaContribution = 9.5
         val staminaContribution = when (pitcher.pitcherType) {
             Constants.STARTER -> minStarterStaminaContribution + (pitcher.staminaAbility - Constants.NEEDED_STARTER_STAMINA) * staminaCoefficient
-            else -> lossOfStamina * staminaCoefficient
+            else -> lossOfStamina(pitcher) * staminaCoefficient
         }
         val eraCoefficient = when (pitcher.pitcherType) {
             Constants.STARTER -> 1.0
@@ -262,7 +279,7 @@ class PitcherRecordFragment : Fragment() {
         }
         val eraContribution = when (pitcher.pitcherType) {
             Constants.STARTER -> theoreticalERA * eraCoefficient
-            else -> (theoreticalERA - maxRequiredERA) * eraCoefficient
+            else -> (theoreticalERA - maxRequiredERA(pitcher)) * eraCoefficient
         }
         val bbCoefficient = when (pitcher.pitcherType) {
             Constants.STARTER -> 0.5
@@ -280,16 +297,16 @@ class PitcherRecordFragment : Fragment() {
         return inningsPerGame.toFloat()
     }
 
-    private fun calculateActualERA(): Float {
+    fun calcActualERA(theoreticalERA: Float, totalInnings: Int): Float {
         val actualRunsAllowed = ceil(theoreticalERA * totalInnings / oneGameInnings)
         return (actualRunsAllowed / totalInnings * oneGameInnings).toFloat()
     }
 
-    private fun calculateWinRate(): Float {
+    fun calcWinRate(win: Int, lose: Int): Float {
         return ((win * 1.0) / (win + lose)).toFloat()
     }
 
-    private fun calculationSave(pitcher: PlayerPitcherClass): Int {
+    fun calcSave(pitcher: PlayerPitcherClass, games: Int, theoreticalERA: Float): Int {
         if (pitcher.pitcherType != Constants.CLOSER) return 0
 
         val saveSituationRate = 0.7
@@ -302,7 +319,7 @@ class PitcherRecordFragment : Fragment() {
         return (saveSituation * (1 - saveFailRate)).toInt()
     }
 
-    private fun calculateWin(pitcher: PlayerPitcherClass): Int {
+    fun calcWin(pitcher: PlayerPitcherClass, games: Int, save: Int, theoreticalERA: Float, inningsPerGame: Float): Int {
         val pitchingGames = games - save
 
         val contributionOfERA = 1 - theoreticalERA / 10
@@ -313,7 +330,7 @@ class PitcherRecordFragment : Fragment() {
         return win
     }
 
-    private fun calculateLose(pitcher: PlayerPitcherClass): Int {
+    fun calcLose(pitcher: PlayerPitcherClass, games: Int, win: Int, save: Int, theoreticalERA: Float, inningsPerGame: Float): Int {
         var nonWinGame = games - win
         if (pitcher.pitcherType == Constants.CLOSER) nonWinGame -= save
 

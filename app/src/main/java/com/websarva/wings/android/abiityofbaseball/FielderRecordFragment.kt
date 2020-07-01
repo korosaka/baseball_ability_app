@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_fielder_record.*
+import kotlin.properties.Delegates
 
 class FielderRecordFragment : Fragment() {
     private lateinit var fielderPlayer: PlayerClass
-    var ave = 0
-    var hr = 0
-    var rbi = 0
-    var sb = 0
+    private var ave by Delegates.notNull<Int>()
+    private var hr by Delegates.notNull<Int>()
+    private var rbi by Delegates.notNull<Int>()
+    private var sb by Delegates.notNull<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +24,6 @@ class FielderRecordFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fielder_record, container, false)
     }
 
@@ -36,12 +36,12 @@ class FielderRecordFragment : Fragment() {
     private fun calcRecords(player: PlayerClass) {
         ave = calcAve(player)
         hr = calcHr(player)
-        rbi = calcRbi(player, hr)
+        rbi = calcRbi(player)
         sb = calcSb(player)
     }
 
     private fun displayRecord() {
-        average_display.text = when{
+        average_display.text = when {
             ave < 100 -> ".0$ave"
             else -> ".$ave"
         }
@@ -50,7 +50,7 @@ class FielderRecordFragment : Fragment() {
         steel_display.text = sb.toString()
     }
 
-    private fun calcAve(player: PlayerClass): Int {
+    fun calcAve(player: PlayerClass): Int {
         var ave = 85 + (player.contactAbility * 4.5).toInt() + (player.powerAbility * 0.45).toInt() + (player.speedAbility * 0.15).toInt()
         when {
             ave < 150 -> {
@@ -74,7 +74,7 @@ class FielderRecordFragment : Fragment() {
         return ave
     }
 
-    private fun calcHr(player: PlayerClass): Int {
+    fun calcHr(player: PlayerClass): Int {
         var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 30
         if (hr < 0) {
             hr = (player.powerAbility * 0.1).toInt()
@@ -91,7 +91,7 @@ class FielderRecordFragment : Fragment() {
         return hr
     }
 
-    private fun calcRbi(player: PlayerClass, hr: Int): Int {
+    fun calcRbi(player: PlayerClass): Int {
         var rbi = (((player.contactAbility * 0.5) + (player.powerAbility * 1.0)) * player.chance).toInt()
         when {
             rbi < 0 -> {
@@ -113,12 +113,14 @@ class FielderRecordFragment : Fragment() {
                 rbi = (rbi * 0.9).toInt()
             }
         }
+
+        val hr = calcHr(player)
         if (rbi < hr) rbi = hr
 
         return rbi
     }
 
-    private fun calcSb(player: PlayerClass): Int {
+    fun calcSb(player: PlayerClass): Int {
         var sb = (player.speedAbility * 0.8).toInt() - 25
         when {
             sb < -10 -> {

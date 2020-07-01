@@ -18,11 +18,11 @@ class PlayerInfoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setPlayerWithBundle()
+        assignPlayerWithBundle()
 
     }
 
-    private fun setPlayerWithBundle() {
+    private fun assignPlayerWithBundle() {
         arguments?.let {
             when (PlayerMakingActivity.playerType) {
                 Constants.TYPE_FIELDER -> fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
@@ -50,7 +50,7 @@ class PlayerInfoFragment : Fragment() {
             Constants.TYPE_FIELDER -> fielderPlayer.playerName
             else -> pitcherPlayer.playerName
         }
-        val nameFrag = NameFragment.newInstance(name, when(PlayerMakingActivity.playerType) {
+        val nameFrag = NameFragment.newInstance(name, when (PlayerMakingActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderPlayer.mainPosition
             else -> Constants.TYPE_PITCHER
         })
@@ -88,19 +88,31 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun displaySalary() {
-        val salaryFrag = when (PlayerMakingActivity.playerType) {
-            Constants.TYPE_FIELDER -> FielderSalaryFragment.newInstance(
-                    fielderPlayer, fielderRecord.ave, fielderRecord.hr, fielderRecord.rbi, fielderRecord.sb)
-            else -> PitcherSalaryFragment.newInstance(
-                    pitcherPlayer, pitcherRecord.win, pitcherRecord.save, pitcherRecord.totalInnings,
-                    pitcherRecord.totalK, pitcherRecord.actualERA, pitcherRecord.winRate)
+        when (PlayerMakingActivity.playerType) {
+            Constants.TYPE_FIELDER -> {
+                val fielderSalaryFrag = FielderSalaryFragment.newInstance(
+                        fielderPlayer,
+                        fielderRecord)
+
+                addSalaryFrag(fielderSalaryFrag)
+            }
+            Constants.TYPE_PITCHER -> {
+                val pitcherSalaryFrag = PitcherSalaryFragment.newInstance(
+                        pitcherPlayer,
+                        pitcherRecord)
+
+                addSalaryFrag(pitcherSalaryFrag)
+            }
+
         }
 
+    }
+
+    private fun addSalaryFrag(salaryFrag: SalaryParentFragment) {
         val myActivity = activity ?: return
         val transaction = myActivity.supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_salary, salaryFrag)
         transaction.commit()
-
     }
 
 
