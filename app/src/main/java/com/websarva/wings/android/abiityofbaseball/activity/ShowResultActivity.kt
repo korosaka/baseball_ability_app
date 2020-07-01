@@ -17,11 +17,19 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     private fun displayPlayerInfo() {
-        val playerInfoFrag = when (AnswerQuestionsActivity.playerType) {
-            Constants.TYPE_FIELDER -> PlayerInfoFragment.newInstance(makeFielder())
-            else -> PlayerInfoFragment.newInstance(makePitcher())
+        when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> {
+                val fielderPlayerFrag = PlayerInfoFragment.newInstance(makeFielder())
+                addPlayerInfoFrag(fielderPlayerFrag)
+            }
+            Constants.TYPE_PITCHER -> {
+                val pitcherPlayerFrag = PlayerInfoFragment.newInstance(makePitcher())
+                addPlayerInfoFrag(pitcherPlayerFrag)
+            }
         }
+    }
 
+    private fun addPlayerInfoFrag(playerInfoFrag: PlayerInfoFragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_player_info, playerInfoFrag)
         transaction.commit()
