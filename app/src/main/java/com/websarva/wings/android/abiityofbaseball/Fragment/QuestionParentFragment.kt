@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.R
 import android.os.Bundle
@@ -6,13 +6,15 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
+import com.websarva.wings.android.abiityofbaseball.Constants
 
 abstract class QuestionParentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (PlayerMakingActivity.sex_id == Constants.ID_WOMAN) {
+        if (AnswerQuestionsActivity.sex_id == Constants.ID_WOMAN) {
             changeChoices()
         }
         setSpinner()

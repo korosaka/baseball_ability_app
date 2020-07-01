@@ -1,15 +1,18 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.PlayerFielderClass
+import com.websarva.wings.android.abiityofbaseball.R
 import kotlinx.android.synthetic.main.fragment_fielder_record.*
 import kotlin.properties.Delegates
 
 class FielderRecordFragment : Fragment() {
-    private lateinit var fielderPlayer: PlayerClass
+    private lateinit var fielderPlayer: PlayerFielderClass
     private var ave by Delegates.notNull<Int>()
     private var hr by Delegates.notNull<Int>()
     private var rbi by Delegates.notNull<Int>()
@@ -18,7 +21,7 @@ class FielderRecordFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerFielderClass
         }
     }
 
@@ -33,7 +36,7 @@ class FielderRecordFragment : Fragment() {
         displayRecord()
     }
 
-    private fun calcRecords(player: PlayerClass) {
+    private fun calcRecords(player: PlayerFielderClass) {
         ave = calcAve(player)
         hr = calcHr(player)
         rbi = calcRbi(player)
@@ -50,7 +53,7 @@ class FielderRecordFragment : Fragment() {
         steel_display.text = sb.toString()
     }
 
-    fun calcAve(player: PlayerClass): Int {
+    fun calcAve(player: PlayerFielderClass): Int {
         var ave = 85 + (player.contactAbility * 4.5).toInt() + (player.powerAbility * 0.45).toInt() + (player.speedAbility * 0.15).toInt()
         when {
             ave < 150 -> {
@@ -74,7 +77,7 @@ class FielderRecordFragment : Fragment() {
         return ave
     }
 
-    fun calcHr(player: PlayerClass): Int {
+    fun calcHr(player: PlayerFielderClass): Int {
         var hr = ((player.powerAbility * 0.8) + (player.contactAbility * 0.1)).toInt() - 30
         if (hr < 0) {
             hr = (player.powerAbility * 0.1).toInt()
@@ -91,7 +94,7 @@ class FielderRecordFragment : Fragment() {
         return hr
     }
 
-    fun calcRbi(player: PlayerClass): Int {
+    fun calcRbi(player: PlayerFielderClass): Int {
         var rbi = (((player.contactAbility * 0.5) + (player.powerAbility * 1.0)) * player.chance).toInt()
         when {
             rbi < 0 -> {
@@ -120,7 +123,7 @@ class FielderRecordFragment : Fragment() {
         return rbi
     }
 
-    fun calcSb(player: PlayerClass): Int {
+    fun calcSb(player: PlayerFielderClass): Int {
         var sb = (player.speedAbility * 0.8).toInt() - 25
         when {
             sb < -10 -> {
@@ -140,7 +143,7 @@ class FielderRecordFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(fielder: PlayerClass) =
+        fun newInstance(fielder: PlayerFielderClass) =
                 FielderRecordFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_FIELDER, fielder)

@@ -1,9 +1,10 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.Fragment.PlayerInfoFragment
 import kotlinx.android.synthetic.main.activity_show_result.*
 
 class ShowResultActivity : BaseBannerActivity() {
@@ -16,7 +17,7 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     private fun displayPlayerInfo() {
-        val playerInfoFrag = when (PlayerMakingActivity.playerType) {
+        val playerInfoFrag = when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> PlayerInfoFragment.newInstance(makeFielder())
             else -> PlayerInfoFragment.newInstance(makePitcher())
         }
@@ -26,8 +27,8 @@ class ShowResultActivity : BaseBannerActivity() {
         transaction.commit()
     }
 
-    private fun makeFielder(): PlayerClass {
-        return PlayerClass(
+    private fun makeFielder(): PlayerFielderClass {
+        return PlayerFielderClass(
                 intent.getStringExtra(Constants.PLAYER_NAME)!!,
                 intent.getStringExtra(Constants.POSITION)!!,
                 intent.getIntExtra(Constants.BALLISTIC, 1),

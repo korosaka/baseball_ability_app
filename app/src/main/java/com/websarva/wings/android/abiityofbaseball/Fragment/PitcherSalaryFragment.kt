@@ -1,7 +1,9 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.os.Bundle
 import android.view.View
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.PlayerPitcherClass
 import kotlin.properties.Delegates
 
 class PitcherSalaryFragment : SalaryParentFragment() {

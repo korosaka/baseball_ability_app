@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,12 +6,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfAppearanceFragment
+import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfPersonalityFragment
+import com.websarva.wings.android.abiityofbaseball.Fragment.QuestionOfPopularityFragment
 import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 import kotlinx.android.synthetic.main.fragment_question_of_popularity.*
 
-class PlayerMakingActivity : BaseBannerActivity() {
+class AnswerQuestionsActivity : BaseBannerActivity() {
 
     // for using on child fragment
     companion object {

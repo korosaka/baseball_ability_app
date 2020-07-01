@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.R
 import kotlinx.android.synthetic.main.activity_select_player_type.*
 
 class SelectPlayerTypeActivity : BaseBannerActivity() {
@@ -58,7 +60,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
      */
     private fun makeIntent(name: String, type: String) {
 
-        val intent = Intent(this, PlayerMakingActivity::class.java)
+        val intent = Intent(this, AnswerQuestionsActivity::class.java)
 
         when (sex_radio.checkedRadioButtonId) {
             R.id.radio_m -> intent.putExtra(Constants.SEX_ID, Constants.ID_MAN)

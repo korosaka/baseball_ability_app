@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.graphics.Color
 import android.os.Bundle
@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.PlayerFielderClass
+import com.websarva.wings.android.abiityofbaseball.R
 import kotlinx.android.synthetic.main.fragment_fielder_ability.*
 
 class FielderAbilityFragment : AbilityParentFragment() {
-    private lateinit var fielderPlayer: PlayerClass
+    private lateinit var fielderPlayer: PlayerFielderClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerFielderClass
         }
     }
 
@@ -28,7 +31,7 @@ class FielderAbilityFragment : AbilityParentFragment() {
         displayAbility(fielderPlayer)
     }
 
-    private fun displayAbility(player: PlayerClass) {
+    private fun displayAbility(player: PlayerFielderClass) {
         ballistic_display.text = player.ballisticAbility.toString()
         setBallisticArrow(ballistic_arrow, player.ballisticAbility)
         setBallisticColor(ballistic_arrow, player.ballisticAbility)
@@ -81,7 +84,7 @@ class FielderAbilityFragment : AbilityParentFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(fielder: PlayerClass) =
+        fun newInstance(fielder: PlayerFielderClass) =
                 FielderAbilityFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_FIELDER, fielder)

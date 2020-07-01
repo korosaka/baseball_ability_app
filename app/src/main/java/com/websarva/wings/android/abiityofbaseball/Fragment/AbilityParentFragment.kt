@@ -1,8 +1,9 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.graphics.Color
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.websarva.wings.android.abiityofbaseball.Constants
 
 abstract class AbilityParentFragment : Fragment() {
 

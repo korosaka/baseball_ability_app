@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TopActivity"
+            android:name=".Activity.TopActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,16 +19,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SelectOptionActivity"
+            android:name=".Activity.SelectOptionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SelectPlayerTypeActivity"
+            android:name=".Activity.SelectPlayerTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlayerMakingActivity"
+            android:name=".Activity.AnswerQuestionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ShowResultActivity"
+            android:name=".Activity.ShowResultActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

@@ -2,7 +2,7 @@ package com.websarva.wings.android.abiityofbaseball
 
 import java.io.*
 
-class PlayerClass (
+class PlayerFielderClass (
         val playerName: String,
         val mainPosition: String,
         val ballisticAbility: Int,

@@ -1,9 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball
 
-import android.app.PendingIntent.getActivity
 import android.content.Context
-import android.content.res.Resources
-import android.provider.Settings.Global.getString
+import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
 
 class CalcAbility(
         private val context: Context,
@@ -58,7 +56,7 @@ class CalcAbility(
 
     init {
 
-        if (PlayerMakingActivity.sex_id == Constants.ID_MAN) {
+        if (AnswerQuestionsActivity.sex_id == Constants.ID_MAN) {
             calcManAbility()
         } else {
             calcWomanAbility()

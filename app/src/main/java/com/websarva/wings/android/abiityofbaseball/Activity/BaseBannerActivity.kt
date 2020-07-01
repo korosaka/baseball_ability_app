@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Activity
 
 import android.os.Bundle
 import android.util.DisplayMetrics

@@ -1,11 +1,13 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.os.Bundle
 import android.view.View
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.PlayerFielderClass
 import kotlin.properties.Delegates
 
 class FielderSalaryFragment : SalaryParentFragment() {
-    private lateinit var fielderPlayer: PlayerClass
+    private lateinit var fielderPlayer: PlayerFielderClass
     private var ave by Delegates.notNull<Int>()
     private var hr by Delegates.notNull<Int>()
     private var rbi by Delegates.notNull<Int>()
@@ -14,7 +16,7 @@ class FielderSalaryFragment : SalaryParentFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+            fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerFielderClass
             ave = it.getInt(KEY_AVE)
             hr = it.getInt(KEY_HR)
             rbi = it.getInt(KEY_RBI)
@@ -28,7 +30,7 @@ class FielderSalaryFragment : SalaryParentFragment() {
         displaySalary(salary)
     }
 
-    private fun calcSalary(player: PlayerClass, ave: Int, hr: Int, rbi: Int, sb: Int): Int {
+    private fun calcSalary(player: PlayerFielderClass, ave: Int, hr: Int, rbi: Int, sb: Int): Int {
 
         val avePoint = when (ave) {
             in 0..199 -> ave
@@ -100,7 +102,7 @@ class FielderSalaryFragment : SalaryParentFragment() {
         private const val KEY_SB = "sb"
 
         @JvmStatic
-        fun newInstance(fielder: PlayerClass,
+        fun newInstance(fielder: PlayerFielderClass,
                         fielderRecord: FielderRecordFragment) =
                 FielderSalaryFragment().apply {
                     arguments = Bundle().apply {

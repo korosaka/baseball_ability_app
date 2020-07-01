@@ -1,15 +1,17 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.Activity.AnswerQuestionsActivity
 
 
 class PlayerInfoFragment : Fragment() {
 
-    private lateinit var fielderPlayer: PlayerClass
+    private lateinit var fielderPlayer: PlayerFielderClass
     private lateinit var pitcherPlayer: PlayerPitcherClass
 
     private lateinit var fielderRecord: FielderRecordFragment
@@ -24,8 +26,8 @@ class PlayerInfoFragment : Fragment() {
 
     private fun assignPlayerWithBundle() {
         arguments?.let {
-            when (PlayerMakingActivity.playerType) {
-                Constants.TYPE_FIELDER -> fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerClass
+            when (AnswerQuestionsActivity.playerType) {
+                Constants.TYPE_FIELDER -> fielderPlayer = it.getSerializable(Constants.TYPE_FIELDER) as PlayerFielderClass
                 Constants.TYPE_PITCHER -> pitcherPlayer = it.getSerializable(Constants.TYPE_PITCHER) as PlayerPitcherClass
             }
         }
@@ -46,11 +48,11 @@ class PlayerInfoFragment : Fragment() {
 
     private fun displayName() {
 
-        val name = when (PlayerMakingActivity.playerType) {
+        val name = when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderPlayer.playerName
             else -> pitcherPlayer.playerName
         }
-        val nameFrag = NameFragment.newInstance(name, when (PlayerMakingActivity.playerType) {
+        val nameFrag = NameFragment.newInstance(name, when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderPlayer.mainPosition
             else -> Constants.TYPE_PITCHER
         })
@@ -61,7 +63,7 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun displayAbility() {
-        val abilityFrag = when (PlayerMakingActivity.playerType) {
+        val abilityFrag = when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> FielderAbilityFragment.newInstance(fielderPlayer)
             else -> PitcherAbilityFragment.newInstance(pitcherPlayer)
         }
@@ -73,14 +75,14 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun displayRecord() {
-        when (PlayerMakingActivity.playerType) {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderRecord = FielderRecordFragment.newInstance(fielderPlayer)
             Constants.TYPE_PITCHER -> pitcherRecord = PitcherRecordFragment.newInstance(pitcherPlayer)
         }
 
         val myActivity = activity ?: return
         val transaction = myActivity.supportFragmentManager.beginTransaction()
-        when (PlayerMakingActivity.playerType) {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> fielderRecord
             else -> pitcherRecord
         }.let { transaction.add(R.id.frame_for_record, it) }
@@ -88,7 +90,7 @@ class PlayerInfoFragment : Fragment() {
     }
 
     private fun displaySalary() {
-        when (PlayerMakingActivity.playerType) {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> {
                 val fielderSalaryFrag = FielderSalaryFragment.newInstance(
                         fielderPlayer,
@@ -118,7 +120,7 @@ class PlayerInfoFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(fielder: PlayerClass) =
+        fun newInstance(fielder: PlayerFielderClass) =
                 PlayerInfoFragment().apply {
                     arguments = Bundle().apply {
                         putSerializable(Constants.TYPE_FIELDER, fielder)
