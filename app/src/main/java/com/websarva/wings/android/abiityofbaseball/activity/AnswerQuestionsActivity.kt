@@ -146,24 +146,75 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.confirm_input))
         builder.setMessage(resources.getString(R.string.ask_complete))
+        // TODO
         builder.setPositiveButton(resources.getString(R.string.done)) { dialog, which ->
-            // 全ての入力値から計算
-            val calcAbility = CalcAbility(this,
-                    spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
-                    spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
-                    spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String)
-
-            when(playerType) {
-                Constants.TYPE_FIELDER -> startFielderActivity(calcAbility)
-                Constants.TYPE_PITCHER -> startPitcherActivity(calcAbility)
+            when (playerType) {
+                Constants.TYPE_FIELDER -> {
+                    when (sex_id) {
+                        Constants.ID_MAN -> makeMaleFielder()
+                        Constants.ID_WOMAN -> makeFemaleFielder()
+                    }
+                }
+                Constants.TYPE_PITCHER -> {
+                    when (sex_id) {
+                        Constants.ID_MAN -> makeMalePitcher()
+                        Constants.ID_WOMAN -> makeFemalePitcher()
+                    }
+                }
             }
+
             finish()
         }
         builder.setNegativeButton(resources.getString(R.string.no), null)
         builder.show()
     }
 
-    private fun startFielderActivity(calcAbility: CalcAbility) {
+    // TODO
+    private fun makeMaleFielder() {
+        startFielderActivity(
+                CalcMaleFielderAbility(
+                        this,
+                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
+                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                )
+        )
+    }
+
+    private fun makeFemaleFielder() {
+        startFielderActivity(
+                CalcFemaleFielderAbility(
+                        this,
+                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
+                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                )
+        )
+    }
+
+    private fun makeMalePitcher() {
+        startPitcherActivity(
+                CalcMalePitcherAbility(
+                        this,
+                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
+                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                )
+        )
+    }
+
+    private fun makeFemalePitcher() {
+        startPitcherActivity(
+                CalcFemalePitcherAbility(
+                        this,
+                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
+                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
+                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                )
+        )
+    }
+
+    private fun startFielderActivity(calcAbility: CalcFielderAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.POSITION, calcAbility.position)
@@ -179,7 +230,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         startActivity(intent)
     }
 
-    private fun startPitcherActivity(calcAbility: CalcAbility) {
+    private fun startPitcherActivity(calcAbility: CalcPitcherAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
