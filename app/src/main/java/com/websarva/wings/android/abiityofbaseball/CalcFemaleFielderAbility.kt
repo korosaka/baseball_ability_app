@@ -4,10 +4,9 @@ import android.content.Context
 
 class CalcFemaleFielderAbility(
         private val context: Context,
-        private val a1_a: String, private val a2_a: String, private val a3_a: String, private val a4_a: String, private val a5_a: String,
-        private val a1_p: String, private val a2_p: String, private val a3_p: String, private val a4_p: String, private val a5_p: String,
-        private val a1_o: String, private val a2_o: String, private val a3_o: String, private val a4_o: String, private val a5_o: String
-) : CalcFielderAbility() {
+        private val answersAppearance: Array<String>,
+        private val answersPersonality: Array<String>,
+        private val answersOther: Array<String>) : CalcFielderAbility() {
 
     init {
         calcAbility()
@@ -15,7 +14,7 @@ class CalcFemaleFielderAbility(
 
     private fun calcAbility() {
         val womanAnswersA1 = context.resources.getStringArray(R.array.w_array_q1_a)
-        when (a1_a) {
+        when (answersAppearance[0]) {
             womanAnswersA1[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
@@ -60,7 +59,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersA2 = context.resources.getStringArray(R.array.w_array_q2_a)
-        when (a2_a) {
+        when (answersAppearance[1]) {
             womanAnswersA2[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 2)
@@ -127,7 +126,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersA3 = context.resources.getStringArray(R.array.w_array_q3_a)
-        when (a3_a) {
+        when (answersAppearance[2]) {
             womanAnswersA3[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
@@ -196,7 +195,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersA4 = context.resources.getStringArray(R.array.w_array_q4_a)
-        when (a4_a) {
+        when (answersAppearance[3]) {
             womanAnswersA4[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
@@ -275,7 +274,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersA5 = context.resources.getStringArray(R.array.w_array_q5_a)
-        when (a5_a) {
+        when (answersAppearance[4]) {
             womanAnswersA5[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
@@ -341,7 +340,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersP1 = context.resources.getStringArray(R.array.w_array_q1_p)
-        when (a1_p) {
+        when (answersPersonality[0]) {
             womanAnswersP1[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
@@ -411,7 +410,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersP2 = context.resources.getStringArray(R.array.w_array_q2_p)
-        when (a2_p) {
+        when (answersPersonality[1]) {
             womanAnswersP2[0] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
@@ -493,7 +492,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersP3 = context.resources.getStringArray(R.array.w_array_q3_p)
-        when (a3_p) {
+        when (answersPersonality[2]) {
             womanAnswersP3[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -1)
@@ -570,7 +569,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersP4 = context.resources.getStringArray(R.array.w_array_q4_p)
-        when (a4_p) {
+        when (answersPersonality[3]) {
             womanAnswersP4[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
@@ -642,7 +641,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersP5 = context.resources.getStringArray(R.array.w_array_q5_p)
-        when (a5_p) {
+        when (answersPersonality[4]) {
             womanAnswersP5[0] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
@@ -724,7 +723,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersPop1 = context.resources.getStringArray(R.array.w_array_q1_o)
-        when (a1_o) {
+        when (answersOther[0]) {
             womanAnswersPop1[0] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -5)
@@ -783,7 +782,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersPop2 = context.resources.getStringArray(R.array.w_array_q2_o)
-        when (a2_o) {
+        when (answersOther[1]) {
             womanAnswersPop2[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -831,7 +830,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersPop3 = context.resources.getStringArray(R.array.w_array_q3_o)
-        when (a3_o) {
+        when (answersOther[2]) {
             womanAnswersPop3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
             }
@@ -849,7 +848,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersPop5 = context.resources.getStringArray(R.array.w_array_q5_o)
-        when (a5_o) {
+        when (answersOther[4]) {
             womanAnswersPop5[0] -> {
             }
             womanAnswersPop5[1] -> {
@@ -943,7 +942,7 @@ class CalcFemaleFielderAbility(
         }
 
         val womanAnswersPop4 = context.resources.getStringArray(R.array.w_array_q4_o)
-        when (a4_o) {
+        when (answersOther[3]) {
             womanAnswersPop4[0] -> {
                 contact = (contact * 1.2).toInt()
                 power = (power * 1.2).toInt()

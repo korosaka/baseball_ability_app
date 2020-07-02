@@ -31,6 +31,10 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     private lateinit var personalityFrag: Fragment
     private lateinit var popularityFrag: Fragment
 
+    private lateinit var answersAppearance: Array<String>
+    private lateinit var answersPersonality: Array<String>
+    private lateinit var answersOther: Array<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_player_making)
         setAdViewContainer(ad_view_container_on_player_making)
@@ -148,6 +152,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         builder.setMessage(resources.getString(R.string.ask_complete))
         // TODO
         builder.setPositiveButton(resources.getString(R.string.done)) { dialog, which ->
+            assignAnswers()
             when (playerType) {
                 Constants.TYPE_FIELDER -> {
                     when (sex_id) {
@@ -169,14 +174,34 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         builder.show()
     }
 
-    // TODO
+    private fun assignAnswers() {
+        answersAppearance = arrayOf(
+            spinner_q1_a.selectedItem as String,
+            spinner_q2_a.selectedItem as String,
+            spinner_q3_a.selectedItem as String,
+            spinner_q4_a.selectedItem as String,
+            spinner_q5_a.selectedItem as String)
+        answersPersonality = arrayOf(
+            spinner_q1_p.selectedItem as String,
+            spinner_q2_p.selectedItem as String,
+            spinner_q3_p.selectedItem as String,
+            spinner_q4_p.selectedItem as String,
+            spinner_q5_p.selectedItem as String)
+        answersOther = arrayOf(
+            spinner_q1_o.selectedItem as String,
+            spinner_q2_o.selectedItem as String,
+            spinner_q3_o.selectedItem as String,
+            spinner_q4_o.selectedItem as String,
+            spinner_q5_o.selectedItem as String)
+    }
+
     private fun makeMaleFielder() {
         startFielderActivity(
                 CalcMaleFielderAbility(
                         this,
-                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
-                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
-                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                        answersAppearance,
+                        answersPersonality,
+                        answersOther
                 )
         )
     }
@@ -185,9 +210,9 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         startFielderActivity(
                 CalcFemaleFielderAbility(
                         this,
-                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
-                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
-                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                        answersAppearance,
+                        answersPersonality,
+                        answersOther
                 )
         )
     }
@@ -196,9 +221,9 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         startPitcherActivity(
                 CalcMalePitcherAbility(
                         this,
-                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
-                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
-                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                        answersAppearance,
+                        answersPersonality,
+                        answersOther
                 )
         )
     }
@@ -207,9 +232,9 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         startPitcherActivity(
                 CalcFemalePitcherAbility(
                         this,
-                        spinner_q1_a.selectedItem as String, spinner_q2_a.selectedItem as String, spinner_q3_a.selectedItem as String, spinner_q4_a.selectedItem as String, spinner_q5_a.selectedItem as String,
-                        spinner_q1_p.selectedItem as String, spinner_q2_p.selectedItem as String, spinner_q3_p.selectedItem as String, spinner_q4_p.selectedItem as String, spinner_q5_p.selectedItem as String,
-                        spinner_q1_o.selectedItem as String, spinner_q2_o.selectedItem as String, spinner_q3_o.selectedItem as String, spinner_q4_o.selectedItem as String, spinner_q5_o.selectedItem as String
+                        answersAppearance,
+                        answersPersonality,
+                        answersOther
                 )
         )
     }
