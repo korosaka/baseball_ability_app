@@ -26,7 +26,7 @@
                 android:layout_weight="1.0"
                 android:background="#ffffff"
                 android:gravity="center_horizontal"
-                android:text="外見"
+                android:text="@string/appearance"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -39,7 +39,7 @@
                 android:layout_weight="1.0"
                 android:background="#ffffff"
                 android:gravity="center_horizontal"
-                android:text="性格"
+                android:text="@string/personality"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -52,7 +52,7 @@
                 android:layout_weight="1.0"
                 android:background="#ffffff"
                 android:gravity="center_horizontal"
-                android:text="その他"
+                android:text="@string/other"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -70,7 +70,7 @@
                 android:layout_weight="1.0"
                 android:onClick="onClickBack"
                 android:textSize="20sp"
-                android:text="◀ 戻る" />
+                android:text="@string/go_back" />
 
             <Button
                 android:id="@+id/bt_next"
@@ -79,7 +79,7 @@
                 android:layout_weight="1.0"
                 android:onClick="onClickNext"
                 android:textSize="20sp"
-                android:text="次へ ▶︎" />
+                android:text="@string/go_next" />
 
         </LinearLayout>
 

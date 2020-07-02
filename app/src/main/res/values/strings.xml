@@ -19,8 +19,15 @@
     <string name="confirm_input">入力確認</string>
     <string name="ask_complete">入力はお済みでしょうか</string>
     <string name="done">完了</string>
+    <string name="finish">終了</string>
     <string name="ask_go_back">前の画面に戻りますか？</string>
     <string name="input_name">登録名を入力してください</string>
+    <string name="appearance">外見</string>
+    <string name="personality">性格</string>
+    <string name="other">その他</string>
+    <string name="male">男性</string>
+    <string name="female">女性</string>
+
 
     <string name="position_catcher">捕</string>
     <string name="position_first_base">一</string>
@@ -33,8 +40,98 @@
     <string name="middle_relief">中継ぎ</string>
     <string name="closer">抑え</string>
 
+    <string name="ballistic">弾道</string>
+    <string name="contact">ミート</string>
+    <string name="power">パワー</string>
+    <string name="speed">走力</string>
+    <string name="arm">肩力</string>
+    <string name="field">守備</string>
+    <string name="catching">捕球</string>
+    <string name="position">守備位置</string>
+    <string name="test_ballistic_arrow">↗︎</string>
+    <string name="test_ballistic_num">2</string>
+    <string name="test_position">遊</string>
+    <string name="average">打率</string>
+    <string name="home_run">本塁打</string>
+    <string name="home_run_unit">本</string>
+    <string name="rbi">打点</string>
+    <string name="rbi_unit">点</string>
+    <string name="steel">盗塁</string>
+    <string name="steel_unit">個</string>
+    <string name="test_average_num">.278</string>
+    <string name="test_home_run_num">18</string>
+    <string name="test_rbi_num">103</string>
+    <string name="test_steel_num">13</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ball_speed">球速</string>
+    <string name="kilometers">km/h</string>
+    <string name="control">コントロール</string>
+    <string name="stamina">スタミナ</string>
+    <string name="test_speed">120</string>
+    <string name="test_lank">T</string>
+
+    <string name="slider">スライダー</string>
+    <string name="curb">カーブ</string>
+    <string name="fork">フォーク</string>
+    <string name="sinker">シンカー</string>
+    <string name="shoot">シュート</string>
+    <string name="arrow_slider">←</string>
+    <string name="arrow_curb">↙︎</string>
+    <string name="arrow_fork">↓</string>
+    <string name="arrow_sinker">↘︎</string>
+    <string name="arrow_shoot">→</string>
+    <string name="test_name">試験太郎</string>
+
+    <string name="win">勝利</string>
+    <string name="lose">敗戦</string>
+    <string name="save">セーブ</string>
+    <string name="era">防御率</string>
+    <string name="innings">イニング</string>
+    <string name="strikeout">奪三振</string>
+    <string name="bb">与四死球</string>
+    <string name="ave_against">被打率</string>
+    <string name="win_unit">勝</string>
+    <string name="lose_unit">負</string>
+    <string name="save_unit">S</string>
+    <string name="innings_unit">回</string>
+    <string name="strikeout_unit">K</string>
+    <string name="bb_unit">個</string>
+    <string name="test_win_num">18</string>
+    <string name="test_lose_num">11</string>
+    <string name="test_save_num">31</string>
+    <string name="test_era_num">3.56</string>
+    <string name="test_innings_num">143</string>
+    <string name="test_strikeout_num">108</string>
+    <string name="test_bb_num">108</string>
+    <string name="test_ave_against">.247</string>
+
+    <string name="salary">年俸</string>
+    <string name="hundred_million_unit">億</string>
+    <string name="ten_thousand_unit">万</string>
+    <string name="yen">円</string>
+
+
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <string name="appearance_question1">①身長</string>
+    <string name="appearance_question2">②体型</string>
+    <string name="appearance_question3">③ビジュアル</string>
+    <string name="appearance_question4">④第一印象</string>
+    <string name="appearance_question5">⑤ファッション</string>
+
+    <string name="personality_question1">①性格-1</string>
+    <string name="personality_question2">②性格-2</string>
+    <string name="personality_question3">③性格-3</string>
+    <string name="personality_question4">④知性</string>
+    <string name="personality_question5">⑤ユーモア</string>
+
+    <string name="popularity_question1">①異性からの人気</string>
+    <string name="popularity_question2">②同性からの人気</string>
+    <string name="popularity_question3">③勝負強さ</string>
+    <string name="popularity_question4_1">④</string>
+    <string name="popularity_question4_2">あなたからの好感度</string>
+    <string name="popularity_question5">⑤その他特徴</string>
+
 
     <string-array name="array_for_spinner">
         <item>1</item>
@@ -273,7 +370,6 @@
         <item>ヘビースモーカー</item>
         <item>元ヤン</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="w_array_q5_o">
         <item>特になし</item>
         <item>スポーツ少女</item>
@@ -283,8 +379,5 @@
         <item>ヘビースモーカー</item>
         <item>酒豪</item>
     </string-array>
-
-    <!--    <string name="title_activity_making_status_pitcher">MakingStatusPitcherActivity</string>-->
-
 
 </resources>

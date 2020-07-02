@@ -1,74 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/batter_record_background"
+    android:orientation="vertical"
     tools:context=".fragment.SalaryParentFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/salary"
+        android:textColor="#ffd700"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/batter_record_background"
-        android:orientation="vertical">
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/white_round_background"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/hundred_million_number"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="年俸"
-            android:textColor="#ffd700"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/hundred_million_unit"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="5dp"
-            android:maxLines="1"
-            android:background="@drawable/white_round_background"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:text="@string/hundred_million_unit"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/hundred_million_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="22sp" />
+        <TextView
+            android:id="@+id/ten_thousand_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/hundred_million_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="億"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/ten_thousand_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ten_thousand_unit"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/ten_thousand_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/ten_thousand_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="万"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="円"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-        </LinearLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yen"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>
+

@@ -5,7 +5,7 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="①身長"
+            android:text="@string/appearance_question1"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="②体型"
+            android:text="@string/appearance_question2"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="③ビジュアル"
+            android:text="@string/appearance_question3"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -116,7 +116,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="④第一印象"
+            android:text="@string/appearance_question4"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -149,7 +149,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⑤ファッション"
+            android:text="@string/appearance_question5"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -170,7 +170,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
