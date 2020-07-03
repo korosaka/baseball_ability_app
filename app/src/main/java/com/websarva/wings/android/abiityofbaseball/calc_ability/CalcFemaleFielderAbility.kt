@@ -724,9 +724,9 @@ class CalcFemaleFielderAbility(
             }
         }
 
-        val womanAnswersPop1 = context.resources.getStringArray(R.array.w_array_q1_o)
+        val womanAnswersO1 = context.resources.getStringArray(R.array.w_array_q1_o)
         when (answersOther[0]) {
-            womanAnswersPop1[0] -> {
+            womanAnswersO1[0] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -741,7 +741,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 3)
             }
-            womanAnswersPop1[1] -> {
+            womanAnswersO1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -756,7 +756,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.CATCHING, 3)
             }
-            womanAnswersPop1[2] -> {
+            womanAnswersO1[2] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -768,12 +768,12 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 6)
             }
-            womanAnswersPop1[3] -> {
+            womanAnswersO1[3] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 3)
             }
-            womanAnswersPop1[4] -> {
+            womanAnswersO1[4] -> {
                 plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, -3)
@@ -783,9 +783,9 @@ class CalcFemaleFielderAbility(
             }
         }
 
-        val womanAnswersPop2 = context.resources.getStringArray(R.array.w_array_q2_o)
+        val womanAnswersO2 = context.resources.getStringArray(R.array.w_array_q2_o)
         when (answersOther[1]) {
-            womanAnswersPop2[0] -> {
+            womanAnswersO2[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 5)
@@ -795,7 +795,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 12)
                 plusAbility(Constants.CATCHING, 15)
             }
-            womanAnswersPop2[1] -> {
+            womanAnswersO2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.CONTACT, 2)
@@ -805,7 +805,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 8)
                 plusAbility(Constants.CATCHING, 10)
             }
-            womanAnswersPop2[2] -> {
+            womanAnswersO2[2] -> {
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 3)
@@ -813,13 +813,13 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 4)
                 plusAbility(Constants.CATCHING, 6)
             }
-            womanAnswersPop2[3] -> {
+            womanAnswersO2[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.ARM_STRENGTH, 1)
                 plusAbility(Constants.FIELDING, 1)
             }
-            womanAnswersPop2[4] -> {
+            womanAnswersO2[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.CONTACT, -1)
@@ -831,29 +831,29 @@ class CalcFemaleFielderAbility(
             }
         }
 
-        val womanAnswersPop3 = context.resources.getStringArray(R.array.w_array_q3_o)
+        val womanAnswersO3 = context.resources.getStringArray(R.array.w_array_q3_o)
         when (answersOther[2]) {
-            womanAnswersPop3[0] -> {
+            womanAnswersO3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
             }
-            womanAnswersPop3[1] -> {
+            womanAnswersO3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
             }
-            womanAnswersPop3[2] -> {
+            womanAnswersO3[2] -> {
             }
-            womanAnswersPop3[3] -> {
+            womanAnswersO3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
             }
-            womanAnswersPop3[4] -> {
+            womanAnswersO3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
             }
         }
 
-        val womanAnswersPop5 = context.resources.getStringArray(R.array.w_array_q5_o)
+        val womanAnswersO5 = context.resources.getStringArray(R.array.w_array_q5_o)
         when (answersOther[4]) {
-            womanAnswersPop5[0] -> {
+            womanAnswersO5[0] -> {
             }
-            womanAnswersPop5[1] -> {
+            womanAnswersO5[1] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -865,7 +865,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.SPEED, 14)
                 plusAbility(Constants.ARM_STRENGTH, 10)
             }
-            womanAnswersPop5[2] -> {
+            womanAnswersO5[2] -> {
                 plusAbility(Constants.CATCHER, 10)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -880,7 +880,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 2)
                 plusSpecial(Constants.CHANCE, 0.03)
             }
-            womanAnswersPop5[3] -> {
+            womanAnswersO5[3] -> {
                 plusAbility(Constants.CATCHER, -8)
                 plusAbility(Constants.FIRST_BASE, 10)
                 plusAbility(Constants.SECOND_BASE, -10)
@@ -895,7 +895,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, -6)
                 plusAbility(Constants.CATCHING, -10)
             }
-            womanAnswersPop5[4] -> {
+            womanAnswersO5[4] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -910,7 +910,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 10)
                 plusAbility(Constants.CATCHING, 8)
             }
-            womanAnswersPop5[5] -> {
+            womanAnswersO5[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -926,7 +926,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CATCHING, -2)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersPop5[6] -> {
+            womanAnswersO5[6] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -943,9 +943,9 @@ class CalcFemaleFielderAbility(
             }
         }
 
-        val womanAnswersPop4 = context.resources.getStringArray(R.array.w_array_q4_o)
+        val womanAnswersO4 = context.resources.getStringArray(R.array.w_array_q4_o)
         when (answersOther[3]) {
-            womanAnswersPop4[0] -> {
+            womanAnswersO4[0] -> {
                 contact = (contact * 1.2).toInt()
                 power = (power * 1.2).toInt()
                 speed = (speed * 1.2).toInt()
@@ -953,7 +953,7 @@ class CalcFemaleFielderAbility(
                 fielding = (fielding * 1.2).toInt()
                 catching = (catching * 1.2).toInt()
             }
-            womanAnswersPop4[1] -> {
+            womanAnswersO4[1] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -961,9 +961,9 @@ class CalcFemaleFielderAbility(
                 fielding = (fielding * 1.1).toInt()
                 catching = (catching * 1.1).toInt()
             }
-            womanAnswersPop4[2] -> {
+            womanAnswersO4[2] -> {
             }
-            womanAnswersPop4[3] -> {
+            womanAnswersO4[3] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -971,7 +971,7 @@ class CalcFemaleFielderAbility(
                 fielding = (fielding * 1.1).toInt()
                 catching = (catching * 1.1).toInt()
             }
-            womanAnswersPop4[4] -> {
+            womanAnswersO4[4] -> {
                 contact = (contact * 0.9).toInt()
                 power = (power * 0.9).toInt()
                 speed = (speed * 0.9).toInt()

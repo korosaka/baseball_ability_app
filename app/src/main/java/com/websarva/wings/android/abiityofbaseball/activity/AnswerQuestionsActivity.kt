@@ -10,11 +10,11 @@ import com.websarva.wings.android.abiityofbaseball.*
 import com.websarva.wings.android.abiityofbaseball.calc_ability.*
 import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfAppearanceFragment
 import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfPersonalityFragment
-import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfPopularityFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfOtherFragment
 import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
-import kotlinx.android.synthetic.main.fragment_question_of_popularity.*
+import kotlinx.android.synthetic.main.fragment_question_of_other.*
 
 class AnswerQuestionsActivity : BaseBannerActivity() {
 
@@ -30,7 +30,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
 
     private lateinit var appearanceFrag: Fragment
     private lateinit var personalityFrag: Fragment
-    private lateinit var popularityFrag: Fragment
+    private lateinit var otherFrag: Fragment
 
     private lateinit var answersAppearance: Array<String>
     private lateinit var answersPersonality: Array<String>
@@ -54,12 +54,12 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     private fun addFragments() {
         appearanceFrag = QuestionOfAppearanceFragment()
         personalityFrag = QuestionOfPersonalityFragment()
-        popularityFrag = QuestionOfPopularityFragment()
+        otherFrag = QuestionOfOtherFragment()
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_fragment, appearanceFrag)
         transaction.add(R.id.frame_for_fragment, personalityFrag)
-        transaction.add(R.id.frame_for_fragment, popularityFrag)
+        transaction.add(R.id.frame_for_fragment, otherFrag)
         transaction.commit()
         showHideFragment(Constants.APPEARANCE)
     }
@@ -68,15 +68,15 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         when (currentName) {
             Constants.APPEARANCE -> backToPrevious()
             Constants.PERSONALITY -> changeToAppearance()
-            Constants.POPULARITY -> changeToPerson()
+            Constants.OTHER -> changeToPerson()
         }
     }
 
     fun onClickNext(view: View) {
         when (currentName) {
             Constants.APPEARANCE -> changeToPerson()
-            Constants.PERSONALITY -> changeToPopularity()
-            Constants.POPULARITY -> makePlayer()
+            Constants.PERSONALITY -> changeToOTHER()
+            Constants.OTHER -> makePlayer()
         }
     }
 
@@ -101,9 +101,9 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     /**
      * -> 人気
      */
-    private fun changeToPopularity() {
-        showHideFragment(Constants.POPULARITY)
-        currentName = Constants.POPULARITY
+    private fun changeToOTHER() {
+        showHideFragment(Constants.OTHER)
+        currentName = Constants.OTHER
         bt_next.text = resources.getString(R.string.go_result)
     }
 
@@ -116,7 +116,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
             Constants.APPEARANCE -> {
                 transaction.show(appearanceFrag)
                 transaction.hide(personalityFrag)
-                transaction.hide(popularityFrag)
+                transaction.hide(otherFrag)
 
                 label_A.setBackgroundColor(Color.WHITE)
                 label_P.setBackgroundColor(Color.GRAY)
@@ -125,14 +125,14 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
             Constants.PERSONALITY -> {
                 transaction.show(personalityFrag)
                 transaction.hide(appearanceFrag)
-                transaction.hide(popularityFrag)
+                transaction.hide(otherFrag)
 
                 label_A.setBackgroundColor(Color.GRAY)
                 label_P.setBackgroundColor(Color.WHITE)
                 label_O.setBackgroundColor(Color.GRAY)
             }
-            Constants.POPULARITY -> {
-                transaction.show(popularityFrag)
+            Constants.OTHER -> {
+                transaction.show(otherFrag)
                 transaction.hide(appearanceFrag)
                 transaction.hide(personalityFrag)
 

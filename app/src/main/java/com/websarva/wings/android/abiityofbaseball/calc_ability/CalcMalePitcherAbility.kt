@@ -558,9 +558,9 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
             }
         }
-        val manAnswersPop1 = context.resources.getStringArray(R.array.m_array_q1_o)
+        val manAnswersO1 = context.resources.getStringArray(R.array.m_array_q1_o)
         when (answersOther[0]) {
-            manAnswersPop1[0] -> {
+            manAnswersO1[0] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 5)
@@ -568,7 +568,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, 4)
             }
-            manAnswersPop1[1] -> {
+            manAnswersO1[1] -> {
                 plusAbility(Constants.BALL_SPEED, 11)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 3)
@@ -576,7 +576,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.STARTER, 2)
             }
-            manAnswersPop1[2] -> {
+            manAnswersO1[2] -> {
                 plusSpecial(Constants.CHANCE, 0.03)
                 plusAbility(Constants.BALL_SPEED, 11)
                 plusAbility(Constants.STAMINA, 5)
@@ -584,13 +584,13 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, -3)
             }
-            manAnswersPop1[3] -> {
+            manAnswersO1[3] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersPop1[4] -> {
+            manAnswersO1[4] -> {
                 plusAbility(Constants.BALL_SPEED, -2)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.STAMINA, -1)
@@ -599,9 +599,9 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 3)
             }
         }
-        val manAnswersPop2 = context.resources.getStringArray(R.array.m_array_q2_o)
+        val manAnswersO2 = context.resources.getStringArray(R.array.m_array_q2_o)
         when (answersOther[1]) {
-            manAnswersPop2[0] -> {
+            manAnswersO2[0] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, 18)
                 plusAbility(Constants.STAMINA, 18)
@@ -609,7 +609,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.STARTER, 5)
             }
-            manAnswersPop2[1] -> {
+            manAnswersO2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 12)
                 plusAbility(Constants.STAMINA, 12)
@@ -617,18 +617,18 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 3)
             }
-            manAnswersPop2[2] -> {
+            manAnswersO2[2] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 5)
             }
-            manAnswersPop2[3] -> {
+            manAnswersO2[3] -> {
                 plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.STAMINA, -4)
             }
-            manAnswersPop2[4] -> {
+            manAnswersO2[4] -> {
                 plusAbility(Constants.BALL_SPEED, -1)
                 plusAbility(Constants.CONTROL, -10)
                 plusAbility(Constants.STAMINA, -10)
@@ -636,33 +636,33 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, -2)
             }
         }
-        val manAnswersPop3 = context.resources.getStringArray(R.array.m_array_q3_o)
+        val manAnswersO3 = context.resources.getStringArray(R.array.m_array_q3_o)
         when (answersOther[2]) {
-            manAnswersPop3[0] -> {
+            manAnswersO3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
                 plusAbility(Constants.CLOSER, 3)
 
             }
-            manAnswersPop3[1] -> {
+            manAnswersO3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
                 plusAbility(Constants.CLOSER, 2)
             }
-            manAnswersPop3[2] -> {
+            manAnswersO3[2] -> {
             }
-            manAnswersPop3[3] -> {
+            manAnswersO3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersPop3[4] -> {
+            manAnswersO3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
                 plusAbility(Constants.MIDDLE, 4)
             }
         }
-        val manAnswersPop5 = context.resources.getStringArray(R.array.m_array_q5_o)
+        val manAnswersO5 = context.resources.getStringArray(R.array.m_array_q5_o)
         when (answersOther[4]) {
-            manAnswersPop5[0] -> {
+            manAnswersO5[0] -> {
             }
-            manAnswersPop5[1] -> {
+            manAnswersO5[1] -> {
                 plusSpecial(Constants.CHANCE, 0.05)
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 16)
@@ -674,7 +674,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.MIDDLE, -5)
             }
-            manAnswersPop5[2] -> {
+            manAnswersO5[2] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.STAMINA, 25)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
@@ -683,11 +683,11 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 8)
             }
-            manAnswersPop5[3] -> {
+            manAnswersO5[3] -> {
                 plusAbility(Constants.CONTROL, 17)
                 plusAbility(Constants.KIND_CHANGE, 12)
             }
-            manAnswersPop5[4] -> {
+            manAnswersO5[4] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -5)
@@ -696,7 +696,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.CLOSER, 3)
             }
-            manAnswersPop5[5] -> {
+            manAnswersO5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.STAMINA, -8)
@@ -705,7 +705,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 3)
             }
-            manAnswersPop5[6] -> {
+            manAnswersO5[6] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, -3)
                 plusAbility(Constants.STAMINA, -3)
@@ -714,32 +714,32 @@ class CalcMalePitcherAbility(
             }
         }
 
-        val manAnswersPop4 = context.resources.getStringArray(R.array.m_array_q4_o)
+        val manAnswersO4 = context.resources.getStringArray(R.array.m_array_q4_o)
         when (answersOther[3]) {
-            manAnswersPop4[0] -> {
+            manAnswersO4[0] -> {
                 ballSpeed = (ballSpeed * 1.15).toInt()
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
                 amountOfChange = (amountOfChange * 1.3).toInt()
             }
-            manAnswersPop4[1] -> {
+            manAnswersO4[1] -> {
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
                 amountOfChange = (amountOfChange * 1.15).toInt()
             }
-            manAnswersPop4[2] -> {
+            manAnswersO4[2] -> {
             }
-            manAnswersPop4[3] -> {
+            manAnswersO4[3] -> {
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
                 amountOfChange = (amountOfChange * 1.1).toInt()
             }
-            manAnswersPop4[4] -> {
+            manAnswersO4[4] -> {
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()

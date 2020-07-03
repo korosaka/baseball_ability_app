@@ -125,12 +125,12 @@
     <string name="personality_question4">④知性</string>
     <string name="personality_question5">⑤ユーモア</string>
 
-    <string name="popularity_question1">①異性からの人気</string>
-    <string name="popularity_question2">②同性からの人気</string>
-    <string name="popularity_question3">③勝負強さ</string>
-    <string name="popularity_question4_1">④</string>
-    <string name="popularity_question4_2">あなたからの好感度</string>
-    <string name="popularity_question5">⑤その他特徴</string>
+    <string name="other_question1">①異性からの人気</string>
+    <string name="other_question2">②同性からの人気</string>
+    <string name="other_question3">③勝負強さ</string>
+    <string name="other_question4_1">④</string>
+    <string name="other_question4_2">あなたからの好感度</string>
+    <string name="other_question5">⑤その他特徴</string>
 
 
     <string-array name="array_for_spinner">

@@ -545,9 +545,9 @@ class CalcFemalePitcherAbility(
             }
         }
 
-        val womanAnswersPop1 = context.resources.getStringArray(R.array.w_array_q1_o)
+        val womanAnswersO1 = context.resources.getStringArray(R.array.w_array_q1_o)
         when (answersOther[0]) {
-            womanAnswersPop1[0] -> {
+            womanAnswersO1[0] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 5)
@@ -555,7 +555,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 18)
                 plusAbility(Constants.STARTER, 6)
             }
-            womanAnswersPop1[1] -> {
+            womanAnswersO1[1] -> {
                 plusAbility(Constants.BALL_SPEED, 12)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 3)
@@ -563,18 +563,18 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
                 plusAbility(Constants.STARTER, 3)
             }
-            womanAnswersPop1[2] -> {
+            womanAnswersO1[2] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, 1)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
-            womanAnswersPop1[3] -> {
+            womanAnswersO1[3] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
             }
-            womanAnswersPop1[4] -> {
+            womanAnswersO1[4] -> {
                 plusAbility(Constants.BALL_SPEED, -3)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.STAMINA, -1)
@@ -584,9 +584,9 @@ class CalcFemalePitcherAbility(
             }
         }
 
-        val womanAnswersPop2 = context.resources.getStringArray(R.array.w_array_q2_o)
+        val womanAnswersO2 = context.resources.getStringArray(R.array.w_array_q2_o)
         when (answersOther[1]) {
-            womanAnswersPop2[0] -> {
+            womanAnswersO2[0] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 18)
                 plusAbility(Constants.STAMINA, 18)
@@ -594,7 +594,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 6)
             }
-            womanAnswersPop2[1] -> {
+            womanAnswersO2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 12)
                 plusAbility(Constants.STAMINA, 12)
@@ -602,19 +602,19 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.STARTER, 3)
             }
-            womanAnswersPop2[2] -> {
+            womanAnswersO2[2] -> {
                 plusAbility(Constants.BALL_SPEED, 1)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 6)
             }
-            womanAnswersPop2[3] -> {
+            womanAnswersO2[3] -> {
                 plusAbility(Constants.BALL_SPEED, 1)
                 plusAbility(Constants.CONTROL, -5)
                 plusAbility(Constants.STAMINA, -1)
             }
-            womanAnswersPop2[4] -> {
+            womanAnswersO2[4] -> {
                 plusAbility(Constants.BALL_SPEED, -1)
                 plusAbility(Constants.CONTROL, -8)
                 plusAbility(Constants.STAMINA, -3)
@@ -623,33 +623,33 @@ class CalcFemalePitcherAbility(
             }
         }
 
-        val womanAnswersPop3 = context.resources.getStringArray(R.array.w_array_q3_o)
+        val womanAnswersO3 = context.resources.getStringArray(R.array.w_array_q3_o)
         when (answersOther[2]) {
-            womanAnswersPop3[0] -> {
+            womanAnswersO3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
                 plusAbility(Constants.CLOSER, 5)
             }
-            womanAnswersPop3[1] -> {
+            womanAnswersO3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
                 plusAbility(Constants.CLOSER, 2)
             }
-            womanAnswersPop3[2] -> {
+            womanAnswersO3[2] -> {
             }
-            womanAnswersPop3[3] -> {
+            womanAnswersO3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
                 plusAbility(Constants.CLOSER, -2)
             }
-            womanAnswersPop3[4] -> {
+            womanAnswersO3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
                 plusAbility(Constants.CLOSER, -5)
             }
         }
 
-        val womanAnswersPop5 = context.resources.getStringArray(R.array.w_array_q5_o)
+        val womanAnswersO5 = context.resources.getStringArray(R.array.w_array_q5_o)
         when (answersOther[4]) {
-            womanAnswersPop5[0] -> {
+            womanAnswersO5[0] -> {
             }
-            womanAnswersPop5[1] -> {
+            womanAnswersO5[1] -> {
                 plusAbility(Constants.BALL_SPEED, 14)
                 plusAbility(Constants.STAMINA, 18)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
@@ -658,7 +658,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 6)
             }
-            womanAnswersPop5[2] -> {
+            womanAnswersO5[2] -> {
                 plusSpecial(Constants.CHANCE, 0.03)
                 plusAbility(Constants.BALL_SPEED, 12)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
@@ -667,7 +667,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 15)
             }
-            womanAnswersPop5[3] -> {
+            womanAnswersO5[3] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.STAMINA, -4)
@@ -678,7 +678,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -8)
             }
-            womanAnswersPop5[4] -> {
+            womanAnswersO5[4] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, 11)
                 plusAbility(Constants.STAMINA, 11)
@@ -688,7 +688,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.STARTER, 6)
             }
-            womanAnswersPop5[5] -> {
+            womanAnswersO5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.STAMINA, -7)
@@ -697,7 +697,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -6)
             }
-            womanAnswersPop5[6] -> {
+            womanAnswersO5[6] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, -5)
@@ -708,32 +708,32 @@ class CalcFemalePitcherAbility(
             }
         }
 
-        val womanAnswersPop4 = context.resources.getStringArray(R.array.w_array_q4_o)
+        val womanAnswersO4 = context.resources.getStringArray(R.array.w_array_q4_o)
         when (answersOther[3]) {
-            womanAnswersPop4[0] -> {
+            womanAnswersO4[0] -> {
                 ballSpeed = (ballSpeed * 1.15).toInt()
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
                 amountOfChange = (amountOfChange * 1.3).toInt()
             }
-            womanAnswersPop4[1] -> {
+            womanAnswersO4[1] -> {
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
                 amountOfChange = (amountOfChange * 1.15).toInt()
             }
-            womanAnswersPop4[2] -> {
+            womanAnswersO4[2] -> {
             }
-            womanAnswersPop4[3] -> {
+            womanAnswersO4[3] -> {
                 ballSpeed = (ballSpeed * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
                 amountOfChange = (amountOfChange * 1.1).toInt()
             }
-            womanAnswersPop4[4] -> {
+            womanAnswersO4[4] -> {
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
                 kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()

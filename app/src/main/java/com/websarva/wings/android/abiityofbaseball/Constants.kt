@@ -113,7 +113,7 @@ class Constants {
 
         const val APPEARANCE = "appearance"
         const val PERSONALITY = "personality"
-        const val POPULARITY = "popularity"
+        const val OTHER = "other"
 
         const val HALF_SPACE = " "
 

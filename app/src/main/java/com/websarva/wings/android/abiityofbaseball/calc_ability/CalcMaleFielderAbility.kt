@@ -710,9 +710,9 @@ class CalcMaleFielderAbility(
                 plusSpecial(Constants.CHANCE, 0.02)
             }
         }
-        val manAnswersPop1 = context.resources.getStringArray(R.array.m_array_q1_o)
+        val manAnswersO1 = context.resources.getStringArray(R.array.m_array_q1_o)
         when (answersOther[0]) {
-            manAnswersPop1[0] -> {
+            manAnswersO1[0] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -727,7 +727,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 3)
             }
-            manAnswersPop1[1] -> {
+            manAnswersO1[1] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -742,7 +742,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 3)
             }
-            manAnswersPop1[2] -> {
+            manAnswersO1[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -756,14 +756,14 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 7)
                 plusSpecial(Constants.CHANCE, 0.03)
             }
-            manAnswersPop1[3] -> {
+            manAnswersO1[3] -> {
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, 1)
             }
-            manAnswersPop1[4] -> {
+            manAnswersO1[4] -> {
                 plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.CONTACT, -3)
                 plusAbility(Constants.POWER, -3)
@@ -773,9 +773,9 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CATCHING, -1)
             }
         }
-        val manAnswersPop2 = context.resources.getStringArray(R.array.m_array_q2_o)
+        val manAnswersO2 = context.resources.getStringArray(R.array.m_array_q2_o)
         when (answersOther[1]) {
-            manAnswersPop2[0] -> {
+            manAnswersO2[0] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 4)
@@ -785,7 +785,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 12)
                 plusAbility(Constants.CATCHING, 15)
             }
-            manAnswersPop2[1] -> {
+            manAnswersO2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.CONTACT, 2)
@@ -795,19 +795,19 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 7)
                 plusAbility(Constants.CATCHING, 10)
             }
-            manAnswersPop2[2] -> {
+            manAnswersO2[2] -> {
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 5)
             }
-            manAnswersPop2[3] -> {
+            manAnswersO2[3] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.ARM_STRENGTH, -1)
                 plusAbility(Constants.FIELDING, -1)
                 plusAbility(Constants.CATCHING, -3)
             }
-            manAnswersPop2[4] -> {
+            manAnswersO2[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.SECOND_BASE, -2)
                 plusAbility(Constants.CONTACT, -1)
@@ -818,28 +818,28 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CATCHING, -6)
             }
         }
-        val manAnswersPop3 = context.resources.getStringArray(R.array.m_array_q3_o)
+        val manAnswersO3 = context.resources.getStringArray(R.array.m_array_q3_o)
         when (answersOther[2]) {
-            manAnswersPop3[0] -> {
+            manAnswersO3[0] -> {
                 plusSpecial(Constants.CHANCE, 0.15)
             }
-            manAnswersPop3[1] -> {
+            manAnswersO3[1] -> {
                 plusSpecial(Constants.CHANCE, 0.08)
             }
-            manAnswersPop3[2] -> {
+            manAnswersO3[2] -> {
             }
-            manAnswersPop3[3] -> {
+            manAnswersO3[3] -> {
                 plusSpecial(Constants.CHANCE, -0.08)
             }
-            manAnswersPop3[4] -> {
+            manAnswersO3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.15)
             }
         }
-        val manAnswersPop5 = context.resources.getStringArray(R.array.m_array_q5_o)
+        val manAnswersO5 = context.resources.getStringArray(R.array.m_array_q5_o)
         when (answersOther[4]) {
-            manAnswersPop5[0] -> {
+            manAnswersO5[0] -> {
             }
-            manAnswersPop5[1] -> {
+            manAnswersO5[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, -1)
@@ -855,7 +855,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CATCHING, 2)
                 plusSpecial(Constants.CHANCE, 0.05)
             }
-            manAnswersPop5[2] -> {
+            manAnswersO5[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -870,7 +870,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 2)
             }
-            manAnswersPop5[3] -> {
+            manAnswersO5[3] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 4)
@@ -883,7 +883,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.FIELDING, 10)
                 plusAbility(Constants.CATCHING, 8)
             }
-            manAnswersPop5[4] -> {
+            manAnswersO5[4] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -898,7 +898,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CATCHING, -5)
                 plusSpecial(Constants.CHANCE, 0.02)
             }
-            manAnswersPop5[5] -> {
+            manAnswersO5[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -914,7 +914,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CATCHING, -3)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
-            manAnswersPop5[6] -> {
+            manAnswersO5[6] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -928,9 +928,9 @@ class CalcMaleFielderAbility(
             }
         }
 
-        val manAnswersPop4 = context.resources.getStringArray(R.array.m_array_q4_o)
+        val manAnswersO4 = context.resources.getStringArray(R.array.m_array_q4_o)
         when (answersOther[3]) {
-            manAnswersPop4[0] -> {
+            manAnswersO4[0] -> {
                 contact = (contact * 1.2).toInt()
                 power = (power * 1.2).toInt()
                 speed = (speed * 1.2).toInt()
@@ -938,7 +938,7 @@ class CalcMaleFielderAbility(
                 fielding = (fielding * 1.2).toInt()
                 catching = (catching * 1.2).toInt()
             }
-            manAnswersPop4[1] -> {
+            manAnswersO4[1] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -946,9 +946,9 @@ class CalcMaleFielderAbility(
                 fielding = (fielding * 1.1).toInt()
                 catching = (catching * 1.1).toInt()
             }
-            manAnswersPop4[2] -> {
+            manAnswersO4[2] -> {
             }
-            manAnswersPop4[3] -> {
+            manAnswersO4[3] -> {
                 contact = (contact * 1.1).toInt()
                 power = (power * 1.1).toInt()
                 speed = (speed * 1.1).toInt()
@@ -956,7 +956,7 @@ class CalcMaleFielderAbility(
                 fielding = (fielding * 1.1).toInt()
                 catching = (catching * 1.1).toInt()
             }
-            manAnswersPop4[4] -> {
+            manAnswersO4[4] -> {
                 contact = (contact * 0.9).toInt()
                 power = (power * 0.9).toInt()
                 speed = (speed * 0.9).toInt()
