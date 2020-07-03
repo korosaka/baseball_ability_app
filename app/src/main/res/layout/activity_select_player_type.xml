@@ -84,14 +84,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:checked="true"
-                    android:text="男性"></RadioButton>
+                    android:text="@string/male"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_w"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="女性"></RadioButton>
+                    android:text="@string/female"></RadioButton>
             </RadioGroup>
 
 
@@ -115,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onClickSelectPitcher"
-                android:text="@string/picher_making" />
+                android:text="@string/pitcher_making" />
 
 
         </LinearLayout>

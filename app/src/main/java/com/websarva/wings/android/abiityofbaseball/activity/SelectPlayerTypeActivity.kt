@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.R
 import kotlinx.android.synthetic.main.activity_select_player_type.*
 
 class SelectPlayerTypeActivity : BaseBannerActivity() {
@@ -35,7 +37,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         if (playerName.isNotEmpty()) {
             makeIntent(playerName, Constants.TYPE_FIELDER)
         } else {
-            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, resources.getString(R.string.input_name), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -48,7 +50,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         if (playerName.isNotEmpty()) {
             makeIntent(playerName, Constants.TYPE_PITCHER)
         } else {
-            Toast.makeText(applicationContext, Constants.PLEASE_INPUT_NAME, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, resources.getString(R.string.input_name), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -58,15 +60,11 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
      */
     private fun makeIntent(name: String, type: String) {
 
-        val intent = Intent(this, PlayerMakingActivity::class.java)
+        val intent = Intent(this, AnswerQuestionsActivity::class.java)
 
-        val radioGroup = sex_radio
-        val id = radioGroup.checkedRadioButtonId
-
-        // TODO Refactor
-        when (id) {
-            R.id.radio_m -> intent.putExtra(Constants.SEX_ID, 0)
-            R.id.radio_w -> intent.putExtra(Constants.SEX_ID, 1)
+        when (sex_radio.checkedRadioButtonId) {
+            R.id.radio_m -> intent.putExtra(Constants.SEX_ID, Constants.ID_MAN)
+            R.id.radio_w -> intent.putExtra(Constants.SEX_ID, Constants.ID_WOMAN)
         }
 
         intent.putExtra(Constants.PLAYER_NAME, name)
@@ -89,7 +87,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
             // フォーカス外れる→キーボード非表示
             else {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0)
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
             }
         }
     }

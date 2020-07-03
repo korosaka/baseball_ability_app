@@ -5,7 +5,7 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="①異性からの人気"
+            android:text="@string/other_question1"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -33,12 +33,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q1_o" />
+                android:entries="@array/m_array_q1_o" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="②同性からの人気"
+            android:text="@string/other_question2"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -66,11 +66,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q2_o" />
+                android:entries="@array/m_array_q2_o" />
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="③勝負強さ"
+            android:text="@string/other_question3"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -98,12 +98,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q3_o" />
+                android:entries="@array/m_array_q3_o" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -116,14 +116,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="④"
+            android:text="@string/other_question4_1"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="あなたからの好感度"
+            android:text="@string/other_question4_2"
             android:textSize="19sp"
             android:textStyle="bold" />
 
@@ -138,12 +138,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q4_o" />
+                android:entries="@array/m_array_q4_o" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
@@ -156,7 +156,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⑤その他特徴"
+            android:text="@string/other_question5"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -171,11 +171,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/array_q5_o" />
+                android:entries="@array/m_array_q5_o" />
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />
