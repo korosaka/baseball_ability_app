@@ -35,36 +35,36 @@ class FielderSalaryFragment : SalaryParentFragment() {
         val avePoint = when (ave) {
             in 0..199 -> ave
             in 200..224 -> ave * 2
-            in 225..249 -> ave * 4
-            in 250..274 -> ave * 8
-            in 275..299 -> ave * 15
-            in 300..332 -> ave * 25
-            in 333..349 -> ave * 35
-            in 350..399 -> ave * 45
-            else -> ave * 50
+            in 225..249 -> ave * 5
+            in 250..274 -> ave * 10
+            in 275..299 -> ave * 20
+            in 300..332 -> ave * 40
+            in 333..349 -> ave * 45
+            in 350..399 -> ave * 50
+            else -> ave * 60
         }
 
         val hrPoint = when (hr) {
             in 0..9 -> hr * 70
-            in 10..14 -> hr * 130
-            in 15..19 -> hr * 160
-            in 20..24 -> hr * 220
-            in 25..29 -> hr * 250
-            in 30..39 -> hr * 360
-            in 40..49 -> hr * 450
-            in 50..54 -> hr * 500
-            in 55..59 -> hr * 550
-            else -> hr * 600
+            in 10..14 -> hr * 150
+            in 15..19 -> hr * 180
+            in 20..24 -> hr * 250
+            in 25..29 -> hr * 360
+            in 30..39 -> hr * 450
+            in 40..49 -> hr * 500
+            in 50..54 -> hr * 550
+            in 55..59 -> hr * 600
+            else -> hr * 700
         }
         val rbiPoint = when (rbi) {
             in 0..9 -> rbi * 10
-            in 10..19 -> rbi * 15
-            in 20..39 -> rbi * 20
-            in 40..59 -> rbi * 25
-            in 60..79 -> rbi * 30
-            in 80..99 -> rbi * 35
-            in 100..129 -> rbi * 50
-            else -> rbi * 60
+            in 10..19 -> rbi * 20
+            in 20..39 -> rbi * 25
+            in 40..59 -> rbi * 30
+            in 60..79 -> rbi * 35
+            in 80..99 -> rbi * 45
+            in 100..129 -> rbi * 55
+            else -> rbi * 65
         }
         val sbPoint = when (sb) {
             in 0..3 -> sb * 10
