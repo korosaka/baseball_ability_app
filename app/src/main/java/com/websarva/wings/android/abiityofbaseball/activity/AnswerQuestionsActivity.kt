@@ -40,12 +40,11 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_player_making)
         super.onCreate(savedInstanceState)
 
+        assignInfo()
         addFragments()
-
-        takeInfo()
     }
 
-    private fun takeInfo() {
+    private fun assignInfo() {
         playerName = intent.getStringExtra(Constants.PLAYER_NAME).toString()
         playerType = intent.getStringExtra(Constants.PLAYER_TYPE).toString()
         sex_id = intent.getIntExtra(Constants.SEX_ID, Constants.ID_ERROR)
@@ -150,24 +149,13 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.confirm_input))
         builder.setMessage(resources.getString(R.string.ask_complete))
-        // TODO
-        builder.setPositiveButton(resources.getString(R.string.done)) { dialog, which ->
+        // _ means argument which is never used
+        builder.setPositiveButton(resources.getString(R.string.done)) { _, _ ->
             assignAnswers()
             when (playerType) {
-                Constants.TYPE_FIELDER -> {
-                    when (sex_id) {
-                        Constants.ID_MAN -> makeMaleFielder()
-                        Constants.ID_WOMAN -> makeFemaleFielder()
-                    }
-                }
-                Constants.TYPE_PITCHER -> {
-                    when (sex_id) {
-                        Constants.ID_MAN -> makeMalePitcher()
-                        Constants.ID_WOMAN -> makeFemalePitcher()
-                    }
-                }
+                Constants.TYPE_FIELDER -> makeFielder()
+                Constants.TYPE_PITCHER -> makePitcher()
             }
-
             finish()
         }
         builder.setNegativeButton(resources.getString(R.string.no), null)
@@ -193,6 +181,20 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
             spinner_q3_o.selectedItem as String,
             spinner_q4_o.selectedItem as String,
             spinner_q5_o.selectedItem as String)
+    }
+
+    private fun makeFielder() {
+        when (sex_id) {
+            Constants.ID_MAN -> makeMaleFielder()
+            Constants.ID_WOMAN -> makeFemaleFielder()
+        }
+    }
+
+    private fun makePitcher() {
+        when (sex_id) {
+            Constants.ID_MAN -> makeMalePitcher()
+            Constants.ID_WOMAN -> makeFemalePitcher()
+        }
     }
 
     private fun makeMaleFielder() {
@@ -273,7 +275,8 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.go_back))
         builder.setMessage(resources.getString(R.string.ask_go_back))
-        builder.setPositiveButton(resources.getString(R.string.yes)) { dialog, which ->
+        // _ means argument which is never used
+        builder.setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
             val intent = Intent(this, SelectPlayerTypeActivity::class.java)
             startActivity(intent)
             finish()
