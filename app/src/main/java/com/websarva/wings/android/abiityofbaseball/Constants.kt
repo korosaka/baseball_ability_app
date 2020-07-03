@@ -18,6 +18,7 @@ class Constants {
         const val KIND_CHANGE = "kindsOfChangeBall_status"
         const val AMOUNT_CHANGE = "amountOfChangeBall_status"
         const val PRIORITY_CHANGE = "priorityOfChangeBall"
+        const val CHANGE_BALLS = "change_balls"
 
         const val POSITION = "position"
         const val CATCHER = "catcher"

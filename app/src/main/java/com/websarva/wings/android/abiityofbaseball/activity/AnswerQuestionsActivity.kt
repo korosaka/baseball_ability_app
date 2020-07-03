@@ -262,12 +262,13 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
-        intent.putExtra(Constants.BALL_SPEED, calcAbility.ballSpeed)
+        intent.putExtra(Constants.BALL_SPEED, calcAbility.maxBallSpeed)
         intent.putExtra(Constants.CONTROL, calcAbility.control)
         intent.putExtra(Constants.STAMINA, calcAbility.stamina)
-        intent.putExtra(Constants.KIND_CHANGE, calcAbility.kindsOfChangeBall)
-        intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.amountOfChange)
-        intent.putExtra(Constants.PRIORITY_CHANGE, calcAbility.priorityOfChange)
+        intent.putExtra(Constants.KIND_CHANGE, calcAbility.numberOfChange)
+        intent.putExtra(Constants.AMOUNT_CHANGE, calcAbility.totalAmountOfChange)
+        intent.putExtra(Constants.CHANGE_BALLS, calcAbility.changeBalls)
+        intent.putExtra(Constants.CHANCE, calcAbility.chance)
 
         startActivity(intent)
     }

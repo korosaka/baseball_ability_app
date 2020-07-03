@@ -34,7 +34,7 @@ class PitcherAbilityFragment : AbilityParentFragment() {
 
     private fun displayAbility(player: PlayerPitcherClass) {
         displayPitcherType(player)
-        ball_speed_display.text = player.maxSpeed.toString()
+        ball_speed_display.text = player.maxBallSpeed.toString()
         control_display.text = player.controlLank
         stamina_display.text = player.staminaLank
         changeLankColor(control_display)

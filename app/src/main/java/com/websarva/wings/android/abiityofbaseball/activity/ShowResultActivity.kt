@@ -8,6 +8,7 @@ import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerIn
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
 import kotlinx.android.synthetic.main.activity_show_result.*
+import java.util.ArrayList
 
 class ShowResultActivity : BaseBannerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,9 +62,19 @@ class ShowResultActivity : BaseBannerActivity() {
                 intent.getIntExtra(Constants.STAMINA, 0),
                 intent.getIntExtra(Constants.KIND_CHANGE, 0),
                 intent.getIntExtra(Constants.AMOUNT_CHANGE, 0),
-                intent.getIntegerArrayListExtra(Constants.PRIORITY_CHANGE)!!,
+                obtainChangeBalls(),
                 intent.getDoubleExtra(Constants.CHANCE, 1.0)
         )
+    }
+
+    private fun obtainChangeBalls(): ArrayList<Int> {
+        val changeBalls = intent.getIntegerArrayListExtra(Constants.CHANGE_BALLS)
+        val emptyChange = arrayListOf(0, 0, 0, 0, 0)
+
+        return when {
+            changeBalls != null -> changeBalls
+            else -> emptyChange
+        }
     }
 
     fun onClickFinish(view: View) {

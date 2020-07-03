@@ -78,8 +78,8 @@ class PitcherRecordFragment : Fragment() {
 
     private fun addedSpeedToMin(pitcher: PlayerPitcherClass): Int {
         return when (pitcher.pitcherType) {
-            Constants.STARTER -> pitcher.maxSpeed - starterLossSpeed - minSpeed
-            else -> pitcher.maxSpeed - minSpeed
+            Constants.STARTER -> pitcher.maxBallSpeed - starterLossSpeed - minSpeed
+            else -> pitcher.maxBallSpeed - minSpeed
         }
     }
 
@@ -142,8 +142,8 @@ class PitcherRecordFragment : Fragment() {
         val kindOfChangeCoefficient = 0.1
         val assumedMaxChangePointForCalc = assumedMaxChangeAmount * (1.0 + assumedMaxKindOfChange * kindOfChangeCoefficient)
         val changeCoefficient = variableRangeEach / assumedMaxChangePointForCalc
-        val kindOfChangeWeight = 1.0 + pitcher.kindChangeAbility * kindOfChangeCoefficient
-        val changePointForCalc = pitcher.amountChangeAbility * kindOfChangeWeight
+        val kindOfChangeWeight = 1.0 + pitcher.numberOfChange * kindOfChangeCoefficient
+        val changePointForCalc = pitcher.totalAmountOfChange * kindOfChangeWeight
         battingAveAgainstElements[changeBallIndex] -= changePointForCalc * changeCoefficient
 
         // calculate from control
@@ -195,7 +195,7 @@ class PitcherRecordFragment : Fragment() {
 
         // calculate from change ball
         val assignmentOfChange = variableRange * weightOfChangeAmount
-        elementsOfKRate[indexOfChange] = pitcher.amountChangeAbility * (assignmentOfChange / assumedMaxChangeAmount)
+        elementsOfKRate[indexOfChange] = pitcher.totalAmountOfChange * (assignmentOfChange / assumedMaxChangeAmount)
 
         // calculate from folk
         val maxFolkAmount = 7

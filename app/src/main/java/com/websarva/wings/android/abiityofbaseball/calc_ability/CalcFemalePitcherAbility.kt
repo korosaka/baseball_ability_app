@@ -711,37 +711,37 @@ class CalcFemalePitcherAbility(
         val womanAnswersO4 = context.resources.getStringArray(R.array.w_array_q4_o)
         when (answersOther[3]) {
             womanAnswersO4[0] -> {
-                ballSpeed = (ballSpeed * 1.15).toInt()
+                ballSpeedPoint = (ballSpeedPoint * 1.15).toInt()
                 control = (control * 1.15).toInt()
                 stamina = (stamina * 1.15).toInt()
-                kindsOfChangeBall = (kindsOfChangeBall * 1.3).toInt()
-                amountOfChange = (amountOfChange * 1.3).toInt()
+                numberOfChangePoint = (numberOfChangePoint * 1.3).toInt()
+                amountOfChangePoint = (amountOfChangePoint * 1.3).toInt()
             }
             womanAnswersO4[1] -> {
-                ballSpeed = (ballSpeed * 1.1).toInt()
+                ballSpeedPoint = (ballSpeedPoint * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
-                kindsOfChangeBall = (kindsOfChangeBall * 1.15).toInt()
-                amountOfChange = (amountOfChange * 1.15).toInt()
+                numberOfChangePoint = (numberOfChangePoint * 1.15).toInt()
+                amountOfChangePoint = (amountOfChangePoint * 1.15).toInt()
             }
             womanAnswersO4[2] -> {
             }
             womanAnswersO4[3] -> {
-                ballSpeed = (ballSpeed * 1.1).toInt()
+                ballSpeedPoint = (ballSpeedPoint * 1.1).toInt()
                 control = (control * 1.1).toInt()
                 stamina = (stamina * 1.1).toInt()
-                kindsOfChangeBall = (kindsOfChangeBall * 1.1).toInt()
-                amountOfChange = (amountOfChange * 1.1).toInt()
+                numberOfChangePoint = (numberOfChangePoint * 1.1).toInt()
+                amountOfChangePoint = (amountOfChangePoint * 1.1).toInt()
             }
             womanAnswersO4[4] -> {
                 control = (control * 0.9).toInt()
                 stamina = (stamina * 0.9).toInt()
-                kindsOfChangeBall = (kindsOfChangeBall * 0.8).toInt()
-                amountOfChange = (amountOfChange * 0.8).toInt()
+                numberOfChangePoint = (numberOfChangePoint * 0.8).toInt()
+                amountOfChangePoint = (amountOfChangePoint * 0.8).toInt()
             }
         }
 
-        setPitcherType()
+        assignAbilities()
 
     }
 
