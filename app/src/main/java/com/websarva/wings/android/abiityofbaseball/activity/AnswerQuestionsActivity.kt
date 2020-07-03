@@ -15,12 +15,13 @@ import kotlinx.android.synthetic.main.activity_player_making.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
+import kotlin.properties.Delegates
 
 class AnswerQuestionsActivity : BaseBannerActivity() {
 
     // for using on child fragment
     companion object {
-        var sex_id = Constants.ID_ERROR
+        var sex_id by Delegates.notNull<Int>()
         lateinit var playerType: String
     }
 
