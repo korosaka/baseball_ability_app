@@ -76,7 +76,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     fun onClickNext(view: View) {
         when (currentName) {
             Constants.APPEARANCE -> changeToPerson()
-            Constants.PERSONALITY -> changeToOTHER()
+            Constants.PERSONALITY -> changeToOther()
             Constants.OTHER -> makePlayer()
         }
     }
@@ -102,7 +102,7 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     /**
      * -> 人気
      */
-    private fun changeToOTHER() {
+    private fun changeToOther() {
         showHideFragment(Constants.OTHER)
         currentName = Constants.OTHER
         bt_next.text = resources.getString(R.string.go_result)
