@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.fragment
+package com.websarva.wings.android.abiityofbaseball.fragment.player_info
 
 import android.graphics.Color
 import android.widget.TextView

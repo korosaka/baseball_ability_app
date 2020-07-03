@@ -1,5 +1,6 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.player_class
 
+import com.websarva.wings.android.abiityofbaseball.Constants
 import java.io.*
 
 class PlayerFielderClass (

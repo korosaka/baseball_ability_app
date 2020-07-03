@@ -1,4 +1,6 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.calc_ability
+
+import com.websarva.wings.android.abiityofbaseball.Constants
 
 
 open class CalcFielderAbility {

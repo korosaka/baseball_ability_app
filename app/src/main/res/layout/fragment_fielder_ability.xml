@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/abilities_box_background"
     android:orientation="vertical"
-    tools:context=".fragment.FielderAbilityFragment">
+    tools:context=".fragment.player_info.FielderAbilityFragment">
 
 
     <LinearLayout

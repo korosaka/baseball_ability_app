@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.fragment
+package com.websarva.wings.android.abiityofbaseball.fragment.player_info
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.websarva.wings.android.abiityofbaseball.Constants
-import com.websarva.wings.android.abiityofbaseball.PlayerFielderClass
+import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.R
 import kotlinx.android.synthetic.main.fragment_fielder_ability.*
 

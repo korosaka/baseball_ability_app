@@ -7,7 +7,7 @@
     android:baselineAligned="false"
     android:orientation="horizontal"
     android:padding="3dp"
-    tools:context=".fragment.FielderRecordFragment">
+    tools:context=".fragment.player_info.FielderRecordFragment">
 
     <LinearLayout
         android:layout_width="0dp"

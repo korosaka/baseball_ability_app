@@ -8,7 +8,7 @@
         android:background="@drawable/abilities_box_background"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        tools:context=".fragment.PitcherAbilityFragment"
+        tools:context=".fragment.player_info.PitcherAbilityFragment"
         android:baselineAligned="false">
 
         <LinearLayout

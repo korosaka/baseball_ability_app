@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/batter_record_background"
     android:orientation="vertical"
-    tools:context=".fragment.SalaryParentFragment">
+    tools:context=".fragment.player_info.SalaryParentFragment">
 
     <TextView
         android:layout_width="match_parent"

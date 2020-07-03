@@ -1,6 +1,8 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.calc_ability
 
 import android.content.Context
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.R
 
 class CalcMalePitcherAbility(
         private val context: Context,

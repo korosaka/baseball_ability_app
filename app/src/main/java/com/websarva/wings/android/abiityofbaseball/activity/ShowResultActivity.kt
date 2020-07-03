@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.websarva.wings.android.abiityofbaseball.*
-import com.websarva.wings.android.abiityofbaseball.fragment.PlayerInfoFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
+import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
+import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
 import kotlinx.android.synthetic.main.activity_show_result.*
 
 class ShowResultActivity : BaseBannerActivity() {

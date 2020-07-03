@@ -6,7 +6,7 @@
     android:background="@drawable/abilities_box_background"
     android:orientation="vertical"
     android:padding="3dp"
-    tools:context=".fragment.PitcherRecordFragment">
+    tools:context=".fragment.player_info.PitcherRecordFragment">
 
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball.fragment
+package com.websarva.wings.android.abiityofbaseball.fragment.question
 
 import android.R
 import android.os.Bundle
