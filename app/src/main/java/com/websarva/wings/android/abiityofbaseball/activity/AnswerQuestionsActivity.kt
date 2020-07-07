@@ -166,23 +166,26 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
 
     private fun assignAnswers() {
         answersAppearance = arrayOf(
-            spinner_q1_a.selectedItem as String,
-            spinner_q2_a.selectedItem as String,
-            spinner_q3_a.selectedItem as String,
-            spinner_q4_a.selectedItem as String,
-            spinner_q5_a.selectedItem as String)
+                spinner_q1_a.selectedItem as String,
+                spinner_q2_a.selectedItem as String,
+                spinner_q3_a.selectedItem as String,
+                spinner_q4_a.selectedItem as String,
+                spinner_q5_a.selectedItem as String,
+                spinner_q6_a.selectedItem as String)
         answersPersonality = arrayOf(
-            spinner_q1_p.selectedItem as String,
-            spinner_q2_p.selectedItem as String,
-            spinner_q3_p.selectedItem as String,
-            spinner_q4_p.selectedItem as String,
-            spinner_q5_p.selectedItem as String)
+                spinner_q1_p.selectedItem as String,
+                spinner_q2_p.selectedItem as String,
+                spinner_q3_p.selectedItem as String,
+                spinner_q4_p.selectedItem as String,
+                spinner_q5_p.selectedItem as String,
+                spinner_q6_p.selectedItem as String)
         answersOther = arrayOf(
-            spinner_q1_o.selectedItem as String,
-            spinner_q2_o.selectedItem as String,
-            spinner_q3_o.selectedItem as String,
-            spinner_q4_o.selectedItem as String,
-            spinner_q5_o.selectedItem as String)
+                spinner_q1_o.selectedItem as String,
+                spinner_q2_o.selectedItem as String,
+                spinner_q3_o.selectedItem as String,
+                spinner_q4_o.selectedItem as String,
+                spinner_q5_o.selectedItem as String,
+                spinner_q6_o.selectedItem as String)
     }
 
     private fun makeFielder() {

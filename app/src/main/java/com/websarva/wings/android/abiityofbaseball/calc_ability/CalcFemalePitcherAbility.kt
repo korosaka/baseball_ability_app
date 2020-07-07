@@ -182,11 +182,19 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 8)
                 plusAbility(Constants.CLOSER, 5)
             }
+            womanAnswersA3[5] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.STARTER, -5)
+            }
         }
 
         val womanAnswersA4 = context.resources.getStringArray(R.array.w_array_q4_a)
         when (answersAppearance[3]) {
             womanAnswersA4[0] -> {
+            }
+            womanAnswersA4[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.STAMINA, 5)
@@ -196,7 +204,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
             }
-            womanAnswersA4[1] -> {
+            womanAnswersA4[2] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, 7)
                 plusAbility(Constants.STAMINA, 2)
@@ -206,7 +214,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.CLOSER, -4)
             }
-            womanAnswersA4[2] -> {
+            womanAnswersA4[3] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
@@ -214,7 +222,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 7)
                 plusAbility(Constants.CLOSER, 5)
             }
-            womanAnswersA4[3] -> {
+            womanAnswersA4[4] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.STAMINA, 15)
                 plusAbility(Constants.KIND_CHANGE, 4)
@@ -224,7 +232,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 3)
                 plusAbility(Constants.STARTER, 7)
             }
-            womanAnswersA4[4] -> {
+            womanAnswersA4[5] -> {
                 plusAbility(Constants.CONTROL, 7)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 3)
@@ -233,7 +241,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, 5)
             }
-            womanAnswersA4[5] -> {
+            womanAnswersA4[6] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, -2)
                 plusAbility(Constants.STAMINA, 3)
@@ -243,6 +251,26 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 7)
+            }
+            womanAnswersA4[7] -> {
+                plusAbility(Constants.BALL_SPEED, 6)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.SLIDER, 1)
+                plusAbility(Constants.CURB, 1)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.STARTER, 3)
+            }
+            womanAnswersA4[8] -> {
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.KIND_CHANGE, 2)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.CLOSER, -3)
             }
         }
 
@@ -258,6 +286,13 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 1)
             }
             womanAnswersA5[1] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 2)
+            }
+            womanAnswersA5[2] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 4)
@@ -268,7 +303,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 2)
             }
-            womanAnswersA5[2] -> {
+            womanAnswersA5[3] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 8)
@@ -278,7 +313,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.CLOSER, -6)
             }
-            womanAnswersA5[3] -> {
+            womanAnswersA5[4] -> {
                 plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.CONTROL, 1)
                 plusAbility(Constants.STAMINA, 2)
@@ -287,7 +322,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.MIDDLE, -6)
             }
-            womanAnswersA5[4] -> {
+            womanAnswersA5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 4)
@@ -296,10 +331,62 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.STARTER, -5)
             }
         }
+        val womanAnswersA6 = context.resources.getStringArray(R.array.w_array_q6_a)
+        when (answersAppearance[5]) {
+            womanAnswersA6[0] -> {
+            }
+            womanAnswersA6[1] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 5)
+                plusAbility(Constants.MIDDLE, -5)
+            }
+            womanAnswersA6[2] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 7)
+            }
+            womanAnswersA6[3] -> {
+                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.CLOSER, -3)
+            }
+            womanAnswersA6[4] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.CURB, 1)
+            }
+            womanAnswersA6[5] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, -5)
+                plusAbility(Constants.STAMINA, -5)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.SINKER, 1)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.MIDDLE, -3)
+            }
+            womanAnswersA6[6] -> {
+                plusAbility(Constants.BALL_SPEED, -3)
+                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.MIDDLE, 5)
+            }
+        }
 
         val womanAnswersP1 = context.resources.getStringArray(R.array.w_array_q1_p)
         when (answersPersonality[0]) {
             womanAnswersP1[0] -> {
+            }
+            womanAnswersP1[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.STAMINA, 7)
@@ -308,7 +395,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.CURB, 3)
             }
-            womanAnswersP1[1] -> {
+            womanAnswersP1[2] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, 7)
                 plusAbility(Constants.STAMINA, 4)
@@ -318,7 +405,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.CLOSER, -5)
             }
-            womanAnswersP1[2] -> {
+            womanAnswersP1[3] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 2)
                 plusAbility(Constants.STAMINA, 6)
@@ -327,31 +414,35 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.SHOOT, 6)
             }
-            womanAnswersP1[3] -> {
-                plusAbility(Constants.BALL_SPEED, 6)
-                plusAbility(Constants.CONTROL, -3)
-                plusAbility(Constants.STAMINA, 2)
-                plusAbility(Constants.KIND_CHANGE, 1)
-                plusAbility(Constants.AMOUNT_CHANGE, 1)
-                plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.SHOOT, 4)
-                plusAbility(Constants.CLOSER, 2)
-            }
             womanAnswersP1[4] -> {
-                plusSpecial(Constants.CHANCE, -0.05)
-                plusAbility(Constants.CONTROL, -7)
-                plusAbility(Constants.STAMINA, -3)
-                plusAbility(Constants.AMOUNT_CHANGE, 5)
-                plusAbility(Constants.FOLK, 3)
-                plusAbility(Constants.SHOOT, 3)
-                plusAbility(Constants.MIDDLE, 7)
+                plusAbility(Constants.BALL_SPEED, 2)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 1)
+                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.MIDDLE, 2)
             }
-
+            womanAnswersP1[5] -> {
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SINKER, 5)
+            }
+            womanAnswersP1[6] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.KIND_CHANGE, -3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 7)
+                plusAbility(Constants.CLOSER, 5)
+            }
         }
 
         val womanAnswersP2 = context.resources.getStringArray(R.array.w_array_q2_p)
         when (answersPersonality[1]) {
             womanAnswersP2[0] -> {
+            }
+            womanAnswersP2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.STAMINA, 6)
@@ -361,14 +452,14 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
             }
-            womanAnswersP2[1] -> {
+            womanAnswersP2[2] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.STAMINA, 16)
                 plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.STARTER, 9)
             }
-            womanAnswersP2[2] -> {
+            womanAnswersP2[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.SLIDER, 1)
@@ -376,29 +467,48 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 12)
                 plusAbility(Constants.CLOSER, 5)
             }
-            womanAnswersP2[3] -> {
+            womanAnswersP2[4] -> {
                 plusAbility(Constants.MIDDLE, 8)
             }
-            womanAnswersP2[4] -> {
+            womanAnswersP2[5] -> {
+                plusSpecial(Constants.CHANCE, 0.02)
+                plusAbility(Constants.BALL_SPEED, 6)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.CLOSER, 6)
+            }
+            womanAnswersP2[6] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.FOLK, 3)
             }
-            womanAnswersP2[5] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.STAMINA, 9)
-                plusAbility(Constants.KIND_CHANGE, 1)
-                plusAbility(Constants.AMOUNT_CHANGE, 2)
-                plusAbility(Constants.SLIDER, 2)
-                plusAbility(Constants.SHOOT, 4)
-                plusAbility(Constants.STARTER, 3)
+            womanAnswersP2[7] -> {
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.STAMINA, -3)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.CURB, 2)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.SINKER, 3)
+            }
+            womanAnswersP2[8] -> {
+                plusSpecial(Constants.CHANCE, 0.04)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.STAMINA, 6)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.STARTER, 5)
             }
         }
 
         val womanAnswersP3 = context.resources.getStringArray(R.array.w_array_q3_p)
         when (answersPersonality[2]) {
             womanAnswersP3[0] -> {
+            }
+            womanAnswersP3[1] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 18)
@@ -409,7 +519,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 9)
             }
-            womanAnswersP3[1] -> {
+            womanAnswersP3[2] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, 7)
                 plusAbility(Constants.STAMINA, 6)
@@ -419,7 +529,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, -7)
             }
-            womanAnswersP3[2] -> {
+            womanAnswersP3[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 4)
@@ -430,14 +540,14 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.CLOSER, -4)
             }
-            womanAnswersP3[3] -> {
+            womanAnswersP3[4] -> {
                 plusSpecial(Constants.CHANCE, -0.02)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.KIND_CHANGE, -2)
                 plusAbility(Constants.SHOOT, 7)
             }
-            womanAnswersP3[4] -> {
+            womanAnswersP3[5] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.KIND_CHANGE, 10)
@@ -446,7 +556,16 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.MIDDLE, 3)
             }
-
+            womanAnswersP3[6] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.STAMINA, 9)
+                plusAbility(Constants.KIND_CHANGE, 1)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.STARTER, 3)
+            }
         }
 
         val womanAnswersP4 = context.resources.getStringArray(R.array.w_array_q4_p)
@@ -469,17 +588,27 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CLOSER, -5)
             }
             womanAnswersP4[2] -> {
-                plusSpecial(Constants.CHANCE, 0.03)
-                plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 5)
-                plusAbility(Constants.STAMINA, 3)
-                plusAbility(Constants.KIND_CHANGE, 13)
-                plusAbility(Constants.AMOUNT_CHANGE, 7)
-                plusAbility(Constants.SLIDER, 3)
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
+                plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.SINKER, 2)
             }
             womanAnswersP4[3] -> {
+                plusSpecial(Constants.CHANCE, 0.03)
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.KIND_CHANGE, 15)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SINKER, 2)
+            }
+            womanAnswersP4[4] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -5)
@@ -487,7 +616,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.KIND_CHANGE, -5)
                 plusAbility(Constants.AMOUNT_CHANGE, -4)
             }
-            womanAnswersP4[4] -> {
+            womanAnswersP4[5] -> {
                 plusSpecial(Constants.CHANCE, -0.05)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, -3)
@@ -530,10 +659,10 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.STARTER, 3)
             }
             womanAnswersP5[4] -> {
-                plusSpecial(Constants.CHANCE, -0.03)
-                plusAbility(Constants.CONTROL, -2)
-                plusAbility(Constants.KIND_CHANGE, -3)
-                plusAbility(Constants.AMOUNT_CHANGE, -3)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
             }
             womanAnswersP5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
@@ -542,6 +671,73 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.STAMINA, 7)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
+            }
+            womanAnswersP5[6] -> {
+                plusSpecial(Constants.CHANCE, -0.03)
+                plusAbility(Constants.CONTROL, -2)
+                plusAbility(Constants.KIND_CHANGE, -3)
+                plusAbility(Constants.AMOUNT_CHANGE, -3)
+            }
+        }
+        val womanAnswersP6 = context.resources.getStringArray(R.array.w_array_q6_p)
+        when (answersPersonality[5]) {
+            womanAnswersP6[0] -> {
+            }
+            womanAnswersP6[1] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STARTER, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 1)
+            }
+            womanAnswersP6[2] -> {
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.STAMINA, -4)
+                plusAbility(Constants.KIND_CHANGE, 4)
+                plusAbility(Constants.CURB, 1)
+                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SHOOT, 4)
+            }
+            womanAnswersP6[3] -> {
+                plusAbility(Constants.CONTROL, -5)
+                plusAbility(Constants.STAMINA, -2)
+                plusAbility(Constants.AMOUNT_CHANGE, 4)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SINKER, 2)
+            }
+            womanAnswersP6[4] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 4)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.CLOSER, 4)
+            }
+            womanAnswersP6[5] -> {
+                plusSpecial(Constants.CHANCE, 0.03)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SINKER, 4)
+            }
+            womanAnswersP6[6] -> {
+                plusSpecial(Constants.CHANCE, -0.01)
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, -2)
+            }
+            womanAnswersP6[7] -> {
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 3)
+            }
+            womanAnswersP6[8] -> {
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, 6)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SHOOT, 3)
             }
         }
 
@@ -659,6 +855,13 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.STARTER, 6)
             }
             womanAnswersO5[2] -> {
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.KIND_CHANGE, 8)
+                plusAbility(Constants.AMOUNT_CHANGE, 12)
+                plusAbility(Constants.CURB, 7)
+                plusAbility(Constants.SINKER, 5)
+            }
+            womanAnswersO5[3] -> {
                 plusSpecial(Constants.CHANCE, 0.03)
                 plusAbility(Constants.BALL_SPEED, 12)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
@@ -667,7 +870,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 15)
             }
-            womanAnswersO5[3] -> {
+            womanAnswersO5[4] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.STAMINA, -4)
@@ -678,7 +881,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -8)
             }
-            womanAnswersO5[4] -> {
+            womanAnswersO5[5] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, 11)
                 plusAbility(Constants.STAMINA, 11)
@@ -688,23 +891,75 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.STARTER, 6)
             }
-            womanAnswersO5[5] -> {
+            womanAnswersO5[6] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.STAMINA, -7)
+                plusAbility(Constants.STAMINA, -4)
+                plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -6)
+                plusAbility(Constants.CLOSER, 2)
             }
-            womanAnswersO5[6] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
-                plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.CONTROL, -5)
-                plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.SLIDER, 2)
+            womanAnswersO5[7] -> {
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.FOLK, 5)
+                plusAbility(Constants.SINKER, 3)
+            }
+        }
+
+        val womanAnswersO6 = context.resources.getStringArray(R.array.w_array_q6_o)
+        when (answersOther[5]) {
+            womanAnswersO6[0] -> {
+            }
+            womanAnswersO6[1] -> {
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.KIND_CHANGE, 2)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.CLOSER, -3)
+            }
+            womanAnswersO6[2] -> {
+                plusSpecial(Constants.CHANCE, 0.03)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+            }
+            womanAnswersO6[3] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.KIND_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
-                plusAbility(Constants.CLOSER, 5)
+                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.MIDDLE, -5)
+            }
+            womanAnswersO6[4] -> {
+                plusAbility(Constants.CONTROL, 4)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.MIDDLE, 5)
+            }
+            womanAnswersO6[5] -> {
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 12)
+            }
+            womanAnswersO6[6] -> {
+                plusSpecial(Constants.CHANCE, -0.03)
+                plusAbility(Constants.BALL_SPEED, 2)
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.STAMINA, -5)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+            }
+            womanAnswersO6[7] -> {
+                plusSpecial(Constants.CHANCE, 0.05)
             }
         }
 

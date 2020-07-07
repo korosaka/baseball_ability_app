@@ -154,8 +154,8 @@
         <item>スリム</item>
         <item>ぽっちゃり</item>
         <item>ムッチリ</item>
-        <item>ガリマッチョ</item>
-        <item>普通マッチョ</item>
+        <item>細マッチョ</item>
+        <item>マッチョ</item>
         <item>ゴリマッチョ</item>
     </string-array>
 
@@ -416,7 +416,7 @@
         <item>まぁまぁ</item>
         <item>ふつう</item>
         <item>興味深い</item>
-        <item>アンチ</item>
+        <item>嫌い</item>
     </string-array>
 
     <string-array name="w_array_q4_o">
@@ -424,7 +424,7 @@
         <item>まぁまぁ</item>
         <item>ふつう</item>
         <item>興味深い</item>
-        <item>アンチ</item>
+        <item>嫌い</item>
     </string-array>
     <string-array name="m_array_q5_o">
         <item>特になし</item>
@@ -454,7 +454,7 @@
         <item>太陽系男子</item>
         <item>世話焼き</item>
         <item>SNS投稿多め</item>
-        <item>存在感ある</item>
+        <item>持ってる男</item>
     </string-array>
     <string-array name="w_array_q6_o">
         <item>特になし</item>
@@ -464,7 +464,7 @@
         <item>お母さんタイプ</item>
         <item>愛嬌MAX</item>
         <item>SNS投稿多め</item>
-        <item>存在感ある</item>
+        <item>持ってる女</item>
     </string-array>
 
 

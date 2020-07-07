@@ -200,7 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:entries="@array/m_array_q5_p" />
+                android:entries="@array/m_array_q6_p" />
         </LinearLayout>
 
     </LinearLayout>

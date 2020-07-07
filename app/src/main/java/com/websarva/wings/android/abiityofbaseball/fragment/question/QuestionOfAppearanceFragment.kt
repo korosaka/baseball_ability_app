@@ -21,6 +21,7 @@ class QuestionOfAppearanceFragment : QuestionParentFragment() {
         changeAdapter(spinner_q3_a, resources.getStringArray(R.array.w_array_q3_a))
         changeAdapter(spinner_q4_a, resources.getStringArray(R.array.w_array_q4_a))
         changeAdapter(spinner_q5_a, resources.getStringArray(R.array.w_array_q5_a))
+        changeAdapter(spinner_q6_a, resources.getStringArray(R.array.w_array_q6_a))
     }
 
     override fun setSpinner() {
@@ -29,6 +30,7 @@ class QuestionOfAppearanceFragment : QuestionParentFragment() {
         spinner_q3_a.setSelection(0)
         spinner_q4_a.setSelection(0)
         spinner_q5_a.setSelection(0)
+        spinner_q6_a.setSelection(0)
     }
 
 }
