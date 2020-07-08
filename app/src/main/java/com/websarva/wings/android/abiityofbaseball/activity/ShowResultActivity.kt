@@ -35,6 +35,10 @@ class ShowResultActivity : BaseBannerActivity() {
         loadInterstitialAd()
     }
 
+    /**
+     * reference
+     * https://developers.google.com/admob/android/interstitial
+     */
     private fun loadInterstitialAd() {
         makingPlayerCounter++
 
