@@ -3,6 +3,10 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import com.websarva.wings.android.abiityofbaseball.*
 import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
@@ -11,12 +15,46 @@ import kotlinx.android.synthetic.main.activity_show_result.*
 import java.util.ArrayList
 
 class ShowResultActivity : BaseBannerActivity() {
+
+    private lateinit var mInterstitialAd: InterstitialAd
+
+    companion object {
+        // Interstitial AD's ID
+        const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
+        const val AD_FREQUENCY = 2
+        var makingPlayerCounter = 0
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_show_result)
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
         displayPlayerInfo()
+        loadInterstitialAd()
+    }
+
+    /**
+     * reference
+     * https://developers.google.com/admob/android/interstitial
+     */
+    private fun loadInterstitialAd() {
+        makingPlayerCounter++
+
+        MobileAds.initialize(this) {}
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = AD_UNIT_ID
+        mInterstitialAd.adListener = object : AdListener() {
+            override fun onAdClicked() {
+                backToTop()
+            }
+            override fun onAdClosed() {
+                backToTop()
+            }
+        }
+
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
     }
 
     private fun displayPlayerInfo() {
@@ -78,7 +116,16 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     fun onClickFinish(view: View) {
+        if (checkStatement()) mInterstitialAd.show()
+        else backToTop()
+    }
 
+    private fun checkStatement(): Boolean {
+        return mInterstitialAd.isLoaded
+                && makingPlayerCounter % AD_FREQUENCY == 0
+    }
+
+    private fun backToTop() {
         val intent = Intent(this, TopActivity::class.java)
         startActivity(intent)
         finish()
