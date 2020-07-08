@@ -228,7 +228,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 3)
             }
             manAnswersA4[3] -> {
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 10)
                 plusAbility(Constants.STAMINA, 10)
@@ -338,7 +338,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CLOSER, 4)
             }
             manAnswersA5[5] -> {
-                plusSpecial(Constants.CHANCE, 0.04)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 4)
@@ -438,7 +438,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CLOSER, 2)
             }
             manAnswersP1[5] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 2)
                 plusAbility(Constants.STAMINA, 5)
@@ -491,7 +491,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 4)
             }
             manAnswersP2[5] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 3)
@@ -509,7 +509,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 3)
             }
             manAnswersP2[7] -> {
-                plusSpecial(Constants.CHANCE, 0.04)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 6)
@@ -543,7 +543,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 3)
             }
             manAnswersP3[3] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 4)
@@ -554,7 +554,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 1)
             }
             manAnswersP3[4] -> {
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.KIND_CHANGE, -1)
@@ -571,7 +571,6 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 1)
             }
             manAnswersP3[6] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.STAMINA, 10)
                 plusAbility(Constants.KIND_CHANGE, 2)
@@ -612,7 +611,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
             }
             manAnswersP4[3] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 3)
@@ -623,7 +622,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
             }
             manAnswersP4[4] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -5)
                 plusAbility(Constants.STAMINA, 5)
@@ -632,7 +631,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, -2)
             }
             manAnswersP4[5] -> {
-                plusSpecial(Constants.CHANCE, -0.5)
+                plusSpecial(Constants.CHANCE, -0.03)
                 plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.CONTROL, -3)
                 plusAbility(Constants.STAMINA, 10)
@@ -657,7 +656,6 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             manAnswersP5[2] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 5)
@@ -665,7 +663,6 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
             }
             manAnswersP5[3] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 5)
@@ -680,7 +677,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 7)
             }
             manAnswersP5[5] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 7)
@@ -688,7 +685,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
             }
             manAnswersP5[6] -> {
-                plusSpecial(Constants.CHANCE, -0.03)
+                plusSpecial(Constants.CHANCE, -0.02)
                 plusAbility(Constants.CONTROL, -2)
                 plusAbility(Constants.KIND_CHANGE, -3)
                 plusAbility(Constants.AMOUNT_CHANGE, -3)
@@ -731,13 +728,14 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CLOSER, 4)
             }
             manAnswersP6[5] -> {
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.STAMINA, 5)
             }
             manAnswersP6[6] -> {
-                plusSpecial(Constants.CHANCE, -0.01)
-                plusAbility(Constants.CONTROL, 6)
-                plusAbility(Constants.KIND_CHANGE, -2)
+                plusSpecial(Constants.CHANCE, -0.02)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.KIND_CHANGE, -3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
             manAnswersP6[7] -> {
                 plusAbility(Constants.CONTROL, 10)
@@ -774,7 +772,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 2)
             }
             manAnswersO1[2] -> {
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 11)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 6)
@@ -860,7 +858,7 @@ class CalcMalePitcherAbility(
             manAnswersO5[0] -> {
             }
             manAnswersO5[1] -> {
-                plusSpecial(Constants.CHANCE, 0.05)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 16)
                 plusAbility(Constants.KIND_CHANGE, 16)
@@ -881,6 +879,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 8)
             }
             manAnswersO5[3] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 12)
@@ -888,11 +887,14 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 5)
             }
             manAnswersO5[4] -> {
-                plusAbility(Constants.CONTROL, 17)
-                plusAbility(Constants.KIND_CHANGE, 12)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.CLOSER, -3)
             }
             manAnswersO5[5] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -5)
                 plusAbility(Constants.STAMINA, -4)
@@ -909,6 +911,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, 2)
             }
             manAnswersO5[7] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.AMOUNT_CHANGE, 10)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.FOLK, 5)
@@ -944,6 +947,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, -5)
             }
             manAnswersO6[4] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.STAMINA, 15)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
@@ -956,12 +960,11 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.KIND_CHANGE, 3)
             }
             manAnswersO6[6] -> {
-                plusSpecial(Constants.CHANCE, -0.03)
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, -7)
-                plusAbility(Constants.STAMINA, -5)
-                plusAbility(Constants.KIND_CHANGE, 7)
-                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.STAMINA, -2)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
             }
             manAnswersO6[7] -> {
                 plusSpecial(Constants.CHANCE, 0.05)

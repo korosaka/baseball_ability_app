@@ -226,8 +226,8 @@
     </string-array>
     <string-array name="m_array_q6_a">
         <item>特になし</item>
-        <item>目力強め</item>
-        <item>眉毛細め</item>
+        <item>目力</item>
+        <item>細眉</item>
         <item>色白</item>
         <item>色黒</item>
         <item>毛深い</item>
@@ -236,7 +236,7 @@
 
     <string-array name="w_array_q6_a">
         <item>特になし</item>
-        <item>目力強め</item>
+        <item>目力</item>
         <item>切れ目</item>
         <item>色白</item>
         <item>色黒</item>
@@ -310,7 +310,7 @@
         <item>ふつう</item>
         <item>お勉強得意</item>
         <item>地頭が良い</item>
-        <item>大天才</item>
+        <item>天才</item>
         <item>頭からっぽ</item>
         <item>脳筋</item>
     </string-array>
@@ -320,7 +320,7 @@
         <item>ふつう</item>
         <item>お勉強得意</item>
         <item>地頭が良い</item>
-        <item>大天才</item>
+        <item>天才</item>
         <item>頭からっぽ</item>
         <item>脳筋</item>
     </string-array>
@@ -330,7 +330,7 @@
         <item>冗談多め</item>
         <item>話が上手い</item>
         <item>ツッコミ上手</item>
-        <item>とにかくオモロイ</item>
+        <item>とにかく面白い</item>
         <item>つまらない</item>
     </string-array>
 
@@ -340,28 +340,28 @@
         <item>冗談多め</item>
         <item>話が上手い</item>
         <item>ツッコミ上手</item>
-        <item>とにかくオモロイ</item>
+        <item>とにかく面白い</item>
         <item>つまらない</item>
     </string-array>
     <string-array name="m_array_q6_p">
         <item>特になし</item>
         <item>努力家</item>
-        <item>裏表ある</item>
+        <item>裏表がある</item>
         <item>女好き</item>
         <item>チャレンジ精神</item>
         <item>鈍感</item>
-        <item>お人好し</item>
+        <item>注意力散漫</item>
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
     <string-array name="w_array_q6_p">
         <item>特になし</item>
         <item>努力家</item>
-        <item>裏表ある</item>
+        <item>裏表がある</item>
         <item>男好き</item>
         <item>チャレンジ精神</item>
         <item>不思議ちゃん</item>
-        <item>お人好し</item>
+        <item>ドジっ子</item>
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
@@ -431,7 +431,7 @@
         <item>カリスマ</item>
         <item>スポーツマン</item>
         <item>芸術(音楽)家</item>
-        <item>天才頭脳</item>
+        <item>しっかり者</item>
         <item>酒豪or愛煙家</item>
         <item>元ヤン</item>
         <item>ロマンチスト</item>
@@ -453,7 +453,7 @@
         <item>センスマン</item>
         <item>太陽系男子</item>
         <item>世話焼き</item>
-        <item>SNS投稿多め</item>
+        <item>ナルシスト</item>
         <item>持ってる男</item>
     </string-array>
     <string-array name="w_array_q6_o">
@@ -463,7 +463,7 @@
         <item>センスマン</item>
         <item>お母さんタイプ</item>
         <item>愛嬌MAX</item>
-        <item>SNS投稿多め</item>
+        <item>ナルシスト</item>
         <item>持ってる女</item>
     </string-array>
 

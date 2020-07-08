@@ -205,7 +205,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.ARM_STRENGTH, 1)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
         }
         val manAnswersA4 = context.resources.getStringArray(R.array.m_array_q4_a)
@@ -254,7 +254,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 6)
                 plusAbility(Constants.CATCHING, 5)
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusSpecial(Constants.CHANCE, -0.01)
             }
             manAnswersA4[4] -> {
                 plusAbility(Constants.CATCHER, -1)
@@ -394,7 +394,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.ARM_STRENGTH, 1)
-                plusSpecial(Constants.CHANCE, 0.04)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
         }
         val manAnswersA6 = context.resources.getStringArray(R.array.m_array_q6_a)
@@ -529,7 +529,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 3)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP1[6] -> {
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -607,7 +607,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP2[6] -> {
                 plusAbility(Constants.CATCHER, 5)
@@ -628,7 +628,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 3)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
         }
         val manAnswersP3 = context.resources.getStringArray(R.array.m_array_q3_p)
@@ -675,7 +675,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 4)
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, 2)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP3[4] -> {
                 plusAbility(Constants.CATCHER, 1)
@@ -689,7 +689,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.SPEED, -2)
                 plusAbility(Constants.ARM_STRENGTH, 5)
                 plusAbility(Constants.FIELDING, -1)
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusSpecial(Constants.CHANCE, -0.01)
             }
             manAnswersP3[5] -> {
                 plusAbility(Constants.CATCHER, 3)
@@ -717,7 +717,6 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 5)
                 plusAbility(Constants.ARM_STRENGTH, 4)
-                plusSpecial(Constants.CHANCE, 0.01)
             }
         }
         val manAnswersP4 = context.resources.getStringArray(R.array.m_array_q4_p)
@@ -757,7 +756,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 6)
                 plusAbility(Constants.CATCHING, 2)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP4[3] -> {
                 plusAbility(Constants.CATCHER, 3)
@@ -771,7 +770,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 8)
                 plusAbility(Constants.CATCHING, 4)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP4[4] -> {
                 plusAbility(Constants.CATCHER, -5)
@@ -786,7 +785,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 4)
                 plusAbility(Constants.FIELDING, -4)
                 plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP4[5] -> {
                 plusAbility(Constants.CATCHER, -5)
@@ -801,7 +800,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 4)
                 plusAbility(Constants.FIELDING, -3)
                 plusAbility(Constants.CATCHING, -3)
-                plusSpecial(Constants.CHANCE, -0.5)
+                plusSpecial(Constants.CHANCE, -0.03)
             }
         }
         val manAnswersP5 = context.resources.getStringArray(R.array.m_array_q5_p)
@@ -841,7 +840,6 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.SPEED, 3)
-                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP5[3] -> {
                 plusAbility(Constants.CATCHER, 4)
@@ -857,7 +855,6 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 3)
-                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP5[4] -> {
                 plusAbility(Constants.CATCHER, 4)
@@ -868,7 +865,6 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 5)
                 plusAbility(Constants.FIELDING, 6)
                 plusAbility(Constants.CATCHING, 4)
-                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP5[5] -> {
                 plusAbility(Constants.CATCHER, -3)
@@ -884,7 +880,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 3)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP5[6] -> {
                 plusAbility(Constants.THIRD_BASE, -3)
@@ -892,7 +888,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.POWER, -2)
                 plusAbility(Constants.FIELDING, -2)
                 plusAbility(Constants.CATCHING, -1)
-                plusSpecial(Constants.CHANCE, -0.03)
+                plusSpecial(Constants.CHANCE, -0.02)
             }
         }
         val manAnswersP6 = context.resources.getStringArray(R.array.m_array_q6_p)
@@ -932,7 +928,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 1)
                 plusAbility(Constants.ARM_STRENGTH, 1)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersP6[5] -> {
                 plusAbility(Constants.CATCHER, -5)
@@ -943,13 +939,15 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, -3)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
             manAnswersP6[6] -> {
-                plusAbility(Constants.FIRST_BASE, 5)
-                plusAbility(Constants.THIRD_BASE, 2)
-                plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.FIELDING, -2)
+                plusAbility(Constants.CATCHING, -5)
+                plusSpecial(Constants.CHANCE, -0.02)
             }
             manAnswersP6[7] -> {
                 plusAbility(Constants.CATCHER, 3)
@@ -1011,7 +1009,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 8)
                 plusAbility(Constants.ARM_STRENGTH, 7)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
             manAnswersO1[3] -> {
                 plusAbility(Constants.BALLISTIC, 1)
@@ -1110,7 +1108,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 4)
                 plusAbility(Constants.FIELDING, 4)
                 plusAbility(Constants.CATCHING, 2)
-                plusSpecial(Constants.CHANCE, 0.05)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
             manAnswersO5[2] -> {
                 plusAbility(Constants.CATCHER, 1)
@@ -1136,16 +1134,13 @@ class CalcMaleFielderAbility(
             }
             manAnswersO5[4] -> {
                 plusAbility(Constants.CATCHER, 5)
-                plusAbility(Constants.FIRST_BASE, -5)
-                plusAbility(Constants.SECOND_BASE, 4)
-                plusAbility(Constants.THIRD_BASE, -10)
-                plusAbility(Constants.SHORTSTOP, 3)
-                plusAbility(Constants.OUTFIELD, -1)
-                plusAbility(Constants.CONTACT, 8)
-                plusAbility(Constants.SPEED, 5)
+                plusAbility(Constants.FIRST_BASE, -3)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.FIELDING, 10)
-                plusAbility(Constants.CATCHING, 8)
+                plusAbility(Constants.FIELDING, 7)
+                plusAbility(Constants.CATCHING, 14)
             }
             manAnswersO5[5] -> {
                 plusAbility(Constants.CATCHER, -1)
@@ -1160,7 +1155,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, -1)
                 plusAbility(Constants.CATCHING, -5)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersO5[6] -> {
                 plusAbility(Constants.CATCHER, -3)
@@ -1195,7 +1190,7 @@ class CalcMaleFielderAbility(
             }
             manAnswersO6[2] -> {
                 plusAbility(Constants.BALLISTIC, 3)
-                plusSpecial(Constants.CHANCE, 0.04)
+                plusSpecial(Constants.CHANCE, 0.03)
             }
             manAnswersO6[3] -> {
                 plusAbility(Constants.SHORTSTOP, 5)
@@ -1215,7 +1210,7 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.CATCHING, 2)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
             manAnswersO6[5] -> {
                 plusAbility(Constants.CATCHER, 4)
@@ -1224,13 +1219,12 @@ class CalcMaleFielderAbility(
             }
             manAnswersO6[6] -> {
                 plusAbility(Constants.CATCHER, -3)
-                plusAbility(Constants.FIRST_BASE, 1)
-                plusAbility(Constants.THIRD_BASE, 1)
-                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.SPEED, 3)
-                plusAbility(Constants.FIELDING, -3)
-                plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+                plusAbility(Constants.CATCHING, -5)
             }
             manAnswersO6[7] -> {
                 plusAbility(Constants.BALLISTIC, 3)
