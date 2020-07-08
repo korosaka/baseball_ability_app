@@ -766,9 +766,9 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.SHORTSTOP, 5)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 6)
-                plusAbility(Constants.SPEED, 10)
+                plusAbility(Constants.SPEED, 11)
                 plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.FIELDING, 8)
+                plusAbility(Constants.FIELDING, 9)
                 plusAbility(Constants.CATCHING, 4)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
@@ -1036,9 +1036,9 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.SPEED, 6)
-                plusAbility(Constants.ARM_STRENGTH, 10)
-                plusAbility(Constants.FIELDING, 12)
-                plusAbility(Constants.CATCHING, 15)
+                plusAbility(Constants.ARM_STRENGTH, 9)
+                plusAbility(Constants.FIELDING, 11)
+                plusAbility(Constants.CATCHING, 14)
             }
             manAnswersO2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
@@ -1164,9 +1164,9 @@ class CalcMaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 3)
                 plusAbility(Constants.SHORTSTOP, 1)
                 plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.POWER, 7)
-                plusAbility(Constants.SPEED, 3)
-                plusAbility(Constants.ARM_STRENGTH, 12)
+                plusAbility(Constants.POWER, 5)
+                plusAbility(Constants.SPEED, 6)
+                plusAbility(Constants.ARM_STRENGTH, 10)
                 plusAbility(Constants.CATCHING, -3)
             }
             manAnswersO5[7] -> {
@@ -1194,9 +1194,9 @@ class CalcMaleFielderAbility(
             }
             manAnswersO6[3] -> {
                 plusAbility(Constants.SHORTSTOP, 5)
-                plusAbility(Constants.CONTACT, 7)
-                plusAbility(Constants.SPEED, 3)
-                plusAbility(Constants.FIELDING, 6)
+                plusAbility(Constants.CONTACT, 8)
+                plusAbility(Constants.SPEED, 7)
+                plusAbility(Constants.FIELDING, 8)
                 plusAbility(Constants.CATCHING, 3)
             }
             manAnswersO6[4] -> {

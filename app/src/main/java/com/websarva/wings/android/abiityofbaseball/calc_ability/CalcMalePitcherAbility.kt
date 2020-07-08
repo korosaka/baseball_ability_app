@@ -525,7 +525,7 @@ class CalcMalePitcherAbility(
             manAnswersP3[1] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 4)
-                plusAbility(Constants.STAMINA, 20)
+                plusAbility(Constants.STAMINA, 18)
                 plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.SLIDER, 2)
@@ -572,7 +572,7 @@ class CalcMalePitcherAbility(
             }
             manAnswersP3[6] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STAMINA, 9)
                 plusAbility(Constants.KIND_CHANGE, 2)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
                 plusAbility(Constants.SLIDER, 2)
@@ -613,7 +613,7 @@ class CalcMalePitcherAbility(
             manAnswersP4[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 15)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
@@ -660,7 +660,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 5)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
             }
             manAnswersP5[3] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
@@ -681,8 +681,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 7)
-                plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.KIND_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
             }
             manAnswersP5[6] -> {
                 plusSpecial(Constants.CHANCE, -0.02)
@@ -738,7 +738,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
             manAnswersP6[7] -> {
-                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 3)
@@ -798,16 +798,16 @@ class CalcMalePitcherAbility(
         when (answersOther[1]) {
             manAnswersO2[0] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.CONTROL, 18)
-                plusAbility(Constants.STAMINA, 18)
+                plusAbility(Constants.CONTROL, 17)
+                plusAbility(Constants.STAMINA, 17)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.STARTER, 5)
             }
             manAnswersO2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 12)
-                plusAbility(Constants.STAMINA, 12)
+                plusAbility(Constants.CONTROL, 11)
+                plusAbility(Constants.STAMINA, 11)
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 3)
@@ -860,9 +860,9 @@ class CalcMalePitcherAbility(
             manAnswersO5[1] -> {
                 plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 8)
-                plusAbility(Constants.CONTROL, 16)
-                plusAbility(Constants.KIND_CHANGE, 16)
-                plusAbility(Constants.AMOUNT_CHANGE, 16)
+                plusAbility(Constants.CONTROL, 14)
+                plusAbility(Constants.KIND_CHANGE, 14)
+                plusAbility(Constants.AMOUNT_CHANGE, 14)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.SINKER, 2)
@@ -870,8 +870,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, -5)
             }
             manAnswersO5[2] -> {
-                plusAbility(Constants.BALL_SPEED, 15)
-                plusAbility(Constants.STAMINA, 25)
+                plusAbility(Constants.BALL_SPEED, 14)
+                plusAbility(Constants.STAMINA, 23)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
@@ -881,8 +881,8 @@ class CalcMalePitcherAbility(
             manAnswersO5[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 12)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 11)
                 plusAbility(Constants.CURB, 7)
                 plusAbility(Constants.SINKER, 5)
             }
@@ -912,7 +912,7 @@ class CalcMalePitcherAbility(
             }
             manAnswersO5[7] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.SINKER, 3)
@@ -937,9 +937,9 @@ class CalcMalePitcherAbility(
             }
             manAnswersO6[3] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.SINKER, 2)
@@ -956,7 +956,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 10)
             }
             manAnswersO6[5] -> {
-                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.KIND_CHANGE, 3)
             }
             manAnswersO6[6] -> {

@@ -289,7 +289,7 @@
     </string-array>
     <string-array name="m_array_q3_p">
         <item>特になし</item>
-        <item>まとめ役</item>
+        <item>リーダー</item>
         <item>控えめ</item>
         <item>ムードメーカー</item>
         <item>批評家</item>
@@ -299,7 +299,7 @@
 
     <string-array name="w_array_q3_p">
         <item>特になし</item>
-        <item>まとめ役</item>
+        <item>リーダー</item>
         <item>控えめ</item>
         <item>ムードメーカー</item>
         <item>批評家</item>

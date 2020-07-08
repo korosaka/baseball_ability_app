@@ -141,21 +141,21 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA3[1] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
-                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.STAMINA, 5)
-                plusAbility(Constants.KIND_CHANGE, 15)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.KIND_CHANGE, 14)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.CURB, 4)
                 plusAbility(Constants.FOLK, 1)
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -10)
             }
             womanAnswersA3[2] -> {
-                plusAbility(Constants.BALL_SPEED, 13)
-                plusAbility(Constants.CONTROL, 11)
-                plusAbility(Constants.STAMINA, 11)
-                plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 15)
+                plusAbility(Constants.BALL_SPEED, 12)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.KIND_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 14)
                 plusAbility(Constants.SLIDER, 5)
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.SINKER, 1)
@@ -198,10 +198,10 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA4[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 5)
-                plusAbility(Constants.AMOUNT_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
@@ -226,7 +226,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA4[4] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
-                plusAbility(Constants.STAMINA, 15)
+                plusAbility(Constants.STAMINA, 13)
                 plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.SLIDER, 3)
@@ -257,7 +257,7 @@ class CalcFemalePitcherAbility(
             womanAnswersA4[7] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STAMINA, 9)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.SLIDER, 1)
@@ -266,7 +266,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.STARTER, 3)
             }
             womanAnswersA4[8] -> {
-                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.KIND_CHANGE, 2)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
                 plusAbility(Constants.SLIDER, 4)
@@ -290,7 +290,7 @@ class CalcFemalePitcherAbility(
             womanAnswersA5[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, -3)
-                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STAMINA, 9)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 2)
             }
@@ -298,8 +298,8 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 4)
-                plusAbility(Constants.KIND_CHANGE, 13)
-                plusAbility(Constants.AMOUNT_CHANGE, 7)
+                plusAbility(Constants.KIND_CHANGE, 12)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 2)
@@ -320,7 +320,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.CONTROL, 1)
                 plusAbility(Constants.STAMINA, 2)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.MIDDLE, -6)
@@ -330,7 +330,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 4)
-                plusAbility(Constants.AMOUNT_CHANGE, 15)
+                plusAbility(Constants.AMOUNT_CHANGE, 13)
                 plusAbility(Constants.STARTER, -5)
             }
         }
@@ -340,7 +340,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA6[1] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.MIDDLE, -5)
@@ -360,7 +360,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA6[4] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.STAMINA, 6)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.CURB, 1)
@@ -378,7 +378,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersA6[6] -> {
                 plusAbility(Constants.BALL_SPEED, -3)
-                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.MIDDLE, 5)
@@ -391,7 +391,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersP1[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 7)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
@@ -400,7 +400,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersP1[2] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
-                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 4)
                 plusAbility(Constants.KIND_CHANGE, 2)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
@@ -427,12 +427,12 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersP1[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.SINKER, 5)
             }
             womanAnswersP1[6] -> {
-                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -7)
                 plusAbility(Constants.KIND_CHANGE, -3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
@@ -448,24 +448,24 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersP2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.CONTROL, 9)
-                plusAbility(Constants.STAMINA, 6)
-                plusAbility(Constants.KIND_CHANGE, 6)
-                plusAbility(Constants.AMOUNT_CHANGE, 6)
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.STAMINA, 5)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 1)
             }
             womanAnswersP2[2] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
-                plusAbility(Constants.STAMINA, 16)
+                plusAbility(Constants.STAMINA, 15)
                 plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.STARTER, 9)
             }
             womanAnswersP2[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 10)
+                plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.SLIDER, 1)
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 12)
@@ -515,7 +515,7 @@ class CalcFemalePitcherAbility(
             womanAnswersP3[1] -> {
                 plusAbility(Constants.BALL_SPEED, 10)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.STAMINA, 18)
+                plusAbility(Constants.STAMINA, 16)
                 plusAbility(Constants.KIND_CHANGE, 2)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.SLIDER, 2)
@@ -539,7 +539,7 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 5)
-                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.CLOSER, -4)
@@ -554,15 +554,15 @@ class CalcFemalePitcherAbility(
             womanAnswersP3[5] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.KIND_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.MIDDLE, 3)
             }
             womanAnswersP3[6] -> {
-                plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.STAMINA, 9)
+                plusAbility(Constants.BALL_SPEED, 6)
+                plusAbility(Constants.STAMINA, 8)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
                 plusAbility(Constants.SLIDER, 2)
@@ -584,8 +584,8 @@ class CalcFemalePitcherAbility(
             womanAnswersP4[1] -> {
                 plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 10)
-                plusAbility(Constants.STAMINA, 5)
+                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.STAMINA, 4)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.CLOSER, -5)
@@ -594,7 +594,7 @@ class CalcFemalePitcherAbility(
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 6)
-                plusAbility(Constants.KIND_CHANGE, 10)
+                plusAbility(Constants.KIND_CHANGE, 9)
                 plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
@@ -603,7 +603,7 @@ class CalcFemalePitcherAbility(
             womanAnswersP4[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 15)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
@@ -621,9 +621,9 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersP4[5] -> {
                 plusSpecial(Constants.CHANCE, -0.01)
-                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -3)
-                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STAMINA, 9)
                 plusAbility(Constants.KIND_CHANGE, -2)
                 plusAbility(Constants.AMOUNT_CHANGE, -2)
                 plusAbility(Constants.STARTER, 4)
@@ -639,37 +639,38 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
             womanAnswersP5[1] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.03)
                 plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.CONTROL, 1)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
             }
             womanAnswersP5[2] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 5)
-                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             womanAnswersP5[3] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
-                plusAbility(Constants.CONTROL, 9)
-                plusAbility(Constants.STAMINA, 5)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.STAMINA, 4)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.STARTER, 3)
             }
             womanAnswersP5[4] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 7)
-                plusAbility(Constants.KIND_CHANGE, 7)
-                plusAbility(Constants.AMOUNT_CHANGE, 7)
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, 6)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
             }
             womanAnswersP5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.STAMINA, 6)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
@@ -687,7 +688,7 @@ class CalcFemalePitcherAbility(
             womanAnswersP6[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STAMINA, 9)
                 plusAbility(Constants.STARTER, 3)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 1)
@@ -728,14 +729,14 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
             }
             womanAnswersP6[7] -> {
-                plusAbility(Constants.CONTROL, 10)
-                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.STAMINA, 2)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 3)
             }
             womanAnswersP6[8] -> {
-                plusAbility(Constants.CONTROL, 6)
-                plusAbility(Constants.KIND_CHANGE, 6)
+                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 2)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
@@ -746,26 +747,26 @@ class CalcFemalePitcherAbility(
         val womanAnswersO1 = context.resources.getStringArray(R.array.w_array_q1_o)
         when (answersOther[0]) {
             womanAnswersO1[0] -> {
-                plusAbility(Constants.BALL_SPEED, 15)
+                plusAbility(Constants.BALL_SPEED, 14)
                 plusAbility(Constants.CONTROL, 5)
                 plusAbility(Constants.STAMINA, 5)
-                plusAbility(Constants.KIND_CHANGE, 18)
-                plusAbility(Constants.AMOUNT_CHANGE, 18)
+                plusAbility(Constants.KIND_CHANGE, 17)
+                plusAbility(Constants.AMOUNT_CHANGE, 17)
                 plusAbility(Constants.STARTER, 6)
             }
             womanAnswersO1[1] -> {
-                plusAbility(Constants.BALL_SPEED, 12)
+                plusAbility(Constants.BALL_SPEED, 11)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 3)
-                plusAbility(Constants.KIND_CHANGE, 12)
-                plusAbility(Constants.AMOUNT_CHANGE, 12)
+                plusAbility(Constants.KIND_CHANGE, 11)
+                plusAbility(Constants.AMOUNT_CHANGE, 11)
                 plusAbility(Constants.STARTER, 3)
             }
             womanAnswersO1[2] -> {
-                plusAbility(Constants.BALL_SPEED, 10)
+                plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 1)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.KIND_CHANGE, 6)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
             }
             womanAnswersO1[3] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
@@ -786,16 +787,16 @@ class CalcFemalePitcherAbility(
         when (answersOther[1]) {
             womanAnswersO2[0] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 18)
-                plusAbility(Constants.STAMINA, 18)
+                plusAbility(Constants.CONTROL, 16)
+                plusAbility(Constants.STAMINA, 16)
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 6)
             }
             womanAnswersO2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 12)
-                plusAbility(Constants.STAMINA, 12)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 10)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.STARTER, 3)
@@ -848,8 +849,8 @@ class CalcFemalePitcherAbility(
             womanAnswersO5[0] -> {
             }
             womanAnswersO5[1] -> {
-                plusAbility(Constants.BALL_SPEED, 14)
-                plusAbility(Constants.STAMINA, 18)
+                plusAbility(Constants.BALL_SPEED, 12)
+                plusAbility(Constants.STAMINA, 16)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 3)
@@ -859,37 +860,37 @@ class CalcFemalePitcherAbility(
             womanAnswersO5[2] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.CONTROL, 3)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 12)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
                 plusAbility(Constants.CURB, 7)
                 plusAbility(Constants.SINKER, 5)
             }
             womanAnswersO5[3] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 12)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.BALL_SPEED, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 6)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 15)
             }
             womanAnswersO5[4] -> {
-                plusAbility(Constants.BALL_SPEED, 15)
+                plusAbility(Constants.BALL_SPEED, 14)
                 plusAbility(Constants.CONTROL, -4)
                 plusAbility(Constants.STAMINA, -4)
-                plusAbility(Constants.KIND_CHANGE, 8)
-                plusAbility(Constants.AMOUNT_CHANGE, 16)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 14)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.STARTER, -8)
             }
             womanAnswersO5[5] -> {
-                plusAbility(Constants.BALL_SPEED, 10)
-                plusAbility(Constants.CONTROL, 11)
-                plusAbility(Constants.STAMINA, 11)
+                plusAbility(Constants.BALL_SPEED, 9)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 10)
                 plusAbility(Constants.KIND_CHANGE, 2)
-                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
                 plusAbility(Constants.SLIDER, 5)
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.STARTER, 6)
@@ -907,7 +908,7 @@ class CalcFemalePitcherAbility(
             }
             womanAnswersO5[7] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.CURB, 3)
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.SINKER, 3)
@@ -932,10 +933,10 @@ class CalcFemalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
             }
             womanAnswersO6[3] -> {
-                plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 10)
-                plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.KIND_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.SINKER, 2)
@@ -953,7 +954,7 @@ class CalcFemalePitcherAbility(
             womanAnswersO6[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.CONTROL, 7)
-                plusAbility(Constants.AMOUNT_CHANGE, 12)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             womanAnswersO6[6] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
