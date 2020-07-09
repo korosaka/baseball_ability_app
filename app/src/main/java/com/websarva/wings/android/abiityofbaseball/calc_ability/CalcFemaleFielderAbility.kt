@@ -145,8 +145,8 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 3)
                 plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 3)
-                plusAbility(Constants.CONTACT, 10)
+                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.CONTACT, 9)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 5)
                 plusAbility(Constants.ARM_STRENGTH, 4)
@@ -194,11 +194,23 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CATCHING, -1)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
+            womanAnswersA3[5] -> {
+                plusAbility(Constants.FIRST_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 1)
+                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.POWER, 2)
+                plusAbility(Constants.ARM_STRENGTH, 1)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
         }
 
         val womanAnswersA4 = context.resources.getStringArray(R.array.w_array_q4_a)
         when (answersAppearance[3]) {
             womanAnswersA4[0] -> {
+            }
+            womanAnswersA4[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -211,7 +223,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 5)
             }
-            womanAnswersA4[1] -> {
+            womanAnswersA4[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -223,7 +235,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 9)
             }
-            womanAnswersA4[2] -> {
+            womanAnswersA4[3] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -236,7 +248,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.CATCHING, -2)
             }
-            womanAnswersA4[3] -> {
+            womanAnswersA4[4] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -248,7 +260,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.SPEED, 6)
                 plusAbility(Constants.ARM_STRENGTH, 7)
             }
-            womanAnswersA4[4] -> {
+            womanAnswersA4[5] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -257,10 +269,10 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.OUTFIELD, -1)
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.SPEED, 2)
-                plusAbility(Constants.FIELDING, 4)
+                plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 6)
             }
-            womanAnswersA4[5] -> {
+            womanAnswersA4[6] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -272,6 +284,33 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.SPEED, 6)
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.CATCHING, -2)
+            }
+            womanAnswersA4[7] -> {
+                plusAbility(Constants.CATCHER, 2)
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 4)
+                plusAbility(Constants.BALLISTIC, 4)
+                plusAbility(Constants.CONTACT, 4)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.ARM_STRENGTH, 4)
+                plusAbility(Constants.FIELDING, 3)
+                plusAbility(Constants.CATCHING, 2)
+            }
+            womanAnswersA4[8] -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.FIRST_BASE, -1)
+                plusAbility(Constants.SECOND_BASE, 5)
+                plusAbility(Constants.THIRD_BASE, -4)
+                plusAbility(Constants.SHORTSTOP, 4)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.SPEED, 2)
+                plusAbility(Constants.FIELDING, 6)
+                plusAbility(Constants.CATCHING, 5)
             }
         }
 
@@ -287,13 +326,25 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CATCHING, 1)
             }
             womanAnswersA5[1] -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, -3)
+                plusAbility(Constants.OUTFIELD, 2)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.ARM_STRENGTH, 1)
+            }
+            womanAnswersA5[2] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.FIRST_BASE, -5)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 5)
                 plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 4)
                 plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, 4)
@@ -301,7 +352,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 6)
                 plusAbility(Constants.CATCHING, 2)
             }
-            womanAnswersA5[2] -> {
+            womanAnswersA5[3] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -314,20 +365,21 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 6)
             }
-            womanAnswersA5[3] -> {
+            womanAnswersA5[4] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, -3)
                 plusAbility(Constants.SECOND_BASE, -2)
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 2)
                 plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 5)
+                plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 5)
                 plusAbility(Constants.ARM_STRENGTH, 5)
                 plusAbility(Constants.CATCHING, -1)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersA5[4] -> {
+            womanAnswersA5[5] -> {
                 plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -2)
@@ -337,13 +389,74 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.ARM_STRENGTH, 3)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+        }
+        val womanAnswersA6 = context.resources.getStringArray(R.array.w_array_q6_a)
+        when (answersAppearance[5]) {
+            womanAnswersA6[0] -> {
+            }
+            womanAnswersA6[1] -> {
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.OUTFIELD, 1)
+                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.CONTACT, 4)
+                plusAbility(Constants.POWER, 4)
+            }
+            womanAnswersA6[2] -> {
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.SPEED, 4)
+                plusAbility(Constants.ARM_STRENGTH, 4)
+            }
+            womanAnswersA6[3] -> {
+                plusAbility(Constants.CATCHER, -2)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.FIELDING, 3)
+                plusAbility(Constants.CATCHING, 1)
+            }
+            womanAnswersA6[4] -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.FIRST_BASE, 1)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 4)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+            }
+            womanAnswersA6[5] -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 1)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 1)
+                plusAbility(Constants.BALLISTIC, 4)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+                plusAbility(Constants.CATCHING, -3)
+            }
+            womanAnswersA6[6] -> {
+                plusAbility(Constants.SECOND_BASE, 4)
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, -2)
+                plusAbility(Constants.FIELDING, 2)
+                plusAbility(Constants.CATCHING, 5)
             }
         }
 
         val womanAnswersP1 = context.resources.getStringArray(R.array.w_array_q1_p)
         when (answersPersonality[0]) {
             womanAnswersP1[0] -> {
+            }
+            womanAnswersP1[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 4)
@@ -358,7 +471,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 5)
             }
-            womanAnswersP1[1] -> {
+            womanAnswersP1[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -370,7 +483,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, 4)
             }
-            womanAnswersP1[2] -> {
+            womanAnswersP1[3] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, 1)
@@ -378,18 +491,18 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.SHORTSTOP, 2)
                 plusAbility(Constants.OUTFIELD, 2)
                 plusAbility(Constants.BALLISTIC, 1)
-                plusAbility(Constants.POWER, 4)
-                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 5)
                 plusAbility(Constants.ARM_STRENGTH, 5)
             }
-            womanAnswersP1[3] -> {
+            womanAnswersP1[4] -> {
                 plusAbility(Constants.CATCHER, -2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -4)
                 plusAbility(Constants.THIRD_BASE, 6)
                 plusAbility(Constants.SHORTSTOP, -3)
                 plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, -2)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.SPEED, 4)
@@ -397,23 +510,33 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, -2)
                 plusAbility(Constants.CATCHING, -5)
             }
-            womanAnswersP1[4] -> {
-                plusAbility(Constants.CATCHER, -5)
-                plusAbility(Constants.SECOND_BASE, -1)
-                plusAbility(Constants.THIRD_BASE, -3)
-                plusAbility(Constants.SHORTSTOP, -2)
-                plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.CONTACT, -3)
-                plusAbility(Constants.FIELDING, -5)
-                plusAbility(Constants.CATCHING, -8)
-                plusSpecial(Constants.CHANCE, -0.05)
+            womanAnswersP1[5] -> {
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, -4)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.CONTACT, 3)
+                plusAbility(Constants.FIELDING, 3)
+                plusAbility(Constants.CATCHING, 1)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
-
+            womanAnswersP1[6] -> {
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 1)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.ARM_STRENGTH, 4)
+                plusAbility(Constants.CATCHING, -3)
+            }
         }
 
         val womanAnswersP2 = context.resources.getStringArray(R.array.w_array_q2_p)
         when (answersPersonality[1]) {
             womanAnswersP2[0] -> {
+            }
+            womanAnswersP2[1] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -428,7 +551,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 4)
                 plusAbility(Constants.CATCHING, 4)
             }
-            womanAnswersP2[1] -> {
+            womanAnswersP2[2] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
@@ -442,7 +565,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 1)
             }
-            womanAnswersP2[2] -> {
+            womanAnswersP2[3] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -451,11 +574,11 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.OUTFIELD, 1)
                 plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, -2)
-                plusAbility(Constants.ARM_STRENGTH, 9)
+                plusAbility(Constants.ARM_STRENGTH, 8)
                 plusAbility(Constants.CATCHING, -1)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersP2[3] -> {
+            womanAnswersP2[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.CONTACT, 1)
@@ -464,7 +587,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 1)
                 plusAbility(Constants.FIELDING, 1)
             }
-            womanAnswersP2[4] -> {
+            womanAnswersP2[5] -> {
                 plusAbility(Constants.CATCHER, -1)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -5)
@@ -473,44 +596,69 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.OUTFIELD, 3)
                 plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.FIELDING, 2)
+                plusAbility(Constants.CATCHING, -2)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersP2[6] -> {
+                plusAbility(Constants.CATCHER, -1)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, -5)
+                plusAbility(Constants.THIRD_BASE, 5)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 4)
+                plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 4)
                 plusAbility(Constants.ARM_STRENGTH, 4)
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, -3)
             }
-            womanAnswersP2[5] -> {
-                plusAbility(Constants.CATCHER, -5)
-                plusAbility(Constants.FIRST_BASE, 3)
-                plusAbility(Constants.SECOND_BASE, -1)
-                plusAbility(Constants.THIRD_BASE, 3)
+            womanAnswersP2[7] -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.SECOND_BASE, 4)
+                plusAbility(Constants.THIRD_BASE, -4)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.OUTFIELD, -1)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.FIELDING, 3)
+                plusAbility(Constants.CATCHING, 5)
+            }
+            womanAnswersP2[8] -> {
+                plusAbility(Constants.FIRST_BASE, 2)
+                plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, -1)
-                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.OUTFIELD, 4)
                 plusAbility(Constants.BALLISTIC, 2)
-                plusAbility(Constants.POWER, 4)
-                plusAbility(Constants.SPEED, 4)
-                plusAbility(Constants.ARM_STRENGTH, 4)
-                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.CONTACT, 3)
+                plusAbility(Constants.POWER, 3)
+                plusAbility(Constants.SPEED, 3)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
         }
 
         val womanAnswersP3 = context.resources.getStringArray(R.array.w_array_q3_p)
         when (answersPersonality[2]) {
             womanAnswersP3[0] -> {
+            }
+            womanAnswersP3[1] -> {
                 plusAbility(Constants.CATCHER, 5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, -1)
                 plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 2)
-                plusAbility(Constants.ARM_STRENGTH, 6)
+                plusAbility(Constants.ARM_STRENGTH, 5)
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 3)
             }
-            womanAnswersP3[1] -> {
+            womanAnswersP3[2] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 5)
@@ -521,14 +669,14 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 5)
             }
-            womanAnswersP3[2] -> {
+            womanAnswersP3[3] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, -1)
                 plusAbility(Constants.SECOND_BASE, -3)
                 plusAbility(Constants.THIRD_BASE, 5)
                 plusAbility(Constants.SHORTSTOP, -1)
                 plusAbility(Constants.OUTFIELD, 5)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.SPEED, 3)
@@ -537,7 +685,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CATCHING, 3)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersP3[3] -> {
+            womanAnswersP3[4] -> {
                 plusAbility(Constants.CATCHER, 1)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, -3)
@@ -550,16 +698,16 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.FIELDING, -1)
                 plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, -0.02)
+                plusSpecial(Constants.CHANCE, -0.01)
             }
-            womanAnswersP3[4] -> {
+            womanAnswersP3[5] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, -1)
                 plusAbility(Constants.THIRD_BASE, -4)
                 plusAbility(Constants.SHORTSTOP, 2)
                 plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 1)
@@ -567,7 +715,18 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.FIELDING, 5)
                 plusAbility(Constants.CATCHING, 3)
             }
-
+            womanAnswersP3[6] -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -1)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -1)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.POWER, 4)
+                plusAbility(Constants.SPEED, 4)
+                plusAbility(Constants.ARM_STRENGTH, 4)
+            }
         }
 
         val womanAnswersP4 = context.resources.getStringArray(R.array.w_array_q4_p)
@@ -591,41 +750,54 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.SPEED, 3)
                 plusAbility(Constants.ARM_STRENGTH, 2)
-                plusAbility(Constants.FIELDING, 5)
-                plusAbility(Constants.CATCHING, 7)
+                plusAbility(Constants.FIELDING, 4)
+                plusAbility(Constants.CATCHING, 6)
                 plusSpecial(Constants.CHANCE, -0.01)
             }
             womanAnswersP4[2] -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.FIRST_BASE, -2)
+                plusAbility(Constants.SECOND_BASE, 1)
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 3)
+                plusAbility(Constants.SPEED, 8)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.FIELDING, 6)
+                plusAbility(Constants.CATCHING, 2)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersP4[3] -> {
                 plusAbility(Constants.CATCHER, 3)
                 plusAbility(Constants.FIRST_BASE, -2)
                 plusAbility(Constants.SECOND_BASE, 1)
                 plusAbility(Constants.THIRD_BASE, -3)
                 plusAbility(Constants.SHORTSTOP, 5)
-                plusAbility(Constants.OUTFIELD, 1)
-                plusAbility(Constants.BALLISTIC, 3)
-                plusAbility(Constants.CONTACT, 3)
-                plusAbility(Constants.SPEED, 9)
-                plusAbility(Constants.ARM_STRENGTH, 6)
-                plusAbility(Constants.FIELDING, 7)
-                plusAbility(Constants.CATCHING, 3)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 6)
+                plusAbility(Constants.SPEED, 11)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.FIELDING, 9)
+                plusAbility(Constants.CATCHING, 4)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersP4[3] -> {
+            womanAnswersP4[4] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 2)
                 plusAbility(Constants.SECOND_BASE, -4)
                 plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, -3)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 4)
+                plusAbility(Constants.BALLISTIC, 3)
                 plusAbility(Constants.CONTACT, -1)
                 plusAbility(Constants.POWER, 4)
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.FIELDING, -4)
                 plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersP4[4] -> {
+            womanAnswersP4[5] -> {
                 plusAbility(Constants.CATCHER, -5)
                 plusAbility(Constants.FIRST_BASE, 5)
                 plusAbility(Constants.SECOND_BASE, -4)
@@ -638,7 +810,7 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.ARM_STRENGTH, 6)
                 plusAbility(Constants.FIELDING, -3)
                 plusAbility(Constants.CATCHING, -3)
-                plusSpecial(Constants.CHANCE, -0.05)
+                plusSpecial(Constants.CHANCE, -0.01)
             }
         }
 
@@ -659,14 +831,14 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 2)
                 plusAbility(Constants.SHORTSTOP, -1)
                 plusAbility(Constants.OUTFIELD, 5)
-                plusAbility(Constants.BALLISTIC, 6)
+                plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.CONTACT, 1)
                 plusAbility(Constants.POWER, 1)
                 plusAbility(Constants.SPEED, 1)
                 plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 2)
                 plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
             }
             womanAnswersP5[2] -> {
                 plusAbility(Constants.CATCHER, -1)
@@ -675,11 +847,10 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, -2)
                 plusAbility(Constants.OUTFIELD, 4)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.POWER, 5)
                 plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.SPEED, 3)
-                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.SPEED, 4)
             }
             womanAnswersP5[3] -> {
                 plusAbility(Constants.CATCHER, 4)
@@ -688,23 +859,23 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 1)
                 plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.BALLISTIC, 1)
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 6)
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, 4)
                 plusAbility(Constants.CATCHING, 3)
-                plusSpecial(Constants.CHANCE, 0.01)
             }
             womanAnswersP5[4] -> {
-                plusAbility(Constants.THIRD_BASE, -3)
-                plusAbility(Constants.OUTFIELD, -3)
-                plusAbility(Constants.BALLISTIC, -3)
-                plusAbility(Constants.POWER, -2)
-                plusAbility(Constants.FIELDING, -2)
-                plusAbility(Constants.CATCHING, -2)
-                plusSpecial(Constants.CHANCE, -0.03)
+                plusAbility(Constants.CATCHER, 4)
+                plusAbility(Constants.SHORTSTOP, 1)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 2)
+                plusAbility(Constants.SPEED, 5)
+                plusAbility(Constants.ARM_STRENGTH, 5)
+                plusAbility(Constants.FIELDING, 4)
+                plusAbility(Constants.CATCHING, 4)
             }
             womanAnswersP5[5] -> {
                 plusAbility(Constants.CATCHER, -3)
@@ -713,14 +884,95 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, -5)
                 plusAbility(Constants.OUTFIELD, 4)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 3)
-                plusAbility(Constants.POWER, 6)
-                plusAbility(Constants.SPEED, 8)
-                plusAbility(Constants.ARM_STRENGTH, 7)
+                plusAbility(Constants.POWER, 5)
+                plusAbility(Constants.SPEED, 7)
+                plusAbility(Constants.ARM_STRENGTH, 5)
                 plusAbility(Constants.FIELDING, 3)
                 plusAbility(Constants.CATCHING, 2)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersP5[6] -> {
+                plusAbility(Constants.THIRD_BASE, -3)
+                plusAbility(Constants.OUTFIELD, -3)
+                plusAbility(Constants.BALLISTIC, -3)
+                plusAbility(Constants.POWER, -2)
+                plusAbility(Constants.FIELDING, -2)
+                plusAbility(Constants.CATCHING, -2)
+                plusSpecial(Constants.CHANCE, -0.02)
+            }
+        }
+        val womanAnswersP6 = context.resources.getStringArray(R.array.w_array_q6_p)
+        when (answersPersonality[5]) {
+            womanAnswersP6[0] -> {
+            }
+            womanAnswersP6[1] -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.POWER, 2)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+                plusAbility(Constants.FIELDING, 4)
+                plusAbility(Constants.CATCHING, 6)
+            }
+            womanAnswersP6[2] -> {
+                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.CATCHING, -3)
+            }
+            womanAnswersP6[3] -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 3)
+                plusAbility(Constants.BALLISTIC, 2)
+                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.CATCHING, -3)
+            }
+            womanAnswersP6[4] -> {
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.OUTFIELD, 2)
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.SPEED, 1)
+                plusAbility(Constants.ARM_STRENGTH, 1)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersP6[5] -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.FIRST_BASE, 5)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.OUTFIELD, 1)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusSpecial(Constants.CHANCE, 0.02)
+            }
+            womanAnswersP6[6] -> {
+                plusAbility(Constants.CATCHER, -5)
+                plusAbility(Constants.SECOND_BASE, -3)
+                plusAbility(Constants.SHORTSTOP, -2)
+                plusAbility(Constants.FIELDING, -2)
+                plusAbility(Constants.CATCHING, -5)
+                plusSpecial(Constants.CHANCE, -0.01)
+            }
+            womanAnswersP6[7] -> {
+                plusAbility(Constants.CATCHER, 3)
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.FIELDING, 2)
+                plusAbility(Constants.CATCHING, 8)
+            }
+            womanAnswersP6[8] -> {
+                plusAbility(Constants.CATCHER, 5)
+                plusAbility(Constants.SECOND_BASE, 3)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.FIELDING, 3)
+                plusAbility(Constants.CATCHING, 5)
             }
         }
 
@@ -733,12 +985,12 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 5)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 9)
-                plusAbility(Constants.CONTACT, 15)
-                plusAbility(Constants.POWER, 10)
-                plusAbility(Constants.SPEED, 8)
-                plusAbility(Constants.ARM_STRENGTH, 5)
-                plusAbility(Constants.FIELDING, 5)
+                plusAbility(Constants.BALLISTIC, 7)
+                plusAbility(Constants.CONTACT, 14)
+                plusAbility(Constants.POWER, 9)
+                plusAbility(Constants.SPEED, 7)
+                plusAbility(Constants.ARM_STRENGTH, 4)
+                plusAbility(Constants.FIELDING, 4)
                 plusAbility(Constants.CATCHING, 3)
             }
             womanAnswersO1[1] -> {
@@ -748,11 +1000,11 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 3)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 6)
-                plusAbility(Constants.CONTACT, 10)
-                plusAbility(Constants.POWER, 8)
-                plusAbility(Constants.SPEED, 6)
-                plusAbility(Constants.ARM_STRENGTH, 3)
+                plusAbility(Constants.BALLISTIC, 5)
+                plusAbility(Constants.CONTACT, 9)
+                plusAbility(Constants.POWER, 7)
+                plusAbility(Constants.SPEED, 5)
+                plusAbility(Constants.ARM_STRENGTH, 2)
                 plusAbility(Constants.FIELDING, 1)
                 plusAbility(Constants.CATCHING, 3)
             }
@@ -790,10 +1042,10 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 5)
-                plusAbility(Constants.SPEED, 8)
-                plusAbility(Constants.ARM_STRENGTH, 12)
-                plusAbility(Constants.FIELDING, 12)
-                plusAbility(Constants.CATCHING, 15)
+                plusAbility(Constants.SPEED, 6)
+                plusAbility(Constants.ARM_STRENGTH, 10)
+                plusAbility(Constants.FIELDING, 10)
+                plusAbility(Constants.CATCHING, 13)
             }
             womanAnswersO2[1] -> {
                 plusAbility(Constants.CATCHER, 3)
@@ -801,9 +1053,9 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.CONTACT, 2)
                 plusAbility(Constants.POWER, 3)
                 plusAbility(Constants.SPEED, 5)
-                plusAbility(Constants.ARM_STRENGTH, 8)
-                plusAbility(Constants.FIELDING, 8)
-                plusAbility(Constants.CATCHING, 10)
+                plusAbility(Constants.ARM_STRENGTH, 7)
+                plusAbility(Constants.FIELDING, 7)
+                plusAbility(Constants.CATCHING, 9)
             }
             womanAnswersO2[2] -> {
                 plusAbility(Constants.CONTACT, 1)
@@ -860,86 +1112,136 @@ class CalcFemaleFielderAbility(
                 plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, 2)
                 plusAbility(Constants.OUTFIELD, 7)
-                plusAbility(Constants.BALLISTIC, 4)
-                plusAbility(Constants.POWER, 7)
-                plusAbility(Constants.SPEED, 14)
-                plusAbility(Constants.ARM_STRENGTH, 10)
+                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.POWER, 6)
+                plusAbility(Constants.SPEED, 11)
+                plusAbility(Constants.ARM_STRENGTH, 8)
             }
             womanAnswersO5[2] -> {
+                plusAbility(Constants.BALLISTIC, 1)
+                plusAbility(Constants.CONTACT, 3)
+                plusAbility(Constants.FIELDING, 5)
+                plusAbility(Constants.CATCHING, 2)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersO5[3] -> {
                 plusAbility(Constants.CATCHER, 10)
                 plusAbility(Constants.FIRST_BASE, 3)
                 plusAbility(Constants.SECOND_BASE, -5)
                 plusAbility(Constants.THIRD_BASE, 3)
                 plusAbility(Constants.SHORTSTOP, -3)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 6)
+                plusAbility(Constants.BALLISTIC, 5)
                 plusAbility(Constants.CONTACT, 1)
-                plusAbility(Constants.POWER, 8)
+                plusAbility(Constants.POWER, 7)
                 plusAbility(Constants.SPEED, 1)
-                plusAbility(Constants.ARM_STRENGTH, 10)
+                plusAbility(Constants.ARM_STRENGTH, 9)
                 plusAbility(Constants.FIELDING, 2)
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersO5[3] -> {
+            womanAnswersO5[4] -> {
                 plusAbility(Constants.CATCHER, -8)
                 plusAbility(Constants.FIRST_BASE, 10)
                 plusAbility(Constants.SECOND_BASE, -10)
                 plusAbility(Constants.THIRD_BASE, 3)
                 plusAbility(Constants.SHORTSTOP, 1)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 20)
-                plusAbility(Constants.CONTACT, 10)
-                plusAbility(Constants.POWER, 15)
+                plusAbility(Constants.BALLISTIC, 18)
+                plusAbility(Constants.CONTACT, 9)
+                plusAbility(Constants.POWER, 14)
                 plusAbility(Constants.SPEED, -5)
                 plusAbility(Constants.ARM_STRENGTH, -5)
                 plusAbility(Constants.FIELDING, -6)
                 plusAbility(Constants.CATCHING, -10)
             }
-            womanAnswersO5[4] -> {
+            womanAnswersO5[5] -> {
                 plusAbility(Constants.CATCHER, 2)
                 plusAbility(Constants.FIRST_BASE, 1)
                 plusAbility(Constants.SECOND_BASE, 2)
                 plusAbility(Constants.THIRD_BASE, 1)
                 plusAbility(Constants.SHORTSTOP, 5)
                 plusAbility(Constants.OUTFIELD, 2)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 2)
                 plusAbility(Constants.CONTACT, 5)
                 plusAbility(Constants.POWER, 5)
-                plusAbility(Constants.SPEED, 5)
+                plusAbility(Constants.SPEED, 6)
                 plusAbility(Constants.ARM_STRENGTH, 5)
-                plusAbility(Constants.FIELDING, 10)
-                plusAbility(Constants.CATCHING, 8)
+                plusAbility(Constants.FIELDING, 9)
+                plusAbility(Constants.CATCHING, 7)
             }
-            womanAnswersO5[5] -> {
-                plusAbility(Constants.CATCHER, -5)
+            womanAnswersO5[6] -> {
+                plusAbility(Constants.CATCHER, -3)
                 plusAbility(Constants.FIRST_BASE, 5)
-                plusAbility(Constants.SECOND_BASE, -5)
-                plusAbility(Constants.THIRD_BASE, 3)
+                plusAbility(Constants.SECOND_BASE, -4)
+                plusAbility(Constants.THIRD_BASE, 4)
                 plusAbility(Constants.SHORTSTOP, -2)
                 plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.BALLISTIC, 4)
                 plusAbility(Constants.CONTACT, 2)
-                plusAbility(Constants.POWER, 1)
+                plusAbility(Constants.POWER, 2)
                 plusAbility(Constants.SPEED, 2)
                 plusAbility(Constants.ARM_STRENGTH, 3)
                 plusAbility(Constants.FIELDING, -1)
-                plusAbility(Constants.CATCHING, -2)
+                plusAbility(Constants.CATCHING, -3)
                 plusSpecial(Constants.CHANCE, 0.01)
             }
-            womanAnswersO5[6] -> {
-                plusAbility(Constants.CATCHER, -1)
-                plusAbility(Constants.FIRST_BASE, 5)
-                plusAbility(Constants.SECOND_BASE, -3)
-                plusAbility(Constants.THIRD_BASE, 5)
-                plusAbility(Constants.SHORTSTOP, -1)
-                plusAbility(Constants.OUTFIELD, 3)
-                plusAbility(Constants.BALLISTIC, 7)
+            womanAnswersO5[7] -> {
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.SPEED, 2)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+        }
+
+        val womanAnswersO6 = context.resources.getStringArray(R.array.w_array_q6_o)
+        when (answersOther[5]) {
+            womanAnswersO6[0] -> {
+            }
+            womanAnswersO6[1] -> {
+                plusAbility(Constants.SECOND_BASE, 2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.CONTACT, 2)
+                plusAbility(Constants.SPEED, 2)
+                plusAbility(Constants.FIELDING, 5)
+                plusAbility(Constants.CATCHING, 5)
+            }
+            womanAnswersO6[2] -> {
+                plusAbility(Constants.BALLISTIC, 3)
+                plusSpecial(Constants.CHANCE, 0.03)
+            }
+            womanAnswersO6[3] -> {
+                plusAbility(Constants.SHORTSTOP, 5)
+                plusAbility(Constants.CONTACT, 7)
+                plusAbility(Constants.SPEED, 6)
+                plusAbility(Constants.FIELDING, 7)
+                plusAbility(Constants.CATCHING, 2)
+            }
+            womanAnswersO6[4] -> {
+                plusAbility(Constants.CATCHER, 4)
                 plusAbility(Constants.CONTACT, 1)
+                plusAbility(Constants.FIELDING, 4)
+                plusAbility(Constants.CATCHING, 5)
+            }
+            womanAnswersO6[5] -> {
+                plusAbility(Constants.THIRD_BASE, 2)
+                plusAbility(Constants.OUTFIELD, 3)
+                plusAbility(Constants.BALLISTIC, 3)
+                plusAbility(Constants.CONTACT, 3)
                 plusAbility(Constants.POWER, 3)
-                plusAbility(Constants.ARM_STRENGTH, 3)
-                plusAbility(Constants.FIELDING, -1)
-                plusAbility(Constants.CATCHING, -3)
-                plusSpecial(Constants.CHANCE, 0.02)
+                plusSpecial(Constants.CHANCE, 0.01)
+            }
+            womanAnswersO6[6] -> {
+                plusAbility(Constants.CATCHER, -3)
+                plusAbility(Constants.SECOND_BASE, -2)
+                plusAbility(Constants.SHORTSTOP, 2)
+                plusAbility(Constants.BALLISTIC, 5)
+                plusAbility(Constants.SPEED, 3)
+                plusAbility(Constants.ARM_STRENGTH, 2)
+                plusAbility(Constants.CATCHING, -5)
+            }
+            womanAnswersO6[7] -> {
+                plusAbility(Constants.BALLISTIC, 2)
+                plusSpecial(Constants.CHANCE, 0.05)
             }
         }
 

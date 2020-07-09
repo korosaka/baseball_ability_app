@@ -107,6 +107,16 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CLOSER, 2)
             }
             manAnswersA2[4] -> {
+                plusAbility(Constants.BALL_SPEED, 9)
+                plusAbility(Constants.CONTROL, 4)
+                plusAbility(Constants.STAMINA, 13)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 5)
+                plusAbility(Constants.SHOOT, 2)
+                plusAbility(Constants.STARTER, 5)
+            }
+            manAnswersA2[5] -> {
                 plusAbility(Constants.BALL_SPEED, 15)
                 plusAbility(Constants.CONTROL, 2)
                 plusAbility(Constants.STAMINA, 13)
@@ -117,7 +127,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 5)
             }
-            manAnswersA2[5] -> {
+            manAnswersA2[6] -> {
                 plusAbility(Constants.BALL_SPEED, 25)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.STAMINA, -5)
@@ -184,10 +194,18 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SHOOT, 10)
             }
+            manAnswersA3[5] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.STARTER, -5)
+            }
         }
         val manAnswersA4 = context.resources.getStringArray(R.array.m_array_q4_a)
         when (answersAppearance[3]) {
             manAnswersA4[0] -> {
+            }
+            manAnswersA4[1] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 6)
@@ -198,7 +216,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersA4[1] -> {
+            manAnswersA4[2] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 10)
@@ -209,8 +227,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.STARTER, 3)
             }
-            manAnswersA4[2] -> {
-                plusSpecial(Constants.CHANCE, -0.02)
+            manAnswersA4[3] -> {
+                plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 10)
                 plusAbility(Constants.STAMINA, 10)
@@ -220,7 +238,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 1)
                 plusAbility(Constants.CLOSER, -3)
             }
-            manAnswersA4[3] -> {
+            manAnswersA4[4] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 5)
@@ -231,7 +249,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.SHOOT, 3)
             }
-            manAnswersA4[4] -> {
+            manAnswersA4[5] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 6)
@@ -242,7 +260,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 7)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersA4[5] -> {
+            manAnswersA4[6] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.KIND_CHANGE, 5)
@@ -251,6 +269,23 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.CLOSER, -2)
+            }
+            manAnswersA4[7] -> {
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 2)
+                plusAbility(Constants.MIDDLE, 5)
+            }
+            manAnswersA4[8] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 7)
+                plusAbility(Constants.CLOSER, 5)
             }
         }
         val manAnswersA5 = context.resources.getStringArray(R.array.m_array_q5_a)
@@ -265,6 +300,13 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CURB, 1)
             }
             manAnswersA5[1] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 2)
+            }
+            manAnswersA5[2] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 4)
@@ -275,7 +317,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.STARTER, 1)
             }
-            manAnswersA5[2] -> {
+            manAnswersA5[3] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 8)
@@ -285,7 +327,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CURB, 2)
                 plusAbility(Constants.MIDDLE, 4)
             }
-            manAnswersA5[3] -> {
+            manAnswersA5[4] -> {
                 plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.CONTROL, 1)
                 plusAbility(Constants.STAMINA, 2)
@@ -295,8 +337,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.CLOSER, 4)
             }
-            manAnswersA5[4] -> {
-                plusSpecial(Constants.CHANCE, 0.04)
+            manAnswersA5[5] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 4)
@@ -305,9 +347,57 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, -5)
             }
         }
+        val manAnswersA6 = context.resources.getStringArray(R.array.m_array_q6_a)
+        when (answersAppearance[5]) {
+            manAnswersA6[0] -> {
+            }
+            manAnswersA6[1] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 5)
+                plusAbility(Constants.MIDDLE, -5)
+            }
+            manAnswersA6[2] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 7)
+            }
+            manAnswersA6[3] -> {
+                plusAbility(Constants.CONTROL, 5)
+                plusAbility(Constants.KIND_CHANGE, 2)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.CLOSER, -3)
+            }
+            manAnswersA6[4] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.CURB, 1)
+            }
+            manAnswersA6[5] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.STAMINA, 8)
+            }
+            manAnswersA6[6] -> {
+                plusAbility(Constants.BALL_SPEED, -3)
+                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.MIDDLE, 5)
+            }
+        }
+
         val manAnswersP1 = context.resources.getStringArray(R.array.m_array_q1_p)
         when (answersPersonality[0]) {
             manAnswersP1[0] -> {
+            }
+            manAnswersP1[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 9)
                 plusAbility(Constants.STAMINA, 5)
@@ -318,7 +408,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 2)
                 plusAbility(Constants.CLOSER, -2)
             }
-            manAnswersP1[1] -> {
+            manAnswersP1[2] -> {
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 6)
                 plusAbility(Constants.KIND_CHANGE, 2)
@@ -327,7 +417,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CURB, 1)
                 plusAbility(Constants.MIDDLE, 3)
             }
-            manAnswersP1[2] -> {
+            manAnswersP1[3] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 2)
                 plusAbility(Constants.STAMINA, 6)
@@ -337,7 +427,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 5)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersP1[3] -> {
+            manAnswersP1[4] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -3)
                 plusAbility(Constants.STAMINA, 2)
@@ -347,8 +437,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 2)
             }
-            manAnswersP1[4] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+            manAnswersP1[5] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 2)
                 plusAbility(Constants.STAMINA, 5)
@@ -357,10 +447,21 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 5)
                 plusAbility(Constants.MIDDLE, 2)
             }
+            manAnswersP1[6] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.KIND_CHANGE, -3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 7)
+                plusAbility(Constants.CLOSER, 5)
+            }
         }
         val manAnswersP2 = context.resources.getStringArray(R.array.m_array_q2_p)
         when (answersPersonality[1]) {
             manAnswersP2[0] -> {
+            }
+            manAnswersP2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 10)
                 plusAbility(Constants.STAMINA, 4)
@@ -370,14 +471,14 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 1)
                 plusAbility(Constants.SINKER, 1)
             }
-            manAnswersP2[1] -> {
+            manAnswersP2[2] -> {
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.STAMINA, 15)
                 plusAbility(Constants.KIND_CHANGE, 6)
                 plusAbility(Constants.AMOUNT_CHANGE, 6)
                 plusAbility(Constants.STARTER, 10)
             }
-            manAnswersP2[2] -> {
+            manAnswersP2[3] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.KIND_CHANGE, 1)
                 plusAbility(Constants.AMOUNT_CHANGE, 1)
@@ -386,11 +487,11 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 12)
                 plusAbility(Constants.CLOSER, 4)
             }
-            manAnswersP2[3] -> {
+            manAnswersP2[4] -> {
                 plusAbility(Constants.MIDDLE, 4)
             }
-            manAnswersP2[4] -> {
-                plusSpecial(Constants.CHANCE, 0.03)
+            manAnswersP2[5] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 3)
@@ -399,24 +500,32 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.CLOSER, 6)
             }
-            manAnswersP2[5] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.STAMINA, 10)
-                plusAbility(Constants.KIND_CHANGE, 2)
-                plusAbility(Constants.AMOUNT_CHANGE, 2)
-                plusAbility(Constants.SLIDER, 2)
-                plusAbility(Constants.SHOOT, 4)
-                plusAbility(Constants.CLOSER, 2)
-                plusAbility(Constants.STARTER, 4)
+            manAnswersP2[6] -> {
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.STAMINA, -3)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.CURB, 2)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.SINKER, 3)
+            }
+            manAnswersP2[7] -> {
+                plusSpecial(Constants.CHANCE, 0.02)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.STAMINA, 6)
+                plusAbility(Constants.KIND_CHANGE, 5)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+                plusAbility(Constants.STARTER, 5)
             }
         }
         val manAnswersP3 = context.resources.getStringArray(R.array.m_array_q3_p)
         when (answersPersonality[2]) {
             manAnswersP3[0] -> {
+            }
+            manAnswersP3[1] -> {
                 plusAbility(Constants.BALL_SPEED, 8)
                 plusAbility(Constants.CONTROL, 4)
-                plusAbility(Constants.STAMINA, 20)
+                plusAbility(Constants.STAMINA, 18)
                 plusAbility(Constants.KIND_CHANGE, 4)
                 plusAbility(Constants.AMOUNT_CHANGE, 4)
                 plusAbility(Constants.SLIDER, 2)
@@ -424,7 +533,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SHOOT, 2)
                 plusAbility(Constants.STARTER, 10)
             }
-            manAnswersP3[1] -> {
+            manAnswersP3[2] -> {
                 plusAbility(Constants.BALL_SPEED, 2)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.STAMINA, 6)
@@ -433,8 +542,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.CURB, 1)
                 plusAbility(Constants.MIDDLE, 3)
             }
-            manAnswersP3[2] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+            manAnswersP3[3] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, 4)
                 plusAbility(Constants.STAMINA, 4)
@@ -444,15 +553,15 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.MIDDLE, 1)
             }
-            manAnswersP3[3] -> {
-                plusSpecial(Constants.CHANCE, -0.02)
+            manAnswersP3[4] -> {
+                plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -1)
                 plusAbility(Constants.KIND_CHANGE, -1)
                 plusAbility(Constants.SHOOT, 7)
                 plusAbility(Constants.MIDDLE, 2)
             }
-            manAnswersP3[4] -> {
+            manAnswersP3[5] -> {
                 plusAbility(Constants.BALL_SPEED, 4)
                 plusAbility(Constants.CONTROL, 6)
                 plusAbility(Constants.KIND_CHANGE, 12)
@@ -460,6 +569,16 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 2)
                 plusAbility(Constants.SINKER, 4)
                 plusAbility(Constants.MIDDLE, 1)
+            }
+            manAnswersP3[6] -> {
+                plusAbility(Constants.BALL_SPEED, 7)
+                plusAbility(Constants.STAMINA, 9)
+                plusAbility(Constants.KIND_CHANGE, 2)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.CLOSER, 2)
+                plusAbility(Constants.STARTER, 4)
             }
         }
         val manAnswersP4 = context.resources.getStringArray(R.array.m_array_q4_p)
@@ -475,16 +594,26 @@ class CalcMalePitcherAbility(
             manAnswersP4[1] -> {
                 plusSpecial(Constants.CHANCE, -0.01)
                 plusAbility(Constants.BALL_SPEED, 3)
-                plusAbility(Constants.CONTROL, 9)
+                plusAbility(Constants.CONTROL, 10)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 3)
                 plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.CLOSER, -2)
             }
             manAnswersP4[2] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
-                plusAbility(Constants.BALL_SPEED, 5)
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SINKER, 2)
+            }
+            manAnswersP4[3] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 3)
                 plusAbility(Constants.KIND_CHANGE, 15)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
@@ -492,8 +621,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.FOLK, 3)
                 plusAbility(Constants.SINKER, 2)
             }
-            manAnswersP4[3] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
+            manAnswersP4[4] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 6)
                 plusAbility(Constants.CONTROL, -5)
                 plusAbility(Constants.STAMINA, 5)
@@ -501,8 +630,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, -4)
                 plusAbility(Constants.MIDDLE, -2)
             }
-            manAnswersP4[4] -> {
-                plusSpecial(Constants.CHANCE, -0.5)
+            manAnswersP4[5] -> {
+                plusSpecial(Constants.CHANCE, -0.03)
                 plusAbility(Constants.BALL_SPEED, 9)
                 plusAbility(Constants.CONTROL, -3)
                 plusAbility(Constants.STAMINA, 10)
@@ -527,15 +656,13 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
             }
             manAnswersP5[2] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 7)
                 plusAbility(Constants.CONTROL, 3)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 5)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
             }
             manAnswersP5[3] -> {
-                plusSpecial(Constants.CHANCE, 0.01)
                 plusAbility(Constants.BALL_SPEED, 5)
                 plusAbility(Constants.CONTROL, 8)
                 plusAbility(Constants.STAMINA, 5)
@@ -544,20 +671,88 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 3)
             }
             manAnswersP5[4] -> {
-                plusSpecial(Constants.CHANCE, -0.03)
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 7)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 7)
+            }
+            manAnswersP5[5] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 8)
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.STAMINA, 7)
+                plusAbility(Constants.KIND_CHANGE, 9)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
+            }
+            manAnswersP5[6] -> {
+                plusSpecial(Constants.CHANCE, -0.02)
                 plusAbility(Constants.CONTROL, -2)
                 plusAbility(Constants.KIND_CHANGE, -3)
                 plusAbility(Constants.AMOUNT_CHANGE, -3)
             }
-            manAnswersP5[5] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
-                plusAbility(Constants.BALL_SPEED, 8)
-                plusAbility(Constants.CONTROL, 6)
+        }
+        val manAnswersP6 = context.resources.getStringArray(R.array.m_array_q6_p)
+        when (answersPersonality[5]) {
+            manAnswersP6[0] -> {
+            }
+            manAnswersP6[1] -> {
+                plusAbility(Constants.BALL_SPEED, 3)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.STAMINA, 10)
+                plusAbility(Constants.STARTER, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 1)
+            }
+            manAnswersP6[2] -> {
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.STAMINA, -4)
+                plusAbility(Constants.KIND_CHANGE, 4)
+                plusAbility(Constants.CURB, 1)
+                plusAbility(Constants.SINKER, 3)
+                plusAbility(Constants.SHOOT, 4)
+            }
+            manAnswersP6[3] -> {
+                plusAbility(Constants.CONTROL, -5)
+                plusAbility(Constants.STAMINA, -2)
+                plusAbility(Constants.AMOUNT_CHANGE, 4)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SINKER, 2)
+            }
+            manAnswersP6[4] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 3)
                 plusAbility(Constants.STAMINA, 7)
-                plusAbility(Constants.KIND_CHANGE, 10)
-                plusAbility(Constants.AMOUNT_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 4)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.FOLK, 2)
+                plusAbility(Constants.CLOSER, 4)
+            }
+            manAnswersP6[5] -> {
+                plusSpecial(Constants.CHANCE, 0.02)
+                plusAbility(Constants.STAMINA, 5)
+            }
+            manAnswersP6[6] -> {
+                plusSpecial(Constants.CHANCE, -0.02)
+                plusAbility(Constants.CONTROL, -3)
+                plusAbility(Constants.KIND_CHANGE, -3)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+            }
+            manAnswersP6[7] -> {
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.STAMINA, 3)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 3)
+            }
+            manAnswersP6[8] -> {
+                plusAbility(Constants.CONTROL, 6)
+                plusAbility(Constants.KIND_CHANGE, 6)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 2)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.SHOOT, 3)
             }
         }
+
         val manAnswersO1 = context.resources.getStringArray(R.array.m_array_q1_o)
         when (answersOther[0]) {
             manAnswersO1[0] -> {
@@ -577,7 +772,7 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 2)
             }
             manAnswersO1[2] -> {
-                plusSpecial(Constants.CHANCE, 0.03)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 11)
                 plusAbility(Constants.STAMINA, 5)
                 plusAbility(Constants.KIND_CHANGE, 6)
@@ -603,16 +798,16 @@ class CalcMalePitcherAbility(
         when (answersOther[1]) {
             manAnswersO2[0] -> {
                 plusAbility(Constants.BALL_SPEED, 7)
-                plusAbility(Constants.CONTROL, 18)
-                plusAbility(Constants.STAMINA, 18)
+                plusAbility(Constants.CONTROL, 17)
+                plusAbility(Constants.STAMINA, 17)
                 plusAbility(Constants.KIND_CHANGE, 8)
                 plusAbility(Constants.AMOUNT_CHANGE, 8)
                 plusAbility(Constants.STARTER, 5)
             }
             manAnswersO2[1] -> {
                 plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.CONTROL, 12)
-                plusAbility(Constants.STAMINA, 12)
+                plusAbility(Constants.CONTROL, 11)
+                plusAbility(Constants.STAMINA, 11)
                 plusAbility(Constants.KIND_CHANGE, 5)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.STARTER, 3)
@@ -663,11 +858,11 @@ class CalcMalePitcherAbility(
             manAnswersO5[0] -> {
             }
             manAnswersO5[1] -> {
-                plusSpecial(Constants.CHANCE, 0.05)
+                plusSpecial(Constants.CHANCE, 0.02)
                 plusAbility(Constants.BALL_SPEED, 8)
-                plusAbility(Constants.CONTROL, 16)
-                plusAbility(Constants.KIND_CHANGE, 16)
-                plusAbility(Constants.AMOUNT_CHANGE, 16)
+                plusAbility(Constants.CONTROL, 14)
+                plusAbility(Constants.KIND_CHANGE, 14)
+                plusAbility(Constants.AMOUNT_CHANGE, 14)
                 plusAbility(Constants.SLIDER, 3)
                 plusAbility(Constants.FOLK, 4)
                 plusAbility(Constants.SINKER, 2)
@@ -675,8 +870,8 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.MIDDLE, -5)
             }
             manAnswersO5[2] -> {
-                plusAbility(Constants.BALL_SPEED, 15)
-                plusAbility(Constants.STAMINA, 25)
+                plusAbility(Constants.BALL_SPEED, 14)
+                plusAbility(Constants.STAMINA, 23)
                 plusAbility(Constants.AMOUNT_CHANGE, 5)
                 plusAbility(Constants.SLIDER, 2)
                 plusAbility(Constants.FOLK, 3)
@@ -684,23 +879,26 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STARTER, 8)
             }
             manAnswersO5[3] -> {
-                plusAbility(Constants.CONTROL, 17)
-                plusAbility(Constants.KIND_CHANGE, 12)
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.CONTROL, 3)
+                plusAbility(Constants.KIND_CHANGE, 7)
+                plusAbility(Constants.AMOUNT_CHANGE, 11)
+                plusAbility(Constants.CURB, 7)
+                plusAbility(Constants.SINKER, 5)
             }
             manAnswersO5[4] -> {
-                plusSpecial(Constants.CHANCE, 0.02)
-                plusAbility(Constants.BALL_SPEED, 6)
-                plusAbility(Constants.CONTROL, -5)
-                plusAbility(Constants.STAMINA, 5)
-                plusAbility(Constants.AMOUNT_CHANGE, 3)
-                plusAbility(Constants.FOLK, 2)
-                plusAbility(Constants.CLOSER, 3)
+                plusAbility(Constants.CONTROL, 10)
+                plusAbility(Constants.STAMINA, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.CLOSER, -3)
             }
             manAnswersO5[5] -> {
                 plusSpecial(Constants.CHANCE, 0.01)
-                plusAbility(Constants.BALL_SPEED, 5)
-                plusAbility(Constants.STAMINA, -8)
-                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.BALL_SPEED, 6)
+                plusAbility(Constants.CONTROL, -5)
+                plusAbility(Constants.STAMINA, -4)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
                 plusAbility(Constants.SINKER, 3)
                 plusAbility(Constants.SHOOT, 4)
                 plusAbility(Constants.CLOSER, 3)
@@ -711,6 +909,65 @@ class CalcMalePitcherAbility(
                 plusAbility(Constants.STAMINA, -3)
                 plusAbility(Constants.SHOOT, 9)
                 plusAbility(Constants.MIDDLE, 2)
+            }
+            manAnswersO5[7] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.AMOUNT_CHANGE, 9)
+                plusAbility(Constants.CURB, 3)
+                plusAbility(Constants.FOLK, 5)
+                plusAbility(Constants.SINKER, 3)
+            }
+        }
+        val manAnswersO6 = context.resources.getStringArray(R.array.m_array_q6_o)
+        when (answersOther[5]) {
+            manAnswersO6[0] -> {
+            }
+            manAnswersO6[1] -> {
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.KIND_CHANGE, 2)
+                plusAbility(Constants.AMOUNT_CHANGE, 2)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.CURB, 4)
+                plusAbility(Constants.FOLK, 1)
+                plusAbility(Constants.CLOSER, -3)
+            }
+            manAnswersO6[2] -> {
+                plusSpecial(Constants.CHANCE, 0.03)
+                plusAbility(Constants.AMOUNT_CHANGE, 5)
+            }
+            manAnswersO6[3] -> {
+                plusAbility(Constants.BALL_SPEED, 5)
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.KIND_CHANGE, 10)
+                plusAbility(Constants.AMOUNT_CHANGE, 8)
+                plusAbility(Constants.SLIDER, 3)
+                plusAbility(Constants.FOLK, 4)
+                plusAbility(Constants.SINKER, 2)
+                plusAbility(Constants.SHOOT, 4)
+                plusAbility(Constants.MIDDLE, -5)
+            }
+            manAnswersO6[4] -> {
+                plusSpecial(Constants.CHANCE, 0.01)
+                plusAbility(Constants.BALL_SPEED, 8)
+                plusAbility(Constants.STAMINA, 15)
+                plusAbility(Constants.AMOUNT_CHANGE, 3)
+                plusAbility(Constants.SLIDER, 4)
+                plusAbility(Constants.FOLK, 3)
+                plusAbility(Constants.STARTER, 10)
+            }
+            manAnswersO6[5] -> {
+                plusAbility(Constants.CONTROL, 8)
+                plusAbility(Constants.KIND_CHANGE, 3)
+            }
+            manAnswersO6[6] -> {
+                plusAbility(Constants.BALL_SPEED, 2)
+                plusAbility(Constants.CONTROL, -7)
+                plusAbility(Constants.STAMINA, -2)
+                plusAbility(Constants.KIND_CHANGE, 3)
+                plusAbility(Constants.AMOUNT_CHANGE, 6)
+            }
+            manAnswersO6[7] -> {
+                plusSpecial(Constants.CHANCE, 0.05)
             }
         }
 
