@@ -20,7 +20,7 @@ class ShowResultActivity : BaseBannerActivity() {
 
     companion object {
         // Interstitial AD's ID
-        const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
+        const val AD_UNIT_ID: String = "ca-app-pub-6298264304843789/3463574114"
         const val AD_FREQUENCY = 2
         var makingPlayerCounter = 0
     }
