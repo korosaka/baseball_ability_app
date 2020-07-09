@@ -5,19 +5,20 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.websarva.wings.android.abiityofbaseball.*
 import com.websarva.wings.android.abiityofbaseball.calc_ability.*
 import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfAppearanceFragment
 import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfPersonalityFragment
 import com.websarva.wings.android.abiityofbaseball.fragment.question.QuestionOfOtherFragment
-import kotlinx.android.synthetic.main.activity_player_making.*
+import kotlinx.android.synthetic.main.activity_answer_questions.*
 import kotlinx.android.synthetic.main.fragment_question_of_appearance.*
 import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlin.properties.Delegates
 
-class AnswerQuestionsActivity : BaseBannerActivity() {
+class AnswerQuestionsActivity : AppCompatActivity() {
 
     // for using on child fragment
     companion object {
@@ -38,9 +39,8 @@ class AnswerQuestionsActivity : BaseBannerActivity() {
     private lateinit var answersOther: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_player_making)
-        setAdViewContainer(ad_view_container_on_player_making)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_answer_questions)
 
         assignInfo()
         addFragments()
