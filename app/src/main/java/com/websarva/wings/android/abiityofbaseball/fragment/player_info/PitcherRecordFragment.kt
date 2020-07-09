@@ -171,8 +171,8 @@ class PitcherRecordFragment : Fragment() {
     fun calcKRate(pitcher: PlayerPitcherClass): Float {
         val minKRate = 1.0
         val maxKRate = when (pitcher.pitcherType) {
-            Constants.STARTER -> 12.5
-            else -> 15.0
+            Constants.STARTER -> 11.8
+            else -> 14.0
         }
 
         val variableRange = maxKRate - minKRate
@@ -270,7 +270,7 @@ class PitcherRecordFragment : Fragment() {
             Constants.STARTER -> 0.06
             else -> 0.1
         }
-        val minStarterStaminaContribution = 9.5
+        val minStarterStaminaContribution = 8.5
         val staminaContribution = when (pitcher.pitcherType) {
             Constants.STARTER -> minStarterStaminaContribution + (pitcher.staminaAbility - Constants.NEEDED_STARTER_STAMINA) * staminaCoefficient
             else -> lossOfStamina(pitcher) * staminaCoefficient
