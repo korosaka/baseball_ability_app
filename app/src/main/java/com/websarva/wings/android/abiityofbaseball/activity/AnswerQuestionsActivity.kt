@@ -41,7 +41,6 @@ class AnswerQuestionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_questions)
-//        setAdViewContainer(ad_view_container_on_player_making)
 
         assignInfo()
         addFragments()
