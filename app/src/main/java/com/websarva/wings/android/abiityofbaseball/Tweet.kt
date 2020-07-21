@@ -33,7 +33,7 @@ class Tweet(private val context: Context,
     private val errorMassage = "エラー発生"
 
 
-    private fun getScreenShot(view: View): Bitmap {
+    private fun takeScreenShot(view: View): Bitmap {
         val returnedBitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(returnedBitmap)
 
@@ -84,7 +84,7 @@ class Tweet(private val context: Context,
     }
 
     public fun tweet() {
-        val mBitmap = getScreenShot(view)
+        val mBitmap = takeScreenShot(view)
         shareCompat(saveImage(mBitmap))
     }
 
