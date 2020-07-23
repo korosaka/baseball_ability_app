@@ -33,6 +33,7 @@ class Tweet(private val context: Context,
 
     private val fileName = "player_info.jpg"
     private val errorMassage = "エラー発生"
+    private val meaningLessNum = 1
 
 
     private fun takeScreenShot(view: View): Bitmap {
@@ -82,7 +83,7 @@ class Tweet(private val context: Context,
         val intent =
                 builder.createChooserIntent().addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
 
-        activity.startActivityForResult(intent, 1)
+        activity.startActivityForResult(intent, meaningLessNum)
     }
 
     public fun tweet() {
