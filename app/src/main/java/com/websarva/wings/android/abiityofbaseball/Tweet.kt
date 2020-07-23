@@ -22,11 +22,13 @@ class Tweet(private val context: Context,
 
     private val displayPlayerName = "『$playerName』"
     private val message1 = "野球能力診断アプリで"
-    private val message2 = "を診断してみました！"
+    private val message2 = "を診断しました！"
     private val androidTab = "Android: "
     private val googlePlayUrl = "https://bit.ly/39dbyZP"
+    private val hashTagMessage = "#野球能力診断"
     private val nextLine = "\n"
-    private val tweetMessage = message1 + nextLine + displayPlayerName + message2 + nextLine + nextLine + androidTab + googlePlayUrl
+    private val tweetMessage = message1 + nextLine + displayPlayerName + message2 + nextLine +
+            nextLine + androidTab + googlePlayUrl+ nextLine + nextLine + hashTagMessage
     private val dataType = "image/jpeg"
 
     private val fileName = "player_info.jpg"
