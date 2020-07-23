@@ -52,7 +52,7 @@ class Tweet(private val context: Context,
         try {
             val directory = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString()
 
-            val folder = File(directory.toString())
+            val folder = File(directory)
             if (!folder.exists()) {
                 folder.mkdirs()
             }
