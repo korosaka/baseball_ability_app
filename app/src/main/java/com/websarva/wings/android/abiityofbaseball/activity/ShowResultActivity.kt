@@ -12,6 +12,7 @@ import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerIn
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
 import kotlinx.android.synthetic.main.activity_show_result.*
+import kotlinx.android.synthetic.main.fragment_player_info.*
 import java.util.ArrayList
 
 class ShowResultActivity : BaseBannerActivity() {
@@ -24,6 +25,8 @@ class ShowResultActivity : BaseBannerActivity() {
         const val AD_FREQUENCY = 2
         var makingPlayerCounter = 0
     }
+
+    private lateinit var playerName: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +61,7 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     private fun displayPlayerInfo() {
+        playerName = intent.getStringExtra(Constants.PLAYER_NAME)!!
         when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> {
                 val fielderPlayerFrag = PlayerInfoFragment.newInstance(makeFielder())
@@ -78,7 +82,7 @@ class ShowResultActivity : BaseBannerActivity() {
 
     private fun makeFielder(): PlayerFielderClass {
         return PlayerFielderClass(
-                intent.getStringExtra(Constants.PLAYER_NAME)!!,
+                playerName,
                 intent.getStringExtra(Constants.POSITION)!!,
                 intent.getIntExtra(Constants.BALLISTIC, 1),
                 intent.getIntExtra(Constants.CONTACT, 0),
@@ -93,7 +97,7 @@ class ShowResultActivity : BaseBannerActivity() {
 
     private fun makePitcher(): PlayerPitcherClass {
         return PlayerPitcherClass(
-                intent.getStringExtra(Constants.PLAYER_NAME)!!,
+                playerName,
                 intent.getStringExtra(Constants.PITCHER_TYPE)!!,
                 intent.getIntExtra(Constants.BALL_SPEED, 0),
                 intent.getIntExtra(Constants.CONTROL, 0),
@@ -129,6 +133,11 @@ class ShowResultActivity : BaseBannerActivity() {
         val intent = Intent(this, TopActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+
+    fun onClickTweet(view: View) {
+        Tweet(applicationContext, this, player_info_frame, playerName).tweet()
     }
 
 }

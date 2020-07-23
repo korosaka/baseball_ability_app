@@ -117,6 +117,7 @@ class Constants {
         const val OTHER = "other"
 
         const val HALF_SPACE = " "
+        const val EMPTY = ""
 
     }
 }
