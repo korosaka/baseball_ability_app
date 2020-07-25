@@ -116,6 +116,7 @@ class Constants {
         const val PERSONALITY = "personality"
         const val OTHER = "other"
 
+        const val PRIVACY_POLICY = "privacyPolicy"
         const val HALF_SPACE = " "
         const val EMPTY = ""
 
