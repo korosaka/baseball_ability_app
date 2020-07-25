@@ -8,7 +8,7 @@ import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.fragment.PrivacyPolicyFragment
 
-class TopActivity : AppCompatActivity() {
+class TopActivity : BaseOptionMenuActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class TopActivity : AppCompatActivity() {
     }
 
     private fun showPrivacyPolicy() {
-        val dialog = PrivacyPolicyFragment()
+        val dialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
         dialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
     }
 }
