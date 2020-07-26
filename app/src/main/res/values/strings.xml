@@ -134,6 +134,13 @@
     <string name="other_question5">⑤その他特徴-1</string>
     <string name="other_question6">⑥その他特徴-2</string>
 
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="policy_title">個人情報保護について</string>
+    <string name="policy_message1">＜広告について＞</string>
+    <string name="policy_message2">本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMobがご利用者の情報を自動取得する場合がございます。取得する情報、利用目的、第三者への提供等につきましては、以下の広告配信事業者のアプリケーション・プライバシーポリシーのリンクよりご確認ください。</string>
+    <string name="google_policy"><a href="https://policies.google.com/technologies/ads?hl=ja">Google広告に関するポリシー</a></string>
+    <string name="agree">同意する</string>
+    <string name="close">閉じる</string>
 
     <string-array name="m_array_q1_a">
         <item>~160cm</item>
@@ -185,6 +192,7 @@
         <item>派手め</item>
         <item>独特</item>
     </string-array>
+
     <string-array name="m_array_q4_a">
         <item>特になし</item>
         <item>優しそう</item>
@@ -196,6 +204,7 @@
         <item>大人しそう</item>
         <item>こわそう</item>
     </string-array>
+
 
     <string-array name="w_array_q4_a">
         <item>特になし</item>
@@ -216,6 +225,7 @@
         <item>派手め</item>
         <item>独創的</item>
     </string-array>
+
 
     <string-array name="w_array_q5_a">
         <item>ふつう</item>
@@ -244,7 +254,6 @@
         <item>ばっちりメイク</item>
         <item>メガネ女子</item>
     </string-array>
-
     <string-array name="m_array_q1_p">
         <item>特になし</item>
         <item>穏やか</item>
@@ -276,7 +285,6 @@
         <item>ポジティブ</item>
     </string-array>
 
-
     <string-array name="w_array_q2_p">
         <item>特になし</item>
         <item>優しい</item>
@@ -297,7 +305,6 @@
         <item>アイデアマン</item>
         <item>一匹オオカミ</item>
     </string-array>
-
     <string-array name="w_array_q3_p">
         <item>特になし</item>
         <item>リーダー</item>
@@ -307,6 +314,7 @@
         <item>アイデアマン</item>
         <item>一匹オオカミ</item>
     </string-array>
+
     <string-array name="m_array_q4_p">
         <item>ふつう</item>
         <item>お勉強得意</item>
@@ -315,7 +323,6 @@
         <item>頭からっぽ</item>
         <item>脳筋</item>
     </string-array>
-
 
     <string-array name="w_array_q4_p">
         <item>ふつう</item>
@@ -355,6 +362,7 @@
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
+
     <string-array name="w_array_q6_p">
         <item>特になし</item>
         <item>努力家</item>
@@ -366,7 +374,6 @@
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
-
     <string-array name="m_array_q1_o">
         <item>王子様</item>
         <item>モテる</item>
@@ -389,7 +396,6 @@
         <item>あんまり</item>
         <item>ぷぅ〜</item>
     </string-array>
-
     <string-array name="w_array_q2_o">
         <item>大人気</item>
         <item>まぁまぁ</item>
@@ -404,7 +410,6 @@
         <item>あんまり</item>
         <item>豆腐メンタル</item>
     </string-array>
-
     <string-array name="w_array_q3_o">
         <item>最強</item>
         <item>なかなか</item>
@@ -467,6 +472,4 @@
         <item>ナルシスト</item>
         <item>持ってる女</item>
     </string-array>
-
-
 </resources>

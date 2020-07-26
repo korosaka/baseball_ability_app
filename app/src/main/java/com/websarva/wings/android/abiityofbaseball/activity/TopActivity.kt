@@ -3,14 +3,17 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
+import com.websarva.wings.android.abiityofbaseball.fragment.PrivacyPolicyFragment
 
-class TopActivity : AppCompatActivity() {
+class TopActivity : BaseOptionMenuActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top)
+
+        if (!PrivacyPolicyFragment.isPolicyAgreed(this)) showPrivacyPolicy()
     }
 
     // はじめるボタンクリックで画面遷移
@@ -21,5 +24,10 @@ class TopActivity : AppCompatActivity() {
         val intent = Intent(this, SelectPlayerTypeActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun showPrivacyPolicy() {
+        val policyDialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
+        policyDialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
     }
 }

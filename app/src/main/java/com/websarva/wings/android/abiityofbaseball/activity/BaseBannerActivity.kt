@@ -9,7 +9,7 @@ import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 
-abstract class BaseBannerActivity : AppCompatActivity() {
+abstract class BaseBannerActivity : BaseOptionMenuActivity() {
 
     private lateinit var adView: AdView
     private lateinit var adViewContainer: FrameLayout
