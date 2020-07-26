@@ -1,6 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball.fragment
 
 import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
+import com.websarva.wings.android.abiityofbaseball.MySharedPreferences
 
 class PrivacyPolicyFragment : DialogFragment() {
 
@@ -51,12 +53,19 @@ class PrivacyPolicyFragment : DialogFragment() {
     private fun addButtonListener(buttonType: String, dialog: Dialog) {
         agreeButton.setOnClickListener {
             when (buttonType) {
-                Constants.AGREE -> {
-
-                }
+                Constants.AGREE -> agreePolicy()
             }
             dialog.dismiss()
         }
+    }
+
+    private fun agreePolicy() {
+        context?.let { MySharedPreferences(it) }?.storeBoolean(true, Constants.AGREE)
+    }
+
+    // this method is called before creating this dialog, so require Context
+    fun isAgreed(context: Context): Boolean {
+        return MySharedPreferences(context).getBoolean(Constants.AGREE)
     }
 
     companion object {

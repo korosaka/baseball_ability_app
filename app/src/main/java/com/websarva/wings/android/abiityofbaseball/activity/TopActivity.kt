@@ -3,7 +3,6 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.fragment.PrivacyPolicyFragment
@@ -27,7 +26,7 @@ class TopActivity : BaseOptionMenuActivity() {
     }
 
     private fun showPrivacyPolicy() {
-        val dialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
-        dialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
+        val policyDialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
+        if (!policyDialog.isAgreed(this)) policyDialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
     }
 }
