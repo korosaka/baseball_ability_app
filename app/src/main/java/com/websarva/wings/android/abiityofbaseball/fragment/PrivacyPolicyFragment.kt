@@ -63,10 +63,6 @@ class PrivacyPolicyFragment : DialogFragment() {
         context?.let { MySharedPreferences(it) }?.storeBoolean(true, Constants.AGREE)
     }
 
-    // this method is called before creating this dialog, so require Context
-    fun isAgreed(context: Context): Boolean {
-        return MySharedPreferences(context).getBoolean(Constants.AGREE)
-    }
 
     companion object {
         @JvmStatic
@@ -76,6 +72,10 @@ class PrivacyPolicyFragment : DialogFragment() {
                         putString(Constants.BUTTON_TYPE, buttonType)
                     }
                 }
+
+        fun isPolicyAgreed(context: Context): Boolean {
+            return MySharedPreferences(context).getBoolean(Constants.AGREE)
+        }
     }
 
 

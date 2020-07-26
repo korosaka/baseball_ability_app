@@ -12,7 +12,8 @@ class TopActivity : BaseOptionMenuActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top)
-        showPrivacyPolicy()
+
+        if (!PrivacyPolicyFragment.isPolicyAgreed(this)) showPrivacyPolicy()
     }
 
     // はじめるボタンクリックで画面遷移
@@ -27,6 +28,6 @@ class TopActivity : BaseOptionMenuActivity() {
 
     private fun showPrivacyPolicy() {
         val policyDialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
-        if (!policyDialog.isAgreed(this)) policyDialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
+        policyDialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)
     }
 }
