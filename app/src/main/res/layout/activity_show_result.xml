@@ -27,11 +27,34 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/tweet"
+                android:textSize="28sp"
+                android:background="@drawable/tweet_button_background"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:onClick="onClickTweet"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp" />
+
+        </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="200dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 

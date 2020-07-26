@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_question_of_personality.*
 import kotlinx.android.synthetic.main.fragment_question_of_other.*
 import kotlin.properties.Delegates
 
-class AnswerQuestionsActivity : AppCompatActivity() {
+class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
     // for using on child fragment
     companion object {

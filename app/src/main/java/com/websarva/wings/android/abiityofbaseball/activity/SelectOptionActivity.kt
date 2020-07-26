@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.websarva.wings.android.abiityofbaseball.R
 
-class SelectOptionActivity : AppCompatActivity() {
+class SelectOptionActivity : BaseOptionMenuActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
