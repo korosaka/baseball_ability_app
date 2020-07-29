@@ -123,5 +123,11 @@ class Constants {
         const val HALF_SPACE = " "
         const val EMPTY = ""
 
+        // DB
+        const val DATABASE_NAME = "player.db"
+        const val DATABASE_VERSION = 1
+        const val FIELDER_TABLE = "fielderTable"
+        const val PITCHER_TABLE = "pitcherTable"
+
     }
 }
