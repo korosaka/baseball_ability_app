@@ -32,6 +32,7 @@
     <string name="ask_save">データを保存しますか？</string>
     <string name="completed_save">保存が完了しました</string>
     <string name="failed_save">保存に失敗しました</string>
+    <string name="full_data">データがいっぱいです</string>
 
 
     <string name="position_catcher">捕</string>

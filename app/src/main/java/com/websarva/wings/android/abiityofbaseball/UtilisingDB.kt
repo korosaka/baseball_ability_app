@@ -1,6 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
+import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
 import android.graphics.Color
@@ -11,7 +12,6 @@ import androidx.core.content.res.ResourcesCompat
 import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbility
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
-import java.lang.Exception
 
 class UtilisingDB(val context: Context, private val applicationContext: Context) {
 
@@ -19,6 +19,16 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
     private var saveSucceed = true
     private var mFielder: PlayerFielderClass? = null
     private var mPitcher: PlayerPitcherClass? = null
+
+    fun countSavedFielder(): Int {
+        val database = helper.readableDatabase
+        return DatabaseUtils.queryNumEntries(database, Constants.FIELDER_TABLE).toInt()
+    }
+
+    fun countSavedPitcher(): Int {
+        val database = helper.readableDatabase
+        return DatabaseUtils.queryNumEntries(database, Constants.PITCHER_TABLE).toInt()
+    }
 
     fun saveFielder(fielder: PlayerFielderClass, saveButton: Button) {
         mFielder = fielder

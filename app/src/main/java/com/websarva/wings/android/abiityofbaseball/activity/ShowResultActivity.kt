@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -24,6 +25,8 @@ class ShowResultActivity : BaseBannerActivity() {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
         const val AD_FREQUENCY = 2
+        // TODO this num is going to be 100
+        const val LIMIT_PLAYER_DATA = 3
         var makingPlayerCounter = 0
     }
 
@@ -156,9 +159,23 @@ class ShowResultActivity : BaseBannerActivity() {
         Tweet(applicationContext, this, player_info_frame, playerName).tweet()
     }
 
-    // TODO データ数チェック(上限100?)
     fun onClickSave(view: View) {
-        showSaveDialog()
+        if (canSave()) showSaveDialog()
+        else Toast.makeText(applicationContext,
+                resources.getString(R.string.full_data),
+                Toast.LENGTH_SHORT)
+                .show()
+    }
+
+    private fun canSave(): Boolean {
+        val uDB = UtilisingDB(this, applicationContext)
+        val numberOfData = when(AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> uDB.countSavedFielder()
+            Constants.TYPE_PITCHER -> uDB.countSavedPitcher()
+            else -> LIMIT_PLAYER_DATA
+        }
+
+        return numberOfData < LIMIT_PLAYER_DATA
     }
 
     private fun showSaveDialog() {
@@ -173,10 +190,10 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     private fun savePlayerInfo() {
-        val db = UtilisingDB(this, applicationContext)
+        val uDB = UtilisingDB(this, applicationContext)
         when (AnswerQuestionsActivity.playerType) {
-            Constants.TYPE_FIELDER -> fielder?.let { db.saveFielder(it, save_button) }
-            Constants.TYPE_PITCHER -> pitcher?.let { db.savePitcher(it, save_button) }
+            Constants.TYPE_FIELDER -> fielder?.let { uDB.saveFielder(it, save_button) }
+            Constants.TYPE_PITCHER -> pitcher?.let { uDB.savePitcher(it, save_button) }
         }
     }
 
