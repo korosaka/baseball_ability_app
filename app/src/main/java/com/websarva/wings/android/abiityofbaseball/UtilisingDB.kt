@@ -1,18 +1,52 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
+import android.database.sqlite.SQLiteStatement
+import android.graphics.Color
+import android.util.Log
+import android.widget.Button
+import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbility
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
 
-class UtilisingDB(context: Context) {
+class UtilisingDB(val context: Context, private val applicationContext: Context) {
 
     private var helper: DatabaseHelper = DatabaseHelper(context)
+    private var saveSucceed = true
 
-    fun saveFielder(fielder: PlayerFielderClass) {
+    fun saveFielder(fielder: PlayerFielderClass, saveButton: Button) {
         val database = helper.writableDatabase
+        saveSucceed = true
+        try {
+            val stmt = database.compileStatement(FIELDER_INSERT)
+            bindFielderStmt(stmt, fielder)
+            stmt.executeInsert()
+        } catch (e: Exception) {
+            saveSucceed = false
+        } finally {
+            database.close()
+            showSaveToast(saveSucceed, saveButton)
+        }
+    }
 
-        val stmt = database.compileStatement(FIELDER_INSERT)
+    fun savePitcher(pitcher: PlayerPitcherClass, saveButton: Button) {
+        val database = helper.writableDatabase
+        saveSucceed = true
+        try {
+            val stmt = database.compileStatement(PITCHER_INSERT)
+            bindPitcherStmt(stmt, pitcher)
+            stmt.executeInsert()
+        } catch (e: java.lang.Exception) {
+            saveSucceed = false
+        } finally {
+            database.close()
+            showSaveToast(saveSucceed, saveButton)
+        }
+    }
+
+    private fun bindFielderStmt(stmt: SQLiteStatement, fielder: PlayerFielderClass) {
         stmt.bindString(1, fielder.playerName)
         stmt.bindString(2, fielder.mainPosition)
         stmt.bindLong(3, fielder.ballisticAbility.toLong())
@@ -23,14 +57,9 @@ class UtilisingDB(context: Context) {
         stmt.bindLong(8, fielder.fieldingAbility.toLong())
         stmt.bindLong(9, fielder.catchingAbility.toLong())
         stmt.bindDouble(10, fielder.chance)
-
-        stmt.executeInsert()
     }
 
-    fun savePitcher(pitcher: PlayerPitcherClass) {
-        val database = helper.writableDatabase
-
-        val stmt = database.compileStatement(PITCHER_INSERT)
+    private fun bindPitcherStmt(stmt: SQLiteStatement, pitcher: PlayerPitcherClass) {
         stmt.bindString(1, pitcher.playerName)
         stmt.bindString(2, pitcher.pitcherType)
         stmt.bindLong(3, pitcher.maxBallSpeed.toLong())
@@ -42,9 +71,71 @@ class UtilisingDB(context: Context) {
         stmt.bindLong(9, pitcher.changeBalls[CalcPitcherAbility.SINKER_INDEX].toLong())
         stmt.bindLong(10, pitcher.changeBalls[CalcPitcherAbility.SHOOT_INDEX].toLong())
         stmt.bindDouble(11, pitcher.chance)
-
-        stmt.executeInsert()
     }
+
+
+    // TODO test
+    fun getFielders() {
+        val database = helper.readableDatabase
+
+        val cursor = database.rawQuery(FIELDER_SELECT, null)
+        while (cursor.moveToNext()) {
+            val name = cursor.getString(cursor.getColumnIndex("name"))
+            val position = cursor.getString(cursor.getColumnIndex("position"))
+            val ballistic = cursor.getInt(cursor.getColumnIndex("ballistic"))
+            val contact = cursor.getInt(cursor.getColumnIndex("contact"))
+            val power = cursor.getInt(cursor.getColumnIndex("power"))
+            val speed = cursor.getInt(cursor.getColumnIndex("speed"))
+            val arm = cursor.getInt(cursor.getColumnIndex("arm"))
+            val fielding = cursor.getInt(cursor.getColumnIndex("fielding"))
+            val catching = cursor.getInt(cursor.getColumnIndex("catching"))
+            val chance = cursor.getDouble(cursor.getColumnIndex("chance"))
+
+            Log.e("test_db", "$name $position $ballistic $contact $power $speed $arm $fielding $catching $chance")
+            database.close()
+        }
+    }
+
+
+    // TODO test
+    fun getPitcher() {
+        val database = helper.readableDatabase
+
+        val cursor = database.rawQuery(PITCHER_SELECT, null)
+        while (cursor.moveToNext()) {
+            val name = cursor.getString(cursor.getColumnIndex("name"))
+            val type = cursor.getString(cursor.getColumnIndex("type"))
+            val max_speed = cursor.getInt(cursor.getColumnIndex("max_speed"))
+            val control = cursor.getInt(cursor.getColumnIndex("control"))
+            val stamina = cursor.getInt(cursor.getColumnIndex("stamina"))
+            val slider = cursor.getInt(cursor.getColumnIndex("slider"))
+            val curb = cursor.getInt(cursor.getColumnIndex("curb"))
+            val folk = cursor.getInt(cursor.getColumnIndex("folk"))
+            val sinker = cursor.getInt(cursor.getColumnIndex("sinker"))
+            val shoot = cursor.getInt(cursor.getColumnIndex("shoot"))
+            val chance = cursor.getDouble(cursor.getColumnIndex("chance"))
+
+            Log.e("pitcher_db", "$name $type $max_speed $control $stamina $slider $curb $folk $sinker $shoot $chance")
+            database.close()
+        }
+    }
+
+    private fun showSaveToast(success: Boolean, saveButton: Button) {
+        val messageId = if (success) R.string.completed_save
+        else R.string.failed_save
+        Toast.makeText(applicationContext, context.resources.getString(messageId), Toast.LENGTH_SHORT).show()
+
+        if (success) disableButton(saveButton)
+    }
+
+    private fun disableButton(button: Button) {
+        button.isEnabled = false
+        button.setTextColor(Color.parseColor("#696969"))
+        val disableBackground =
+                ResourcesCompat.getDrawable(context.resources, R.drawable.save_button_disable, null)
+        button.background = disableBackground
+    }
+
 
     companion object {
 
@@ -57,6 +148,9 @@ class UtilisingDB(context: Context) {
                 Constants.PITCHER_TABLE +
                 "(name, type, max_speed, control, stamina, slider, curb, folk, sinker, shoot, chance) " +
                 "VALUES(?,?,?,?,?,?,?,?,?,?,?)"
+
+        const val FIELDER_SELECT = "SELECT * FROM " + Constants.FIELDER_TABLE
+        const val PITCHER_SELECT = "SELECT * FROM " + Constants.PITCHER_TABLE
     }
 
 }

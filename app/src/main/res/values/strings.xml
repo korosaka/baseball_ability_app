@@ -28,6 +28,10 @@
     <string name="male">男性</string>
     <string name="female">女性</string>
     <string name="tweet">Tweet</string>
+    <string name="save_data">SAVE</string>
+    <string name="ask_save">データを保存しますか？</string>
+    <string name="completed_save">保存が完了しました</string>
+    <string name="failed_save">保存に失敗しました</string>
 
 
     <string name="position_catcher">捕</string>

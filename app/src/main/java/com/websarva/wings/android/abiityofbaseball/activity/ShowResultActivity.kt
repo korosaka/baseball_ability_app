@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
@@ -28,12 +29,16 @@ class ShowResultActivity : BaseBannerActivity() {
 
     private lateinit var playerName: String
 
+    private var fielder: PlayerFielderClass? = null
+    private var pitcher: PlayerPitcherClass? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_show_result)
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
+        makePlayer()
         displayPlayerInfo()
         loadInterstitialAd()
     }
@@ -60,16 +65,27 @@ class ShowResultActivity : BaseBannerActivity() {
         mInterstitialAd.loadAd(AdRequest.Builder().build())
     }
 
-    private fun displayPlayerInfo() {
+    private fun makePlayer() {
         playerName = intent.getStringExtra(Constants.PLAYER_NAME)!!
         when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder = makeFielder()
+            Constants.TYPE_PITCHER -> pitcher = makePitcher()
+        }
+    }
+
+    private fun displayPlayerInfo() {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> {
-                val fielderPlayerFrag = PlayerInfoFragment.newInstance(makeFielder())
-                addPlayerInfoFrag(fielderPlayerFrag)
+                if (fielder != null) {
+                    val fielderPlayerFrag = PlayerInfoFragment.newInstance(fielder!!)
+                    addPlayerInfoFrag(fielderPlayerFrag)
+                }
             }
             Constants.TYPE_PITCHER -> {
-                val pitcherPlayerFrag = PlayerInfoFragment.newInstance(makePitcher())
-                addPlayerInfoFrag(pitcherPlayerFrag)
+                if (pitcher != null) {
+                    val pitcherPlayerFrag = PlayerInfoFragment.newInstance(pitcher!!)
+                    addPlayerInfoFrag(pitcherPlayerFrag)
+                }
             }
         }
     }
@@ -138,6 +154,30 @@ class ShowResultActivity : BaseBannerActivity() {
 
     fun onClickTweet(view: View) {
         Tweet(applicationContext, this, player_info_frame, playerName).tweet()
+    }
+
+    // TODO データ数チェック(上限100?)
+    fun onClickSave(view: View) {
+        showSaveDialog()
+    }
+
+    private fun showSaveDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage(resources.getString(R.string.ask_save))
+        // _ means argument which is never used
+        builder.setPositiveButton(resources.getString(R.string.done)) { _, _ ->
+            savePlayerInfo()
+        }
+        builder.setNegativeButton(resources.getString(R.string.no), null)
+        builder.show()
+    }
+
+    private fun savePlayerInfo() {
+        val db = UtilisingDB(this, applicationContext)
+        when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder?.let { db.saveFielder(it, save_button) }
+            Constants.TYPE_PITCHER -> pitcher?.let { db.savePitcher(it, save_button) }
+        }
     }
 
 }
