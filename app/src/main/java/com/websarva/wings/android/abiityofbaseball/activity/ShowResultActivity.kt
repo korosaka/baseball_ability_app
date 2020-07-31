@@ -25,6 +25,7 @@ class ShowResultActivity : BaseBannerActivity() {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
         const val AD_FREQUENCY = 2
+
         // TODO this num is going to be 100
         const val LIMIT_PLAYER_DATA = 3
         var makingPlayerCounter = 0
@@ -60,6 +61,7 @@ class ShowResultActivity : BaseBannerActivity() {
             override fun onAdClicked() {
                 backToTop()
             }
+
             override fun onAdClosed() {
                 backToTop()
             }
@@ -169,7 +171,7 @@ class ShowResultActivity : BaseBannerActivity() {
 
     private fun canSave(): Boolean {
         val uDB = UtilisingDB(this, applicationContext)
-        val numberOfData = when(AnswerQuestionsActivity.playerType) {
+        val numberOfData = when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> uDB.countSavedFielder()
             Constants.TYPE_PITCHER -> uDB.countSavedPitcher()
             else -> LIMIT_PLAYER_DATA

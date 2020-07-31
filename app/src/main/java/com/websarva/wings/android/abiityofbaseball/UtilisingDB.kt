@@ -56,7 +56,7 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
 
     private fun insertPlayerInfo(playerType: String, database: SQLiteDatabase) {
         try {
-            when(playerType) {
+            when (playerType) {
                 Constants.TYPE_FIELDER -> {
                     val stmt = database.compileStatement(FIELDER_INSERT)
                     mFielder?.let { bindFielderStmt(stmt, it) }
