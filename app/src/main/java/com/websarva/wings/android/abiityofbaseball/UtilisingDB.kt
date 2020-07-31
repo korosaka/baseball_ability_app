@@ -1,6 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
 import android.graphics.Color
 import android.util.Log
@@ -10,39 +11,55 @@ import androidx.core.content.res.ResourcesCompat
 import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbility
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
+import java.lang.Exception
 
 class UtilisingDB(val context: Context, private val applicationContext: Context) {
 
     private var helper: DatabaseHelper = DatabaseHelper(context)
     private var saveSucceed = true
+    private var mFielder: PlayerFielderClass? = null
+    private var mPitcher: PlayerPitcherClass? = null
 
     fun saveFielder(fielder: PlayerFielderClass, saveButton: Button) {
-        val database = helper.writableDatabase
-        saveSucceed = true
-        try {
-            val stmt = database.compileStatement(FIELDER_INSERT)
-            bindFielderStmt(stmt, fielder)
-            stmt.executeInsert()
-        } catch (e: Exception) {
-            saveSucceed = false
-        } finally {
-            database.close()
-            showSaveToast(saveSucceed, saveButton)
-        }
+        mFielder = fielder
+        savePlayer(Constants.TYPE_FIELDER, saveButton)
     }
 
     fun savePitcher(pitcher: PlayerPitcherClass, saveButton: Button) {
+        mPitcher = pitcher
+        savePlayer(Constants.TYPE_PITCHER, saveButton)
+    }
+
+    private fun savePlayer(playerType: String, saveButton: Button) {
         val database = helper.writableDatabase
         saveSucceed = true
         try {
-            val stmt = database.compileStatement(PITCHER_INSERT)
-            bindPitcherStmt(stmt, pitcher)
-            stmt.executeInsert()
+            insertPlayerInfo(playerType, database)
         } catch (e: java.lang.Exception) {
             saveSucceed = false
         } finally {
             database.close()
-            showSaveToast(saveSucceed, saveButton)
+            showSaveToast(saveSucceed)
+            if (saveSucceed) disableButton(saveButton)
+        }
+    }
+
+    private fun insertPlayerInfo(playerType: String, database: SQLiteDatabase) {
+        try {
+            when(playerType) {
+                Constants.TYPE_FIELDER -> {
+                    val stmt = database.compileStatement(FIELDER_INSERT)
+                    mFielder?.let { bindFielderStmt(stmt, it) }
+                    stmt.executeInsert()
+                }
+                Constants.TYPE_PITCHER -> {
+                    val stmt = database.compileStatement(PITCHER_INSERT)
+                    mPitcher?.let { bindPitcherStmt(stmt, it) }
+                    stmt.executeInsert()
+                }
+            }
+        } catch (e: java.lang.Exception) {
+            throw e
         }
     }
 
@@ -120,12 +137,10 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
         }
     }
 
-    private fun showSaveToast(success: Boolean, saveButton: Button) {
+    private fun showSaveToast(success: Boolean) {
         val messageId = if (success) R.string.completed_save
         else R.string.failed_save
         Toast.makeText(applicationContext, context.resources.getString(messageId), Toast.LENGTH_SHORT).show()
-
-        if (success) disableButton(saveButton)
     }
 
     private fun disableButton(button: Button) {
