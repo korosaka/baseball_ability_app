@@ -13,7 +13,7 @@ import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbili
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
 
-class UtilisingDB(val context: Context, private val applicationContext: Context) {
+class UtilisingDB(private val context: Context, private val applicationContext: Context) {
 
     private var helper: DatabaseHelper = DatabaseHelper(context)
     private var saveSucceed = true
@@ -22,12 +22,16 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
 
     fun countSavedFielder(): Int {
         val database = helper.readableDatabase
-        return DatabaseUtils.queryNumEntries(database, Constants.FIELDER_TABLE).toInt()
+        val count = DatabaseUtils.queryNumEntries(database, Constants.FIELDER_TABLE).toInt()
+        database.close()
+        return count
     }
 
     fun countSavedPitcher(): Int {
         val database = helper.readableDatabase
-        return DatabaseUtils.queryNumEntries(database, Constants.PITCHER_TABLE).toInt()
+        val count = DatabaseUtils.queryNumEntries(database, Constants.PITCHER_TABLE).toInt()
+        database.close()
+        return count
     }
 
     fun saveFielder(fielder: PlayerFielderClass, saveButton: Button) {
@@ -132,7 +136,7 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
         while (cursor.moveToNext()) {
             val name = cursor.getString(cursor.getColumnIndex("name"))
             val type = cursor.getString(cursor.getColumnIndex("type"))
-            val max_speed = cursor.getInt(cursor.getColumnIndex("max_speed"))
+            val maxSpeed = cursor.getInt(cursor.getColumnIndex("max_speed"))
             val control = cursor.getInt(cursor.getColumnIndex("control"))
             val stamina = cursor.getInt(cursor.getColumnIndex("stamina"))
             val slider = cursor.getInt(cursor.getColumnIndex("slider"))
@@ -142,7 +146,7 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
             val shoot = cursor.getInt(cursor.getColumnIndex("shoot"))
             val chance = cursor.getDouble(cursor.getColumnIndex("chance"))
 
-            Log.e("pitcher_db", "$name $type $max_speed $control $stamina $slider $curb $folk $sinker $shoot $chance")
+            Log.e("pitcher_db", "$name $type $maxSpeed $control $stamina $slider $curb $folk $sinker $shoot $chance")
             database.close()
         }
     }
@@ -155,7 +159,7 @@ class UtilisingDB(val context: Context, private val applicationContext: Context)
 
     private fun disableButton(button: Button) {
         button.isEnabled = false
-        button.setTextColor(Color.parseColor("#696969"))
+        button.setTextColor(Color.parseColor(Constants.SAVE_DISABLE_COLOR))
         val disableBackground =
                 ResourcesCompat.getDrawable(context.resources, R.drawable.save_button_disable, null)
         button.background = disableBackground
