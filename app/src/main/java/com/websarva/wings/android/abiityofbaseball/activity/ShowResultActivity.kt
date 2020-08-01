@@ -3,6 +3,8 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
@@ -23,10 +25,16 @@ class ShowResultActivity : BaseBannerActivity() {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
         const val AD_FREQUENCY = 2
+
+        // TODO this num is going to be 100
+        const val LIMIT_PLAYER_DATA = 3
         var makingPlayerCounter = 0
     }
 
     private lateinit var playerName: String
+
+    private var fielder: PlayerFielderClass? = null
+    private var pitcher: PlayerPitcherClass? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +42,7 @@ class ShowResultActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
+        makePlayer()
         displayPlayerInfo()
         loadInterstitialAd()
     }
@@ -52,6 +61,7 @@ class ShowResultActivity : BaseBannerActivity() {
             override fun onAdClicked() {
                 backToTop()
             }
+
             override fun onAdClosed() {
                 backToTop()
             }
@@ -60,16 +70,27 @@ class ShowResultActivity : BaseBannerActivity() {
         mInterstitialAd.loadAd(AdRequest.Builder().build())
     }
 
-    private fun displayPlayerInfo() {
+    private fun makePlayer() {
         playerName = intent.getStringExtra(Constants.PLAYER_NAME)!!
         when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder = makeFielder()
+            Constants.TYPE_PITCHER -> pitcher = makePitcher()
+        }
+    }
+
+    private fun displayPlayerInfo() {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> {
-                val fielderPlayerFrag = PlayerInfoFragment.newInstance(makeFielder())
-                addPlayerInfoFrag(fielderPlayerFrag)
+                if (fielder != null) {
+                    val fielderPlayerFrag = PlayerInfoFragment.newInstance(fielder!!)
+                    addPlayerInfoFrag(fielderPlayerFrag)
+                }
             }
             Constants.TYPE_PITCHER -> {
-                val pitcherPlayerFrag = PlayerInfoFragment.newInstance(makePitcher())
-                addPlayerInfoFrag(pitcherPlayerFrag)
+                if (pitcher != null) {
+                    val pitcherPlayerFrag = PlayerInfoFragment.newInstance(pitcher!!)
+                    addPlayerInfoFrag(pitcherPlayerFrag)
+                }
             }
         }
     }
@@ -138,6 +159,44 @@ class ShowResultActivity : BaseBannerActivity() {
 
     fun onClickTweet(view: View) {
         Tweet(applicationContext, this, player_info_frame, playerName).tweet()
+    }
+
+    fun onClickSave(view: View) {
+        if (canSave()) showSaveDialog()
+        else Toast.makeText(applicationContext,
+                resources.getString(R.string.full_data),
+                Toast.LENGTH_SHORT)
+                .show()
+    }
+
+    private fun canSave(): Boolean {
+        val uDB = UtilisingDB(this, applicationContext)
+        val numberOfData = when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> uDB.countSavedFielder()
+            Constants.TYPE_PITCHER -> uDB.countSavedPitcher()
+            else -> LIMIT_PLAYER_DATA
+        }
+
+        return numberOfData < LIMIT_PLAYER_DATA
+    }
+
+    private fun showSaveDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage(resources.getString(R.string.ask_save))
+        // _ means argument which is never used
+        builder.setPositiveButton(resources.getString(R.string.done)) { _, _ ->
+            savePlayerInfo()
+        }
+        builder.setNegativeButton(resources.getString(R.string.no), null)
+        builder.show()
+    }
+
+    private fun savePlayerInfo() {
+        val uDB = UtilisingDB(this, applicationContext)
+        when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder?.let { uDB.saveFielder(it, save_button) }
+            Constants.TYPE_PITCHER -> pitcher?.let { uDB.savePitcher(it, save_button) }
+        }
     }
 
 }
