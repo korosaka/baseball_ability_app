@@ -1,18 +1,16 @@
 package com.websarva.wings.android.abiityofbaseball.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.websarva.wings.android.abiityofbaseball.Constants
-import com.websarva.wings.android.abiityofbaseball.PlayerItemData
-import com.websarva.wings.android.abiityofbaseball.PlayerListAdapter
-import com.websarva.wings.android.abiityofbaseball.R
-import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
+import android.widget.ListView
+import com.websarva.wings.android.abiityofbaseball.*
 import kotlinx.android.synthetic.main.fragment_fielder_list.*
 
-class FielderListFragment : Fragment() {
+class FielderListFragment : Fragment(), PlayerListAdapterListener {
 
     lateinit var playerListAdapter: PlayerListAdapter
     lateinit var mAnimalList: ArrayList<PlayerItemData>
@@ -31,12 +29,29 @@ class FielderListFragment : Fragment() {
         // TODO test
         val player1 = PlayerItemData(1, "Saka", Constants.SHORTSTOP)
         val player2 = PlayerItemData(4, "Yamamoto", Constants.SECOND_BASE)
-        val player3 = PlayerItemData(4, "Kikuchi", Constants.OUTFIELD)
+        val player3 = PlayerItemData(7, "Kikuchi", Constants.OUTFIELD)
         mAnimalList = arrayListOf(player1, player2, player3)
 
 
-        playerListAdapter = PlayerListAdapter(context!!, mAnimalList)
+        playerListAdapter = PlayerListAdapter(context!!, mAnimalList, this)
+//        val listView = activity?.findViewById<ListView>(R.id.list_view)
+//        if (listView != null) {
         list_view.adapter = playerListAdapter
+//        }
+
+//        if (listView != null) {
+//            listView.setOnItemClickListener { adapterView, view, position, id ->
+//
+//                Log.e("test_log","" + mAnimalList[position].name +
+//                        " " + mAnimalList[position].playerId)
+//
+//            }
+//        }
+    }
+
+    override fun nameClicked(player: PlayerItemData) {
+        Log.e("test_log","" + player.name +
+                        " " + player.playerId)
     }
 
 
