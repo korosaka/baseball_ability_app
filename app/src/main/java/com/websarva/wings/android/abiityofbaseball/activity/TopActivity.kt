@@ -32,6 +32,13 @@ class TopActivity : BaseOptionMenuActivity() {
         finish()
     }
 
+    fun onClickSeeData(view: View) {
+
+        val intent = Intent(this, DisplaySavedPlayerActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     private fun showPrivacyPolicy() {
         val policyDialog = PrivacyPolicyFragment.newInstance(Constants.AGREE)
         policyDialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)

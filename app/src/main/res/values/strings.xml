@@ -3,6 +3,7 @@
     <string name="title1">＜パワプロ風＞</string>
     <string name="title2">野球能力診断アプリ</string>
     <string name="app_start">はじめる</string>
+    <string name="see_data">作った選手を見る</string>
     <string name="player_making">野球選手をつくる</string>
     <string name="check_data">つくった選手をみる</string>
     <string name="pitcher_making">投手でつくる</string>
@@ -147,6 +148,8 @@
     <string name="agree">同意する</string>
     <string name="close">閉じる</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string-array name="m_array_q1_a">
         <item>~160cm</item>
         <item>161~170cm</item>
@@ -154,7 +157,6 @@
         <item>181~190cm</item>
         <item>191cm~</item>
     </string-array>
-
     <string-array name="w_array_q1_a">
         <item>~150cm</item>
         <item>151~160cm</item>
@@ -162,6 +164,7 @@
         <item>171~180cm</item>
         <item>181cm~</item>
     </string-array>
+
     <string-array name="m_array_q2_a">
         <item>ふつう</item>
         <item>スリム</item>
@@ -171,7 +174,6 @@
         <item>マッチョ</item>
         <item>ゴリマッチョ</item>
     </string-array>
-
     <string-array name="w_array_q2_a">
         <item>ふつう</item>
         <item>スリム</item>
@@ -180,6 +182,7 @@
         <item>筋肉質</item>
         <item>グラマラス</item>
     </string-array>
+
     <string-array name="m_array_q3_a">
         <item>ふつう</item>
         <item>イケメン</item>
@@ -198,6 +201,7 @@
         <item>独特</item>
     </string-array>
 
+
     <string-array name="m_array_q4_a">
         <item>特になし</item>
         <item>優しそう</item>
@@ -209,8 +213,6 @@
         <item>大人しそう</item>
         <item>こわそう</item>
     </string-array>
-
-
     <string-array name="w_array_q4_a">
         <item>特になし</item>
         <item>優しそう</item>
@@ -222,6 +224,8 @@
         <item>明るそう</item>
         <item>清楚そう</item>
     </string-array>
+
+
     <string-array name="m_array_q5_a">
         <item>ふつう</item>
         <item>無頓着</item>
@@ -230,8 +234,6 @@
         <item>派手め</item>
         <item>独創的</item>
     </string-array>
-
-
     <string-array name="w_array_q5_a">
         <item>ふつう</item>
         <item>無頓着</item>
@@ -240,6 +242,7 @@
         <item>派手め</item>
         <item>独創的</item>
     </string-array>
+
     <string-array name="m_array_q6_a">
         <item>特になし</item>
         <item>目力強い</item>
@@ -249,7 +252,6 @@
         <item>毛深い</item>
         <item>メガネ男子</item>
     </string-array>
-
     <string-array name="w_array_q6_a">
         <item>特になし</item>
         <item>目力強い</item>
@@ -259,6 +261,8 @@
         <item>ばっちりメイク</item>
         <item>メガネ女子</item>
     </string-array>
+
+
     <string-array name="m_array_q1_p">
         <item>特になし</item>
         <item>穏やか</item>
@@ -268,8 +272,6 @@
         <item>ミステリアス</item>
         <item>威圧的</item>
     </string-array>
-
-
     <string-array name="w_array_q1_p">
         <item>特になし</item>
         <item>穏やか</item>
@@ -279,6 +281,7 @@
         <item>ミステリアス</item>
         <item>威圧的</item>
     </string-array>
+
     <string-array name="m_array_q2_p">
         <item>特になし</item>
         <item>優しい</item>
@@ -289,7 +292,6 @@
         <item>疑り深い</item>
         <item>ポジティブ</item>
     </string-array>
-
     <string-array name="w_array_q2_p">
         <item>特になし</item>
         <item>優しい</item>
@@ -310,6 +312,7 @@
         <item>アイデアマン</item>
         <item>一匹オオカミ</item>
     </string-array>
+
     <string-array name="w_array_q3_p">
         <item>特になし</item>
         <item>リーダー</item>
@@ -328,7 +331,6 @@
         <item>頭からっぽ</item>
         <item>脳筋</item>
     </string-array>
-
     <string-array name="w_array_q4_p">
         <item>ふつう</item>
         <item>お勉強得意</item>
@@ -337,6 +339,7 @@
         <item>頭からっぽ</item>
         <item>脳筋</item>
     </string-array>
+
     <string-array name="m_array_q5_p">
         <item>ふつう</item>
         <item>天然</item>
@@ -346,7 +349,6 @@
         <item>とにかく面白い</item>
         <item>つまらない</item>
     </string-array>
-
     <string-array name="w_array_q5_p">
         <item>ふつう</item>
         <item>天然</item>
@@ -356,6 +358,7 @@
         <item>とにかく面白い</item>
         <item>つまらない</item>
     </string-array>
+
     <string-array name="m_array_q6_p">
         <item>特になし</item>
         <item>努力家</item>
@@ -367,7 +370,6 @@
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
-
     <string-array name="w_array_q6_p">
         <item>特になし</item>
         <item>努力家</item>
@@ -379,6 +381,7 @@
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
+
     <string-array name="m_array_q1_o">
         <item>王子様</item>
         <item>モテる</item>
@@ -386,7 +389,6 @@
         <item>ふつう</item>
         <item>ぷぅ〜</item>
     </string-array>
-
     <string-array name="w_array_q1_o">
         <item>マドンナ</item>
         <item>モテる</item>
@@ -422,6 +424,7 @@
         <item>あんまり</item>
         <item>豆腐メンタル</item>
     </string-array>
+
     <string-array name="m_array_q4_o">
         <item>大好き</item>
         <item>まぁまぁ</item>
@@ -429,7 +432,6 @@
         <item>興味深い</item>
         <item>嫌い</item>
     </string-array>
-
     <string-array name="w_array_q4_o">
         <item>大好き</item>
         <item>まぁまぁ</item>
@@ -467,6 +469,7 @@
         <item>ナルシスト</item>
         <item>持ってる男</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="w_array_q6_o">
         <item>特になし</item>
         <item>上品</item>
