@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_fielder_list.*
 class FielderListFragment : Fragment(), PlayerListAdapterListener {
 
     lateinit var playerListAdapter: PlayerListAdapter
-    lateinit var mAnimalList: ArrayList<PlayerItemData>
+    lateinit var playerList: ArrayList<PlayerItemData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,28 +25,11 @@ class FielderListFragment : Fragment(), PlayerListAdapterListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val uDB = UtilisingDB(context!!, context!!.applicationContext)
+        playerList = uDB.getFielderForList()
 
-        // TODO test
-        val player1 = PlayerItemData(1, "Saka", Constants.SHORTSTOP)
-        val player2 = PlayerItemData(4, "Yamamoto", Constants.SECOND_BASE)
-        val player3 = PlayerItemData(7, "Kikuchi", Constants.OUTFIELD)
-        mAnimalList = arrayListOf(player1, player2, player3)
-
-
-        playerListAdapter = PlayerListAdapter(context!!, mAnimalList, this)
-//        val listView = activity?.findViewById<ListView>(R.id.list_view)
-//        if (listView != null) {
+        playerListAdapter = PlayerListAdapter(context!!, playerList, this)
         list_view.adapter = playerListAdapter
-//        }
-
-//        if (listView != null) {
-//            listView.setOnItemClickListener { adapterView, view, position, id ->
-//
-//                Log.e("test_log","" + mAnimalList[position].name +
-//                        " " + mAnimalList[position].playerId)
-//
-//            }
-//        }
     }
 
     override fun nameClicked(player: PlayerItemData) {

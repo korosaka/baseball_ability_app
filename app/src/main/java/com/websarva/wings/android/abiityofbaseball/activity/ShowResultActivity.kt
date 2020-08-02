@@ -27,7 +27,7 @@ class ShowResultActivity : BaseBannerActivity() {
         const val AD_FREQUENCY = 2
 
         // TODO this num is going to be 100
-        const val LIMIT_PLAYER_DATA = 3
+        const val LIMIT_PLAYER_DATA = 30
         var makingPlayerCounter = 0
     }
 

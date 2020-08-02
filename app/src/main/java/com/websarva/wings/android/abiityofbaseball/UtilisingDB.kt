@@ -127,6 +127,25 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
         }
     }
 
+    fun getFielderForList(): ArrayList<PlayerItemData> {
+        val fielderItemList = ArrayList<PlayerItemData>()
+
+
+        val database = helper.readableDatabase
+        val cursor = database.rawQuery(FIELDER_FOR_LIST, null)
+        while (cursor.moveToNext()) {
+            val fielderId = cursor.getInt(cursor.getColumnIndex("fielder_id"))
+            val name = cursor.getString(cursor.getColumnIndex("name"))
+            val position = cursor.getString(cursor.getColumnIndex("position"))
+            val player = PlayerItemData(fielderId, name, position)
+
+            fielderItemList.add(player)
+        }
+        database.close()
+
+        return fielderItemList
+    }
+
 
     // TODO test
     fun getPitcher() {
@@ -180,6 +199,7 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
 
         const val FIELDER_SELECT = "SELECT * FROM " + Constants.FIELDER_TABLE
         const val PITCHER_SELECT = "SELECT * FROM " + Constants.PITCHER_TABLE
+        const val FIELDER_FOR_LIST = "SELECT fielder_id, name, position FROM " + Constants.FIELDER_TABLE
     }
 
 }
