@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
 import kotlinx.android.synthetic.main.fragment_fielder_list.*
 
 class FielderListFragment : Fragment(), PlayerListAdapterListener {
@@ -33,8 +34,11 @@ class FielderListFragment : Fragment(), PlayerListAdapterListener {
     }
 
     override fun nameClicked(player: PlayerItemData) {
-        Log.e("test_log","" + player.name +
-                        " " + player.playerId)
+        AnswerQuestionsActivity.playerType = Constants.TYPE_FIELDER
+        val uDB = UtilisingDB(context!!, context!!.applicationContext)
+        val intent = uDB.getFielderWithId(player.playerId)
+
+        startActivity(intent)
     }
 
 

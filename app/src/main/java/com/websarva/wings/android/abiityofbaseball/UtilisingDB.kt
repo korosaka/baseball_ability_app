@@ -1,6 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
+import android.content.Intent
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
@@ -9,6 +10,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import com.websarva.wings.android.abiityofbaseball.activity.ShowResultActivity
 import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbility
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
@@ -130,7 +132,6 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
     fun getFielderForList(): ArrayList<PlayerItemData> {
         val fielderItemList = ArrayList<PlayerItemData>()
 
-
         val database = helper.readableDatabase
         val cursor = database.rawQuery(FIELDER_FOR_LIST, null)
         while (cursor.moveToNext()) {
@@ -144,6 +145,26 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
         database.close()
 
         return fielderItemList
+    }
+
+    fun getFielderWithId(id: Int) : Intent {
+        val intent = Intent(context, ShowResultActivity::class.java)
+        val database = helper.readableDatabase
+        val cursor = database.rawQuery(FIELDER_SELECT_WITH_ID + id, null)
+        if (cursor.moveToNext()) {
+            intent.putExtra(Constants.PLAYER_NAME, cursor.getString(cursor.getColumnIndex("name")))
+            intent.putExtra(Constants.POSITION, cursor.getString(cursor.getColumnIndex("position")))
+            intent.putExtra(Constants.BALLISTIC, cursor.getInt(cursor.getColumnIndex("ballistic")))
+            intent.putExtra(Constants.CONTACT, cursor.getInt(cursor.getColumnIndex("contact")))
+            intent.putExtra(Constants.POWER, cursor.getInt(cursor.getColumnIndex("power")))
+            intent.putExtra(Constants.SPEED, cursor.getInt(cursor.getColumnIndex("speed")))
+            intent.putExtra(Constants.ARM_STRENGTH, cursor.getInt(cursor.getColumnIndex("arm")))
+            intent.putExtra(Constants.FIELDING, cursor.getInt(cursor.getColumnIndex("fielding")))
+            intent.putExtra(Constants.CATCHING, cursor.getInt(cursor.getColumnIndex("catching")))
+            intent.putExtra(Constants.CHANCE, cursor.getDouble(cursor.getColumnIndex("chance")))
+        }
+        database.close()
+        return intent
     }
 
 
@@ -200,6 +221,7 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
         const val FIELDER_SELECT = "SELECT * FROM " + Constants.FIELDER_TABLE
         const val PITCHER_SELECT = "SELECT * FROM " + Constants.PITCHER_TABLE
         const val FIELDER_FOR_LIST = "SELECT fielder_id, name, position FROM " + Constants.FIELDER_TABLE
+        const val FIELDER_SELECT_WITH_ID = "SELECT * FROM " + Constants.FIELDER_TABLE + " WHERE fielder_id = "
     }
 
 }
