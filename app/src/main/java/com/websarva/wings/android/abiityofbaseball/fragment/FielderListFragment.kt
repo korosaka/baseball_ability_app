@@ -41,6 +41,11 @@ class FielderListFragment : Fragment(), PlayerListAdapterListener {
         startActivity(intent)
     }
 
+    override fun buttonClicked(player: PlayerItemData) {
+        val uDB = UtilisingDB(context!!, context!!.applicationContext)
+        uDB.deletePlayerWithId(player.playerId, Constants.TYPE_FIELDER)
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

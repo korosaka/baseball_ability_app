@@ -31,6 +31,7 @@
     <string name="tweet">Tweet</string>
     <string name="save_data">SAVE</string>
     <string name="ask_save">データを保存しますか？</string>
+    <string name="ask_delete">を削除しますか？</string>
     <string name="completed_save">保存が完了しました</string>
     <string name="failed_save">保存に失敗しました</string>
     <string name="full_data">データがいっぱいです</string>

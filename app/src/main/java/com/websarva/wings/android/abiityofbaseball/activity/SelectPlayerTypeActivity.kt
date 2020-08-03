@@ -31,7 +31,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     // 野手
     fun onClickSelectFielder(view: View) {
 
-        val editText = player_name
+        val editText = edit_player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
@@ -44,7 +44,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     // 投手
     fun onClickSelectPitcher(view: View) {
 
-        val editText = player_name
+        val editText = edit_player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
@@ -78,7 +78,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
      * キーボード表示操作
      */
     private fun operateKeyBoard() {
-        player_name.setOnFocusChangeListener { view, b ->
+        edit_player_name.setOnFocusChangeListener { view, b ->
             // フォーカスを取得→キーボード表示
             if (b) {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

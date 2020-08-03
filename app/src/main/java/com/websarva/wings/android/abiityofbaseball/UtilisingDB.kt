@@ -213,6 +213,17 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
         return amountOfChange
     }
 
+    fun deletePlayerWithId(id: Int, playerType: String) {
+        val database = helper.writableDatabase
+        val stmt = database.compileStatement(when(playerType) {
+            Constants.TYPE_FIELDER -> FIELDER_DELETE_WITH_ID
+            else -> PITCHER_DELETE_WITH_ID
+        })
+        stmt.bindLong(1, id.toLong())
+        stmt.executeUpdateDelete()
+        database.close()
+    }
+
 
     private fun showSaveToast(success: Boolean) {
         val messageId = if (success) R.string.completed_save
@@ -247,6 +258,8 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
         const val FIELDER_SELECT_WITH_ID = "SELECT * FROM " + Constants.FIELDER_TABLE + " WHERE fielder_id = "
         const val PITCHER_SELECT_WITH_ID = "SELECT * FROM " + Constants.PITCHER_TABLE + " WHERE pitcher_id = "
 
+        const val FIELDER_DELETE_WITH_ID = "DELETE FROM " + Constants.FIELDER_TABLE + " WHERE fielder_id = ?"
+        const val PITCHER_DELETE_WITH_ID = "DELETE FROM " + Constants.PITCHER_TABLE + " WHERE pitcher_id = ?"
     }
 
 }

@@ -39,7 +39,7 @@
                 <!--android:text="入力"/>-->
 
                 <EditText
-                    android:id="@+id/player_name"
+                    android:id="@+id/edit_player_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
