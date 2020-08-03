@@ -2,6 +2,7 @@ package com.websarva.wings.android.abiityofbaseball
 
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
@@ -22,16 +23,14 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
     private var mFielder: PlayerFielderClass? = null
     private var mPitcher: PlayerPitcherClass? = null
 
-    fun countSavedFielder(): Int {
-        val database = helper.readableDatabase
-        val count = DatabaseUtils.queryNumEntries(database, Constants.FIELDER_TABLE).toInt()
-        database.close()
-        return count
-    }
+    fun countSavedPlayer(playerType: String): Int {
+        val table = when (playerType) {
+            Constants.TYPE_FIELDER -> Constants.FIELDER_TABLE
+            else -> Constants.PITCHER_TABLE
+        }
 
-    fun countSavedPitcher(): Int {
         val database = helper.readableDatabase
-        val count = DatabaseUtils.queryNumEntries(database, Constants.PITCHER_TABLE).toInt()
+        val count = DatabaseUtils.queryNumEntries(database, table).toInt()
         database.close()
         return count
     }
@@ -107,89 +106,113 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
     }
 
 
-    // TODO test
-    fun getFielders() {
-        val database = helper.readableDatabase
-
-        val cursor = database.rawQuery(FIELDER_SELECT, null)
-        while (cursor.moveToNext()) {
-            val name = cursor.getString(cursor.getColumnIndex("name"))
-            val position = cursor.getString(cursor.getColumnIndex("position"))
-            val ballistic = cursor.getInt(cursor.getColumnIndex("ballistic"))
-            val contact = cursor.getInt(cursor.getColumnIndex("contact"))
-            val power = cursor.getInt(cursor.getColumnIndex("power"))
-            val speed = cursor.getInt(cursor.getColumnIndex("speed"))
-            val arm = cursor.getInt(cursor.getColumnIndex("arm"))
-            val fielding = cursor.getInt(cursor.getColumnIndex("fielding"))
-            val catching = cursor.getInt(cursor.getColumnIndex("catching"))
-            val chance = cursor.getDouble(cursor.getColumnIndex("chance"))
-
-            Log.e("test_db", "$name $position $ballistic $contact $power $speed $arm $fielding $catching $chance")
-            database.close()
-        }
-    }
-
-    fun getFielderForList(): ArrayList<PlayerItemData> {
-        val fielderItemList = ArrayList<PlayerItemData>()
+    fun getPlayerForList(playerType: String): ArrayList<PlayerItemData> {
+        val playerItemList = ArrayList<PlayerItemData>()
 
         val database = helper.readableDatabase
-        val cursor = database.rawQuery(FIELDER_FOR_LIST, null)
-        while (cursor.moveToNext()) {
-            val fielderId = cursor.getInt(cursor.getColumnIndex("fielder_id"))
-            val name = cursor.getString(cursor.getColumnIndex("name"))
-            val position = cursor.getString(cursor.getColumnIndex("position"))
-            val player = PlayerItemData(fielderId, name, position)
-
-            fielderItemList.add(player)
+        val query = when (playerType) {
+            Constants.TYPE_FIELDER -> FIELDER_FOR_LIST
+            else -> PITCHER_FOR_LIST
         }
+        val cursor = database.rawQuery(query, null)
+        while (cursor.moveToNext()) {
+            val playerId = cursor.getInt(cursor.getColumnIndex(when (playerType) {
+                Constants.TYPE_FIELDER -> "fielder_id"
+                else -> "pitcher_id"
+            }))
+            val name = cursor.getString(cursor.getColumnIndex("name"))
+            val position = when (playerType) {
+                Constants.TYPE_FIELDER -> cursor.getString(cursor.getColumnIndex("position"))
+                else -> Constants.TYPE_PITCHER
+            }
+
+            val player = PlayerItemData(playerId, name, position)
+            playerItemList.add(player)
+        }
+        cursor.close()
         database.close()
 
-        return fielderItemList
+        return playerItemList
     }
 
-    fun getFielderWithId(id: Int) : Intent {
+    fun getPlayerWithId(id: Int, playerType: String): Intent {
         val intent = Intent(context, ShowResultActivity::class.java)
         val database = helper.readableDatabase
-        val cursor = database.rawQuery(FIELDER_SELECT_WITH_ID + id, null)
+        val query = when (playerType) {
+            Constants.TYPE_FIELDER -> FIELDER_SELECT_WITH_ID + id
+            else -> PITCHER_SELECT_WITH_ID + id
+        }
+        val cursor = database.rawQuery(query, null)
         if (cursor.moveToNext()) {
-            intent.putExtra(Constants.PLAYER_NAME, cursor.getString(cursor.getColumnIndex("name")))
-            intent.putExtra(Constants.POSITION, cursor.getString(cursor.getColumnIndex("position")))
-            intent.putExtra(Constants.BALLISTIC, cursor.getInt(cursor.getColumnIndex("ballistic")))
-            intent.putExtra(Constants.CONTACT, cursor.getInt(cursor.getColumnIndex("contact")))
-            intent.putExtra(Constants.POWER, cursor.getInt(cursor.getColumnIndex("power")))
-            intent.putExtra(Constants.SPEED, cursor.getInt(cursor.getColumnIndex("speed")))
-            intent.putExtra(Constants.ARM_STRENGTH, cursor.getInt(cursor.getColumnIndex("arm")))
-            intent.putExtra(Constants.FIELDING, cursor.getInt(cursor.getColumnIndex("fielding")))
-            intent.putExtra(Constants.CATCHING, cursor.getInt(cursor.getColumnIndex("catching")))
-            intent.putExtra(Constants.CHANCE, cursor.getDouble(cursor.getColumnIndex("chance")))
+            when (playerType) {
+                Constants.TYPE_FIELDER -> putFielderInfo(intent, cursor)
+                else -> putPitcherInfo(intent, cursor)
+            }
         }
         database.close()
         return intent
     }
 
-
-    // TODO test
-    fun getPitcher() {
-        val database = helper.readableDatabase
-
-        val cursor = database.rawQuery(PITCHER_SELECT, null)
-        while (cursor.moveToNext()) {
-            val name = cursor.getString(cursor.getColumnIndex("name"))
-            val type = cursor.getString(cursor.getColumnIndex("type"))
-            val maxSpeed = cursor.getInt(cursor.getColumnIndex("max_speed"))
-            val control = cursor.getInt(cursor.getColumnIndex("control"))
-            val stamina = cursor.getInt(cursor.getColumnIndex("stamina"))
-            val slider = cursor.getInt(cursor.getColumnIndex("slider"))
-            val curb = cursor.getInt(cursor.getColumnIndex("curb"))
-            val folk = cursor.getInt(cursor.getColumnIndex("folk"))
-            val sinker = cursor.getInt(cursor.getColumnIndex("sinker"))
-            val shoot = cursor.getInt(cursor.getColumnIndex("shoot"))
-            val chance = cursor.getDouble(cursor.getColumnIndex("chance"))
-
-            Log.e("pitcher_db", "$name $type $maxSpeed $control $stamina $slider $curb $folk $sinker $shoot $chance")
-            database.close()
-        }
+    private fun putFielderInfo(intent: Intent, cursor: Cursor) {
+        intent.putExtra(Constants.PLAYER_NAME, cursor.getString(cursor.getColumnIndex("name")))
+        intent.putExtra(Constants.POSITION, cursor.getString(cursor.getColumnIndex("position")))
+        intent.putExtra(Constants.BALLISTIC, cursor.getInt(cursor.getColumnIndex("ballistic")))
+        intent.putExtra(Constants.CONTACT, cursor.getInt(cursor.getColumnIndex("contact")))
+        intent.putExtra(Constants.POWER, cursor.getInt(cursor.getColumnIndex("power")))
+        intent.putExtra(Constants.SPEED, cursor.getInt(cursor.getColumnIndex("speed")))
+        intent.putExtra(Constants.ARM_STRENGTH, cursor.getInt(cursor.getColumnIndex("arm")))
+        intent.putExtra(Constants.FIELDING, cursor.getInt(cursor.getColumnIndex("fielding")))
+        intent.putExtra(Constants.CATCHING, cursor.getInt(cursor.getColumnIndex("catching")))
+        intent.putExtra(Constants.CHANCE, cursor.getDouble(cursor.getColumnIndex("chance")))
     }
+
+
+    private fun putPitcherInfo(intent: Intent, cursor: Cursor) {
+        val changeBalls = getChangeBalls(cursor)
+
+        intent.putExtra(Constants.PLAYER_NAME, cursor.getString(cursor.getColumnIndex("name")))
+        intent.putExtra(Constants.PITCHER_TYPE, cursor.getString(cursor.getColumnIndex("type")))
+        intent.putExtra(Constants.BALL_SPEED, cursor.getInt(cursor.getColumnIndex("max_speed")))
+        intent.putExtra(Constants.CONTROL, cursor.getInt(cursor.getColumnIndex("control")))
+        intent.putExtra(Constants.STAMINA, cursor.getInt(cursor.getColumnIndex("stamina")))
+        intent.putExtra(Constants.KIND_CHANGE, calcNumberOfChange(changeBalls))
+        intent.putExtra(Constants.AMOUNT_CHANGE, calcAmountOfChange(changeBalls))
+        intent.putExtra(Constants.CHANGE_BALLS, changeBalls)
+        intent.putExtra(Constants.CHANCE, cursor.getDouble(cursor.getColumnIndex("chance")))
+    }
+
+
+    private fun getChangeBalls(cursor: Cursor): java.util.ArrayList<Int> {
+        val sliderAmount = cursor.getInt(cursor.getColumnIndex("slider"))
+        val curbAmount = cursor.getInt(cursor.getColumnIndex("curb"))
+        val folkAmount = cursor.getInt(cursor.getColumnIndex("folk"))
+        val sinkerAmount = cursor.getInt(cursor.getColumnIndex("sinker"))
+        val shootAmount = cursor.getInt(cursor.getColumnIndex("shoot"))
+
+        return arrayListOf(
+                sliderAmount,
+                curbAmount,
+                folkAmount,
+                sinkerAmount,
+                shootAmount)
+    }
+
+    private fun calcNumberOfChange(changeBalls: java.util.ArrayList<Int>): Int {
+        var numberOfChange = 0
+        changeBalls.forEach {
+            if (it > 0) numberOfChange++
+        }
+        return numberOfChange
+    }
+
+    private fun calcAmountOfChange(changeBalls: java.util.ArrayList<Int>): Int {
+        var amountOfChange = 0
+        changeBalls.forEach {
+            amountOfChange += it
+        }
+        return amountOfChange
+    }
+
 
     private fun showSaveToast(success: Boolean) {
         val messageId = if (success) R.string.completed_save
@@ -218,10 +241,12 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
                 "(name, type, max_speed, control, stamina, slider, curb, folk, sinker, shoot, chance) " +
                 "VALUES(?,?,?,?,?,?,?,?,?,?,?)"
 
-        const val FIELDER_SELECT = "SELECT * FROM " + Constants.FIELDER_TABLE
-        const val PITCHER_SELECT = "SELECT * FROM " + Constants.PITCHER_TABLE
         const val FIELDER_FOR_LIST = "SELECT fielder_id, name, position FROM " + Constants.FIELDER_TABLE
+        const val PITCHER_FOR_LIST = "SELECT pitcher_id, name FROM " + Constants.PITCHER_TABLE
+
         const val FIELDER_SELECT_WITH_ID = "SELECT * FROM " + Constants.FIELDER_TABLE + " WHERE fielder_id = "
+        const val PITCHER_SELECT_WITH_ID = "SELECT * FROM " + Constants.PITCHER_TABLE + " WHERE pitcher_id = "
+
     }
 
 }

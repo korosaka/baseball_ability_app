@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FielderListFragment">
+    tools:context=".fragment.PitcherListFragment">
 
     <ListView
-        android:id="@+id/fielder_list_view"
+        android:id="@+id/pitcher_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

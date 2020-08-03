@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
-import com.websarva.wings.android.abiityofbaseball.UtilisingDB
 import com.websarva.wings.android.abiityofbaseball.fragment.PrivacyPolicyFragment
 
 class TopActivity : BaseOptionMenuActivity() {
@@ -15,11 +14,6 @@ class TopActivity : BaseOptionMenuActivity() {
         setContentView(R.layout.activity_top)
 
         if (!PrivacyPolicyFragment.isPolicyAgreed(this)) showPrivacyPolicy()
-
-        // TODO test
-        val db = UtilisingDB(this, applicationContext)
-        db.getFielders()
-        db.getPitcher()
     }
 
     // はじめるボタンクリックで画面遷移

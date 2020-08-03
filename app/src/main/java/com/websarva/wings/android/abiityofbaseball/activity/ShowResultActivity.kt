@@ -172,8 +172,8 @@ class ShowResultActivity : BaseBannerActivity() {
     private fun canSave(): Boolean {
         val uDB = UtilisingDB(this, applicationContext)
         val numberOfData = when (AnswerQuestionsActivity.playerType) {
-            Constants.TYPE_FIELDER -> uDB.countSavedFielder()
-            Constants.TYPE_PITCHER -> uDB.countSavedPitcher()
+            Constants.TYPE_FIELDER -> uDB.countSavedPlayer(Constants.TYPE_FIELDER)
+            Constants.TYPE_PITCHER -> uDB.countSavedPlayer(Constants.TYPE_PITCHER)
             else -> LIMIT_PLAYER_DATA
         }
 
