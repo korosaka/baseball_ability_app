@@ -4,21 +4,25 @@ import android.os.Bundle
 import android.view.View
 import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
-import com.websarva.wings.android.abiityofbaseball.fragment.FielderListFragment
-import com.websarva.wings.android.abiityofbaseball.fragment.PitcherListFragment
+import com.websarva.wings.android.abiityofbaseball.fragment.PlayerListFragment
 
 class DisplaySavedPlayerActivity : BaseOptionMenuActivity() {
 
-    private lateinit var fielderListFrag: FielderListFragment
-    private lateinit var pitcherListFrag: PitcherListFragment
+    private lateinit var fielderListFrag: PlayerListFragment
+    private lateinit var pitcherListFrag: PlayerListFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_saved_player)
 
+        prepareFragment()
+    }
 
-        fielderListFrag = FielderListFragment()
-        pitcherListFrag = PitcherListFragment()
+    private fun prepareFragment() {
+        fielderListFrag = PlayerListFragment.newInstance(Constants.TYPE_FIELDER)
+        pitcherListFrag = PlayerListFragment.newInstance(Constants.TYPE_PITCHER)
+
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frame_for_player_list, fielderListFrag)
         transaction.add(R.id.frame_for_player_list, pitcherListFrag)
