@@ -1,10 +1,13 @@
 package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
@@ -98,7 +101,15 @@ class ShowResultActivity : BaseBannerActivity() {
             }
         }
 
-        if (currentStatus == Constants.SAVED_PLAYER) save_button.visibility = View.INVISIBLE
+        if (currentStatus == Constants.SAVED_PLAYER) disableSaveButton()
+    }
+
+    private fun disableSaveButton() {
+        save_button.isEnabled = false
+        save_button.setTextColor(Color.parseColor(Constants.SAVE_DISABLE_COLOR))
+        val disableBackground =
+                ResourcesCompat.getDrawable(resources, R.drawable.save_button_disable, null)
+        save_button.background = disableBackground
     }
 
     private fun addPlayerInfoFrag(playerInfoFrag: PlayerInfoFragment) {

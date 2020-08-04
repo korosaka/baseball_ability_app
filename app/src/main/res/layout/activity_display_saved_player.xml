@@ -8,11 +8,13 @@
     tools:context=".activity.DisplaySavedPlayerActivity">
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickBackToTop"
             android:text="Topへ戻る"/>
     </LinearLayout>
 
@@ -43,7 +45,6 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
-
             android:onClick="onPitcherClick"
             android:layout_weight="1.0"/>
 

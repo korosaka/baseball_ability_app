@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DisplaySavedPlayerActivity"></activity>
         <activity
             android:name=".activity.TopActivity"
             android:screenOrientation="portrait">
@@ -20,9 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SelectOptionActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.SelectPlayerTypeActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -30,6 +26,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ShowResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DisplaySavedPlayerActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

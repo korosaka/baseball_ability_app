@@ -1,5 +1,6 @@
 package com.websarva.wings.android.abiityofbaseball.activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -92,5 +93,16 @@ class DisplaySavedPlayerActivity : BaseOptionMenuActivity() {
     fun onPitcherClick(view: View) {
         showHideFragment(Constants.TYPE_PITCHER)
     }
+
+    fun onClickBackToTop(view: View) {
+        backToTop()
+    }
+
+    private fun backToTop() {
+        val intent = Intent(this, TopActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 
 }

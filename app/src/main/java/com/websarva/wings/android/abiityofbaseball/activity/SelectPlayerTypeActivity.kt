@@ -18,7 +18,9 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         super.onCreate(savedInstanceState)
 
         operateKeyBoard()
-
+        back_button.setOnClickListener {
+            backToTop(it)
+        }
     }
 
     // OKでフォーカス移してキーボード隠す
@@ -92,5 +94,10 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         }
     }
 
+    private fun backToTop(view: View) {
+        val intent = Intent(this, TopActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
 }

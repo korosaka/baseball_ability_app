@@ -24,10 +24,11 @@
     <View
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"/>
+        android:layout_weight="0.25"/>
     <Button
         android:layout_gravity="center"
         android:id="@+id/delete_player"
+        android:layout_marginRight="10dp"
         android:text="削除"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

@@ -35,18 +35,32 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@drawable/tweet_button_background"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/sky_blue_button_background"
                     android:onClick="onClickTweet"
                     android:text="@string/tweet"
                     android:textColor="#fff"
                     android:textSize="28sp"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.0"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/save_button_background"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:onClick="onClickSave"
+                    android:text="@string/save_data"
+                    android:textColor="#fff"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 
@@ -54,39 +68,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/save_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/save_button_background"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:onClick="onClickSave"
-                    android:text="@string/save_data"
-                    android:textColor="#fff"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:layout_marginBottom="200dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
                     android:background="@drawable/finish_button_background"
                     android:onClick="onClickFinish"
                     android:text="@string/close"
                     android:textColor="#fff"
+                    android:textSize="28sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
