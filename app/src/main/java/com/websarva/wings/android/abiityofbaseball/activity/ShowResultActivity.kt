@@ -20,6 +20,7 @@ import java.util.ArrayList
 class ShowResultActivity : BaseBannerActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
+    private lateinit var currentStatus: String
 
     companion object {
         // Interstitial AD's ID
@@ -42,6 +43,7 @@ class ShowResultActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
+        currentStatus = intent.getStringExtra(Constants.USE).toString()
         makePlayer()
         displayPlayerInfo()
         loadInterstitialAd()
@@ -52,6 +54,8 @@ class ShowResultActivity : BaseBannerActivity() {
      * https://developers.google.com/admob/android/interstitial
      */
     private fun loadInterstitialAd() {
+        if (currentStatus == Constants.SAVED_PLAYER) return
+
         makingPlayerCounter++
 
         MobileAds.initialize(this) {}
@@ -93,6 +97,8 @@ class ShowResultActivity : BaseBannerActivity() {
                 }
             }
         }
+
+        if (currentStatus == Constants.SAVED_PLAYER) save_button.visibility = View.INVISIBLE
     }
 
     private fun addPlayerInfoFrag(playerInfoFrag: PlayerInfoFragment) {
@@ -141,6 +147,11 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     fun onClickFinish(view: View) {
+        if (currentStatus == Constants.SAVED_PLAYER) {
+            finish()
+            return
+        }
+
         if (checkStatement()) mInterstitialAd.show()
         else backToTop()
     }

@@ -137,6 +137,7 @@ class UtilisingDB(private val context: Context, private val applicationContext: 
 
     fun getPlayerWithId(id: Int, playerType: String): Intent {
         val intent = Intent(context, ShowResultActivity::class.java)
+        intent.putExtra(Constants.USE, Constants.SAVED_PLAYER)
         val database = helper.readableDatabase
         val query = when (playerType) {
             Constants.TYPE_FIELDER -> FIELDER_SELECT_WITH_ID + id

@@ -248,6 +248,7 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
     private fun startFielderActivity(calcAbility: CalcFielderAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
+        intent.putExtra(Constants.USE, Constants.NEW_PLAYER)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.POSITION, calcAbility.position)
         intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
@@ -264,6 +265,7 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
     private fun startPitcherActivity(calcAbility: CalcPitcherAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
+        intent.putExtra(Constants.USE, Constants.NEW_PLAYER)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
         intent.putExtra(Constants.BALL_SPEED, calcAbility.maxBallSpeed)

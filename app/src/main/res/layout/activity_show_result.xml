@@ -85,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/finish_button_background"
                     android:onClick="onClickFinish"
-                    android:text="@string/finish"
+                    android:text="@string/close"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 
