@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -40,6 +41,11 @@ class ShowResultActivity : BaseBannerActivity() {
 
     private var fielder: PlayerFielderClass? = null
     private var pitcher: PlayerPitcherClass? = null
+
+    override fun keyBackFunction() {
+        if (checkStatement()) mInterstitialAd.show()
+        else finishActivity()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -180,12 +186,6 @@ class ShowResultActivity : BaseBannerActivity() {
             Constants.SAVED_PLAYER -> seeingSavedPlayerCounter % AD_FREQUENCY_SAVED_PLAYER == 0
             else -> false
         }
-    }
-
-    private fun backToTop() {
-        val intent = Intent(this, TopActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
 

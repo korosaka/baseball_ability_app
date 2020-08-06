@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -44,6 +45,10 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
         assignInfo()
         addFragments()
+    }
+
+    override fun keyBackFunction() {
+        backToPrevious()
     }
 
     private fun assignInfo() {

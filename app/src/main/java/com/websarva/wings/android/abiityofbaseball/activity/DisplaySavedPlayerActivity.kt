@@ -25,6 +25,11 @@ class DisplaySavedPlayerActivity : BaseBannerActivity() {
         prepareFragment()
     }
 
+    override fun keyBackFunction() {
+        backToTop()
+    }
+
+
     private fun prepareFragment() {
         fielderListFrag = PlayerListFragment.newInstance(Constants.TYPE_FIELDER)
         pitcherListFrag = PlayerListFragment.newInstance(Constants.TYPE_PITCHER)
@@ -97,12 +102,6 @@ class DisplaySavedPlayerActivity : BaseBannerActivity() {
 
     fun onClickBackToTop(view: View) {
         backToTop()
-    }
-
-    private fun backToTop() {
-        val intent = Intent(this, TopActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
 

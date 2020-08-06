@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -19,8 +20,12 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
 
         operateKeyBoard()
         back_button.setOnClickListener {
-            backToTop(it)
+            onClickBack(it)
         }
+    }
+
+    override fun keyBackFunction() {
+        backToTop()
     }
 
     // OKでフォーカス移してキーボード隠す
@@ -94,10 +99,8 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         }
     }
 
-    private fun backToTop(view: View) {
-        val intent = Intent(this, TopActivity::class.java)
-        startActivity(intent)
-        finish()
+    private fun onClickBack(view: View) {
+        backToTop()
     }
 
 }

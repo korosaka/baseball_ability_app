@@ -24,6 +24,7 @@
     <string name="ask_complete">入力はお済みでしょうか</string>
     <string name="done">完了</string>
     <string name="finish">終了</string>
+    <string name="ask_finish_app">アプリを終了しますか？</string>
     <string name="ask_go_back">前の画面に戻りますか？</string>
     <string name="input_name">登録名を入力してください</string>
     <string name="appearance">外見</string>
