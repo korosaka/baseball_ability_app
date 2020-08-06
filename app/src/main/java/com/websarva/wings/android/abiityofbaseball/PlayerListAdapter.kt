@@ -20,6 +20,11 @@ class PlayerListAdapter(
 
     private val layoutInflater = LayoutInflater.from(context)
 
+    /**
+     * ListView is supposed to reuse view(in this case => convertView),
+     * ex) for 7th item, it can use 1st item view again
+     * So, be careful!
+     */
     override fun getView(
             position: Int,
             convertView: View?,
@@ -34,8 +39,8 @@ class PlayerListAdapter(
 
         val player = mPlayerList[position]
 
-        val playerName = view?.findViewById<TextView>(R.id.player_name)
-        displayPlayerName(player, playerName)
+        val nameText = view?.findViewById<TextView>(R.id.player_name)
+        displayPlayerName(player, nameText)
 
         val deleteButton = view?.findViewById<Button>(R.id.delete_player)
         putDeleteListener(deleteButton!!, player)
@@ -43,33 +48,46 @@ class PlayerListAdapter(
         return view!!
     }
 
-    private fun displayPlayerName(player: PlayerItemData, playerName: TextView?) {
+    private fun displayPlayerName(player: PlayerItemData, nameText: TextView?) {
         val name = player.name
         val position = player.position
 
-        playerName!!.text = name
-        when (playerName.length()) {
-            2 -> playerName.text = (name[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + name[1])
-            3 -> playerName.text = (name[0] + Constants.HALF_SPACE + name[1] + Constants.HALF_SPACE + name[2])
-            5 -> playerName.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, context.resources.displayMetrics)
-            6 -> playerName.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, context.resources.displayMetrics)
-            7 -> playerName.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, context.resources.displayMetrics)
-            8 -> playerName.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, context.resources.displayMetrics)
-        }
+        nameText!!.text = name
+        setNameTextSize(nameText)
+        putSpaceBetween(nameText, name)
+        setNameBackground(nameText, position)
 
+        nameText.setOnClickListener {
+            listener.nameClicked(player)
+        }
+    }
+
+    private fun setNameTextSize(nameText: TextView) {
+        when (nameText.length()) {
+            5 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, context.resources.displayMetrics)
+            6 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, context.resources.displayMetrics)
+            7 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, context.resources.displayMetrics)
+            8 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, context.resources.displayMetrics)
+            else -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 11.5F, context.resources.displayMetrics)
+        }
+    }
+
+    private fun putSpaceBetween(nameText: TextView, playerName: String) {
+        when (nameText.length()) {
+            2 -> nameText.text = (playerName[0] + Constants.HALF_SPACE + Constants.HALF_SPACE + playerName[1])
+            3 -> nameText.text = (playerName[0] + Constants.HALF_SPACE + playerName[1] + Constants.HALF_SPACE + playerName[2])
+        }
+    }
+
+    private fun setNameBackground(nameText: TextView, position: String) {
         val backGround = when (position) {
             Constants.TYPE_PITCHER -> R.drawable.pitcher_name_background
             Constants.CATCHER -> R.drawable.catcher_name_background
             Constants.OUTFIELD -> R.drawable.outfielder_name_background
             else -> R.drawable.infielder_name_background
         }
-        playerName.background =
+        nameText.background =
                 ResourcesCompat.getDrawable(context.resources, backGround, null)
-
-
-        playerName.setOnClickListener {
-            listener.nameClicked(player)
-        }
     }
 
     private fun putDeleteListener(button: Button, player: PlayerItemData) {
