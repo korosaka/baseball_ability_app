@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
@@ -28,11 +27,13 @@ class ShowResultActivity : BaseBannerActivity() {
     companion object {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
-        const val AD_FREQUENCY = 2
+        const val AD_FREQUENCY_CREATING_NEW = 2
+        const val AD_FREQUENCY_SAVED_PLAYER = 10
 
         // TODO this num is going to be 100
         const val LIMIT_PLAYER_DATA = 30
         var makingPlayerCounter = 0
+        var seeingSavedPlayerCounter = 0
     }
 
     private lateinit var playerName: String
@@ -57,24 +58,34 @@ class ShowResultActivity : BaseBannerActivity() {
      * https://developers.google.com/admob/android/interstitial
      */
     private fun loadInterstitialAd() {
-        if (currentStatus == Constants.SAVED_PLAYER) return
-
-        makingPlayerCounter++
+        incrementCount()
 
         MobileAds.initialize(this) {}
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = AD_UNIT_ID
         mInterstitialAd.adListener = object : AdListener() {
             override fun onAdClicked() {
-                backToTop()
+                finishActivity()
             }
 
             override fun onAdClosed() {
-                backToTop()
+                finishActivity()
             }
         }
 
         mInterstitialAd.loadAd(AdRequest.Builder().build())
+    }
+
+    private fun incrementCount() {
+        when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter++
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter++
+        }
+    }
+
+    private fun finishActivity() {
+        if (currentStatus == Constants.NEW_PLAYER) backToTop()
+        else finish()
     }
 
     private fun makePlayer() {
@@ -158,18 +169,17 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     fun onClickFinish(view: View) {
-        if (currentStatus == Constants.SAVED_PLAYER) {
-            finish()
-            return
-        }
-
         if (checkStatement()) mInterstitialAd.show()
-        else backToTop()
+        else finishActivity()
     }
 
     private fun checkStatement(): Boolean {
-        return mInterstitialAd.isLoaded
-                && makingPlayerCounter % AD_FREQUENCY == 0
+        if (!mInterstitialAd.isLoaded) return false
+        return when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter % AD_FREQUENCY_CREATING_NEW == 0
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter % AD_FREQUENCY_SAVED_PLAYER == 0
+            else -> false
+        }
     }
 
     private fun backToTop() {
