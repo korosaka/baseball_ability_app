@@ -56,7 +56,7 @@ class PlayerListFragment : Fragment(), PlayerListAdapterListener {
         startActivity(intent)
     }
 
-    override fun buttonClicked(player: PlayerItemData) {
+    override fun deleteClicked(player: PlayerItemData) {
         val uDB = UtilisingDB(context!!, context!!.applicationContext)
         uDB.deletePlayerWithId(player.playerId, playerType)
     }

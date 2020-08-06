@@ -63,13 +63,17 @@ class PlayerListAdapter(
     }
 
     private fun setNameTextSize(nameText: TextView) {
-        when (nameText.length()) {
-            5 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 9.5F, context.resources.displayMetrics)
-            6 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8F, context.resources.displayMetrics)
-            7 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6.8F, context.resources.displayMetrics)
-            8 -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 6F, context.resources.displayMetrics)
-            else -> nameText.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 11.5F, context.resources.displayMetrics)
+        nameText.textSize = when (nameText.length()) {
+            5 -> createTextSize(9.5F)
+            6 -> createTextSize(8F)
+            7 -> createTextSize(6.8F)
+            8 -> createTextSize(6F)
+            else -> createTextSize(11.5F)
         }
+    }
+
+    private fun createTextSize(size: Float): Float {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, size, context.resources.displayMetrics)
     }
 
     private fun putSpaceBetween(nameText: TextView, playerName: String) {
@@ -97,7 +101,7 @@ class PlayerListAdapter(
             // _ means argument which is never used
             builder.setPositiveButton(context.resources.getString(R.string.done)) { _, _ ->
                 button.isClickable = false
-                listener.buttonClicked(player)
+                listener.deleteClicked(player)
                 remove(player)
             }
             builder.setNegativeButton(context.resources.getString(R.string.no), null)
@@ -110,5 +114,5 @@ class PlayerListAdapter(
 
 interface PlayerListAdapterListener {
     fun nameClicked(player: PlayerItemData)
-    fun buttonClicked(player: PlayerItemData)
+    fun deleteClicked(player: PlayerItemData)
 }
