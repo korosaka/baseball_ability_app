@@ -11,15 +11,16 @@ import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.fragment.PlayerListFragment
 import kotlinx.android.synthetic.main.activity_display_saved_player.*
 
-class DisplaySavedPlayerActivity : BaseOptionMenuActivity() {
+class DisplaySavedPlayerActivity : BaseBannerActivity() {
 
     private lateinit var fielderListFrag: PlayerListFragment
     private lateinit var pitcherListFrag: PlayerListFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_saved_player)
+        setAdViewContainer(ad_view_container_on_saved_player)
+        super.onCreate(savedInstanceState)
 
         prepareFragment()
     }
