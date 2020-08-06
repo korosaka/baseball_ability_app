@@ -14,7 +14,6 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:maxLines="1"
-        android:text="名前"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_width="0dp"
@@ -29,7 +28,8 @@
         android:layout_gravity="center"
         android:id="@+id/delete_player"
         android:layout_marginRight="10dp"
-        android:text="削除"
+        android:textStyle="bold"
+        android:text="@string/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

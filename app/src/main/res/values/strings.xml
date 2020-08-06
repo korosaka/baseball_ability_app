@@ -9,6 +9,8 @@
     <string name="check_data">つくった選手をみる</string>
     <string name="pitcher_making">投手で作成</string>
     <string name="fielder_making">野手で作成</string>
+    <string name="fielder">野 手</string>
+    <string name="pitcher">投 手</string>
     <string name="require_name">名前を登録してください</string>
     <string name="require_sex">性別を選んでください</string>
     <string name="require_each_item">各項目を登録してください！</string>
@@ -36,6 +38,8 @@
     <string name="completed_save">保存が完了しました</string>
     <string name="failed_save">保存に失敗しました</string>
     <string name="full_data">データがいっぱいです</string>
+    <string name="delete">削除</string>
+    <string name="top">TOP</string>
 
 
     <string name="position_catcher">捕</string>

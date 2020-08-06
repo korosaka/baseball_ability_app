@@ -16,12 +16,14 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:layout_gravity="center"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:layout_weight="0.6"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
             android:onClick="onClickBackToTop"
-            android:text="TOP" />
+            android:text="@string/top" />
 
         <Button
             android:id="@+id/fielder_tab"
@@ -32,7 +34,7 @@
             android:layout_weight="1.0"
             android:background="@drawable/fielder_tab_background"
             android:onClick="onFielderClick"
-            android:text="野 手"
+            android:text="@string/fielder"
             android:textColor="#ffffff"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -46,7 +48,7 @@
             android:layout_weight="1.0"
             android:background="@drawable/pitcher_tab_background"
             android:onClick="onPitcherClick"
-            android:text="投 手"
+            android:text="@string/pitcher"
             android:textColor="#ffffff"
             android:textSize="25sp"
             android:textStyle="bold" />
