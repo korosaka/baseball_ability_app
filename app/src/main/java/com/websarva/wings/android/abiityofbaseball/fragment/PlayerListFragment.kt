@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.websarva.wings.android.abiityofbaseball.*
 import com.websarva.wings.android.abiityofbaseball.activity.AnswerQuestionsActivity
+import com.websarva.wings.android.abiityofbaseball.database.UtilisingDB
+import com.websarva.wings.android.abiityofbaseball.listview.PlayerItemData
+import com.websarva.wings.android.abiityofbaseball.listview.PlayerListAdapter
+import com.websarva.wings.android.abiityofbaseball.listview.PlayerListAdapterListener
 import kotlinx.android.synthetic.main.fragment_fielder_list.*
 import kotlinx.android.synthetic.main.fragment_pitcher_list.*
 

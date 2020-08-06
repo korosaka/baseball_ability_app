@@ -1,9 +1,7 @@
 package com.websarva.wings.android.abiityofbaseball.activity
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -13,6 +11,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.database.UtilisingDB
 import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass

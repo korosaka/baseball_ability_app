@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.database
 
 import android.content.Context
 import android.content.Intent
@@ -7,10 +7,12 @@ import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
 import android.graphics.Color
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.listview.PlayerItemData
+import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.activity.ShowResultActivity
 import com.websarva.wings.android.abiityofbaseball.calc_ability.CalcPitcherAbility
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass

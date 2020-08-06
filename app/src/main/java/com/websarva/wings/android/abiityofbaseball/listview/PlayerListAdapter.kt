@@ -1,4 +1,4 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.listview
 
 import android.content.Context
 import android.util.TypedValue
@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
+import com.websarva.wings.android.abiityofbaseball.Constants
+import com.websarva.wings.android.abiityofbaseball.R
 
 
 class PlayerListAdapter(
