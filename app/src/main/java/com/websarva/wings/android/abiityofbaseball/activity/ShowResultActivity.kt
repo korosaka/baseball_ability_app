@@ -30,7 +30,7 @@ class ShowResultActivity : BaseBannerActivity() {
         const val AD_FREQUENCY_CREATING_NEW = 2
         const val AD_FREQUENCY_SAVED_PLAYER = 8
 
-        const val LIMIT_PLAYER_DATA = 200
+        const val LIMIT_PLAYER_DATA = 250
         var makingPlayerCounter = 0
         var seeingSavedPlayerCounter = 0
     }
