@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -44,6 +45,10 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
         assignInfo()
         addFragments()
+    }
+
+    override fun keyBackFunction() {
+        backToPrevious()
     }
 
     private fun assignInfo() {
@@ -248,6 +253,7 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
     private fun startFielderActivity(calcAbility: CalcFielderAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
+        intent.putExtra(Constants.USE, Constants.NEW_PLAYER)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.POSITION, calcAbility.position)
         intent.putExtra(Constants.BALLISTIC, calcAbility.ballistic)
@@ -264,6 +270,7 @@ class AnswerQuestionsActivity : BaseOptionMenuActivity() {
 
     private fun startPitcherActivity(calcAbility: CalcPitcherAbility) {
         val intent = Intent(this, ShowResultActivity::class.java)
+        intent.putExtra(Constants.USE, Constants.NEW_PLAYER)
         intent.putExtra(Constants.PLAYER_NAME, playerName)
         intent.putExtra(Constants.PITCHER_TYPE, calcAbility.pitcherType)
         intent.putExtra(Constants.BALL_SPEED, calcAbility.maxBallSpeed)

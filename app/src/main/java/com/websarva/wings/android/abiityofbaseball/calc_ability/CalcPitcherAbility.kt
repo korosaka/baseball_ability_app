@@ -134,7 +134,7 @@ open class CalcPitcherAbility {
 
     private fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
         return when (kindsOfChange) {
-            in -100..5 -> 0
+            in Integer.MIN_VALUE..5 -> 0
             in 6..39 -> 1
             in 40..79 -> 2
             in 80..119 -> 3
@@ -166,7 +166,15 @@ open class CalcPitcherAbility {
             if (changeBalls[i] > 7) changeBalls[i] = 7
         }
 
+        reCalcTotalAmountChange(changeBalls)
         return changeBalls
+    }
+
+    private fun reCalcTotalAmountChange(changeBalls: ArrayList<Int>) {
+        totalAmountOfChange = 0
+        changeBalls.forEach {
+            totalAmountOfChange += it
+        }
     }
 
     // 変化球優先順位と種類数上限から優先順位再生成

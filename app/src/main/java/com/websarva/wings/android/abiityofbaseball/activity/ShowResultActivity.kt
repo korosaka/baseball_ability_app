@@ -1,13 +1,17 @@
 package com.websarva.wings.android.abiityofbaseball.activity
 
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.database.UtilisingDB
 import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
@@ -18,15 +22,28 @@ import java.util.ArrayList
 class ShowResultActivity : BaseBannerActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
+    private lateinit var currentStatus: String
 
     companion object {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-6298264304843789/3463574114"
-        const val AD_FREQUENCY = 2
+        const val AD_FREQUENCY_CREATING_NEW = 2
+        const val AD_FREQUENCY_SAVED_PLAYER = 8
+
+        const val LIMIT_PLAYER_DATA = 250
         var makingPlayerCounter = 0
+        var seeingSavedPlayerCounter = 0
     }
 
     private lateinit var playerName: String
+
+    private var fielder: PlayerFielderClass? = null
+    private var pitcher: PlayerPitcherClass? = null
+
+    override fun keyBackFunction() {
+        if (checkStatement()) mInterstitialAd.show()
+        else finishActivity()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +51,8 @@ class ShowResultActivity : BaseBannerActivity() {
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
+        currentStatus = intent.getStringExtra(Constants.USE).toString()
+        makePlayer()
         displayPlayerInfo()
         loadInterstitialAd()
     }
@@ -43,35 +62,69 @@ class ShowResultActivity : BaseBannerActivity() {
      * https://developers.google.com/admob/android/interstitial
      */
     private fun loadInterstitialAd() {
-        makingPlayerCounter++
+        incrementCount()
 
         MobileAds.initialize(this) {}
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = AD_UNIT_ID
         mInterstitialAd.adListener = object : AdListener() {
             override fun onAdClicked() {
-                backToTop()
+                finishActivity()
             }
+
             override fun onAdClosed() {
-                backToTop()
+                finishActivity()
             }
         }
 
         mInterstitialAd.loadAd(AdRequest.Builder().build())
     }
 
-    private fun displayPlayerInfo() {
+    private fun incrementCount() {
+        when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter++
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter++
+        }
+    }
+
+    private fun finishActivity() {
+        if (currentStatus == Constants.NEW_PLAYER) backToTop()
+        else finish()
+    }
+
+    private fun makePlayer() {
         playerName = intent.getStringExtra(Constants.PLAYER_NAME)!!
         when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder = makeFielder()
+            Constants.TYPE_PITCHER -> pitcher = makePitcher()
+        }
+    }
+
+    private fun displayPlayerInfo() {
+        when (AnswerQuestionsActivity.playerType) {
             Constants.TYPE_FIELDER -> {
-                val fielderPlayerFrag = PlayerInfoFragment.newInstance(makeFielder())
-                addPlayerInfoFrag(fielderPlayerFrag)
+                if (fielder != null) {
+                    val fielderPlayerFrag = PlayerInfoFragment.newInstance(fielder!!)
+                    addPlayerInfoFrag(fielderPlayerFrag)
+                }
             }
             Constants.TYPE_PITCHER -> {
-                val pitcherPlayerFrag = PlayerInfoFragment.newInstance(makePitcher())
-                addPlayerInfoFrag(pitcherPlayerFrag)
+                if (pitcher != null) {
+                    val pitcherPlayerFrag = PlayerInfoFragment.newInstance(pitcher!!)
+                    addPlayerInfoFrag(pitcherPlayerFrag)
+                }
             }
         }
+
+        if (currentStatus == Constants.SAVED_PLAYER) disableSaveButton()
+    }
+
+    private fun disableSaveButton() {
+        save_button.isEnabled = false
+        save_button.setTextColor(Color.parseColor(Constants.SAVE_DISABLE_COLOR))
+        val disableBackground =
+                ResourcesCompat.getDrawable(resources, R.drawable.save_button_disable, null)
+        save_button.background = disableBackground
     }
 
     private fun addPlayerInfoFrag(playerInfoFrag: PlayerInfoFragment) {
@@ -121,23 +174,59 @@ class ShowResultActivity : BaseBannerActivity() {
 
     fun onClickFinish(view: View) {
         if (checkStatement()) mInterstitialAd.show()
-        else backToTop()
+        else finishActivity()
     }
 
     private fun checkStatement(): Boolean {
-        return mInterstitialAd.isLoaded
-                && makingPlayerCounter % AD_FREQUENCY == 0
-    }
-
-    private fun backToTop() {
-        val intent = Intent(this, TopActivity::class.java)
-        startActivity(intent)
-        finish()
+        if (!mInterstitialAd.isLoaded) return false
+        return when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter % AD_FREQUENCY_CREATING_NEW == 0
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter % AD_FREQUENCY_SAVED_PLAYER == 0
+            else -> false
+        }
     }
 
 
     fun onClickTweet(view: View) {
         Tweet(applicationContext, this, player_info_frame, playerName).tweet()
+    }
+
+    fun onClickSave(view: View) {
+        if (canSave()) showSaveDialog()
+        else Toast.makeText(applicationContext,
+                resources.getString(R.string.full_data),
+                Toast.LENGTH_SHORT)
+                .show()
+    }
+
+    private fun canSave(): Boolean {
+        val uDB = UtilisingDB(this, applicationContext)
+        val numberOfData = when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> uDB.countSavedPlayer(Constants.TYPE_FIELDER)
+            Constants.TYPE_PITCHER -> uDB.countSavedPlayer(Constants.TYPE_PITCHER)
+            else -> LIMIT_PLAYER_DATA
+        }
+
+        return numberOfData < LIMIT_PLAYER_DATA
+    }
+
+    private fun showSaveDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage(resources.getString(R.string.ask_save))
+        // _ means argument which is never used
+        builder.setPositiveButton(resources.getString(R.string.done)) { _, _ ->
+            savePlayerInfo()
+        }
+        builder.setNegativeButton(resources.getString(R.string.no), null)
+        builder.show()
+    }
+
+    private fun savePlayerInfo() {
+        val uDB = UtilisingDB(this, applicationContext)
+        when (AnswerQuestionsActivity.playerType) {
+            Constants.TYPE_FIELDER -> fielder?.let { uDB.saveFielder(it, save_button) }
+            Constants.TYPE_PITCHER -> pitcher?.let { uDB.savePitcher(it, save_button) }
+        }
     }
 
 }

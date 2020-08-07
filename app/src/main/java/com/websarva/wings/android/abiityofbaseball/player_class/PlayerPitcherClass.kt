@@ -21,7 +21,7 @@ class PlayerPitcherClass(
     private fun lankMaking(ability: Int): String {
 
         return when (ability) {
-            in -100..19 -> Constants.LANK_G
+            in Integer.MIN_VALUE..19 -> Constants.LANK_G
             in 20..39 -> Constants.LANK_F
             in 40..64 -> Constants.LANK_E
             in 65..79 -> Constants.LANK_D

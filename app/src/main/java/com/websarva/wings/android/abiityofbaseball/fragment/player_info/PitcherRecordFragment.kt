@@ -338,8 +338,8 @@ class PitcherRecordFragment : Fragment() {
         if (pitcher.pitcherType == Constants.CLOSER) nonWinGame -= save
 
         val adjustmentCoefficient = when (pitcher.pitcherType) {
-            Constants.CLOSER -> 0.35
-            else -> 0.2
+            Constants.CLOSER -> 0.45
+            else -> 0.25
         }
         val contributionOfERA = theoreticalERA * adjustmentCoefficient
         var lose = (nonWinGame * inningsPerGame / oneGameInnings * contributionOfERA).toInt()

@@ -3,6 +3,7 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -18,7 +19,13 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         super.onCreate(savedInstanceState)
 
         operateKeyBoard()
+        back_button.setOnClickListener {
+            onClickBack(it)
+        }
+    }
 
+    override fun keyBackFunction() {
+        backToTop()
     }
 
     // OKでフォーカス移してキーボード隠す
@@ -31,7 +38,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     // 野手
     fun onClickSelectFielder(view: View) {
 
-        val editText = player_name
+        val editText = edit_player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
@@ -44,7 +51,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
     // 投手
     fun onClickSelectPitcher(view: View) {
 
-        val editText = player_name
+        val editText = edit_player_name
         val playerName = editText.text.toString()
         // 名前空欄はダメ
         if (playerName.isNotEmpty()) {
@@ -78,7 +85,7 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
      * キーボード表示操作
      */
     private fun operateKeyBoard() {
-        player_name.setOnFocusChangeListener { view, b ->
+        edit_player_name.setOnFocusChangeListener { view, b ->
             // フォーカスを取得→キーボード表示
             if (b) {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -92,5 +99,8 @@ class SelectPlayerTypeActivity : BaseBannerActivity() {
         }
     }
 
+    private fun onClickBack(view: View) {
+        backToTop()
+    }
 
 }

@@ -19,9 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SelectOptionActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.SelectPlayerTypeActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -30,11 +27,13 @@
         <activity
             android:name=".activity.ShowResultActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DisplaySavedPlayerActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="google_analytics_adid_collection_enabled"
             android:value="true" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6298264304843789~4492140864" />
