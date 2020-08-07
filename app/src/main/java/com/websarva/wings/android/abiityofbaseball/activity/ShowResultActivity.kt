@@ -1,15 +1,17 @@
 package com.websarva.wings.android.abiityofbaseball.activity
 
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.database.UtilisingDB
 import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerPitcherClass
@@ -20,15 +22,17 @@ import java.util.ArrayList
 class ShowResultActivity : BaseBannerActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
+    private lateinit var currentStatus: String
 
     companion object {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
-        const val AD_FREQUENCY = 2
+        const val AD_FREQUENCY_CREATING_NEW = 2
+        const val AD_FREQUENCY_SAVED_PLAYER = 8
 
-        // TODO this num is going to be 100
-        const val LIMIT_PLAYER_DATA = 3
+        const val LIMIT_PLAYER_DATA = 200
         var makingPlayerCounter = 0
+        var seeingSavedPlayerCounter = 0
     }
 
     private lateinit var playerName: String
@@ -36,12 +40,18 @@ class ShowResultActivity : BaseBannerActivity() {
     private var fielder: PlayerFielderClass? = null
     private var pitcher: PlayerPitcherClass? = null
 
+    override fun keyBackFunction() {
+        if (checkStatement()) mInterstitialAd.show()
+        else finishActivity()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_show_result)
         setAdViewContainer(ad_view_container_on_show_result)
         super.onCreate(savedInstanceState)
 
+        currentStatus = intent.getStringExtra(Constants.USE).toString()
         makePlayer()
         displayPlayerInfo()
         loadInterstitialAd()
@@ -52,22 +62,34 @@ class ShowResultActivity : BaseBannerActivity() {
      * https://developers.google.com/admob/android/interstitial
      */
     private fun loadInterstitialAd() {
-        makingPlayerCounter++
+        incrementCount()
 
         MobileAds.initialize(this) {}
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = AD_UNIT_ID
         mInterstitialAd.adListener = object : AdListener() {
             override fun onAdClicked() {
-                backToTop()
+                finishActivity()
             }
 
             override fun onAdClosed() {
-                backToTop()
+                finishActivity()
             }
         }
 
         mInterstitialAd.loadAd(AdRequest.Builder().build())
+    }
+
+    private fun incrementCount() {
+        when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter++
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter++
+        }
+    }
+
+    private fun finishActivity() {
+        if (currentStatus == Constants.NEW_PLAYER) backToTop()
+        else finish()
     }
 
     private fun makePlayer() {
@@ -93,6 +115,16 @@ class ShowResultActivity : BaseBannerActivity() {
                 }
             }
         }
+
+        if (currentStatus == Constants.SAVED_PLAYER) disableSaveButton()
+    }
+
+    private fun disableSaveButton() {
+        save_button.isEnabled = false
+        save_button.setTextColor(Color.parseColor(Constants.SAVE_DISABLE_COLOR))
+        val disableBackground =
+                ResourcesCompat.getDrawable(resources, R.drawable.save_button_disable, null)
+        save_button.background = disableBackground
     }
 
     private fun addPlayerInfoFrag(playerInfoFrag: PlayerInfoFragment) {
@@ -142,18 +174,16 @@ class ShowResultActivity : BaseBannerActivity() {
 
     fun onClickFinish(view: View) {
         if (checkStatement()) mInterstitialAd.show()
-        else backToTop()
+        else finishActivity()
     }
 
     private fun checkStatement(): Boolean {
-        return mInterstitialAd.isLoaded
-                && makingPlayerCounter % AD_FREQUENCY == 0
-    }
-
-    private fun backToTop() {
-        val intent = Intent(this, TopActivity::class.java)
-        startActivity(intent)
-        finish()
+        if (!mInterstitialAd.isLoaded) return false
+        return when (currentStatus) {
+            Constants.NEW_PLAYER -> makingPlayerCounter % AD_FREQUENCY_CREATING_NEW == 0
+            Constants.SAVED_PLAYER -> seeingSavedPlayerCounter % AD_FREQUENCY_SAVED_PLAYER == 0
+            else -> false
+        }
     }
 
 
@@ -172,8 +202,8 @@ class ShowResultActivity : BaseBannerActivity() {
     private fun canSave(): Boolean {
         val uDB = UtilisingDB(this, applicationContext)
         val numberOfData = when (AnswerQuestionsActivity.playerType) {
-            Constants.TYPE_FIELDER -> uDB.countSavedFielder()
-            Constants.TYPE_PITCHER -> uDB.countSavedPitcher()
+            Constants.TYPE_FIELDER -> uDB.countSavedPlayer(Constants.TYPE_FIELDER)
+            Constants.TYPE_PITCHER -> uDB.countSavedPlayer(Constants.TYPE_PITCHER)
             else -> LIMIT_PLAYER_DATA
         }
 

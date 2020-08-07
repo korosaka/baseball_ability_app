@@ -3,12 +3,11 @@ package com.websarva.wings.android.abiityofbaseball.activity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import com.websarva.wings.android.abiityofbaseball.Constants
 import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.fragment.PrivacyPolicyFragment
 
-abstract class BaseOptionMenuActivity : AppCompatActivity() {
+abstract class BaseOptionMenuActivity : BaseActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -17,7 +16,7 @@ abstract class BaseOptionMenuActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.policy -> {
                 val dialog = PrivacyPolicyFragment.newInstance(Constants.CLOSE)
                 dialog.show(supportFragmentManager, Constants.PRIVACY_POLICY)

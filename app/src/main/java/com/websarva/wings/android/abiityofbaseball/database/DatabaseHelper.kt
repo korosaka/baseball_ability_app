@@ -1,8 +1,9 @@
-package com.websarva.wings.android.abiityofbaseball
+package com.websarva.wings.android.abiityofbaseball.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.websarva.wings.android.abiityofbaseball.Constants
 
 class DatabaseHelper(context: Context) :
         SQLiteOpenHelper(context, Constants.DATABASE_NAME, null, Constants.DATABASE_VERSION) {
