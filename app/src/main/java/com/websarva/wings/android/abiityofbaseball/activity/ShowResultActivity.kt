@@ -28,7 +28,7 @@ class ShowResultActivity : BaseBannerActivity() {
         // Interstitial AD's ID
         const val AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1033173712"
         const val AD_FREQUENCY_CREATING_NEW = 2
-        const val AD_FREQUENCY_SAVED_PLAYER = 10
+        const val AD_FREQUENCY_SAVED_PLAYER = 8
 
         const val LIMIT_PLAYER_DATA = 200
         var makingPlayerCounter = 0
