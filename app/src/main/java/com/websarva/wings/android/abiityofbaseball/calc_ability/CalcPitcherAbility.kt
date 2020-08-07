@@ -134,7 +134,7 @@ open class CalcPitcherAbility {
 
     private fun calculateNumberOfChangeBalls(kindsOfChange: Int): Int {
         return when (kindsOfChange) {
-            in -100..5 -> 0
+            in Integer.MIN_VALUE..5 -> 0
             in 6..39 -> 1
             in 40..79 -> 2
             in 80..119 -> 3
