@@ -255,7 +255,7 @@
         <item>目力強い</item>
         <item>眉毛細い</item>
         <item>色白</item>
-        <item>色黒</item>
+        <item>ロン毛</item>
         <item>毛深い</item>
         <item>メガネ男子</item>
     </string-array>
@@ -264,7 +264,7 @@
         <item>目力強い</item>
         <item>切れ目</item>
         <item>色白</item>
-        <item>色黒</item>
+        <item>ショートカット</item>
         <item>ばっちりメイク</item>
         <item>メガネ女子</item>
     </string-array>
@@ -354,6 +354,7 @@
         <item>話が上手い</item>
         <item>ツッコミ上手</item>
         <item>とにかく面白い</item>
+        <item>いじられキャラ</item>
         <item>つまらない</item>
     </string-array>
     <string-array name="w_array_q5_p">
@@ -363,6 +364,7 @@
         <item>話が上手い</item>
         <item>ツッコミ上手</item>
         <item>とにかく面白い</item>
+        <item>いじられキャラ</item>
         <item>つまらない</item>
     </string-array>
 
@@ -373,7 +375,7 @@
         <item>女好き</item>
         <item>チャレンジ精神</item>
         <item>鈍感</item>
-        <item>注意力散漫</item>
+        <item>注意力不足</item>
         <item>誠実</item>
         <item>精神年齢高め</item>
     </string-array>
@@ -469,18 +471,17 @@
     <string-array name="m_array_q6_o">
         <item>特になし</item>
         <item>上品</item>
-        <item>意外性の男</item>
+        <item>運動神経いい</item>
         <item>センスマン</item>
         <item>太陽系男子</item>
-        <item>世話焼き</item>
+        <item>サイコパス</item>
         <item>ナルシスト</item>
         <item>持ってる男</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="w_array_q6_o">
         <item>特になし</item>
         <item>上品</item>
-        <item>意外性の女</item>
+        <item>運動神経いい</item>
         <item>多才</item>
         <item>母性強い</item>
         <item>愛嬌MAX</item>
