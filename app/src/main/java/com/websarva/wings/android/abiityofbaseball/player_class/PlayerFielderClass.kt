@@ -27,7 +27,7 @@ class PlayerFielderClass (
 
         return when (ability) {
 
-            in -100..10 -> Constants.LANK_G
+            in Integer.MIN_VALUE..10 -> Constants.LANK_G
             in 11..20 -> Constants.LANK_F
             in 21..30 -> Constants.LANK_E
             in 31..40 -> Constants.LANK_D
