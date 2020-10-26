@@ -10,8 +10,8 @@ android {
         applicationId "com.websarva.wings.android.abiityofbaseball"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 202008071
-        versionName "2.0"
+        versionCode 202010261
+        versionName "2.0.1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
