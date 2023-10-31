@@ -2,15 +2,16 @@ package com.websarva.wings.android.abiityofbaseball.activity
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.websarva.wings.android.abiityofbaseball.*
+import com.websarva.wings.android.abiityofbaseball.R
 import com.websarva.wings.android.abiityofbaseball.database.UtilisingDB
 import com.websarva.wings.android.abiityofbaseball.fragment.player_info.PlayerInfoFragment
 import com.websarva.wings.android.abiityofbaseball.player_class.PlayerFielderClass
@@ -21,7 +22,7 @@ import java.util.ArrayList
 
 class ShowResultActivity : BaseBannerActivity() {
 
-    private lateinit var mInterstitialAd: InterstitialAd
+    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var currentStatus: String
 
     companion object {
@@ -41,7 +42,7 @@ class ShowResultActivity : BaseBannerActivity() {
     private var pitcher: PlayerPitcherClass? = null
 
     override fun keyBackFunction() {
-        if (checkStatement()) mInterstitialAd.show()
+        if (checkStatement()) mInterstitialAd?.show(this)
         else finishActivity()
     }
 
@@ -64,20 +65,51 @@ class ShowResultActivity : BaseBannerActivity() {
     private fun loadInterstitialAd() {
         incrementCount()
 
-        MobileAds.initialize(this) {}
-        mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = AD_UNIT_ID
-        mInterstitialAd.adListener = object : AdListener() {
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this, AD_UNIT_ID, adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    // The mInterstitialAd reference will be null until an ad is loaded.
+                    mInterstitialAd = interstitialAd
+                    setFullScreenContentCallback()
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    // Handle the error
+                    Log.d("loadInterstitialAd", loadAdError.toString())
+                    mInterstitialAd = null
+                }
+            })
+    }
+
+    private fun setFullScreenContentCallback() {
+        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdClicked() {
+                // Called when a click is recorded for an ad.
                 finishActivity()
             }
 
-            override fun onAdClosed() {
+            override fun onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                mInterstitialAd = null
                 finishActivity()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
+                // Called when ad fails to show.
+                mInterstitialAd = null
+                finishActivity()
+            }
+
+            override fun onAdImpression() {
+                // Called when an impression is recorded for an ad.
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                // Called when ad is shown.
             }
         }
-
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
     }
 
     private fun incrementCount() {
@@ -173,12 +205,12 @@ class ShowResultActivity : BaseBannerActivity() {
     }
 
     fun onClickFinish(view: View) {
-        if (checkStatement()) mInterstitialAd.show()
+        if (checkStatement()) mInterstitialAd?.show(this)
         else finishActivity()
     }
 
     private fun checkStatement(): Boolean {
-        if (!mInterstitialAd.isLoaded) return false
+        if (mInterstitialAd == null) return false
         return when (currentStatus) {
             Constants.NEW_PLAYER -> makingPlayerCounter % AD_FREQUENCY_CREATING_NEW == 0
             Constants.SAVED_PLAYER -> seeingSavedPlayerCounter % AD_FREQUENCY_SAVED_PLAYER == 0
