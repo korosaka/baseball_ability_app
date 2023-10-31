@@ -89,7 +89,7 @@ open class CalcPitcherAbility {
     // decide pitcher type
     private fun assignPitcherType() {
 
-        val typeIndex = pitcherTypes.indices.maxBy {
+        val typeIndex = pitcherTypes.indices.maxByOrNull {
             pitcherTypes[it]
         } ?: STARTER_INDEX
         when (typeIndex) {
@@ -183,7 +183,7 @@ open class CalcPitcherAbility {
         if (kindChangeAbility == 0) return newPriorityChange
 
         for (i in 1..kindChangeAbility) {
-            val maxChange = oldPriorityChange.max() ?: return newPriorityChange
+            val maxChange = oldPriorityChange.maxOrNull() ?: return newPriorityChange
             val maxIndex = oldPriorityChange.indexOf(maxChange)
             newPriorityChange[maxIndex] = maxChange
             oldPriorityChange[maxIndex] = 0

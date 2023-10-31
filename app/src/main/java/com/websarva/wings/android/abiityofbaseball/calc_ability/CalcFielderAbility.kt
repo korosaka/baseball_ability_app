@@ -52,7 +52,7 @@ open class CalcFielderAbility {
     }
 
     protected fun setPosition() {
-        val positionIndex = positions.indices.maxBy {
+        val positionIndex = positions.indices.maxByOrNull {
             positions[it]
         }
         position = when (positionIndex) {
