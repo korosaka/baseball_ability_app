@@ -33,6 +33,7 @@
     <string name="male">男性</string>
     <string name="female">女性</string>
     <string name="tweet">Tweet</string>
+    <string name="share_disabled">現在利用不可です。スクリーンショットで画像化お願いします。</string>
     <string name="save_data">SAVE</string>
     <string name="ask_save">データを保存しますか？</string>
     <string name="ask_delete">を削除しますか？</string>
