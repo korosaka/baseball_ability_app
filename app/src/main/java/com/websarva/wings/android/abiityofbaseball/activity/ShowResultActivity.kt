@@ -220,7 +220,12 @@ class ShowResultActivity : BaseBannerActivity() {
 
 
     fun onClickTweet(view: View) {
-        Tweet(applicationContext, this, player_info_frame, playerName).tweet()
+        Toast.makeText(
+            applicationContext,
+            resources.getString(R.string.share_disabled),
+            Toast.LENGTH_LONG
+        ).show()
+//        Tweet(applicationContext, this, player_info_frame, playerName).tweet()
     }
 
     fun onClickSave(view: View) {
